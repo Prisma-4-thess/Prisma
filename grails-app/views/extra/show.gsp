@@ -63,7 +63,7 @@
 				<li class="fieldcontain">
 					<span id="type-label" class="property-label"><g:message code="extra.type.label" default="Type" /></span>
 					
-						<span class="property-value" aria-labelledby="type-label"><g:link controller="type" action="show" id="${extraInstance?.type?.id}">${extraInstance?.type?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="type-label"><g:link controller="type" action="show" id="${extraInstance?.type?.id}">${extraInstance?.type}</g:link></span>
 					
 				</li>
 				</g:if>

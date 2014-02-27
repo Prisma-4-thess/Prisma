@@ -15,6 +15,15 @@
 		<g:message code="type.extras.label" default="Extras" />
 		
 	</label>
-	<g:select name="extras" from="${prisma.Extra.list()}" multiple="multiple" optionKey="id" size="5" value="${typeInstance?.extras*.id}" class="many-to-many"/>
+	
+<ul class="one-to-many">
+<g:each in="${typeInstance?.extras?}" var="e">
+    <li><g:link controller="extra" action="show" id="${e.id}">${e}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="extra" action="create" params="['type.id': typeInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'extra.label', default: 'Extra')])}</g:link>
+</li>
+</ul>
+
 </div>
 
