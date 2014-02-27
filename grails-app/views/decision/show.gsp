@@ -63,7 +63,7 @@
 				<li class="fieldcontain">
 					<span id="signer-label" class="property-label"><g:message code="decision.signer.label" default="Signer" /></span>
 					
-						<span class="property-value" aria-labelledby="signer-label"><g:link controller="signer" action="show" id="${decisionInstance?.signer?.id}">${decisionInstance?.signer?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="signer-label"><g:link controller="signer" action="show" id="${decisionInstance?.signer?.id}">${decisionInstance?.signer}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -81,7 +81,7 @@
 				<li class="fieldcontain">
 					<span id="tag-label" class="property-label"><g:message code="decision.tag.label" default="Tag" /></span>
 					
-						<span class="property-value" aria-labelledby="tag-label"><g:link controller="tag" action="show" id="${decisionInstance?.tag?.id}">${decisionInstance?.tag?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="tag-label"><g:link controller="tag" action="show" id="${decisionInstance?.tag?.id}">${decisionInstance?.tag}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -90,7 +90,7 @@
 				<li class="fieldcontain">
 					<span id="type-label" class="property-label"><g:message code="decision.type.label" default="Type" /></span>
 					
-						<span class="property-value" aria-labelledby="type-label"><g:link controller="type" action="show" id="${decisionInstance?.type?.id}">${decisionInstance?.type?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="type-label"><g:link controller="type" action="show" id="${decisionInstance?.type?.id}">${decisionInstance?.type}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -99,7 +99,7 @@
 				<li class="fieldcontain">
 					<span id="unit-label" class="property-label"><g:message code="decision.unit.label" default="Unit" /></span>
 					
-						<span class="property-value" aria-labelledby="unit-label"><g:link controller="unit" action="show" id="${decisionInstance?.unit?.id}">${decisionInstance?.unit?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="unit-label"><g:link controller="unit" action="show" id="${decisionInstance?.unit?.id}">${decisionInstance?.unit}</g:link></span>
 					
 				</li>
 				</g:if>

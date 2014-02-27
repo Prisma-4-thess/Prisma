@@ -31,6 +31,15 @@
 		<g:message code="organization.units.label" default="Units" />
 		
 	</label>
-	<g:select name="units" from="${prisma.Unit.list()}" multiple="multiple" optionKey="id" size="5" value="${organizationInstance?.units*.id}" class="many-to-many"/>
+	
+<ul class="one-to-many">
+<g:each in="${organizationInstance?.units?}" var="u">
+    <li><g:link controller="unit" action="show" id="${u.id}">${u?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="unit" action="create" params="['organization.id': organizationInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'unit.label', default: 'Unit')])}</g:link>
+</li>
+</ul>
+
 </div>
 

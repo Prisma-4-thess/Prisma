@@ -37,7 +37,7 @@
 					<span id="extras-label" class="property-label"><g:message code="type.extras.label" default="Extras" /></span>
 					
 						<g:each in="${typeInstance.extras}" var="e">
-						<span class="property-value" aria-labelledby="extras-label"><g:link controller="extra" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="extras-label"><g:link controller="extra" action="show" id="${e.id}">${e}</g:link></span>
 						</g:each>
 					
 				</li>
