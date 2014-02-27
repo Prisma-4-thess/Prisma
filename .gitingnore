@@ -19,6 +19,6 @@ stacktrace.log
 /test/reports
 
 # project release file
-/target/
-/pdf/
-/target-eclipse/
+/target/*
+/pdf/*
+/target-eclipse/*
