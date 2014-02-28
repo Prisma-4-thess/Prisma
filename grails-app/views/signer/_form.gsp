@@ -2,28 +2,20 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: signerInstance, field: 'firstName', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: signerInstance, field: 'firstName', 'error')} ">
 	<label for="firstName">
 		<g:message code="signer.firstName.label" default="First Name" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="firstName" required="" value="${signerInstance?.firstName}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: signerInstance, field: 'lastName', 'error')} required">
-	<label for="lastName">
-		<g:message code="signer.lastName.label" default="Last Name" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="lastName" required="" value="${signerInstance?.lastName}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: signerInstance, field: 'active', 'error')} ">
-	<label for="active">
-		<g:message code="signer.active.label" default="Active" />
 		
 	</label>
-	<g:checkBox name="active" value="${signerInstance?.active}" />
+	<g:textField name="firstName" value="${signerInstance?.firstName}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: signerInstance, field: 'lastName', 'error')} ">
+	<label for="lastName">
+		<g:message code="signer.lastName.label" default="Last Name" />
+		
+	</label>
+	<g:textField name="lastName" value="${signerInstance?.lastName}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: signerInstance, field: 'position', 'error')} ">
@@ -40,5 +32,13 @@
 		
 	</label>
 	<g:textField name="title" value="${signerInstance?.title}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: signerInstance, field: 'active', 'error')} ">
+	<label for="active">
+		<g:message code="signer.active.label" default="Active" />
+		
+	</label>
+	<g:checkBox name="active" value="${signerInstance?.active}" />
 </div>
 

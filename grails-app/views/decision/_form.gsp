@@ -18,6 +18,23 @@
 	<g:datePicker name="date" precision="day"  value="${decisionInstance?.date}"  />
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: decisionInstance, field: 'decision_exts', 'error')} ">
+	<label for="decision_exts">
+		<g:message code="decision.decision_exts.label" default="Decisionexts" />
+		
+	</label>
+	
+<ul class="one-to-many">
+<g:each in="${decisionInstance?.decision_exts?}" var="d">
+    <li><g:link controller="decision_ext" action="show" id="${d.id}">${d}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="decision_ext" action="create" params="['decision.id': decisionInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'decision_ext.label', default: 'Decision_ext')])}</g:link>
+</li>
+</ul>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: decisionInstance, field: 'documentUrl', 'error')} ">
 	<label for="documentUrl">
 		<g:message code="decision.documentUrl.label" default="Document Url" />
@@ -50,12 +67,12 @@
 	<g:textField name="subject" value="${decisionInstance?.subject}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: decisionInstance, field: 'tag', 'error')} required">
-	<label for="tag">
-		<g:message code="decision.tag.label" default="Tag" />
-		<span class="required-indicator">*</span>
+<div class="fieldcontain ${hasErrors(bean: decisionInstance, field: 'tags', 'error')} ">
+	<label for="tags">
+		<g:message code="decision.tags.label" default="Tags" />
+		
 	</label>
-	<g:select id="tag" name="tag.id" from="${prisma.Tag.list()}" optionKey="id" required="" value="${decisionInstance?.tag?.id}" class="many-to-one"/>
+	<g:select name="tags" from="${prisma.Tag.list()}" multiple="multiple" optionKey="id" size="5" value="${decisionInstance?.tags*.id}" class="many-to-many"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: decisionInstance, field: 'type', 'error')} required">

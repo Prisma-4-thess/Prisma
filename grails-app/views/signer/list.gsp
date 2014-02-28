@@ -28,11 +28,11 @@
 					
 						<g:sortableColumn property="lastName" title="${message(code: 'signer.lastName.label', default: 'Last Name')}" />
 					
-						<g:sortableColumn property="active" title="${message(code: 'signer.active.label', default: 'Active')}" />
-					
 						<g:sortableColumn property="position" title="${message(code: 'signer.position.label', default: 'Position')}" />
 					
 						<g:sortableColumn property="title" title="${message(code: 'signer.title.label', default: 'Title')}" />
+					
+						<g:sortableColumn property="active" title="${message(code: 'signer.active.label', default: 'Active')}" />
 					
 					</tr>
 				</thead>
@@ -44,11 +44,11 @@
 					
 						<td>${fieldValue(bean: signerInstance, field: "lastName")}</td>
 					
-						<td><g:formatBoolean boolean="${signerInstance.active}" /></td>
-					
 						<td>${fieldValue(bean: signerInstance, field: "position")}</td>
 					
 						<td>${fieldValue(bean: signerInstance, field: "title")}</td>
+					
+						<td><g:formatBoolean boolean="${signerInstance.active}" /></td>
 					
 					</tr>
 				</g:each>

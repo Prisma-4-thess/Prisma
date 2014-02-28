@@ -41,6 +41,17 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${decisionInstance?.decision_exts}">
+				<li class="fieldcontain">
+					<span id="decision_exts-label" class="property-label"><g:message code="decision.decision_exts.label" default="Decisionexts" /></span>
+					
+						<g:each in="${decisionInstance.decision_exts}" var="d">
+						<span class="property-value" aria-labelledby="decision_exts-label"><g:link controller="decision_ext" action="show" id="${d.id}">${d}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${decisionInstance?.documentUrl}">
 				<li class="fieldcontain">
 					<span id="documentUrl-label" class="property-label"><g:message code="decision.documentUrl.label" default="Document Url" /></span>
@@ -77,11 +88,13 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${decisionInstance?.tag}">
+				<g:if test="${decisionInstance?.tags}">
 				<li class="fieldcontain">
-					<span id="tag-label" class="property-label"><g:message code="decision.tag.label" default="Tag" /></span>
+					<span id="tags-label" class="property-label"><g:message code="decision.tags.label" default="Tags" /></span>
 					
-						<span class="property-value" aria-labelledby="tag-label"><g:link controller="tag" action="show" id="${decisionInstance?.tag?.id}">${decisionInstance?.tag}</g:link></span>
+						<g:each in="${decisionInstance.tags}" var="t">
+						<span class="property-value" aria-labelledby="tags-label"><g:link controller="tag" action="show" id="${t.id}">${t}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>

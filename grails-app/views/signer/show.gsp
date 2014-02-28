@@ -41,15 +41,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${signerInstance?.active}">
-				<li class="fieldcontain">
-					<span id="active-label" class="property-label"><g:message code="signer.active.label" default="Active" /></span>
-					
-						<span class="property-value" aria-labelledby="active-label"><g:formatBoolean boolean="${signerInstance?.active}" /></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${signerInstance?.position}">
 				<li class="fieldcontain">
 					<span id="position-label" class="property-label"><g:message code="signer.position.label" default="Position" /></span>
@@ -64,6 +55,15 @@
 					<span id="title-label" class="property-label"><g:message code="signer.title.label" default="Title" /></span>
 					
 						<span class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${signerInstance}" field="title"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${signerInstance?.active}">
+				<li class="fieldcontain">
+					<span id="active-label" class="property-label"><g:message code="signer.active.label" default="Active" /></span>
+					
+						<span class="property-value" aria-labelledby="active-label"><g:formatBoolean boolean="${signerInstance?.active}" /></span>
 					
 				</li>
 				</g:if>

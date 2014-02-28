@@ -32,6 +32,17 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${extraInstance?.decision_exts}">
+				<li class="fieldcontain">
+					<span id="decision_exts-label" class="property-label"><g:message code="extra.decision_exts.label" default="Decisionexts" /></span>
+					
+						<g:each in="${extraInstance.decision_exts}" var="d">
+						<span class="property-value" aria-labelledby="decision_exts-label"><g:link controller="decision_ext" action="show" id="${d.id}">${d}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${extraInstance?.formName}">
 				<li class="fieldcontain">
 					<span id="formName-label" class="property-label"><g:message code="extra.formName.label" default="Form Name" /></span>

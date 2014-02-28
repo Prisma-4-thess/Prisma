@@ -7,7 +7,7 @@ String title
 String position
 boolean active
 String toString(){
-	return "${firstname} ${lastname} (${title})"
+	return "${firstName} ${lastName} (${title})"
 	}
     static constraints = {
 		firstName(nullable:true)

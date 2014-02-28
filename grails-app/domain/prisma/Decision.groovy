@@ -9,7 +9,7 @@ String documentUrl
 Date date
 Signer signer
 Type type
-Tag tag
+static hasMany=[tags:Tag,decision_exts:Decision_ext]
 Unit unit
 String toString(){
 	return ada
