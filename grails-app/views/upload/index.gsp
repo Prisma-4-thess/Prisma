@@ -7,18 +7,9 @@
 </head>
 <body>
 	<div class="body">
-		<p>
-		<div>
-			<label for="ada">ΑΔΑ:</label>
-
-			<g:textField name="ada" />
-
-			<fileuploader:form 
-			upload="docs" successAction="success"
-				successController="upload" errorAction="error"
-				errorController="upload" />
-		</div>
-		</p>
+		<fileuploader:form upload="docs" successAction="success"
+			successController="upload" errorAction="error"
+			errorController="upload" />
 	</div>
 </body>
 </html>

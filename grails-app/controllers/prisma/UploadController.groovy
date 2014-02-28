@@ -8,8 +8,10 @@ class UploadController {
 	def error(){
 	}
 	def success(){
-		def d=new Decision();
+		/*def d=new Decision();
 		d.ada=params.ada;
-		d.save(flush: true,failOnError:true)
+		d.save(flush: true,failOnError:true)*/
+		println 'ooo'
+		println ${ada}
 	}
 }
