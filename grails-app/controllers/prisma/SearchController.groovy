@@ -20,10 +20,9 @@ class SearchController {
 
 	}
 	def searchada(){
-		println params.ada
 		def decision = new Decision()
 		def c = Decision.createCriteria()
-		decision = c.list {like(params.ada,"ada")}
-		[results:decision]
+		decision = c.get {eq("ada",params.ada)}
+		[result:decision]
 	}
 }
