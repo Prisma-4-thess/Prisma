@@ -3,7 +3,7 @@
 	<nobr>
 		<sec:ifLoggedIn>
 			
-			<b> ${sec.username()}&nbsp;${session.user?.lastName}</b> |
+			<b> ${sec.username()}</b> |
 		<g:link controller="logout" action="index"><g:message code="topbar.logout"/> </g:link>
 			
 		</sec:ifLoggedIn>

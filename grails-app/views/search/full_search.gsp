@@ -2,9 +2,7 @@
 <html>
 <body>
   <div class="body">
-  
-  <div >${results.documentUrl }</div>
-    
+  <p>full search</p>
   </div>
 </body>
 </html>
