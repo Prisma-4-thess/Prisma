@@ -36,7 +36,7 @@
 				<li class="fieldcontain">
 					<span id="decisionToCorrect-label" class="property-label"><g:message code="decision.decisionToCorrect.label" default="Decision To Correct" /></span>
 					
-						<span class="property-value" aria-labelledby="decisionToCorrect-label"><g:link controller="decision" action="show" id="${decisionInstance?.decisionToCorrect?.id}">${decisionInstance?.decisionToCorrect?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="decisionToCorrect-label"><g:link controller="decision" action="show" id="${decisionInstance?.decisionToCorrect?.id}">${decisionInstance?.decisionToCorrect}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -72,7 +72,7 @@
 				<li class="fieldcontain">
 					<span id="signer-label" class="property-label"><g:message code="decision.signer.label" default="Signer" /></span>
 					
-						<span class="property-value" aria-labelledby="signer-label"><g:link controller="signer" action="show" id="${decisionInstance?.signer?.id}">${decisionInstance?.signer?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="signer-label"><g:link controller="signer" action="show" id="${decisionInstance?.signer?.id}">${decisionInstance?.signer}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -91,7 +91,7 @@
 					<span id="tags-label" class="property-label"><g:message code="decision.tags.label" default="Tags" /></span>
 					
 						<g:each in="${decisionInstance.tags}" var="t">
-						<span class="property-value" aria-labelledby="tags-label"><g:link controller="tag" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="tags-label"><g:link controller="tag" action="show" id="${t.id}">${t}</g:link></span>
 						</g:each>
 					
 				</li>
@@ -101,7 +101,7 @@
 				<li class="fieldcontain">
 					<span id="type-label" class="property-label"><g:message code="decision.type.label" default="Type" /></span>
 					
-						<span class="property-value" aria-labelledby="type-label"><g:link controller="type" action="show" id="${decisionInstance?.type?.id}">${decisionInstance?.type?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="type-label"><g:link controller="type" action="show" id="${decisionInstance?.type?.id}">${decisionInstance?.type}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -110,7 +110,7 @@
 				<li class="fieldcontain">
 					<span id="unit-label" class="property-label"><g:message code="decision.unit.label" default="Unit" /></span>
 					
-						<span class="property-value" aria-labelledby="unit-label"><g:link controller="unit" action="show" id="${decisionInstance?.unit?.id}">${decisionInstance?.unit?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="unit-label"><g:link controller="unit" action="show" id="${decisionInstance?.unit?.id}">${decisionInstance?.unit}</g:link></span>
 					
 				</li>
 				</g:if>
