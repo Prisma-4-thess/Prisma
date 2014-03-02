@@ -9,12 +9,14 @@ String documentUrl
 Date date
 Signer signer
 Type type
-static hasMany=[tags:Tag,decision_exts:Decision_ext]
+Decision decisionToCorrect
+static hasMany=[tags:Tag]
 Unit unit
 String toString(){
 	return ada
 	}
     static constraints = {
 		ada(nullable:false,blank:false,unique:true)
+		decisionToCorrect(nullable:true)
     }
 }

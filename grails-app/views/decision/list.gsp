@@ -26,6 +26,8 @@
 					
 						<g:sortableColumn property="ada" title="${message(code: 'decision.ada.label', default: 'Ada')}" />
 					
+						<th><g:message code="decision.decisionToCorrect.label" default="Decision To Correct" /></th>
+					
 						<g:sortableColumn property="date" title="${message(code: 'decision.date.label', default: 'Date')}" />
 					
 						<g:sortableColumn property="documentUrl" title="${message(code: 'decision.documentUrl.label', default: 'Document Url')}" />
@@ -33,8 +35,6 @@
 						<g:sortableColumn property="protocolNumber" title="${message(code: 'decision.protocolNumber.label', default: 'Protocol Number')}" />
 					
 						<th><g:message code="decision.signer.label" default="Signer" /></th>
-					
-						<g:sortableColumn property="subject" title="${message(code: 'decision.subject.label', default: 'Subject')}" />
 					
 					</tr>
 				</thead>
@@ -44,6 +44,8 @@
 					
 						<td><g:link action="show" id="${decisionInstance.id}">${fieldValue(bean: decisionInstance, field: "ada")}</g:link></td>
 					
+						<td>${fieldValue(bean: decisionInstance, field: "decisionToCorrect")}</td>
+					
 						<td><g:formatDate date="${decisionInstance.date}" /></td>
 					
 						<td>${fieldValue(bean: decisionInstance, field: "documentUrl")}</td>
@@ -51,8 +53,6 @@
 						<td>${fieldValue(bean: decisionInstance, field: "protocolNumber")}</td>
 					
 						<td>${fieldValue(bean: decisionInstance, field: "signer")}</td>
-					
-						<td>${fieldValue(bean: decisionInstance, field: "subject")}</td>
 					
 					</tr>
 				</g:each>

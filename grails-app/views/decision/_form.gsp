@@ -10,29 +10,20 @@
 	<g:textField name="ada" required="" value="${decisionInstance?.ada}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: decisionInstance, field: 'decisionToCorrect', 'error')} ">
+	<label for="decisionToCorrect">
+		<g:message code="decision.decisionToCorrect.label" default="Decision To Correct" />
+		
+	</label>
+	<g:select id="decisionToCorrect" name="decisionToCorrect.id" from="${prisma.Decision.list()}" optionKey="id" value="${decisionInstance?.decisionToCorrect?.id}" class="many-to-one" noSelection="['null': '']"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: decisionInstance, field: 'date', 'error')} required">
 	<label for="date">
 		<g:message code="decision.date.label" default="Date" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:datePicker name="date" precision="day"  value="${decisionInstance?.date}"  />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: decisionInstance, field: 'decision_exts', 'error')} ">
-	<label for="decision_exts">
-		<g:message code="decision.decision_exts.label" default="Decisionexts" />
-		
-	</label>
-	
-<ul class="one-to-many">
-<g:each in="${decisionInstance?.decision_exts?}" var="d">
-    <li><g:link controller="decision_ext" action="show" id="${d.id}">${d}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="decision_ext" action="create" params="['decision.id': decisionInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'decision_ext.label', default: 'Decision_ext')])}</g:link>
-</li>
-</ul>
-
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: decisionInstance, field: 'documentUrl', 'error')} ">
