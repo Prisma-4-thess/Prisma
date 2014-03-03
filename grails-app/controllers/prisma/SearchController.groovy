@@ -139,21 +139,21 @@ class SearchController {
 				eq("ada",dec.ada)
 			}
 		}
-		
+
 		def org=new Organization()
 		org=Organization.createCriteria().get {
-				units{
-					eq("label",dec.unit.label)
-				}
+			units{
+				eq("label",dec.unit.label)
+			}
 		}
-		
+
 		def dec2=new Decision()
 		dec2=Decision.createCriteria().get{
 			decisionToCorrect{
 				eq("ada",dec.ada)
 			}
 		}
-		
+
 		[decision:dec,ext:dec_ext,org:org,dec2:dec2]
 	}
 }
