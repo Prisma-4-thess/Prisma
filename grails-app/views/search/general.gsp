@@ -24,10 +24,10 @@
 			<br />
 			<g:submitButton name="search" />
 		</g:formRemote>
-		<div id="results"
-			style='float: right; width: 80%; min-height: 500px; background-color: #c0ffc0;'>
+		<div id="results">
 			<p>apotelesmata</p>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

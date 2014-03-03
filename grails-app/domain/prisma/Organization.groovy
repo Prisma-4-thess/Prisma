@@ -1,14 +1,14 @@
 package prisma
 
 class Organization {
-String latinName
-String label
-boolean active
-static hasMany = [units: Unit]
-String toString(){
-	return label
+	String latinName
+	String label
+	boolean active
+	static hasMany = [units: Unit]
+	String toString(){
+		return label
 	}
-    static constraints = {
+	static constraints = {
 		label(nullable:false,blank:false)
-    }
+	}
 }

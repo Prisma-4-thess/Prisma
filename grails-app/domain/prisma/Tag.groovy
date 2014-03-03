@@ -1,11 +1,11 @@
 package prisma
 
 class Tag {
-String label
-String toString(){
-return label
+	String label
+	String toString(){
+		return label
 	}
-    static constraints = {
-   label(nullable:false,blank:false)  
-		 }
+	static constraints = {
+		label(nullable:false,blank:false)
+	}
 }

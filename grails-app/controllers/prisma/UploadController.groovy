@@ -4,7 +4,8 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['ROLE_ADMIN'])
 class UploadController {
 
-    def index() { }
+	def index() {
+	}
 	def error(){
 	}
 	def success(){

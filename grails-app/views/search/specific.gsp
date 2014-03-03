@@ -1,7 +1,7 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <body>
- <div class="body">
+	<div class="body">
 		<p>Specific search</p>
 		<g:formRemote name="specific"
 			url="[controller:'search', action:'searchspecific']" update="results">
@@ -29,10 +29,10 @@
 			<br />
 			<g:submitButton name="search" />
 		</g:formRemote>
-		<div id="results"
-			style='float: right; width: 80%; min-height: 500px; background-color: #c0ffc0;'>
+		<div id="results">
 			<p>apotelesmata</p>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

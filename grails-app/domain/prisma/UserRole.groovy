@@ -15,7 +15,7 @@ class UserRole implements Serializable {
 		}
 
 		other.user?.id == user?.id &&
-			other.role?.id == role?.id
+				other.role?.id == role?.id
 	}
 
 	int hashCode() {
@@ -28,7 +28,7 @@ class UserRole implements Serializable {
 	static UserRole get(long userId, long roleId) {
 		UserRole.where {
 			user == User.load(userId) &&
-			role == Role.load(roleId)
+					role == Role.load(roleId)
 		}.get()
 	}
 
@@ -40,7 +40,7 @@ class UserRole implements Serializable {
 
 		int rowCount = UserRole.where {
 			user == User.load(u.id) &&
-			role == Role.load(r.id)
+					role == Role.load(r.id)
 		}.deleteAll()
 
 		rowCount > 0
