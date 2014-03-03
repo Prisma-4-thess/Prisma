@@ -131,5 +131,30 @@ class SearchController {
 		}
 		[results:decision]
 	}
+	def show(){
+		def dec=Decision.get(params.id)
+		def dec_ext=new Decision_ext()
+		dec_ext=Decision_ext.createCriteria().list {
+			decision{
+				eq("ada",dec.ada)
+			}
+		}
+		
+		def org=new Organization()
+		org=Organization.createCriteria().get {
+				units{
+					eq("label",dec.unit.label)
+				}
+		}
+		
+		def dec2=new Decision()
+		dec2=Decision.createCriteria().get{
+			decisionToCorrect{
+				eq("ada",dec.ada)
+			}
+		}
+		
+		[decision:dec,ext:dec_ext,org:org,dec2:dec2]
+	}
 }
 

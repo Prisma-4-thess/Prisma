@@ -1,12 +1,12 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Insert title here</title>
 </head>
 <body>
-  <div class="body">
-  <g:if test="${results}">
+	<div class="body">
+		<g:if test="${results}">
 			<table style="width: 600px" align="left">
 				<tr>
 					<td>ΑΔΑ</td>
@@ -19,7 +19,7 @@
 				</tr>
 				<g:each var="result" in="${results}">
 					<tr>
-						<td><g:link controller="decision" action="show"
+						<td><g:link controller="search" action="show"
 								id="${result.id}">
 								${result.ada}
 							</g:link></td>
@@ -47,6 +47,6 @@
 		<g:else>
 			<p>no decision matching</p>
 		</g:else>
-  </div>
+	</div>
 </body>
 </html>
