@@ -2,7 +2,7 @@
 <html>
 <body>
 	<div class="body">
-		<g:if test="${result }">
+		<g:if test="${results}">
 			<table style="width: 600px" align="left">
 				<tr>
 					<td>ΑΔΑ</td>
@@ -13,8 +13,9 @@
 					<td>Τελικός Υπογράφων</td>
 					<td>Hμερ.Έκδοσης</td>
 				</tr>
+				<g:each var="result" in="${results}">
 				<tr>
-					<td><g:link controller="decision" action="show"
+					<td><g:link controller="search" action="show"
 							id="${result.id}">
 							${result.ada}
 						</g:link></td>
@@ -36,6 +37,7 @@
 					<td><g:formatDate format="yyyy-MM-dd" date="${result.date}" /></td>
 					<td><a href="${result.url}">Pdf Απόφασης</a></td>
 				</tr>
+				</g:each>
 			</table>
 		</g:if>
 		<g:else>

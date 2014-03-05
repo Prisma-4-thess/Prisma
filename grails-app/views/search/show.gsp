@@ -59,55 +59,61 @@
 				<td>
 			</tr>
 			<tr>
-				<td>Θεματική ενότητα<td><td>
-				
-       <g:each in="${decision.tags}">
+				<td>Θεματική ενότητα
+				<td>
+				<td><g:each in="${decision.tags}">
 						${it.label}<br>
 					</g:each>
 				<td>
-				
 			</tr>
-       <tr>
+			<tr>
 				<td>Φορέας
 				<td>
 				<td>
 					${org}
+				
 				<td>
 			</tr>
-       <tr>
+			<tr>
 				<td>Μονάδα
 				<td>
 				<td>
 					${decision.unit}
+				
 				<td>
 			</tr>
-        <tr>
+			<tr>
 				<td>Τελικός Υπογράφων
 				<td>
 				<td>
 					${decision.signer}
+				
 				<td>
 			</tr>
-   <g:each in="${ext}">
-   <tr>
+			<g:each in="${ext}">
+				<tr>
 					<td>
 						${it.extra}
+					
 					<td>
 					<td>
 						${it.value}
+					
 					<td>
 				</tr>
-   </g:each>
-   <g:if test="${decision.decisionToCorrect}">
-   <tr>
+			</g:each>
+			<g:if test="${decision.decisionToCorrect}">
+				<tr>
 					<td>Διόρθωση της απόφασης με ΑΔΑ
 					<td>
 					<td>
 						${decision.decisionToCorrect}
+					
 					<td>
 				</tr>
-   </g:if>
-  </table>
-  </div>
+			</g:if>
+			<td><a href="${decision.documentUrl}">Pdf Απόφασης</a></td>
+		</table>
+	</div>
 </body>
 </html>

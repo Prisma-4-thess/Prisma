@@ -19,8 +19,8 @@ class SearchController {
 	def searchada(){
 		def decision = new Decision()
 		def c = Decision.createCriteria()
-		decision = c.get {eq("ada",params.ada)}
-		[result:decision]
+		decision = c.list {like("ada",params.ada+"%")}
+		[results:decision]
 	}
 
 	def searchgeneral(){
@@ -155,6 +155,8 @@ class SearchController {
 		}
 
 		[decision:dec,ext:dec_ext,org:org,dec2:dec2]
+	}
+	def pdf(){
 	}
 }
 

@@ -15,7 +15,7 @@
 				</tr>
 				<g:each var="result" in="${results}">
 					<tr>
-						<td><g:link controller="decision" action="show"
+						<td><g:link controller="search" action="show"
 								id="${result.id}">
 								${result.ada}
 							</g:link></td>

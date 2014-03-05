@@ -7,19 +7,27 @@
 </head>
 <body>
 	<div class="body">
-		<g:uploadForm controller="fileUploaderController " action="process">
-			<div>
-				<label for="ada">ΑΔΑ:</label>
-				<g:textField name="ada" />
-			</div>
-			<div>
-				<fileuploader:form upload="docs" successAction="success"
-					successController="upload" errorAction="error"
-					errorController="upload" />
-			</div>
-			<g:actionSubmit value="Submit" controller="fileUploaderController "
-				action="process" />
-		</g:uploadForm>
+		 <g:uploadForm controler="upload" action="upload">
+		 <label for="ADA">ADA:</label>
+			<g:textField name="ada" /><br />
+			<label for="ADA">Protocol Number:</label>
+			<g:textField name="prot" /><br />
+			<label for="subject">Subject:</label>
+			<g:textField name="subject" /><br />
+			<label for="type">Type:</label>
+			<g:select name="type" from="${typ}"/><br />
+			<label for="tag">Tag:</label>
+			<g:select name="tag" from="${tag}" noSelection="['':'-no tag-']" /><br />
+			<label for="unit">Unit:</label>
+			<g:select name="unit" from="${un}"/><br />
+			<label for="signer">Signer:</label>
+			<g:select name="signer" from="${sign}"/><br />
+			<label for="date">Date:</label>
+			<g:datePicker name="date" precision="day"
+				noSelection="['':'-No Selection-']" /><br />
+        <input type="file" name="myFile" />
+        <input type="submit" />
+    </g:uploadForm>
 	</div>
 </body>
 </html>
