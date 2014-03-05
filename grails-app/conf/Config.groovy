@@ -118,11 +118,4 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll']]
 
-//file uploader
-fileuploader {
-	docs {
-		maxSize = 1000 * 1024 * 4 //4 mbytes
-		allowedExtensions = ["pdf"]
-		path = "pdf"
-	}
-}
+

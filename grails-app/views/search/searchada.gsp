@@ -14,29 +14,29 @@
 					<td>Hμερ.Έκδοσης</td>
 				</tr>
 				<g:each var="result" in="${results}">
-				<tr>
-					<td><g:link controller="search" action="show"
-							id="${result.id}">
-							${result.ada}
-						</g:link></td>
-					<td>
-						${result.protocolNumber}
-					</td>
-					<td>
-						${result.subject}
-					</td>
-					<td>
-						${result.type}
-					</td>
-					<td>
-						${result.unit}
-					</td>
-					<td>
-						${result.signer}
-					</td>
-					<td><g:formatDate format="yyyy-MM-dd" date="${result.date}" /></td>
-					<td><a href="${result.url}">Pdf Απόφασης</a></td>
-				</tr>
+					<tr>
+						<td><g:link controller="search" action="show"
+								id="${result.id}">
+								${result.ada}
+							</g:link></td>
+						<td>
+							${result.protocolNumber}
+						</td>
+						<td>
+							${result.subject}
+						</td>
+						<td>
+							${result.type}
+						</td>
+						<td>
+							${result.unit}
+						</td>
+						<td>
+							${result.signer}
+						</td>
+						<td><g:formatDate format="yyyy-MM-dd" date="${result.date}" /></td>
+						<td><a href="${result.documentUrl}">Pdf Απόφασης</a></td>
+					</tr>
 				</g:each>
 			</table>
 		</g:if>

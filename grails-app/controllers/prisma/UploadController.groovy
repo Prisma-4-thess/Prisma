@@ -1,5 +1,4 @@
 package prisma
-import com.lucastex.grails.fileuploader.UFile
 import grails.plugin.springsecurity.annotation.Secured
 @Secured(['ROLE_ADMIN'])
 class UploadController {

@@ -19,4 +19,7 @@ class Decision {
 		ada(nullable:false,blank:false,unique:true)
 		decisionToCorrect(nullable:true)
 	}
+	static mapping = {
+		subject type: 'text'
+	 }
 }

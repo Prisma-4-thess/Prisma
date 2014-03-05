@@ -35,7 +35,7 @@
 							${result.signer}
 						</td>
 						<td><g:formatDate format="yyyy-MM-dd" date="${result.date}" /></td>
-						<td><a href="${result.url}">Pdf Απόφασης</a></td>
+						<td><a href="${result.documentUrl}">Pdf Απόφασης</a></td>
 					</tr>
 				</g:each>
 			</table>
