@@ -112,4 +112,23 @@ class UploadController {
 			}
 		}
 	}
+	def orgAJAX(){
+		def orgs = Organization.createCriteria().list{
+			like("label","%"+params.query+"%")
+		}
+
+		//Create XML response
+		render(contentType: "text/xml") {
+			results() {
+				orgs.each {org ->
+					result(){
+						Type:
+						name(org.label)
+						//Optional id which will be available in onItemSelect
+						id(org.id)
+					}
+				}
+			}
+		}
+	}
 }

@@ -156,7 +156,5 @@ class SearchController {
 
 		[decision:dec,ext:dec_ext,org:org,dec2:dec2]
 	}
-	def pdf(){
-	}
 }
 
