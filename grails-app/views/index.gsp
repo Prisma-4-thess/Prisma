@@ -106,11 +106,6 @@ p {
 		</ul>
 	</div>
 
-	<div id="topbar">
-		<g:render template="/common/topbar" />
-	</div>
-
-
 	<div id="page-body" role="main">
 		<h1>Welcome to Prisma</h1>
 		<p>Congratulations, you have successfully started your first
@@ -133,9 +128,7 @@ p {
 			</ul>
 		</div>
 	</div>
-	<div id="footer">
-		<g:render template="/common/footer" />
-	</div>
+	
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 
-<div id="menu">
+<div id="topbar">
 	<nobr>
 		<sec:ifLoggedIn>
 

@@ -593,9 +593,7 @@ a.skip {
 
 #topbar {
 	textalign: left;
-	width: 778px;
-	margin: 0px auto;
-	padding: 5px 0;
+	padding: 5px 5px;
 }
 
 #topbar #menu {
