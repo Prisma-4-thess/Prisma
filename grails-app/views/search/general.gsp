@@ -16,11 +16,11 @@
 			<br />
 			<label for="fromDate">From Date:</label>
 			<g:datePicker name="fromDate" precision="day"
-				noSelection="['':'-No Selection-']" />
+				noSelection="['':'-No Selection-']" default="none"/>
 			<br />
 			<label for="toDate">To Date:</label>
 			<g:datePicker name="toDate" precision="day"
-				noSelection="['':'-No Selection-']" />
+				noSelection="['':'-No Selection-']" default="none"/>
 			<br />
 			<g:submitButton name="search" />
 		</g:formRemote>
