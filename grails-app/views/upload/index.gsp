@@ -7,10 +7,11 @@
 <resource:autoComplete skin="default" />
 </head>
 <body>
-	<div class="body">
-		 <g:uploadForm controller="upload" action="upload">
-		 <label for="ADA">ADA:</label>
-			<g:textField name="ada" /><br />
+	<div id="upload-body">
+		<g:uploadForm controller="upload" action="upload">
+			<label for="ADA">ADA:</label>
+			<g:textField name="ada" />
+			<br />
 			<label for="ADA">Protocol Number:</label>
 			<g:textField name="prot" />
 			<br />

@@ -38,7 +38,7 @@
 #page-body {
 	margin: 2em 1em 1.25em 18em;
 }
-#search-body {
+#search-body, #upload-body{
 	margin: 1em;
 }
 

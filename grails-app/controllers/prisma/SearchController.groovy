@@ -64,6 +64,7 @@ class SearchController {
 		println params.fromDate
 		println params.toDate
 
+		def (first,last)=params.signer.tokenize(' ')
 		def decision = new Decision()
 		def c = Decision.createCriteria()
 
@@ -80,8 +81,8 @@ class SearchController {
 				}
 			}
 			signer{
-				if(!params.signer_first.empty) like("firstName","%"+params.signer_first+"%")
-				if(!params.signer_last.empty) like("lastName","%"+params.signer_last+"%")
+				if(!params.signer.empty) like("firstName","%"+params.first+"%")
+				if(!params.signer.empty) like("lastName","%"+params.last+"%")
 			}
 			if(params.toDate!=null){
 				le("date",params.toDate)
@@ -93,6 +94,7 @@ class SearchController {
 		[results:decision, decisionInstanceTotal: decision.size()]
 	}
 	def searchfull(){
+		def (first,last)=params.signer.tokenize(' ')
 		def decision = new Decision()
 		def c = Decision.createCriteria()
 
@@ -125,8 +127,8 @@ class SearchController {
 				}
 			}
 			signer{
-				if(!params.signer_first.empty) like("firstName","%"+params.signer_first+"%")
-				if(!params.signer_last.empty) like("lastName","%"+params.signer_last+"%")
+				if(!params.signer.empty) like("firstName","%"+first+"%")
+				if(!params.signer.empty) like("lastName","%"+last+"%")
 			}
 		}
 		[results:decision, decisionInstanceTotal: decision.size()]
