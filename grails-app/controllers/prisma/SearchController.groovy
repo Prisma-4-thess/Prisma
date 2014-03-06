@@ -20,7 +20,7 @@ class SearchController {
 		def decision = new Decision()
 		def c = Decision.createCriteria()
 		decision = c.list {like("ada","%"+params.ada+"%")}
-		[results:decision]
+		[results:decision, decisionInstanceTotal: decision.size()]
 	}
 
 	def searchgeneral(){
@@ -51,7 +51,7 @@ class SearchController {
 				ge("date",params.fromDate)
 			}
 		}
-		[results:decision]
+		[results:decision, decisionInstanceTotal: decision.size()]
 	}
 
 	def searchspecific(){
@@ -90,7 +90,7 @@ class SearchController {
 				ge("date",params.fromDate)
 			}
 		}
-		[results:decision]
+		[results:decision, decisionInstanceTotal: decision.size()]
 	}
 	def searchfull(){
 		def decision = new Decision()
@@ -129,7 +129,7 @@ class SearchController {
 				if(!params.signer_last.empty) like("lastName","%"+params.signer_last+"%")
 			}
 		}
-		[results:decision]
+		[results:decision, decisionInstanceTotal: decision.size()]
 	}
 	def show(){
 		def dec=Decision.get(params.id)

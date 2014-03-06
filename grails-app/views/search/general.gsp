@@ -25,7 +25,7 @@
 			<g:submitButton name="search" />
 		</g:formRemote>
 		<div id="results">
-			<p>apotelesmata</p>
+			
 		</div>
 	</div>
 	</div>

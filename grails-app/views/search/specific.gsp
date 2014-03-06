@@ -2,7 +2,7 @@
 <html>
 <body>
 	<div class="body">
-		<p>Specific search</p>
+
 		<g:formRemote name="specific"
 			url="[controller:'search', action:'searchspecific']" update="results">
 			<label for="prot_num">Protocol Number:</label>
@@ -29,9 +29,7 @@
 			<br />
 			<g:submitButton name="search" />
 		</g:formRemote>
-		<div id="results">
-			<p>apotelesmata</p>
-		</div>
+		<div id="results"></div>
 	</div>
 	</div>
 </body>

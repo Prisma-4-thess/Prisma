@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="body">
-		<p>ada search</p>
+
 		<g:formRemote name="ada"
 			url="[controller:'search', action:'searchada']" update="results">
 			<label for="ada">ADA:</label>
@@ -16,7 +16,7 @@
 			<g:submitButton name="search" />
 		</g:formRemote>
 		<div id="results">
-			<p>apotelesmata</p>
+			
 		</div>
 	</div>
 </body>

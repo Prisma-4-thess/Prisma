@@ -7,7 +7,7 @@
 <g:javascript library="jquery" />
 </head>
 <body>
-	<div class="body">
+	<div id="search-body">
 		<table>
 			<tr>
 				<td><g:remoteLink controller="search" action="ada"
