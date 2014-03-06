@@ -4,7 +4,7 @@ import grails.plugin.springsecurity.annotation.Secured
 class UploadController {
 
 	def index() {
-		[typ:Type.list(),tag:Tag.list(),un:Unit.list(),sign:Signer.list()]
+		[typ:Type.list(),tag:Tag.list(),un:Unit.list()]
 	}
 	def error(){
 	}
@@ -34,5 +34,81 @@ class UploadController {
 		dec.url='pdf/'+params.ada
 		dec.save(flush: true,failOnError:true)
 		response.sendError(200, 'Done')
+	}
+	def signerAJAX(){
+		def signers = Signer.createCriteria().list{
+			or{
+				like("firstName",params.query+"%")
+				like("lastName",params.query+"%")
+			}
+		}
+
+		//Create XML response
+		render(contentType: "text/xml") {
+			results() {
+				signers.each { signer ->
+					result(){
+						name(signer.firstName+" "+signer.lastName+" ("+signer.title+")")
+						//Optional id which will be available in onItemSelect
+						id(signer.id)
+					}
+				}
+			}
+		}
+	}
+	def tagAJAX(){
+		def tags = Tag.createCriteria().list{
+			like("label","%"+params.query+"%")
+		}
+
+		//Create XML response
+		render(contentType: "text/xml") {
+			results() {
+				tags.each { tag ->
+					result(){
+						name(tag.label)
+						//Optional id which will be available in onItemSelect
+						id(tag.id)
+					}
+				}
+			}
+		}
+	}
+	def unitAJAX(){
+		def units = Unit.createCriteria().list{
+			like("label","%"+params.query+"%")
+		}
+
+		//Create XML response
+		render(contentType: "text/xml") {
+			results() {
+				units.each { unit ->
+					result(){
+						name(unit.label)
+						//Optional id which will be available in onItemSelect
+						id(unit.id)
+					}
+				}
+			}
+		}
+	}
+	def typeAJAX(){
+		def types = Type.createCriteria().list{
+			like("label","%"+params.query+"%")
+		}
+
+		//Create XML response
+		render(contentType: "text/xml") {
+			results() {
+				types.each {type ->
+					result(){
+						Type:
+						name(type.label)
+						//Optional id which will be available in onItemSelect
+						id(type.id)
+					}
+				}
+			}
+		}
 	}
 }
