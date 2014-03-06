@@ -9,10 +9,12 @@
 			<g:textField name="subject" />
 			<br />
 			<label for="type">Type:</label>
-			<g:textField name="type" />
+			<richui:autoComplete name="type"
+				action="${createLinkTo('dir': 'upload/typeAJAX')}" />
 			<br />
 			<label for="tag">Tag:</label>
-			<g:textField name="tag" />
+			<richui:autoComplete name="tag"
+				action="${createLinkTo('dir': 'upload/tagAJAX')}" />
 			<br />
 			<label for="fromDate">From Date:</label>
 			<g:datePicker name="fromDate" precision="day"

@@ -5,6 +5,7 @@
 <meta name="layout" content="main" />
 <title>Search</title>
 <g:javascript library="jquery" />
+<resource:autoComplete skin="default" />
 </head>
 <body>
 	<div id="search-body">

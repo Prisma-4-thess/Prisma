@@ -9,15 +9,16 @@
 			<g:textField name="prot_num" />
 			<br />
 			<label for="unit">Unit:</label>
-			<g:textField name="unit" />
+			<richui:autoComplete name="unit"
+				action="${createLinkTo('dir': 'upload/unitAJAX')}" />
 			<br />
 			<label for="org">Organization:</label>
-			<g:textField name="org" />
+			<richui:autoComplete name="org"
+				action="${createLinkTo('dir': 'upload/orgAJAX')}" />
 			<br />
-			<label for="signer_first">Signer first name:</label>
-			<g:textField name="signer_first" />
-			<label for="signer_last">Signer last name:</label>
-			<g:textField name="signer_last" />
+			<label for="signer">Signer:</label>
+			<richui:autoComplete name="signer"
+				action="${createLinkTo('dir': 'upload/signerAJAX')}" />
 			<br />
 			<label for="fromDate">From Date:</label>
 			<g:datePicker name="fromDate" precision="day"
