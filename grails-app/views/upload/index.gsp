@@ -8,10 +8,9 @@
 </head>
 <body>
 	<div class="body">
-		<g:uploadForm controler="upload" action="upload">
-			<label for="ADA">ADA:</label>
-			<g:textField name="ada" />
-			<br />
+		 <g:uploadForm controller="upload" action="upload">
+		 <label for="ADA">ADA:</label>
+			<g:textField name="ada" /><br />
 			<label for="ADA">Protocol Number:</label>
 			<g:textField name="prot" />
 			<br />
