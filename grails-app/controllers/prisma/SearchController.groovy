@@ -81,8 +81,8 @@ class SearchController {
 				}
 			}
 			signer{
-				if(!params.signer.empty) like("firstName","%"+params.first+"%")
-				if(!params.signer.empty) like("lastName","%"+params.last+"%")
+				if(!params.signer.empty) like("firstName","%"+first+"%")
+				if(!params.signer.empty) like("lastName","%"+last+"%")
 			}
 			if(params.toDate!=null){
 				le("date",params.toDate)
