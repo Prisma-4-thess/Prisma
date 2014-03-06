@@ -6,6 +6,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="body">success upload</div>
+	<div class="body">success of ${documentUrl} upload
+	<a href="${resource(dir:'/pdf/',file:"${documentUrl}")}" target="_blank">show</a>
+	</div>
 </body>
 </html>

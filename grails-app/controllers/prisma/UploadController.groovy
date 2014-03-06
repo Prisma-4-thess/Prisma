@@ -33,6 +33,8 @@ class UploadController {
 		dec.documentUrl=params.ada
 		dec.url='pdf/'+params.ada
 		dec.save(flush: true,failOnError:true)
-		response.sendError(200, 'Done')
+		render (view:"success", model:[documentUrl:params.ada])
+
 	}
+
 }
