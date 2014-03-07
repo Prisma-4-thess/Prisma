@@ -8,9 +8,7 @@
 			<label for="subject">Subject:</label>
 			<g:textField name="subject" />
 			<br />
-			<label for="type">Type:</label>
-			<richui:autoComplete name="type"
-				action="${createLinkTo('dir': 'upload/typeAJAX')}" />
+			<label for="type">Type:</label>	<richui:autoComplete name="type" action="${createLinkTo('dir': 'upload/typeAJAX')}" />
 			<br />
 			<label for="tag">Tag:</label>
 			<richui:autoComplete name="tag"
@@ -24,6 +22,7 @@
 			<g:datePicker name="toDate" precision="day"
 				noSelection="['':'-No Selection-']" default="none"/>
 			<br />
+			<input name="maxToShow" type="hidden" value="10"/>
 			<g:submitButton name="search" />
 		</g:formRemote>
 		<div id="results">
