@@ -118,4 +118,5 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll']]
 
-
+// Remote Pagination Settings
+grails.plugins.remotepagination.max=10

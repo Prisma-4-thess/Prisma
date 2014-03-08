@@ -48,6 +48,7 @@ grails.project.dependency.resolution = {
 		runtime ":resources:1.2"
 		compile ':spring-security-core:2.0-RC2'
 		compile ":richui:0.8"
+		compile ":remote-pagination:0.4.6"
 		//		compile ":file-uploader:1.2.1"
 		// Uncomment these (or add new ones) to enable additional resources capabilities
 		//runtime ":zipped-resources:1.0"

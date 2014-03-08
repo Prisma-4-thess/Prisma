@@ -5,6 +5,8 @@ import org.grails.datastore.gorm.finders.MethodExpression.Like;
 import grails.plugin.springsecurity.annotation.Secured
 @Secured(['permitAll'])
 class SearchController {
+	def static decision = new Decision()
+	def static maxToShow = 10
 
 	def index() {
 	}
@@ -17,20 +19,30 @@ class SearchController {
 	def full_search(){
 	}
 	def searchada(){
-		def decision = new Decision()
+
+		println params.sort + " " + params.order
+		decision = new Decision()
 		def c = Decision.createCriteria()
-		decision = c.list {like("ada","%"+params.ada+"%")}
-		[results:decision, decisionInstanceTotal: decision.size()]
+		decision = c.list {
+			like("ada","%"+params.ada+"%")
+		}
+		def toShow = Math.min(maxToShow, decision.size())
+		println "toShow: "+toShow
+
+
+		[results:decision.subList(0, toShow), decisionInstanceTotal:decision.size()]
 	}
 
-	def searchgeneral(){
-		println params.subject
-		println params.type
-		println params.tag
-		println params.fromDate
-		println params.toDate
+	def searchgeneral(Integer max){
 
-		def decision = new Decision()
+		/*println "subject: "+params.subject
+		 println "type: "+params.type
+		 println "tag: "+params.tag
+		 println "fromDate: "+params.fromDate
+		 println "toDate: "+params.toDate*/
+
+		decision = new Decision()
+
 		def c = Decision.createCriteria()
 
 		decision = c.list {
@@ -51,21 +63,28 @@ class SearchController {
 				ge("date",params.fromDate)
 			}
 		}
-		[results:decision, decisionInstanceTotal: decision.size()]
+		def toShow = Math.min(maxToShow, decision.size())
+		println "toShow: "+toShow
+
+		[results:decision.subList(0, toShow), decisionInstanceTotal:decision.size()]
+		//					[results:decision, decisionInstanceTotal:decision.size()]
+
 	}
 
 	def searchspecific(){
 
-		println params.prot_num
-		println params.unit
-		println params.org
-		println params.signer_first
-		println params.signer_last
-		println params.fromDate
-		println params.toDate
+		/*println params.prot_num
+		 println params.unit
+		 println params.org
+		 println params.signer_first
+		 println params.signer_last
+		 println params.fromDate
+		 println params.toDate*/
 
+
+		decision = new Decision()
 		def (first,last)=params.signer.tokenize(' ')
-		def decision = new Decision()
+
 		def c = Decision.createCriteria()
 
 		decision = c.list {
@@ -91,11 +110,18 @@ class SearchController {
 				ge("date",params.fromDate)
 			}
 		}
-		[results:decision, decisionInstanceTotal: decision.size()]
+
+		def toShow = Math.min(maxToShow, decision.size())
+		println "toShow: "+toShow
+
+		[results:decision.subList(0, toShow), decisionInstanceTotal:decision.size()]
 	}
 	def searchfull(){
+
+
+		//		println "numberOfResults: "+params.numberOfResults
+		decision = new Decision()
 		def (first,last)=params.signer.tokenize(' ')
-		def decision = new Decision()
 		def c = Decision.createCriteria()
 
 		decision = c.list {
@@ -131,7 +157,10 @@ class SearchController {
 				if(!params.signer.empty) like("lastName","%"+last+"%")
 			}
 		}
-		[results:decision, decisionInstanceTotal: decision.size()]
+		def toShow = Math.min(maxToShow, decision.size())
+		println "toShow: "+toShow
+
+		[results:decision.subList(0, toShow), decisionInstanceTotal:decision.size()]
 	}
 	def show(){
 		def dec=Decision.get(params.id)
@@ -155,8 +184,16 @@ class SearchController {
 				eq("ada",dec.ada)
 			}
 		}
-
 		[decision:dec,ext:dec_ext,org:org,dec2:dec2]
+	}
+
+	def list(Integer max) {
+
+		println "offset: "+params.offset
+		def toShow = Math.min(Math.abs(decision.size() - params.offset.toInteger()),maxToShow)
+		println "toShow: "+toShow
+		println "remaining: "+ (decision.size())
+		render (template:"/common/decision_list", model:[results:decision.subList(params.offset.toInteger(),params.offset.toInteger() + toShow), decisionInstanceTotal:(decision.size())])
 	}
 }
 
