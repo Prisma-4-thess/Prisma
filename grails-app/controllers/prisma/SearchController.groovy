@@ -176,12 +176,12 @@ class SearchController {
 		def org=new Organization()
 		org=Organization.createCriteria().get {
 			units{
-				eq("label",dec.unit.label)
+				eq("id",dec.unit.id)
 			}
 		}
 
 		def dec2=new Decision()
-		dec2=Decision.createCriteria().get{
+		dec2=Decision.createCriteria().list{
 			decisionToCorrect{
 				eq("ada",dec.ada)
 			}
@@ -189,7 +189,7 @@ class SearchController {
 		[decision:dec,ext:dec_ext,org:org,dec2:dec2]
 	}
 
-	def list(Integer max) {
+	def list() {
 
 		println "offset: "+params.offset
 		def toShow = Math.min(Math.abs(decision.size() - params.offset.toInteger()),maxToShow)

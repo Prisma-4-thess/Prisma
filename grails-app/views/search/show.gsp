@@ -10,10 +10,14 @@
 		<table>
 			<g:if test="${dec2}">
 				<tr>
-					<font color="red">Η παρούσα απόφαση έχει διορθωθεί από την <g:link
-							controller="search" action="show" id="${dec2.id}">
-							${dec2.ada}
-						</g:link></font>
+					<g:each in="${dec2}">
+						<font color="red">Η παρούσα απόφαση έχει διορθωθεί από την
+							<g:link controller="search" action="show" id="${it.id}">
+								${it.ada}
+								<br/>
+							</g:link>
+						</font>
+					</g:each>
 				</tr>
 			</g:if>
 			<tr>
@@ -93,7 +97,7 @@
 			<g:each in="${ext}">
 				<tr>
 					<td>
-						${it.extra}
+						${it.extra.label}
 					
 					<td>
 					<td>

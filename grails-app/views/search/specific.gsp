@@ -2,7 +2,7 @@
 <html>
 <body>
 	<div class="body">
-
+		<p>Specific search</p>
 		<g:formRemote name="specific"
 			url="[controller:'search', action:'searchspecific']" update="results">
 			<label for="prot_num">Protocol Number:</label>
@@ -22,13 +22,13 @@
 			<br />
 			<label for="fromDate">From Date:</label>
 			<g:datePicker name="fromDate" precision="day"
-				noSelection="['':'-No Selection-']" default="none"/>
+				noSelection="['':'-No Selection-']" default="none" />
 			<br />
 			<label for="toDate">To Date:</label>
 			<g:datePicker name="toDate" precision="day"
-				noSelection="['':'-No Selection-']" default="none"/>
+				noSelection="['':'-No Selection-']" default="none" />
 			<br />
-			<input name="maxToShow" type="hidden" value="10"/>
+			<input name="maxToShow" type="hidden" value="10" />
 			<g:submitButton name="search" />
 		</g:formRemote>
 		<div id="results"></div>
