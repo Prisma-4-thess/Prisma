@@ -7,8 +7,10 @@ import grails.plugin.springsecurity.annotation.Secured
 class SearchController {
 	static scope = "session"
 	def decision = new Decision()
+	def searchParams
+	def offset
 	def static maxToShow = 10
-	
+
 	def index() {
 	}
 	def ada(){
@@ -22,10 +24,11 @@ class SearchController {
 	def searchada(){
 
 		println params.sort + " " + params.order
+		if(params.ada!=null) searchParams = params
 		decision = new Decision()
 		def c = Decision.createCriteria()
 		decision = c.list {
-			like("ada","%"+params.ada+"%")
+			like("ada","%"+searchParams.ada+"%")
 		}
 		def toShow = Math.min(maxToShow, decision.size())
 		println "toShow: "+toShow
@@ -42,6 +45,7 @@ class SearchController {
 		 println "fromDate: "+params.fromDate
 		 println "toDate: "+params.toDate*/
 
+		if(params.subject!=null) searchParams = params
 		decision = new Decision()
 
 		def c = Decision.createCriteria()
@@ -82,7 +86,7 @@ class SearchController {
 		 println params.fromDate
 		 println params.toDate*/
 
-
+		if(params.prot_num!=null) searchParams = params
 		decision = new Decision()
 		def (first,last)=params.signer.tokenize(' ')
 
@@ -121,6 +125,7 @@ class SearchController {
 
 
 		//		println "numberOfResults: "+params.numberOfResults
+		if(params.ada !=null) searchParams = params
 		decision = new Decision()
 		def (first,last)=params.signer.tokenize(' ')
 		def c = Decision.createCriteria()
@@ -191,11 +196,33 @@ class SearchController {
 
 	def list() {
 
-		println "offset: "+params.offset
+		offset=params.offset
 		def toShow = Math.min(Math.abs(decision.size() - params.offset.toInteger()),maxToShow)
 		println "toShow: "+toShow
 		println "remaining: "+ (decision.size())
 		render (template:"/common/decision_list", model:[results:decision.subList(params.offset.toInteger(),params.offset.toInteger() + toShow), decisionInstanceTotal:(decision.size())])
+	}
+
+	def sort(){
+
+		/*def c = Decision.createCriteria()
+		 decision = c.list {
+		 eq("ada",decision.ada)
+		 order(params.sort,params.order)
+		 }*/
+
+//		decision = decision.ada.sort{it.size()}
+//		def sortedDecisions = Decision.list(params)
+		if(offset==null) offset="0";
+		def c = Decision.createCriteria()
+		decision = c.list {
+			'in'("ada",decision.ada)
+			order(params.sort,params.order)
+		}
+		
+		
+		def toShow = Math.min(Math.abs(decision.size() - offset.toInteger()),maxToShow)
+		render (template:"/common/table_results", model:[results:decision.subList(offset.toInteger(),offset.toInteger() + toShow), decisionInstanceTotal:(decision.size())])
 	}
 }
 
