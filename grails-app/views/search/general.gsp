@@ -24,11 +24,10 @@
 			<g:datePicker name="toDate" precision="day"
 				noSelection="['':'-No Selection-']" default="none" />
 			<br />
-			<input name="maxToShow" type="hidden" value="10"/>
+			<input name="maxToShow" type="hidden" value="10" />
 			<g:submitButton name="search" />
 		</g:formRemote>
 		<div id="results"></div>
-	</div>
 	</div>
 </body>
 </html>

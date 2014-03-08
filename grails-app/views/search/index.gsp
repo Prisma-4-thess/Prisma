@@ -12,17 +12,17 @@
 		<table>
 			<tr>
 				<td><g:remoteLink controller="search" action="ada"
-						update="mainContent">ada search</g:remoteLink> <br /></td>
+						update="mainContent">ada search</g:remoteLink></td>
 				<td><g:remoteLink controller="search" action="specific"
-						update="mainContent">specific  search</g:remoteLink> <br /></td>
+						update="mainContent">specific  search</g:remoteLink></td>
 				<td><g:remoteLink controller="search" action="general"
-						update="mainContent">general  search</g:remoteLink> <br /></td>
+						update="mainContent">general  search</g:remoteLink></td>
 				<td><g:remoteLink controller="search" action="full_search"
 						update="mainContent">full  search</g:remoteLink></td>
 			</tr>
 		</table>
-		<div id="mainContent" style='background-color: #c0ffc0;'>
-			<p>tha allazei dinamika i morfi tou search</p>
+		<div id="mainContent" style="background-color: #c0ffc0;">
+			<p>Επιλέξτε κατηγορία αναζήτησης.</p>
 		</div>
 	</div>
 </body>

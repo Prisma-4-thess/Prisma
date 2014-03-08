@@ -32,6 +32,7 @@ environments {
             url = "jdbc:mysql://localhost/prisma?useUnicode=yes&characterEncoding=UTF-8"
 			username = "prisma"
 			password = "spydiko2014"
+			dialect = "prisma.MyCustomMySQL5InnoDBDialect"
             pooled = true
             properties {
                maxActive = -1

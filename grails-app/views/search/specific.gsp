@@ -2,7 +2,7 @@
 <html>
 <body>
 	<div class="body">
-
+		<p>Specific search</p>
 		<g:formRemote name="specific"
 			url="[controller:'search', action:'searchspecific']" update="results">
 			<label for="prot_num">Protocol Number:</label>

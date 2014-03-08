@@ -23,5 +23,6 @@ class Decision {
 	}
 	static mapping = {
 		subject type: 'text'
+		signer lazy: false
 	 }
 }
