@@ -126,6 +126,7 @@ class SearchController {
 
 		decision = c.list {
 
+			like("ada","%"+params.ada+"%")
 			like("subject","%"+params.subject+"%")
 			type{
 				like("label","%"+params.type+"%")

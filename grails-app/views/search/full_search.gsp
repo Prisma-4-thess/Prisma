@@ -4,6 +4,9 @@
 	<div class="body">
 		<g:formRemote name="full_search"
 			url="[controller:'search', action:'searchfull']" update="results">
+			<label for="ada">ADA:</label>
+			<g:textField name="ada" />
+			<br/>
 			<label for="prot_num">Protocol Number:</label>
 			<g:textField name="prot_num" />
 			<br />
