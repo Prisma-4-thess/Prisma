@@ -8,7 +8,7 @@ class SearchController {
 	static scope = "session"
 	def decision = new Decision()
 	def static maxToShow = 10
-	
+
 	def index() {
 	}
 	def ada(){

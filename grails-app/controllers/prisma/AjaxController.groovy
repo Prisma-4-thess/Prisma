@@ -2,7 +2,9 @@ package prisma
 import grails.plugin.springsecurity.annotation.Secured
 @Secured(['permitAll'])
 class AjaxController {
-
+	static scope = "session"
+	def organ=new Organization()
+	def uni=new Unit()
 	def index() {
 	}
 	def signerAJAX(){
@@ -18,17 +20,16 @@ class AjaxController {
 				}
 				maxResults(10)
 			}
-			
 		}else{
-		signers = Signer.createCriteria().list{
-			or{
-				like("firstName",params.query+"%")
-				like("lastName",params.query+"%")
+			signers = Signer.createCriteria().list{
+				or{
+					like("firstName",params.query+"%")
+					like("lastName",params.query+"%")
+				}
+				maxResults(10)
 			}
-			maxResults(10)
 		}
-		}
-		
+
 
 		//Create XML response
 		render(contentType: "text/xml") {
@@ -63,9 +64,26 @@ class AjaxController {
 		}
 	}
 	def unitAJAX(){
-		def units = Unit.createCriteria().list{
-			like("label","%"+params.query+"%")
-			maxResults(10)
+		if(!params.query){
+			uni=null
+		}
+		println 'test'+organ
+		def units = new Unit();
+		if(organ){
+			println 'not'
+			units=Unit.createCriteria().list{
+				and{
+					like("label","%"+params.query+"%")
+					eq("organization",organ)
+				}
+				maxResults(10)
+			}
+		}else{
+			println 'in'
+			units=Unit.createCriteria().list{
+				like("label","%"+params.query+"%")
+				maxResults(10)
+			}
 		}
 
 		//Create XML response
@@ -101,11 +119,27 @@ class AjaxController {
 		}
 	}
 	def orgAJAX(){
-		def orgs = Organization.createCriteria().list{
-			like("label","%"+params.query+"%")
-			maxResults(10)
+		def orgs=new Organization()
+		if(!params.query){
+			organ=null
 		}
-
+		if(uni){
+			orgs = Organization.createCriteria().list{
+				like("label","%"+params.query+"%")
+				units{
+					and{
+						eq("id",uni.id)
+					}
+				}
+				maxResults(10)
+			}
+		}
+		else{
+			orgs = Organization.createCriteria().list{
+				like("label","%"+params.query+"%")
+				maxResults(10)
+			}
+		}
 		//Create XML response
 		render(contentType: "text/xml") {
 			results() {
@@ -119,5 +153,11 @@ class AjaxController {
 				}
 			}
 		}
+	}
+	def selOrg(){
+		organ=Organization.get(params.id)
+	}
+	def selUn(){
+		uni=Unit.get(params.id)
 	}
 }
