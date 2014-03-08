@@ -5,9 +5,10 @@ import org.grails.datastore.gorm.finders.MethodExpression.Like;
 import grails.plugin.springsecurity.annotation.Secured
 @Secured(['permitAll'])
 class SearchController {
-	def static decision = new Decision()
+	static scope = "session"
+	def decision = new Decision()
 	def static maxToShow = 10
-
+	
 	def index() {
 	}
 	def ada(){

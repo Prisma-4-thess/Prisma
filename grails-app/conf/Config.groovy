@@ -120,3 +120,5 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 
 // Remote Pagination Settings
 grails.plugins.remotepagination.max=10
+
+grails.controllers.defaultScope = "prototype"
