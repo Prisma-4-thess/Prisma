@@ -9,25 +9,26 @@
 			<br />
 			<label for="unit">Unit:</label>
 			<richui:autoComplete name="unit"
-				action="${createLinkTo('dir': 'upload/unitAJAX')}" />
+				action="${createLinkTo('dir': 'ajax/unitAJAX')}" />
 			<br />
 			<label for="org">Organization:</label>
-			<g:textField name="org" />
+			<richui:autoComplete name="org"
+				action="${createLinkTo('dir': 'ajax/orgAJAX')}" />
 			<br />
 			<label for="signer">Signer:</label>
 			<richui:autoComplete name="signer"
-				action="${createLinkTo('dir': 'upload/signerAJAX')}" />
+				action="${createLinkTo('dir': 'ajax/signerAJAX')}" />
 			<br />
 			<label for="subject">Subject:</label>
 			<g:textField name="subject" />
 			<br />
 			<label for="type">Type:</label>
 			<richui:autoComplete name="type"
-				action="${createLinkTo('dir': 'upload/typeAJAX')}" />
+				action="${createLinkTo('dir': 'ajax/typeAJAX')}" />
 			<br />
 			<label for="tag">Tag:</label>
 			<richui:autoComplete name="tag"
-				action="${createLinkTo('dir': 'upload/tagAJAX')}" />
+				action="${createLinkTo('dir': 'ajax/tagAJAX')}" />
 			<br />
 			<label for="fromDate">From Date:</label>
 			<g:datePicker name="fromDate" precision="day"

@@ -20,19 +20,19 @@
 			<br />
 			<label for="type">Type:</label>
 			<richui:autoComplete name="type"
-				action="${createLinkTo('dir': 'upload/typeAJAX')}" />
+				action="${createLinkTo('dir': 'ajax/typeAJAX')}" />
 			<br />
 			<label for="tag">Tag:</label>
 			<richui:autoComplete name="tag"
-				action="${createLinkTo('dir': 'upload/tagAJAX')}" />
+				action="${createLinkTo('dir': 'ajax/tagAJAX')}" />
 			<br />
 			<label for="unit">Unit:</label>
 			<richui:autoComplete name="unit"
-				action="${createLinkTo('dir': 'upload/unitAJAX')}" />
+				action="${createLinkTo('dir': 'ajax/unitAJAX')}" />
 			<br />
 			<label for="signer">Signer:</label>
 			<richui:autoComplete name="signer"
-				action="${createLinkTo('dir': 'upload/signerAJAX')}" />
+				action="${createLinkTo('dir': 'ajax/signerAJAX')}" />
 			<br />
 			<label for="date">Date:</label>
 			<g:datePicker name="date" precision="day" default="none"
