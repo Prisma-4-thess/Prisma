@@ -5,6 +5,7 @@
 <meta name="layout" content="main" />
 <title>Upload Decision</title>
 <resource:autoComplete skin="default" />
+<g:javascript library="jquery" />
 </head>
 <body>
 	<div id="upload-body">
@@ -28,7 +29,13 @@
 			<br />
 			<label for="unit">Unit:</label>
 			<richui:autoComplete name="unit"
-				action="${createLinkTo('dir': 'ajax/unitAJAX')}" />
+				action="${createLinkTo('dir': 'ajax/unitAJAX')}"
+				onItemSelect="${remoteFunction(controller: 'ajax' , action: 'selUn', params: '\'id=\' + id')}" />
+			<br />
+			<label for="org">Organization:</label>
+			<richui:autoComplete name="org"
+				action="${createLinkTo('dir': 'ajax/orgAJAX')}"
+				onItemSelect="${remoteFunction(controller: 'ajax' , action: 'selOrg', params: '\'id=\' + id')}" />
 			<br />
 			<label for="signer">Signer:</label>
 			<richui:autoComplete name="signer"
