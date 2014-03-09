@@ -9,9 +9,6 @@ class Unit {
 		}
 		return label
 	}
-	int tid(){
-		return id
-	}
 	static constraints = {
 		label(nullable:true,blank:false)
 	}
