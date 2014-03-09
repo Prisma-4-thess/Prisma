@@ -2,8 +2,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<resource:richTextEditor type="advanced" />
 <meta name="layout" content="main" />
 <title>Show Decision</title>
+<g:javascript library="jquery" />
 </head>
 <body>
 	<div class="body">
@@ -14,7 +16,7 @@
 						<font color="red">Η παρούσα απόφαση έχει διορθωθεί από την
 							<g:link controller="search" action="show" id="${it.id}">
 								${it.ada}
-								<br/>
+								<br />
 							</g:link>
 						</font>
 					</g:each>
@@ -118,6 +120,11 @@
 			</g:if>
 			<td><a href="${decision.documentUrl}">Pdf Απόφασης</a></td>
 		</table>
+		<g:remoteLink controller="search" action="blog" id="${decision.ada}"
+			update="blog">enable blog</g:remoteLink>
+		<div id="blog" style="background-color: #c0ffc0;">
+			<p>Η λειτουργεία του σχολιασμού είναι ανενεργή</p>
+		</div>
 	</div>
 </body>
 </html>

@@ -10,7 +10,7 @@ class Decision {
 	Signer signer
 	Type type
 	Decision decisionToCorrect
-	static hasMany=[tags:Tag]
+	static hasMany=[tags:Tag,posts:Post]
 	Unit unit
 	Geo geo
 	String toString(){
@@ -20,6 +20,7 @@ class Decision {
 		ada(nullable:false,blank:false,unique:true)
 		decisionToCorrect(nullable:true)
 		geo(nullable:true)
+		posts(nullable:true)
 	}
 	static mapping = {
 		subject type: 'text'

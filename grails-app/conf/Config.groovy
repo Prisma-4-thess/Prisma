@@ -75,10 +75,11 @@ grails.hibernate.cache.queries = false
 environments {
 	development {
 		grails.logging.jul.usebridge = true
+		grails.serverURL="http://localhost:8080/"
 	}
 	production {
 		grails.logging.jul.usebridge = false
-		grails.serverURL = "http://83.212.109.124:80/"
+		grails.serverURL = "http://83.212.109.124:80/Prisma"
 	}
 }
 
@@ -117,6 +118,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],
 	'/**/pdf/**':                     ['permitAll'],
+	'/**/android/**':                     ['permitAll'],
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll']]
 

@@ -1,7 +1,6 @@
 package prisma
 import org.grails.datastore.gorm.finders.MethodExpression.IsNull;
 import org.grails.datastore.gorm.finders.MethodExpression.Like;
-
 import grails.plugin.springsecurity.annotation.Secured
 @Secured(['permitAll'])
 class SearchController {
@@ -208,19 +207,36 @@ class SearchController {
 		 order(params.sort,params.order)
 		 }*/
 
-//		decision = decision.ada.sort{it.size()}
-//		def sortedDecisions = Decision.list(params)
+		//		decision = decision.ada.sort{it.size()}
+		//		def sortedDecisions = Decision.list(params)
 		if(offset==null) offset="0";
 		def c = Decision.createCriteria()
 		decision = c.list {
 			'in'("ada",decision.ada)
 			order(params.sort,params.order)
 		}
-		
-		
+
+
 		def toShow = Math.min(Math.abs(decision.size() - offset.toInteger()),maxToShow)
 		println offset+":"+toShow
 		render (template:"/common/table_results", model:[results:decision.subList(offset.toInteger(),offset.toInteger() + toShow), decisionInstanceTotal:(decision.size())])
+	}
+	def blog(){
+		def posts=new Post()
+		posts=Post.createCriteria().list {
+			decision{
+				eq("ada",params.id)
+			}
+		}
+		[posts:posts,ada:params.id]
+	}
+	def postit(){
+		def post=new Post()
+		post.firstName=params.first
+		post.lastName=params.last
+		post.text=params.text
+
+		redirect(controller:"search",action:"show",id:params.id)
 	}
 }
 
