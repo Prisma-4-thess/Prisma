@@ -78,7 +78,7 @@ environments {
 	}
 	production {
 		grails.logging.jul.usebridge = false
-		grails.serverURL = "http://83.212.109.124:80/Prisma"
+		grails.serverURL = "http://83.212.109.124:80/"
 	}
 }
 
