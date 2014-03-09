@@ -7,8 +7,7 @@ import grails.plugin.springsecurity.annotation.Secured
 class SearchController {
 	static scope = "session"
 	def decision = new Decision()
-	def searchParams
-	def offset
+	def offset = "0"
 	def static maxToShow = 10
 
 	def index() {
@@ -23,12 +22,11 @@ class SearchController {
 	}
 	def searchada(){
 
-		println params.sort + " " + params.order
-		if(params.ada!=null) searchParams = params
 		decision = new Decision()
+		offset = "0"
 		def c = Decision.createCriteria()
 		decision = c.list {
-			like("ada","%"+searchParams.ada+"%")
+			like("ada","%"+params.ada+"%")
 		}
 		def toShow = Math.min(maxToShow, decision.size())
 		println "toShow: "+toShow
@@ -45,9 +43,8 @@ class SearchController {
 		 println "fromDate: "+params.fromDate
 		 println "toDate: "+params.toDate*/
 
-		if(params.subject!=null) searchParams = params
 		decision = new Decision()
-
+		offset = "0"
 		def c = Decision.createCriteria()
 
 		decision = c.list {
@@ -86,8 +83,8 @@ class SearchController {
 		 println params.fromDate
 		 println params.toDate*/
 
-		if(params.prot_num!=null) searchParams = params
 		decision = new Decision()
+		offset = "0"
 		def (first,last)=params.signer.tokenize(' ')
 
 		def c = Decision.createCriteria()
@@ -125,8 +122,8 @@ class SearchController {
 
 
 		//		println "numberOfResults: "+params.numberOfResults
-		if(params.ada !=null) searchParams = params
 		decision = new Decision()
+		offset = "0"
 		def (first,last)=params.signer.tokenize(' ')
 		def c = Decision.createCriteria()
 
@@ -222,6 +219,7 @@ class SearchController {
 		
 		
 		def toShow = Math.min(Math.abs(decision.size() - offset.toInteger()),maxToShow)
+		println offset+":"+toShow
 		render (template:"/common/table_results", model:[results:decision.subList(offset.toInteger(),offset.toInteger() + toShow), decisionInstanceTotal:(decision.size())])
 	}
 }
