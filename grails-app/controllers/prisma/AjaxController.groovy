@@ -119,11 +119,14 @@ class AjaxController {
 		}
 	}
 	def orgAJAX(){
+		println 'q:'+params.query
+		println 'o:'+organ
+		println 'u:'+uni
 		def orgs=new Organization()
 		if(!params.query){
 			organ=null
 		}
-		if(uni){
+		if(!uni.toString().equals("<empty label>")){
 			orgs = Organization.createCriteria().list{
 				like("label","%"+params.query+"%")
 				units{
@@ -135,6 +138,7 @@ class AjaxController {
 			}
 		}
 		else{
+//			println 'unout'
 			orgs = Organization.createCriteria().list{
 				like("label","%"+params.query+"%")
 				maxResults(10)
@@ -156,6 +160,8 @@ class AjaxController {
 	}
 	def selOrg(){
 		organ=Organization.get(params.id)
+		println 'test2'+organ
+		
 	}
 	def selUn(){
 		uni=Unit.get(params.id)

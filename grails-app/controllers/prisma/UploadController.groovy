@@ -22,7 +22,14 @@ class UploadController {
 		dec.subject=params.subject
 		def (first,last)=params.signer.tokenize(' ')
 		dec.type=Type.createCriteria().get{eq("label",params.type)}
-		dec.unit=Unit.createCriteria().get{eq("label",params.unit)}
+		dec.unit=Unit.createCriteria().get{
+			and{
+			organization{
+				eq("label",params.org)
+			}
+			eq("label",params.unit)
+			}
+		}
 		dec.tags=Tag.createCriteria().list{eq("label",params.tag)}
 		dec.signer=Signer.createCriteria().get{
 			eq("firstName",first)
