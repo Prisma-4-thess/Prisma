@@ -11,7 +11,7 @@
 		</sec:ifLoggedIn>
 
 		<sec:ifNotLoggedIn>
-			<g:link controller="login" action="auth">
+			<g:link controller="login" action="index">
 				<g:message code="topbar.login" />
 			</g:link>
 		</sec:ifNotLoggedIn>

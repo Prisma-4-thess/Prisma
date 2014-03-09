@@ -28,9 +28,10 @@
 </head>
 <body>
 	<div id="grailsLogo" role="banner">
-		<a href="/Prisma/"><img
-			src="${resource(dir: 'images', file: 'grails_logo.png')}"
-			alt="Grails" /></a>
+		<g:link mapping="rootUrl">
+			<img src="${resource(dir: 'images', file: 'grails_logo.png')}"
+				alt="Grails" />
+		</g:link>
 
 		<g:render template="/common/topbar" />
 
