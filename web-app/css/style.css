@@ -305,7 +305,11 @@ body {
 	display: none;
 	float: left;
 }
-
+/* -- Dim: vertical search fields
+#portfoliolist li {
+	clear: both;
+}
+*/
 .portfolio-wrapper {
 	overflow: hidden;
 	position: relative !important;
