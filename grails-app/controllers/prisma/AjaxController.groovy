@@ -64,12 +64,12 @@ class AjaxController {
 		}
 	}
 	def unitAJAX(){
-		if(!params.query){
+		if(params.query.isEmpty()){
 			uni=null
 		}
 		println 'test'+organ
 		def units = new Unit();
-		if(organ){
+		if(organ!=null){
 			println 'not'
 			units=Unit.createCriteria().list{
 				and{
@@ -123,7 +123,7 @@ class AjaxController {
 		println 'o:'+organ
 		println 'u:'+uni
 		def orgs=new Organization()
-		if(!params.query){
+		if(params.query.isEmpty()){
 			organ=null
 		}
 		if(!uni.toString().equals("<empty label>")&&uni!=null){
