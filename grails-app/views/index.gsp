@@ -59,18 +59,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<div class="search_table">
 									<script>
 										function clearAll() {
-											document.getElementById("searchForm").reset();
+											document.getElementById(
+													"searchForm").reset();
 										}
 									</script>
 									<ul id="filters" class="clearfix">
 										<li><span class="filter" data-filter="ada"
 											onClick="clearAll();">ΑΔΑ</span></li>
 										<li><span class="filter"
-											data-filter="prot_num unit org signer fromDate toDate" onClick="clearAll();">Ειδικη</span></li>
+											data-filter="prot_num unit org signer fromDate toDate"
+											onClick="clearAll();">Ειδικη</span></li>
 										<li><span class="filter"
-											data-filter="subject type tag fromDate toDate" onClick="clearAll();">Γενικη</span></li>
+											data-filter="subject type tag fromDate toDate"
+											onClick="clearAll();">Γενικη</span></li>
 										<li><span class="filter active"
-											data-filter="ada unit org signer subject type tag fromDate toDate" onClick="clearAll();">Πληρης</span></li>
+											data-filter="ada unit org signer subject type tag fromDate toDate"
+											onClick="clearAll();">Πληρης</span></li>
 										<li><g:submitButton class="search_button" name=" " /></li>
 										<li><input type='reset' value='Reset' /></li>
 									</ul>
@@ -91,12 +95,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<li><div class="portfolio unit" data-cat="unit">
 													<label for="unit">Unit:</label>
 													<richui:autoComplete name="unit"
-														action="${createLinkTo('dir': 'ajax/unitAJAX')}" />
+														action="${createLinkTo('dir': 'ajax/unitAJAX')}"
+														onItemSelect="${remoteFunction(controller: 'ajax' , action: 'selUn', params: '\'id=\' + id')}" />
 												</div></li>
 											<li><div class="portfolio org" data-cat="org">
 													<label for="org">Organization:</label>
 													<richui:autoComplete name="org"
-														action="${createLinkTo('dir': 'ajax/orgAJAX')}" />
+														action="${createLinkTo('dir': 'ajax/orgAJAX')}"
+														onItemSelect="${remoteFunction(controller: 'ajax' , action: 'selOrg', params: '\'id=\' + id')}" />
 												</div></li>
 											<li><div class="portfolio signer" data-cat="signer">
 													<label for="signer">Signer:</label>
