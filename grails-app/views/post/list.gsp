@@ -26,8 +26,6 @@
 					
 						<g:sortableColumn property="text" title="${message(code: 'post.text.label', default: 'Text')}" />
 					
-						<g:sortableColumn property="date" title="${message(code: 'post.date.label', default: 'Date')}" />
-					
 						<th><g:message code="post.decision.label" default="Decision" /></th>
 					
 						<g:sortableColumn property="firstName" title="${message(code: 'post.firstName.label', default: 'First Name')}" />
@@ -41,8 +39,6 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${postInstance.id}">${fieldValue(bean: postInstance, field: "text")}</g:link></td>
-					
-						<td><g:formatDate date="${postInstance.date}" /></td>
 					
 						<td>${fieldValue(bean: postInstance, field: "decision")}</td>
 					
