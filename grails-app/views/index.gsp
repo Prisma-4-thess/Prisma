@@ -7,140 +7,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>The Bak-one Website Template | Home :: w3layouts</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
-<link
-	href='http://fonts.googleapis.com/css?family=Ubuntu&subset=latin,greek,greek-ext'
-	rel='stylesheet' type='text/css'>
-<link href="${resource(dir: 'css', file: 'style.css')}" rel="stylesheet"
-	type="text/css" media="all" />
-<link rel="stylesheet" type="text/css"
-	href="${resource(dir: 'css', file: 'imgeffect.css')}" />
-<script src="${resource(dir: 'js', file: 'jquery.min.js')}"></script>
-<!-- start gallery Script -->
-<script type="text/javascript"
-	src="${resource(dir: 'js', file: 'jquery.easing.min.js')}"></script>
-<script type="text/javascript"
-	src="${resource(dir: 'js', file: 'jquery.mixitup.min.js')}"></script>
-<script type="text/javascript">
-	$(function() {
-
-		var filterList = {
-
-			init : function() {
-
-				// MixItUp plugin
-				// http://mixitup.io
-				$('#portfoliolist').mixitup({
-					targetSelector : '.portfolio',
-					filterSelector : '.filter',
-					effects : [ 'fade' ],
-					easing : 'snap',
-					// call the hover effect
-					onMixEnd : filterList.hoverEffect()
-				});
-
-			},
-
-			hoverEffect : function() {
-
-				// Simple parallax effect
-				$('#portfoliolist .portfolio').hover(function() {
-					$(this).find('.label').stop().animate({
-						bottom : 0
-					}, 200, 'easeOutQuad');
-					$(this).find('img').stop().animate({
-						top : 0
-					}, 500, 'easeOutQuad');
-				}, function() {
-					$(this).find('.label').stop().animate({
-						bottom : 0
-					}, 200, 'easeInQuad');
-					$(this).find('img').stop().animate({
-						top : 0
-					}, 300, 'easeOutQuad');
-				});
-
-			}
-
-		};
-
-		// Run the show!
-		filterList.init();
-
-	});
-</script>
-<!-- Add fancyBox main JS and CSS files -->
-<script src="${resource(dir: 'js', file: 'jquery.magnific-popup.js')}"
-	type="text/javascript"></script>
-<link href="${resource(dir: 'css', file: 'magnific-popup.css')}"
-	rel="stylesheet" type="text/css">
-<script>
-	$(document).ready(function() {
-		$('.popup-with-zoom-anim').magnificPopup({
-			type : 'inline',
-			fixedContentPos : false,
-			fixedBgPos : true,
-			overflowY : 'auto',
-			closeBtnInside : true,
-			preloader : false,
-			midClick : true,
-			removalDelay : 300,
-			mainClass : 'my-mfp-zoom-in'
-		});
-	});
-</script>
-<script type="text/javascript"
-	src="${resource(dir: 'js', file: 'move-top.js')}"></script>
-<script type="text/javascript"
-	src="${resource(dir: 'js', file: 'easing.js')}"></script>
-<!----end gallery-------->
-
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event) {
-			event.preventDefault();
-			$('html,body').animate({
-				scrollTop : $(this.hash).offset().top
-			}, 1200);
-		});
-	});
-</script>
+<meta name="layout" content="homepage_main" />
 
 <g:javascript library="jquery" />
 <resource:autoComplete skin="default" />
-
 </head>
 
 <body>
-	<!----start-header---------->
-	<div class="header_bg">
-		<div class="wrap">
-			<div class="header">
-				<!--------start-logo------>
-				<div class="logo">
-					<a href="index.html"><img
-						src="${resource(dir: 'images', file: 'logo.png')}" alt="" /></a>
-				</div>
-				<!--------end-logo--------->
-				<!----start-nav-------->
-				<div class="nav">
-					<ul>
-						<li><a href="#home" class="scroll">Home</a></li>
-						<li class="active"><a href="#portfolio" class="scroll">Αναζητηση</a></li>
-						<li><a href="#about" class="scroll">Σχετικα με εμας</a></li>
-						<li><a href="#contact" class="scroll">Eπικοινωνια</a></li>
-						<div class="clear"></div>
-					</ul>
-				</div>
-				<!-----end-nav-------->
-				<div class="clear"></div>
-			</div>
-		</div>
-	</div>
-	<!------end-header------------>
+
 	<!-- start slider -->
 	<div class="slider_bg">
 		<div class="wrap">
@@ -182,25 +56,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<h2>Αναζήτηση</h2>
 								<p>Πραγματοποιήστε σύνθετες αναζητήσεις, αναλόγως τι
 									ψάχνετε.</p>
-								<ul id="filters" class="clearfix">
-									<li><span class="filter active" data-filter="ada">ΑΔΑ</span></li>
-									<li><span class="filter"
-										data-filter="unit org signer fromDate toDate">Ειδικη
-											Αναζητηση</span></li>
-									<li><span class="filter"
-										data-filter="subject type tag fromDate toDate">Γενικη
-											Αναζητηση</span></li>
-									<li><span class="filter"
-										data-filter="ada unit org signer subject type tag fromDate toDate">Πληρης
-											Αναζητηση</span></li>
-								</ul>
+								<div class="search_table">
+									<ul id="filters" class="clearfix">
+										<li><span class="filter" data-filter="ada">ΑΔΑ</span></li>
+										<li><span class="filter"
+											data-filter="prot_num unit org signer fromDate toDate">Ειδικη</span></li>
+										<li><span class="filter"
+											data-filter="subject type tag fromDate toDate">Γενικη</span></li>
+										<li><span class="filter active"
+											data-filter="ada unit org signer subject type tag fromDate toDate">Πληρης</span></li>
+										<li><g:submitButton class="search_button" name=" " /></li>
+									</ul>
+								</div>
 								<div id="portfoliolist">
-
 									<div class="portfolio ada" data-cat="ada">
 										<label for="ada">ADA:</label>
 										<g:textField name="ada" />
 									</div>
-									<div class="portfolio prot_num" data-cat="prot_num">
+									<div class="portfolio prot_num hide" data-cat="prot_num">
 										<label for="prot_num">Protocol Number:</label>
 										<g:textField name="prot_num" />
 									</div>
@@ -213,6 +86,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<label for="org">Organization:</label>
 										<richui:autoComplete name="org"
 											action="${createLinkTo('dir': 'ajax/orgAJAX')}" />
+
 									</div>
 									<div class="portfolio signer" data-cat="signer">
 										<label for="signer">Signer:</label>
@@ -243,14 +117,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<g:datePicker name="toDate" precision="day"
 											noSelection="['':'-No Selection-']" default="none" />
 									</div>
-									<input name="maxToShow" type="hidden" value="10" /> 
+									<input name="maxToShow" type="hidden" value="10" />
 
 								</div>
 
 							</div>
-							<div>
-								<g:submitButton class="search-button" name="search" />
-							</div>
+
 						</g:formRemote>
 					</div>
 					<!-- container -->
@@ -417,35 +289,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="clear"></div>
 			</div>
-		</div>
-	</div>
-	<div class="footer-bottom">
-		<div class="wrap">
-			<div class="copy">
-				<p class="copy">
-					&#169 2014 Template by <a href="http://w3layouts.com"
-						target="_blank">w3layouts</a>
-				</p>
-			</div>
-			<script type="text/javascript">
-				$(document).ready(function() {
-
-					var defaults = {
-						containerID : 'toTop', // fading element id
-						containerHoverID : 'toTopHover', // fading element hover id
-						scrollSpeed : 1200,
-						easingType : 'linear'
-					};
-
-					$().UItoTop({
-						easingType : 'easeOutQuart'
-					});
-
-				});
-			</script>
-			<a href="#" id="toTop" style="display: block;"><span
-				id="toTopHover" style="opacity: 1;"> </span></a>
-			<script src="${resource(dir: 'js', file: 'jquery.scrollTo.js')}"></script>
 		</div>
 	</div>
 
