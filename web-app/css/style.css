@@ -256,8 +256,19 @@ body {
 
 .search_table {
 	display: table;
-	margin: 0 auto;
+	
+	/* margin: 0px auto;*/
+	/* Spiros */
+	
+	margin-top: 0px;
+	margin-bottom: 1em;
+	margin-left:auto;
+	margin-right:auto;
+	/* Spiros */
 }
+
+
+
 
 .search_button{
 	width: 44px;
