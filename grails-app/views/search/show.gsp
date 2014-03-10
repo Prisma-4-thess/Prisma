@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<resource:richTextEditor type="advanced" />
+<resource:richTextEditor type="medium" />
 <meta name="layout" content="main" />
 <title>Show Decision</title>
 <g:javascript library="jquery" />

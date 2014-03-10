@@ -1,7 +1,8 @@
 package prisma
 
 import org.springframework.dao.DataIntegrityViolationException
-
+import grails.plugin.springsecurity.annotation.Secured
+@Secured(['permitAll'])
 class PostController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]

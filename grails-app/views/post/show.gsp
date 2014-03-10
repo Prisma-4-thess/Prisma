@@ -32,15 +32,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${postInstance?.date}">
-				<li class="fieldcontain">
-					<span id="date-label" class="property-label"><g:message code="post.date.label" default="Date" /></span>
-					
-						<span class="property-value" aria-labelledby="date-label"><g:formatDate date="${postInstance?.date}" /></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${postInstance?.decision}">
 				<li class="fieldcontain">
 					<span id="decision-label" class="property-label"><g:message code="post.decision.label" default="Decision" /></span>
