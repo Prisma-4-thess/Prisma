@@ -1,15 +1,15 @@
-<table id="table-results">
+<table id="one-column-emphasis" class="search_table">
 	<thead>
 		<tr>
 
-			<util:remoteSortableColumn property="ada" update="table-results"
+			<util:remoteSortableColumn property="ada" update="one-column-emphasis"
 				action="sort"
 				title="${message(code: 'decision.ada.label', default: 'Ada')}" />
 
 			<th><g:message code="decision.decisionToCorrect.label"
 					default="Decision To Correct" /></th>
 
-			<util:remoteSortableColumn property="date" update="table-results"
+			<util:remoteSortableColumn property="date" update="one-column-emphasis"
 				action="sort"
 				title="${message(code: 'decision.date.label', default: 'Date')}" />
 
@@ -17,7 +17,7 @@
 						title="${message(code: 'decision.documentUrl.label', default: 'Document Url')}" />
 					--%>
 			<util:remoteSortableColumn property="protocolNumber"
-				update="table-results" action="sort"
+				update="one-column-emphasis" action="sort"
 				title="${message(code: 'decision.protocolNumber.label', default: 'Protocol Number')}" />
 
 			<th><g:message code="decision.signer.label" default="Signer" /></th>

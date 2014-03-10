@@ -1,3 +1,3 @@
-<span class="copyright">&copy; 2014 SpyDiKoOd Team<br /> All
-	Rights Reserved.
-</span>
+<div class="copy">
+	<p class="copy">&copy; 2014 SpyDiKoOd Team. All Rights Reserved.</p>
+</div>
