@@ -318,10 +318,11 @@ body {
 	display: none;
 	float: left;
 }
-/* -- Dim: vertical search fields
+/* -- Dim: vertical search fields */
 #portfoliolist li {
-	clear: both;
-}*/
+	clear: left;
+}
+
 .portfolio-wrapper {
 	overflow: hidden;
 	position: relative !important;
@@ -1285,6 +1286,11 @@ body {
 	}
 }
 
+/* --- Dim --- */
 #search_params {
 	margin: 5%;
+}
+
+#results {
+	float: right;
 }
