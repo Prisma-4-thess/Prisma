@@ -232,11 +232,19 @@ class SearchController {
 	}
 	def postit(){
 		def post=new Post()
+		println 'text'+params.text
 		post.firstName=params.first
 		post.lastName=params.last
 		post.text=params.text
-
-		redirect(controller:"search",action:"show",id:params.id)
+		post.decision=Decision.findByAda(params.ada)
+		post.save(flush: true,failOnError:true)
+		def posts=new Post()
+		posts=Post.createCriteria().list {
+			decision{
+				eq("ada",params.ada)
+			}
+		}
+		[posts:posts]
 	}
 }
 

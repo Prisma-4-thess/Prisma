@@ -68,58 +68,62 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<li><g:submitButton class="search_button" name=" " /></li>
 									</ul>
 								</div>
-								<div id="portfoliolist">
-									<div class="portfolio ada" data-cat="ada">
-										<label for="ada">ADA:</label>
-										<g:textField name="ada" />
+								<div id=search_params>
+									<div id="portfoliolist">
+										<ul>
+											<li><div class="portfolio ada" data-cat="ada">
+													<label for="ada">ADA:<br /></label>
+													<g:textField name="ada" />
+												</div></li>
+											<li><div class="portfolio prot_num hide"
+													data-cat="prot_num">
+													<label for="prot_num">Protocol Number:<br /></label>
+													<g:textField name="prot_num" />
+												</div></li>
+											<li><div class="portfolio unit" data-cat="unit">
+													<label for="unit">Unit:</label>
+													<richui:autoComplete name="unit"
+														action="${createLinkTo('dir': 'ajax/unitAJAX')}" />
+												</div></li>
+											<li><div class="portfolio org" data-cat="org">
+													<label for="org">Organization:</label>
+													<richui:autoComplete name="org"
+														action="${createLinkTo('dir': 'ajax/orgAJAX')}" />
+												</div></li>
+											<li><div class="portfolio signer" data-cat="signer">
+												<label for="signer">Signer:</label>
+												<richui:autoComplete name="signer"
+													action="${createLinkTo('dir': 'ajax/signerAJAX')}" />
+											</div></li>
+											<li><div class="portfolio subject" data-cat="subject">
+												<label for="subject">Subject:<br /></label>
+												<g:textField name="subject" />
+											</div></li>
+											<li><div class="portfolio type" data-cat="type">
+												<label for="type">Type:</label>
+												<richui:autoComplete name="type"
+													action="${createLinkTo('dir': 'ajax/typeAJAX')}" />
+											</div></li>
+											<li><div class="portfolio tag" data-cat="tag">
+												<label for="tag">Tag:</label>
+												<richui:autoComplete name="tag"
+													action="${createLinkTo('dir': 'ajax/tagAJAX')}" />
+											</div></li>
+											<li><div class="portfolio fromDate" data-cat="fromDate">
+												<label for="fromDate">From Date:<br /></label>
+												<g:datePicker name="fromDate" precision="day"
+													noSelection="['':'-No Selection-']" default="none" />
+											</div></li>
+											<li><div class="portfolio toDate" data-cat="toDate">
+												<label for="toDate">To Date:<br /></label>
+												<g:datePicker name="toDate" precision="day"
+													noSelection="['':'-No Selection-']" default="none" />
+											</div></li>
+											<li><input name="maxToShow" type="hidden" value="10" /></li>
+										</ul>
 									</div>
-									<div class="portfolio prot_num hide" data-cat="prot_num">
-										<label for="prot_num">Protocol Number:</label>
-										<g:textField name="prot_num" />
-									</div>
-									<div class="portfolio unit" data-cat="unit">
-										<label for="unit">Unit:</label>
-										<richui:autoComplete name="unit"
-											action="${createLinkTo('dir': 'ajax/unitAJAX')}" />
-									</div>
-									<div class="portfolio org" data-cat="org">
-										<label for="org">Organization:</label>
-										<richui:autoComplete name="org"
-											action="${createLinkTo('dir': 'ajax/orgAJAX')}" />
-
-									</div>
-									<div class="portfolio signer" data-cat="signer">
-										<label for="signer">Signer:</label>
-										<richui:autoComplete name="signer"
-											action="${createLinkTo('dir': 'ajax/signerAJAX')}" />
-									</div>
-									<div class="portfolio subject" data-cat="subject">
-										<label for="subject">Subject:</label>
-										<g:textField name="subject" />
-									</div>
-									<div class="portfolio type" data-cat="type">
-										<label for="type">Type:</label>
-										<richui:autoComplete name="type"
-											action="${createLinkTo('dir': 'ajax/typeAJAX')}" />
-									</div>
-									<div class="portfolio tag" data-cat="tag">
-										<label for="tag">Tag:</label>
-										<richui:autoComplete name="tag"
-											action="${createLinkTo('dir': 'ajax/tagAJAX')}" />
-									</div>
-									<div class="portfolio fromDate" data-cat="fromDate">
-										<label for="fromDate">From Date:</label>
-										<g:datePicker name="fromDate" precision="day"
-											noSelection="['':'-No Selection-']" default="none" />
-									</div>
-									<div class="portfolio toDate" data-cat="toDate">
-										<label for="toDate">To Date:</label>
-										<g:datePicker name="toDate" precision="day"
-											noSelection="['':'-No Selection-']" default="none" />
-									</div>
-									<input name="maxToShow" type="hidden" value="10" />
-
 								</div>
+
 
 							</div>
 

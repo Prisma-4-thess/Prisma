@@ -10,14 +10,6 @@
 	<g:textField name="text" value="${postInstance?.text}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: postInstance, field: 'date', 'error')} required">
-	<label for="date">
-		<g:message code="post.date.label" default="Date" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="date" precision="day"  value="${postInstance?.date}"  />
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: postInstance, field: 'decision', 'error')} required">
 	<label for="decision">
 		<g:message code="post.decision.label" default="Decision" />
