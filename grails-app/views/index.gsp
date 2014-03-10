@@ -68,13 +68,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<li><g:submitButton class="search_button" name=" " /></li>
 									</ul>
 								</div>
+								<div id=search_params>
 								<div id="portfoliolist">
 									<div class="portfolio ada" data-cat="ada">
-										<label for="ada">ADA:</label>
+										<label for="ada">ADA:<br /></label>
 										<g:textField name="ada" />
 									</div>
 									<div class="portfolio prot_num hide" data-cat="prot_num">
-										<label for="prot_num">Protocol Number:</label>
+										<label for="prot_num">Protocol Number:<br /></label>
 										<g:textField name="prot_num" />
 									</div>
 									<div class="portfolio unit" data-cat="unit">
@@ -94,7 +95,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											action="${createLinkTo('dir': 'ajax/signerAJAX')}" />
 									</div>
 									<div class="portfolio subject" data-cat="subject">
-										<label for="subject">Subject:</label>
+										<label for="subject">Subject:<br /></label>
 										<g:textField name="subject" />
 									</div>
 									<div class="portfolio type" data-cat="type">
@@ -108,17 +109,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											action="${createLinkTo('dir': 'ajax/tagAJAX')}" />
 									</div>
 									<div class="portfolio fromDate" data-cat="fromDate">
-										<label for="fromDate">From Date:</label>
+										<label for="fromDate">From Date:<br /></label>
 										<g:datePicker name="fromDate" precision="day"
 											noSelection="['':'-No Selection-']" default="none" />
 									</div>
 									<div class="portfolio toDate" data-cat="toDate">
-										<label for="toDate">To Date:</label>
+										<label for="toDate">To Date:<br /></label>
 										<g:datePicker name="toDate" precision="day"
 											noSelection="['':'-No Selection-']" default="none" />
 									</div>
 									<input name="maxToShow" type="hidden" value="10" />
 
+								</div>
 								</div>
 
 							</div>

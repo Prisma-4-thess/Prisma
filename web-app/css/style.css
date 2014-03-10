@@ -100,14 +100,12 @@ body {
 	margin: 0 auto;
 }
 /* start header */
-
 .header {
 	padding-top: 1.3em 0em;
 	/* background: white;
 	position: fixed;
 	left: 0;
 	width: 100%; */
-
 }
 
 .logo {
@@ -259,12 +257,11 @@ body {
 	margin: 0 auto;
 }
 
-.search_button{
+.search_button {
 	width: 44px;
-	height:40px;
+	height: 40px;
 	background: url(../images/right-move.png);
 	background-size: 100% 100%;
-	
 }
 
 #filters {
@@ -1270,4 +1267,8 @@ body {
 	#filters li:nth-child(1) {
 		margin-left: 50px;
 	}
+}
+
+#search_params {
+	margin: 5%;
 }
