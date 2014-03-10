@@ -76,7 +76,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											data-filter="ada unit org signer subject type tag fromDate toDate"
 											onClick="clearAll();">Πληρης</span></li>
 										<li><g:submitButton class="search_button" name=" " /></li>
-										<li><input type='reset' value='Reset' /></li>
+										<li><input type='reset' class="clear_button"
+											value=' ' /></li>
 									</ul>
 
 								</div>
