@@ -50,23 +50,31 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!---start-content---->
 					<div class="gallery">
 						<div class="clear"></div>
-						<g:formRemote name="full_search"
+						<g:formRemote id="searchForm" name="full_search"
 							url="[controller:'search', action:'searchfull']" update="results">
 							<div class="container">
 								<h2>Αναζήτηση</h2>
 								<p>Πραγματοποιήστε σύνθετες αναζητήσεις, αναλόγως τι
 									ψάχνετε.</p>
 								<div class="search_table">
+									<script>
+										function clearAll() {
+											document.getElementById("searchForm").reset();
+										}
+									</script>
 									<ul id="filters" class="clearfix">
-										<li><span class="filter" data-filter="ada">ΑΔΑ</span></li>
+										<li><span class="filter" data-filter="ada"
+											onClick="clearAll();">ΑΔΑ</span></li>
 										<li><span class="filter"
-											data-filter="prot_num unit org signer fromDate toDate">Ειδικη</span></li>
+											data-filter="prot_num unit org signer fromDate toDate" onClick="clearAll();">Ειδικη</span></li>
 										<li><span class="filter"
-											data-filter="subject type tag fromDate toDate">Γενικη</span></li>
+											data-filter="subject type tag fromDate toDate" onClick="clearAll();">Γενικη</span></li>
 										<li><span class="filter active"
-											data-filter="ada unit org signer subject type tag fromDate toDate">Πληρης</span></li>
+											data-filter="ada unit org signer subject type tag fromDate toDate" onClick="clearAll();">Πληρης</span></li>
 										<li><g:submitButton class="search_button" name=" " /></li>
+										<li><input type='reset' value='Reset' /></li>
 									</ul>
+
 								</div>
 								<div id=search_params>
 									<div id="portfoliolist">
@@ -91,34 +99,34 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 														action="${createLinkTo('dir': 'ajax/orgAJAX')}" />
 												</div></li>
 											<li><div class="portfolio signer" data-cat="signer">
-												<label for="signer">Signer:</label>
-												<richui:autoComplete name="signer"
-													action="${createLinkTo('dir': 'ajax/signerAJAX')}" />
-											</div></li>
+													<label for="signer">Signer:</label>
+													<richui:autoComplete name="signer"
+														action="${createLinkTo('dir': 'ajax/signerAJAX')}" />
+												</div></li>
 											<li><div class="portfolio subject" data-cat="subject">
-												<label for="subject">Subject:<br /></label>
-												<g:textField name="subject" />
-											</div></li>
+													<label for="subject">Subject:<br /></label>
+													<g:textField name="subject" />
+												</div></li>
 											<li><div class="portfolio type" data-cat="type">
-												<label for="type">Type:</label>
-												<richui:autoComplete name="type"
-													action="${createLinkTo('dir': 'ajax/typeAJAX')}" />
-											</div></li>
+													<label for="type">Type:</label>
+													<richui:autoComplete name="type"
+														action="${createLinkTo('dir': 'ajax/typeAJAX')}" />
+												</div></li>
 											<li><div class="portfolio tag" data-cat="tag">
-												<label for="tag">Tag:</label>
-												<richui:autoComplete name="tag"
-													action="${createLinkTo('dir': 'ajax/tagAJAX')}" />
-											</div></li>
+													<label for="tag">Tag:</label>
+													<richui:autoComplete name="tag"
+														action="${createLinkTo('dir': 'ajax/tagAJAX')}" />
+												</div></li>
 											<li><div class="portfolio fromDate" data-cat="fromDate">
-												<label for="fromDate">From Date:<br /></label>
-												<g:datePicker name="fromDate" precision="day"
-													noSelection="['':'-No Selection-']" default="none" />
-											</div></li>
+													<label for="fromDate">From Date:<br /></label>
+													<g:datePicker name="fromDate" precision="day"
+														noSelection="['':'-No Selection-']" default="none" />
+												</div></li>
 											<li><div class="portfolio toDate" data-cat="toDate">
-												<label for="toDate">To Date:<br /></label>
-												<g:datePicker name="toDate" precision="day"
-													noSelection="['':'-No Selection-']" default="none" />
-											</div></li>
+													<label for="toDate">To Date:<br /></label>
+													<g:datePicker name="toDate" precision="day"
+														noSelection="['':'-No Selection-']" default="none" />
+												</div></li>
 											<li><input name="maxToShow" type="hidden" value="10" /></li>
 										</ul>
 									</div>
@@ -128,6 +136,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</div>
 
 						</g:formRemote>
+						<div id="results"></div>
 					</div>
 					<!-- container -->
 					<script type="text/javascript"
@@ -135,11 +144,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<script type="text/javascript">
 						$('body').flipLightBox()
 					</script>
+
 					<div class="clear"></div>
+
 				</div>
+
 			</div>
+
 		</div>
-		<div id="results"></div>
+
 	</div>
 	<!---End-gallery----->
 	<!-----start-about-------->
