@@ -75,7 +75,7 @@ grails.hibernate.cache.queries = false
 environments {
 	development {
 		grails.logging.jul.usebridge = true
-		grails.serverURL="http://localhost:8080/"
+		grails.serverURL="http://localhost:8080/Prisma"
 	}
 	production {
 		grails.logging.jul.usebridge = false

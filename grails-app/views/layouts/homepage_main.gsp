@@ -148,12 +148,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!----start-footer---------->
 	<div class="footer-bottom">
 		<div class="wrap">
-			<div class="copy">
+			<%--<div class="copy">
 				<p class="copy">
 					&#169 2014 Template by <a href="http://w3layouts.com"
 						target="_blank">w3layouts</a>
 				</p>
 			</div>
+			
+			
+			--%>
+			<g:render template="/common/footer" />
 			<script type="text/javascript">
 				$(document).ready(function() {
 
