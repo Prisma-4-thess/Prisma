@@ -1298,3 +1298,17 @@ body {
 #portfoliolist {
 	display: none;
 }
+
+/* ---Sbond--- */
+#map{
+	
+}
+.mapViewClass{
+	width: 100%;
+	height:30em;
+}
+#mapView{
+	width: 100%;
+	height:30em;
+}
+

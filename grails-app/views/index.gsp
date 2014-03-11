@@ -252,11 +252,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!---------end-about------------>
-	<g:remoteLink controller="map" action="index"
-						update="map_t">map</g:remoteLink>
-	<div id="map_t">
-	show:
+	<!---------start-map------------>
+	<div id="map">
+		<script type="text/javascript">
+			<g:remoteFunction controller="map" action="homepage" update="mapView"/>;
+		</script>
+		<div id="mapView"></div>
 	</div>
+	<!---------end-map------------>
+	<!---------start-contact------------>
 	<div class="contact" id="contact">
 		<div class="wrap">
 			<h2>Επικοινωνία</h2>
