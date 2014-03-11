@@ -61,6 +61,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										function clearAll() {
 											document.getElementById(
 													"searchForm").reset();
+											<g:remoteFunction controller="ajax" action="clearGlobal"/>
 											document
 													.getElementById("portfoliolist").style["display"] = "inline-block";
 										}
@@ -83,7 +84,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 								</div>
 								<div id=search_params>
-									<div id="results"></div>
+
 									<div id="portfoliolist">
 										<ul>
 											<li><div class="portfolio ada" data-cat="ada">
@@ -138,6 +139,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<li><input name="maxToShow" type="hidden" value="10" /></li>
 										</ul>
 									</div>
+									<div id="results"></div>
 								</div>
 
 
@@ -168,7 +170,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="about" id="about">
 		<div class="wrap">
 			<h2>Τι είναι το Prisma</h2>
-			<p>Με το Prisma θέλουμε να δόσουμε την δυνατότητα στον πολίτη να είναι μέρος της διακυβέρνησης του τόπου του.</p>
+			<p>Με το Prisma θέλουμε να δόσουμε την δυνατότητα στον πολίτη να
+				είναι μέρος της διακυβέρνησης του τόπου του.</p>
 			<div class="about-grids">
 				<div class="grid">
 					<div class="dc_zoom_css">
@@ -251,7 +254,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="contact" id="contact">
 		<div class="wrap">
 			<h2>Επικοινωνία</h2>
-			<h4>Βοηθήστε μας να γίνουμε καλύτεροι. Στείλτε τις προτάσεις και τα σχόλιά σας.</h4>
+			<h4>Βοηθήστε μας να γίνουμε καλύτεροι. Στείλτε τις προτάσεις και
+				τα σχόλιά σας.</h4>
 			<div class="section group">
 				<div class="col span_2_of_3">
 					<div class="contact-form">
