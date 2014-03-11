@@ -123,7 +123,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!--------start-logo------>
 				<div class="logo">
 					<g:link mapping="rootUrl"><img
-						src="${resource(dir: 'images', file: 'logo.png')}" alt="" /></g:link>
+						src="${resource(dir: 'images', file: 'site-logo.png')}" alt="" /></g:link>
 				</div>
 				<!--------end-logo--------->
 				
