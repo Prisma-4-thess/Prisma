@@ -1294,3 +1294,7 @@ body {
 #results {
 	float: right;
 }
+
+#portfoliolist {
+	display: none;
+}

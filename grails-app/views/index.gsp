@@ -61,6 +61,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										function clearAll() {
 											document.getElementById(
 													"searchForm").reset();
+											document
+													.getElementById("portfoliolist").style["display"] = "inline-block";
 										}
 									</script>
 									<ul id="filters" class="clearfix">
@@ -72,7 +74,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<li><span class="filter"
 											data-filter="subject type tag fromDate toDate"
 											onClick="clearAll();">Γενικη</span></li>
-										<li><span class="filter active"
+										<li><span class="filter"
 											data-filter="ada unit org signer subject type tag fromDate toDate"
 											onClick="clearAll();">Πληρης</span></li>
 										<li><g:submitButton class="search_button" name=" " /></li>
@@ -88,8 +90,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<label for="ada">ADA:<br /></label>
 													<g:textField name="ada" />
 												</div></li>
-											<li><div class="portfolio prot_num hide"
-													data-cat="prot_num">
+											<li><div class="portfolio prot_num" data-cat="prot_num">
 													<label for="prot_num">Protocol Number:<br /></label>
 													<g:textField name="prot_num" />
 												</div></li>
