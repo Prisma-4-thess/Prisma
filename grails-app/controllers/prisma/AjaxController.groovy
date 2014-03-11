@@ -165,4 +165,8 @@ class AjaxController {
 	def selUn(){
 		uni=Unit.get(params.id)
 	}
+	def clearGlobal(){
+		organ=null
+		uni=null
+	}
 }
