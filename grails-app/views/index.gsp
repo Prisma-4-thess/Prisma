@@ -8,7 +8,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <meta name="layout" content="homepage_main" />
-
+<resource:include components="map"
+	key="AIzaSyAtEbm91-pdOstp5VshIrJSreVvxqS3j4E" />
 <g:javascript library="jquery" />
 <resource:autoComplete skin="default" />
 </head>
@@ -251,6 +252,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!---------end-about------------>
+	<g:remoteLink controller="map" action="index"
+						update="map_t">map</g:remoteLink>
+	<div id="map_t">
+	show:
+	</div>
 	<div class="contact" id="contact">
 		<div class="wrap">
 			<h2>Επικοινωνία</h2>

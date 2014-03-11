@@ -71,4 +71,23 @@ class AndroidController {
 		def res= [marker:marker]
 		render res as JSON
 	}
+	def ada(){
+		println params.id
+		def ada,sub
+		int i=0
+		def decision=new Decision()
+		def c = Decision.createCriteria()
+		decision = c.list {
+			like("ada","%"+params.id+"%")
+		}
+		def marker=new Map[decision.size()]
+		decision.each{ g ->
+			ada=g.ada
+			sub=g.subject
+			marker[i] = [ada:ada,subject:sub]
+			i++
+		}
+		def res= [marker:marker]
+		render res as JSON
+	}
 }

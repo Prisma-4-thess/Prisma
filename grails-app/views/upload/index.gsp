@@ -5,6 +5,8 @@
 <meta name="layout" content="main" />
 <title>Upload Decision</title>
 <resource:autoComplete skin="default" />
+<resource:include components="map"
+	key="AIzaSyAtEbm91-pdOstp5VshIrJSreVvxqS3j4E" />
 <g:javascript library="jquery" />
 </head>
 <body>
@@ -46,6 +48,8 @@
 				noSelection="[' ':'-No Selection-']" />
 			<br />
 			<input type="file" name="myFile" />
+			<richui:map lat="40" lng="22" draggable="true" />
+			<input type="hidden" name="la" value="aa"/>
 			<input type="submit" />
 		</g:uploadForm>
 	</div>
