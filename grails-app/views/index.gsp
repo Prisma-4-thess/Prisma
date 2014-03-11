@@ -166,9 +166,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 	<div class="about" id="about">
 		<div class="wrap">
-			<h2>About US</h2>
-			<p>Lorem Ipsum is simply dummy text of the printing and
-				typesetting industry.</p>
+			<h2>Τι είναι το Prisma</h2>
+			<p>Με το Prisma θέλουμε να δόσουμε την δυνατότητα στον πολίτη να είναι μέρος της διακυβέρνησης του τόπου του.</p>
 			<div class="about-grids">
 				<div class="grid">
 					<div class="dc_zoom_css">
@@ -183,11 +182,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</ul>
 							</div>
 						</span> <img class="post-person"
-							src="${resource(dir: 'images', file: 'img1.jpg')}">
+							src="${resource(dir: 'images', file: 'slider_image_ody.jpg')}">
 					</div>
 					<div class="desc">
-						<h3>Lorem Ipsum is Simply</h3>
-						<p>project manager</p>
+						<h3>Η δύναμη του Δήμου</h3>
+						<p>είσαι μέρος του</p>
 						<p>Lorem Ipsum is simply dummy text of the printing and
 							typesetting industry.Sed ut perspiciatis unde omnis iste natus
 							error sit voluptatem,Sed ut perspiciatis unde omnis iste natus
@@ -208,11 +207,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</ul>
 							</div>
 						</span> <img class="post-person"
-							src="${resource(dir: 'images', file: 'img2.jpg')}">
+							src="${resource(dir: 'images', file: 'justice.jpg')}">
 					</div>
 					<div class="desc">
-						<h3>Lorem Ipsum is Simply</h3>
-						<p>project manager</p>
+						<h3>Η δύναμη της Δικαιοσύνης</h3>
+						<p>είσαι γρανάζι της</p>
 						<p>Lorem Ipsum is simply dummy text of the printing and
 							typesetting industry.Sed ut perspiciatis unde omnis iste natus
 							error sit voluptatem,Sed ut perspiciatis unde omnis iste natus
@@ -232,11 +231,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</ul>
 							</div>
 						</span> <img class="post-person"
-							src="${resource(dir: 'images', file: 'img3.jpg')}">
+							src="${resource(dir: 'images', file: 'hands.png')}">
 					</div>
 					<div class="desc">
-						<h3>Lorem Ipsum is Simply</h3>
-						<p>project manager</p>
+						<h3>Η δύναμη της Δημοκρατίας</h3>
+						<p>είσαι ηλίθιος</p>
 						<p>Lorem Ipsum is simply dummy text of the printing and
 							typesetting industry.Sed ut perspiciatis unde omnis iste natus
 							error sit voluptatem,Sed ut perspiciatis unde omnis iste natus
@@ -250,9 +249,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!---------end-about------------>
 	<div class="contact" id="contact">
 		<div class="wrap">
-			<h2>Contact Us</h2>
-			<h4>Lorem Ipsum is simply dummy text of the printing and
-				typesetting industry.</h4>
+			<h2>Επικοινωνία</h2>
+			<h4>Βοηθήστε μας να γίνουμε καλύτεροι. Στείλτε τις προτάσεις και τα σχόλιά σας.</h4>
 			<div class="section group">
 				<div class="col span_2_of_3">
 					<div class="contact-form">
