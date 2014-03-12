@@ -14,6 +14,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link
 	href='http://fonts.googleapis.com/css?family=Ubuntu&subset=latin,greek,greek-ext'
 	rel='stylesheet' type='text/css'>
+<link rel="shortcut icon"
+	href="${resource(dir: 'images', file: 'favicon.ico')}"
+	type="image/x-icon">
 <link href="${resource(dir: 'css', file: 'style.css')}" rel="stylesheet"
 	type="text/css" media="all" />
 <link rel="stylesheet" type="text/css"
