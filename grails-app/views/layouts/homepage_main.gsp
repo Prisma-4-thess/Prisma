@@ -18,7 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	type="text/css" media="all" />
 <link rel="stylesheet" type="text/css"
 	href="${resource(dir: 'css', file: 'imgeffect.css')}" />
-	
+
 <r:layoutResources />
 
 <script src="${resource(dir: 'js', file: 'jquery.min.js')}"></script>
@@ -116,78 +116,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 </head>
 <body>
-	<!----start-header---------->
-	<div class="header_bg">
-		<div class="wrap">
-			<div class="header">
-				<!--------start-logo------>
-				<div class="logo">
-					<g:link mapping="rootUrl"><img
-						src="${resource(dir: 'images', file: 'site-logo.png')}" alt="" /></g:link>
-				</div>
-				<!--------end-logo--------->
-				
-				<!----start-nav-------->
-				<div class="nav">
-					<ul>
-					
-						<li><a href="#home" class="scroll">Home</a></li>
-						<li class="active"><a href="#portfolio" class="scroll">Αναζητηση</a></li>
-						<li><a href="#about" class="scroll">Σχετικα με εμας</a></li>
-						<li><a href="#map" class="scroll">Χαρτης</a></li>
-						<li><a href="#contact" class="scroll">Eπικοινωνια</a></li>
-						<li><g:render template="/common/topbar" /></li>
-						<div class="clear"></div>
-					</ul>
-					
-				</div>
-				<!-----end-nav-------->
-				
-				<div class="clear"></div>
-			</div>
-		</div>
-	</div>
-	<!------end-header------------>
 
 	<g:layoutBody />
-	
-	<!----start-footer---------->
-	<div class="footer-bottom">
-		<div class="wrap">
-			<%--<div class="copy">
-				<p class="copy">
-					&#169 2014 Template by <a href="http://w3layouts.com"
-						target="_blank">w3layouts</a>
-				</p>
-			</div>
-			
-			
-			--%>
-			<g:render template="/common/footer" />
-			<script type="text/javascript">
-				$(document).ready(function() {
 
-					var defaults = {
-						containerID : 'toTop', // fading element id
-						containerHoverID : 'toTopHover', // fading element hover id
-						scrollSpeed : 1200,
-						easingType : 'linear'
-					};
-
-					$().UItoTop({
-						easingType : 'easeOutQuart'
-					});
-
-				});
-			</script>
-			<a href="#" id="toTop" style="display: block;"><span
-				id="toTopHover" style="opacity: 1;"> </span></a>
-			<script src="${resource(dir: 'js', file: 'jquery.scrollTo.js')}"></script>
-		</div>
-	</div>
-	<!------end-footer------------>
-	
-	<g:javascript library="application" />	
+	<g:javascript library="application" />
 	<r:layoutResources />
 </body>
 

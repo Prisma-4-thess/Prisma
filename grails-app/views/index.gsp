@@ -15,7 +15,40 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 
 <body>
+	<!----start-header---------->
+	<div class="header_bg">
+		<div class="wrap">
+			<div class="header">
+				<!--------start-logo------>
+				<div class="logo">
+					<g:link mapping="rootUrl">
+						<img src="${resource(dir: 'images', file: 'site-logo.png')}"
+							alt="" />
+					</g:link>
+				</div>
+				<!--------end-logo--------->
 
+				<!----start-nav-------->
+				<div class="nav">
+					<ul>
+
+						<li><a href="#home" class="scroll">Home</a></li>
+						<li class="active"><a href="#portfolio" class="scroll">Αναζητηση</a></li>
+						<li><a href="#about" class="scroll">Σχετικα με εμας</a></li>
+						<li><a href="#map" class="scroll">Χαρτης</a></li>
+						<li><a href="#contact" class="scroll">Eπικοινωνια</a></li>
+						<li><g:render template="/common/topbar" /></li>
+						<div class="clear"></div>
+					</ul>
+
+				</div>
+				<!-----end-nav-------->
+
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	<!------end-header------------>
 	<!-- start slider -->
 	<div class="slider_bg">
 		<div class="wrap">
@@ -52,7 +85,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="gallery">
 						<div class="clear"></div>
 						<g:formRemote id="searchForm" name="full_search"
-							url="[controller:'search', action:'searchfull']" update="results">
+							url="[controller:'search', action:'searchfull']" update="results" before="hideDecisionShowResults();">
 							<div class="container">
 								<h2>Αναζήτηση</h2>
 								<p>Πραγματοποιήστε σύνθετες αναζητήσεις, αναλόγως τι
@@ -66,6 +99,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											document
 													.getElementById("portfoliolist").style["display"] = "inline-block";
 										}
+										function hideResultsShowDecision(){
+											document.getElementById("results").style["display"] = "none";
+											document.getElementById("decision").style["display"] = "block";
+											}
+
+										function hideDecisionShowResults(){
+											document.getElementById("results").style["display"] = "block";
+											document.getElementById("decision").style["display"] = "none";
+											}
 									</script>
 									<ul id="filters" class="clearfix">
 										<li><span class="filter" data-filter="ada"
@@ -141,6 +183,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										</ul>
 									</div>
 									<div id="results"></div>
+									<div id="decision"></div>
 								</div>
 
 
@@ -324,10 +367,51 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</ul>
 					</div>
 				</div>
+
 				<div class="clear"></div>
+
+
 			</div>
+
+		</div>
+
+	</div>
+
+	<!----start-footer---------->
+	<div class="footer-bottom">
+		<div class="wrap">
+			<%--<div class="copy">
+				<p class="copy">
+					&#169 2014 Template by <a href="http://w3layouts.com"
+						target="_blank">w3layouts</a>
+				</p>
+			</div>
+			
+			
+			--%>
+			<g:render template="/common/footer" />
+			<script type="text/javascript">
+				$(document).ready(function() {
+
+					var defaults = {
+						containerID : 'toTop', // fading element id
+						containerHoverID : 'toTopHover', // fading element hover id
+						scrollSpeed : 1200,
+						easingType : 'linear'
+					};
+
+					$().UItoTop({
+						easingType : 'easeOutQuart'
+					});
+
+				});
+			</script>
+			<a href="#" id="toTop" style="display: block;"><span
+				id="toTopHover" style="opacity: 1;"> </span></a>
+			<script src="${resource(dir: 'js', file: 'jquery.scrollTo.js')}"></script>
 		</div>
 	</div>
+	<!------end-footer------------>
 
 </body>
 </html>

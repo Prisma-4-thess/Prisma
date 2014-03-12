@@ -2,33 +2,42 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="layout" content="homepage_main" />
+<link rel="stylesheet" type="text/css"
+	href="${resource(dir: 'css', file: 'table.css')}" />
 <resource:richTextEditor type="medium" />
-<meta name="layout" content="main" />
-<title>Show Decision</title>
+
+
 <g:javascript library="jquery" />
 </head>
 <body>
 	<div class="body">
-		<table>
+		<table id="one-column-emphasis" class="search_table">
+			<tr>
+				<th><g:remoteLink before="hideDecisionShowResults();">←</g:remoteLink>
+				</th>
+			</tr>
 			<g:if test="${dec2}">
-				<tr>
-					<g:each in="${dec2}">
-						<font color="red">Η παρούσα απόφαση έχει διορθωθεί από την
-							<g:link controller="search" action="show" id="${it.id}">
-								${it.ada}
-								<br />
-							</g:link>
-						</font>
-					</g:each>
-				</tr>
+
+				<g:each in="${dec2}">
+					<tr>
+						<th><font color="red">Η παρούσα απόφαση έχει διορθωθεί
+								από την: <g:remoteLink controller="search" action="show" id="${it.id}" update="decision" before="hideResultsShowDecision();">
+									${it.ada}
+								</g:remoteLink>
+						</font></th>
+					</tr>
+				</g:each>
+
+
 			</g:if>
 			<tr>
-				<td>ΑΔΑ
-				<td>
-				<td>
+				<th>ΑΔΑ
+				<th>
+				<th>
 					${decision.ada}
 				
-				<td>
+				<th>
 			</tr>
 			<g:if test="${decision.protocolNumber}">
 				<tr>
@@ -123,7 +132,7 @@
 		<g:remoteLink controller="search" action="blog" id="${decision.ada}"
 			update="blog">enable blog</g:remoteLink>
 		<div id="blog" style="background-color: #c0ffc0;">
-			<p>Η λειτουργεία του σχολιασμού είναι ανενεργή</p>
+			<p>Η λειτουργία του σχολιασμού είναι ανενεργή</p>
 		</div>
 	</div>
 </body>

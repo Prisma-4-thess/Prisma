@@ -19,6 +19,6 @@
 	</div>
 </g:if>
 <g:else>
-	<p>No decision matching matches this search</p>
+	<p>Καμία απόφαση δεν ταιριάζει στην αναζήτησή σας</p>
 </g:else>
 </body>
