@@ -24,11 +24,11 @@
 			<br />
 			<label for="fromDate">From Date:</label>
 			<g:datePicker name="fromDate" precision="day"
-				noSelection="['':'-No Selection-']" default="none" />
+				noSelection="['':'-No Selection-']" default="none" years="${Calendar.instance.get(Calendar.YEAR)..2010}"/>
 			<br />
 			<label for="toDate">To Date:</label>
 			<g:datePicker name="toDate" precision="day"
-				noSelection="['':'-No Selection-']" default="none" />
+				noSelection="['':'-No Selection-']" default="none" years="${Calendar.instance.get(Calendar.YEAR)..2010}"/>
 			<br />
 			<input name="pageId" type="hidden" value="admin_panel" />
 			<g:submitButton name="search" />

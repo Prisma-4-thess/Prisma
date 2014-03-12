@@ -55,7 +55,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!-------start-da-slider-->
 			<div class="da-slide">
 				<h2>
-					<span>Είμαστε το</span>Prisma
+					<span>Είμαστε το</span> Prisma
 				</h2>
 				<p>H διαδικτυακή διακυβέρνηση στα καλύτερά της</p>
 				<a href="#portfolio" class="da-link scroll">Αναζητηση</a> <a
@@ -172,12 +172,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<li><div class="portfolio fromDate" data-cat="fromDate">
 													<label for="fromDate">From Date:<br /></label>
 													<g:datePicker name="fromDate" precision="day"
-														noSelection="['':'-No Selection-']" default="none" />
+														noSelection="['':'-No Selection-']" default="none" years="${Calendar.instance.get(Calendar.YEAR)..2010}"/>
 												</div></li>
 											<li><div class="portfolio toDate" data-cat="toDate">
 													<label for="toDate">To Date:<br /></label>
 													<g:datePicker name="toDate" precision="day"
-														noSelection="['':'-No Selection-']" default="none" />
+														noSelection="['':'-No Selection-']" default="none" years="${Calendar.instance.get(Calendar.YEAR)..2010}"/>
 												</div></li>
 											<li><input name="pageId" type="hidden" value="home" /></li>
 										</ul>
