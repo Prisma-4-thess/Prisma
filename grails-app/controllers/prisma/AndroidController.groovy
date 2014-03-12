@@ -5,12 +5,38 @@ import grails.plugin.springsecurity.annotation.Secured
 class AndroidController {
 
 	def index() {
-		def geo=new Geo()
-		geo=Geo.all
-		def lat,lon,namegrk,geoid
-		def marker=new Map[geo.size()]
+		def geo1=new Geo()
+		geo1=Geo.all
+		def c=new Decision()
+		def lat,lon,namegrk,geoid,co,address
+		def marker=[]
 		int i=0
-		geo.each{ g ->
+		geo1.each{ g ->
+			geoid=g.id
+			lat=g.latitude
+			lon=g.longitude
+			namegrk=g.namegrk
+			address=g.address
+			c=Decision.createCriteria().list{
+				geo{
+					eq("id",g.id)
+				}
+			}
+			co=c.size()
+			if(co>0){
+			marker.add([latitude:lat, longitude:lon, namegrk:namegrk,id:geoid,counter:co,address:address])
+			i++}
+		}
+		def res= [marker:marker]
+		render res as JSON
+	}
+	def all() {
+		def geo1=new Geo()
+		geo1=Geo.all
+		def lat,lon,namegrk,geoid
+		def marker=new Map[geo1.size()]
+		int i=0
+		geo1.each{ g ->
 			geoid=g.id
 			lat=g.latitude
 			lon=g.longitude
@@ -101,6 +127,5 @@ class AndroidController {
 		}
 		def res= [marker:marker]
 		render res as JSON
-//		test
 	}
 }
