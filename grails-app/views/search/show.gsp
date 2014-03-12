@@ -14,15 +14,20 @@
 	<div class="body">
 		<table id="one-column-emphasis" class="search_table">
 			<tr>
-				<th><g:remoteLink before="hideDecisionShowResults();">←</g:remoteLink>
-				</th>
+				<th><g:if test="${source=="map"}">
+						<g:link mapping="rootUrl">←</g:link>
+					</g:if> <g:else>
+						<g:remoteLink before="hideDecisionShowResults();">←</g:remoteLink>
+					</g:else></th>
 			</tr>
 			<g:if test="${dec2}">
 
 				<g:each in="${dec2}">
 					<tr>
 						<th><font color="red">Η παρούσα απόφαση έχει διορθωθεί
-								από την: <g:remoteLink controller="search" action="show" id="${it.id}" update="decision" before="hideResultsShowDecision();">
+								από την: <g:remoteLink controller="search" action="show"
+									id="${it.id}" update="decision"
+									before="hideResultsShowDecision();">
 									${it.ada}
 								</g:remoteLink>
 						</font></th>

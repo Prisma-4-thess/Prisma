@@ -7,7 +7,7 @@
 			url="[controller:'search', action:'searchada']" update="results">
 			<label for="ada">ADA:</label>
 			<g:textField name="ada" />
-			<input name="maxToShow" type="hidden" value="10" />
+			<input name="pageId" type="hidden" value="admin_panel" />
 			<g:submitButton name="search" />
 		</g:formRemote>
 		<div id="results"></div>

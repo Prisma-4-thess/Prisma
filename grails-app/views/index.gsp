@@ -84,7 +84,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!---start-content---->
 					<div class="gallery">
 						<div class="clear"></div>
-						<g:formRemote id="searchForm" name="full_search"
+						<g:formRemote id="searchFormHomepage" name="full_search"
 							url="[controller:'search', action:'searchfull']" update="results" after="hideDecisionShowResults();">
 							<div class="container">
 								<h2>Αναζήτηση</h2>
@@ -179,7 +179,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<g:datePicker name="toDate" precision="day"
 														noSelection="['':'-No Selection-']" default="none" />
 												</div></li>
-											<li><input name="maxToShow" type="hidden" value="10" /></li>
+											<li><input name="pageId" type="hidden" value="home" /></li>
 										</ul>
 									</div>
 									<div id="results"></div>

@@ -162,10 +162,12 @@ class SearchController {
 		}
 		def toShow = Math.min(maxToShow, decision.size())
 		println "toShow: "+toShow
+		println "source: "+params.pageId
 
-		[results:decision.subList(0, toShow), decisionInstanceTotal:decision.size()]
+		[results:decision.subList(0, toShow), decisionInstanceTotal:decision.size(), source:params.pageId]
 	}
 	def show(){
+		println params.source
 		def dec=Decision.get(params.id)
 		def dec_ext=new Decision_ext()
 		dec_ext=Decision_ext.createCriteria().list {
@@ -187,7 +189,7 @@ class SearchController {
 				eq("ada",dec.ada)
 			}
 		}
-		[decision:dec,ext:dec_ext,org:org,dec2:dec2]
+		[decision:dec,ext:dec_ext,org:org,dec2:dec2,source:params.source]
 	}
 
 	def list() {

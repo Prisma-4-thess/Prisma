@@ -17,7 +17,7 @@
 				total="${decisionInstanceTotal}" update="list-decision" id="pagination"/>
 		</div>
 		
-		<g:render template="/common/table_results" />
+		<g:render template="/common/table_results" model="['source':source]"/>
 		
 	</div>
 </g:if>

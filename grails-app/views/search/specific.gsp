@@ -30,7 +30,7 @@
 			<g:datePicker name="toDate" precision="day"
 				noSelection="['':'-No Selection-']" default="none" />
 			<br />
-			<input name="maxToShow" type="hidden" value="10" />
+			<input name="pageId" type="hidden" value="admin_panel" />
 			<g:submitButton name="search" />
 		</g:formRemote>
 		<div id="results"></div>
