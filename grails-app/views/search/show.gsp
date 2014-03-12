@@ -131,7 +131,7 @@
 		</table>
 		<g:remoteLink controller="search" action="blog" id="${decision.ada}"
 			update="blog">enable blog</g:remoteLink>
-		<div id="blog" style="background-color: #c0ffc0;">
+		<div id="blog" class="blog">
 			<p>Η λειτουργία του σχολιασμού είναι ανενεργή</p>
 		</div>
 	</div>
