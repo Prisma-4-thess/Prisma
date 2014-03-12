@@ -44,6 +44,7 @@ class AndroidController {
 		render res as JSON
 	}
 	def show(){
+		def geo
 		def marker=new Map[1]
 		def dec=Decision.get(params.id)
 		def dec_ext=new Decision_ext()
@@ -66,14 +67,19 @@ class AndroidController {
 				eq("ada",dec.ada)
 			}
 		}
+		if(dec.geo==null){
+			geo=false
+		}else{
+			geo=true
+		}
 
-		marker[0] = [ada:dec.ada,subject:dec.subject,url:dec.documentUrl,unit:dec.unit.label,org:org.label]
+		marker[0] = [ada:dec.ada,subject:dec.subject,url:dec.documentUrl,unit:dec.unit.label,org:org.label,geo:geo]
 		def res= [marker:marker]
 		render res as JSON
 	}
 	def ada(){
 		println params.id
-		def ada,sub
+		def ada,sub,id
 		int i=0
 		def decision=new Decision()
 		def c = Decision.createCriteria()
@@ -84,7 +90,7 @@ class AndroidController {
 		decision.each{ g ->
 			ada=g.ada
 			sub=g.subject
-			marker[i] = [ada:ada,subject:sub]
+			marker[i] = [ada:ada,subject:sub,id:g.id]
 			i++
 		}
 		def res= [marker:marker]
