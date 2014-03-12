@@ -29,7 +29,7 @@
 <body>
 	<div id="grailsLogo" role="banner">
 		<g:link mapping="rootUrl">
-			<img src="${resource(dir: 'images', file: 'grails_logo.png')}"
+			<img src="${resource(dir: 'images', file: 'site-logo.png')}"
 				alt="Grails" />
 		</g:link>
 
