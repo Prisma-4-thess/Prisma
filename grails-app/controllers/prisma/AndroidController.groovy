@@ -8,7 +8,32 @@ class AndroidController {
 		def geo1=new Geo()
 		geo1=Geo.all
 		def c=new Decision()
-		def lat,lon,namegrk,geoid,co
+		def lat,lon,namegrk,geoid,co,address
+		def marker=[]
+		int i=0
+		geo1.each{ g ->
+			geoid=g.id
+			lat=g.latitude
+			lon=g.longitude
+			namegrk=g.namegrk
+			address=g.address
+			c=Decision.createCriteria().list{
+				geo{
+					eq("id",g.id)
+				}
+			}
+			co=c.size()
+			if(co>0){
+			marker.add([latitude:lat, longitude:lon, namegrk:namegrk,id:geoid,counter:co,address:address])
+			i++}
+		}
+		def res= [marker:marker]
+		render res as JSON
+	}
+	def all() {
+		def geo1=new Geo()
+		geo1=Geo.all
+		def lat,lon,namegrk,geoid
 		def marker=new Map[geo1.size()]
 		int i=0
 		geo1.each{ g ->
@@ -16,13 +41,7 @@ class AndroidController {
 			lat=g.latitude
 			lon=g.longitude
 			namegrk=g.namegrk
-			c=Decision.createCriteria().list{
-				geo{
-					eq("id",g.id)
-				}
-			}
-			co=c.size()
-			marker[i] = [latitude:lat, longitude:lon, namegrk:namegrk,id:geoid,counter:co]
+			marker[i] = [latitude:lat, longitude:lon, namegrk:namegrk,id:geoid]
 			i++
 		}
 		def res= [marker:marker]

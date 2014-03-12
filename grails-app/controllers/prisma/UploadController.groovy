@@ -6,7 +6,7 @@ class UploadController {
 	def index() {
 		 def marker=new Map[1]
 		def address = [latitude:'40', longitude:'36']
-		[typ:Type.list(),tag:Tag.list(),un:Unit.list(),address:address,t:'a']
+		[typ:Type.list(),tag:Tag.list(),un:Unit.list(),geo:Geo.list()]
 	}
 	def error(){
 	}
@@ -35,12 +35,15 @@ class UploadController {
 		}
 		dec.tags=Tag.createCriteria().list{eq("label",params.tag)}
 		dec.signer=Signer.createCriteria().get{
+			and{
 			eq("firstName",first)
 			eq("lastName",last)
+			}
 		}
 		//		dec.date=Date.fromString(params.date)
 		dec.date = params.date
 		dec.documentUrl=params.ada
+		dec.geo=Geo.findByNamegrk(params.geo)
 		dec.url='pdf/'+params.ada
 		dec.save(flush: true,failOnError:true)
 		render (view:"success", model:[documentUrl:params.ada])

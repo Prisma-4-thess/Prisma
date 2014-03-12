@@ -43,15 +43,15 @@
 			<richui:autoComplete name="signer"
 				action="${createLinkTo('dir': 'ajax/signerAJAX')}" />
 			<br />
+			<label for="geo">Geo:</label>
+			<richui:autoComplete name="geo"
+				action="${createLinkTo('dir': 'ajax/geoAJAX')}" />
+			<br />
 			<label for="date">Date:</label>
 			<g:datePicker name="date" precision="day" default="none"
 				noSelection="[' ':'-No Selection-']" />
 			<br />
-			<input type="text" id="latitude" name="latitude" />
-			<input type="text" id="longitude" name="longitude" />
-			
-<richui:googlemaps mapStyle="width: 350px; height: 200px;" style="width: 300px;" 
-               lat="${address?.latitude}" lng="${address?.longitude}" latId="latitude" lngId="longitude" draggable="true" />    
+			<input type="file"  name="myFile">  
 			<input type="submit" />
 		</g:uploadForm>
 		

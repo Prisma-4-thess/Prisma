@@ -63,6 +63,25 @@ class AjaxController {
 			}
 		}
 	}
+	def geoAJAX(){
+		def geos = Geo.createCriteria().list{
+			like("namegrk","%"+params.query+"%")
+			maxResults(10)
+		}
+
+		//Create XML response
+		render(contentType: "text/xml") {
+			results() {
+				geos.each { geo ->
+					result(){
+						name(geo.namegrk)
+						//Optional id which will be available in onItemSelect
+						id(geo.id)
+					}
+				}
+			}
+		}
+	}
 	def unitAJAX(){
 		if(params.query.isEmpty()){
 			uni=null
