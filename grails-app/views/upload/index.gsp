@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -48,8 +48,9 @@
 				noSelection="[' ':'-No Selection-']" />
 			<br />
 			<input type="file" name="myFile" />
-			<richui:map lat="40" lng="22" draggable="true" />
-			<input type="hidden" name="la" value="aa"/>
+			<richui:map showStartMarker="false" markers="${mark}" zoomLevel="11" />
+			${mark[0].latitude}
+			<input type="hidden" name="lat" value="${mark[0].latitude}"/>
 			<input type="submit" />
 		</g:uploadForm>
 	</div>

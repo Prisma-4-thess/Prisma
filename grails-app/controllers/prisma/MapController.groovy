@@ -41,7 +41,7 @@ class MapController {
 			lat=dec.geo.latitude
 			lon=dec.geo.longitude
 			dr=false
-			ds='<a href="'+grailsApplication.config.grails.serverURL+'Prisma/search/show/'+dec.id+'">'+dec.ada+'</a>'
+			ds='<a href="'+grailsApplication.config.grails.serverURL+'/search/show/'+dec.id+'">'+dec.ada+'</a>'
 			marker[i] = [latitude:lat, longitude:lon, draggable:dr,description:ds]
 			i++
 		}

@@ -79,7 +79,7 @@ class AndroidController {
 	}
 	def ada(){
 		println params.id
-		def ada,sub,id
+		def ada,sub,id,geo
 		int i=0
 		def decision=new Decision()
 		def c = Decision.createCriteria()
@@ -90,10 +90,17 @@ class AndroidController {
 		decision.each{ g ->
 			ada=g.ada
 			sub=g.subject
-			marker[i] = [ada:ada,subject:sub,id:g.id]
+			if(g.geo==null){
+				geo=false
+			}
+			else{
+				geo=true
+			}
+			marker[i] = [ada:ada,subject:sub,id:g.id,geo:geo]
 			i++
 		}
 		def res= [marker:marker]
 		render res as JSON
+//		test
 	}
 }
