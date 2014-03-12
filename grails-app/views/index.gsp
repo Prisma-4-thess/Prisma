@@ -32,8 +32,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="nav">
 					<ul>
 
-						<li><a href="#home" class="scroll">Home</a></li>
-						<li class="active"><a href="#portfolio" class="scroll">Αναζητηση</a></li>
+						<li class="active"><a href="#home" class="scroll">Home</a></li>
+						<li><a href="#portfolio" class="scroll">Αναζητηση</a></li>
 						<li><a href="#about" class="scroll">Σχετικα με εμας</a></li>
 						<li><a href="#map" class="scroll">Χαρτης</a></li>
 						<li><a href="#contact" class="scroll">Eπικοινωνια</a></li>
