@@ -11,11 +11,14 @@
 				${flash.message}
 			</div>
 		</g:if>
-		<g:render template="/common/table_results" />
+		
 		<div class="pagination search_table">
 			<util:remotePaginate controller="search" action="list"
 				total="${decisionInstanceTotal}" update="list-decision" id="ver-minimalist"/>
 		</div>
+		
+		<g:render template="/common/table_results" />
+		
 	</div>
 </g:if>
 <g:else>
