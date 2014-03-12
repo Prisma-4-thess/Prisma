@@ -85,7 +85,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="gallery">
 						<div class="clear"></div>
 						<g:formRemote id="searchForm" name="full_search"
-							url="[controller:'search', action:'searchfull']" update="results" before="hideDecisionShowResults();">
+							url="[controller:'search', action:'searchfull']" update="results" after="hideDecisionShowResults();">
 							<div class="container">
 								<h2>Αναζήτηση</h2>
 								<p>Πραγματοποιήστε σύνθετες αναζητήσεις, αναλόγως τι

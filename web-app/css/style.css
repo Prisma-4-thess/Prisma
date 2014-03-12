@@ -320,7 +320,8 @@ body {
 }
 /* -- Dim: vertical search fields */
 #portfoliolist li {
-	clear: left;
+	/*clear: left;*/
+	display: inline;
 }
 
 .portfolio-wrapper {
