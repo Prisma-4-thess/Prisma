@@ -224,6 +224,9 @@ body {
 	text-align: left;
 	border-collapse: collapse;
 }
+#one-column-emphasis{
+	margin: 1em;
+}
 
 #one-column-emphasis th {
 	font-size: 14px;
@@ -343,11 +346,11 @@ body {
 }
 
 #rounded-corner thead th.rounded-company {
-	background: #85FEE6 url('table-images/left.png') left -1px no-repeat;
+	background: #85FEE6 left -1px no-repeat;
 }
 
 #rounded-corner thead th.rounded-q4 {
-	background: #85FEE6 url('table-images/right.png') right -1px no-repeat;
+	background: #85FEE6 right -1px no-repeat;
 }
 
 #rounded-corner th {
@@ -366,12 +369,12 @@ body {
 }
 
 #rounded-corner tfoot td.rounded-foot-left {
-	background: #C2FFF3 url('table-images/botleft.png') left bottom
+	background: #C2FFF3 left bottom
 		no-repeat;
 }
 
 #rounded-corner tfoot td.rounded-foot-right {
-	background: #C2FFF3 url('table-images/botright.png') right bottom
+	background: #C2FFF3 right bottom
 		no-repeat;
 }
 
@@ -385,7 +388,7 @@ body {
 	width: 100%;
 	text-align: left;
 	border-collapse: collapse;
-	background: url('table-images/blurry.jpg') 330px 59px no-repeat;
+	background: 330px 59px no-repeat;
 }
 
 #background-image th {
@@ -406,7 +409,7 @@ body {
 }
 
 #background-image tbody td {
-	background: url('table-images/back.png');
+	
 }
 
 * html #background-image tbody td {
@@ -439,7 +442,7 @@ body {
 	font-size: 13px;
 	font-weight: normal;
 	padding: 8px;
-	background: #85FEE6 url('table-images/gradhead.png') repeat-x;
+	background: #85FEE6 repeat-x;
 	border-top: 2px solid #C2FFF3;
 	border-bottom: 1px solid #fff;
 	color: #10715D;
@@ -450,7 +453,7 @@ body {
 	border-bottom: 1px solid #fff;
 	color: #10715D;
 	border-top: 1px solid #fff;
-	background: #C2FFF3 url('table-images/gradback.png') repeat-x;
+	background: #C2FFF3 repeat-x;
 }
 
 #gradient-style tfoot tr td {
@@ -460,7 +463,7 @@ body {
 }
 
 #gradient-style tbody tr:hover td {
-	background: #C2FFF3 url('table-images/gradhover.png') repeat-x;
+	background: #C2FFF3 repeat-x;
 	color: #10715D;
 }
 
@@ -470,11 +473,11 @@ body {
 	width: 100%;
 	text-align: left;
 	border-collapse: collapse;
-	background: url('table-images/pattern.png');
+
 }
 
 #pattern-style-a thead tr {
-	background: url('table-images/pattern-head.png');
+
 }
 
 #pattern-style-a th {
@@ -503,11 +506,11 @@ body {
 	width: 100%;
 	text-align: left;
 	border-collapse: collapse;
-	background: url('table-images/patternb.png');
+
 }
 
 #pattern-style-b thead tr {
-	background: url('table-images/patternb-head.png');
+
 }
 
 #pattern-style-b th {

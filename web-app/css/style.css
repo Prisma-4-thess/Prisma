@@ -1316,3 +1316,11 @@ body {
 div.blog{
 	background-color:#C2FFF3;
 }
+
+#pagination{
+	font-size: 12px;
+	margin: 0.5em;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+}

@@ -91,7 +91,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<p>Πραγματοποιήστε σύνθετες αναζητήσεις, αναλόγως τι
 									ψάχνετε.</p>
 								<div class="search_table">
-									<script>
+									<script type="text/javascript">
 										function clearAll() {
 											document.getElementById(
 													"searchForm").reset();

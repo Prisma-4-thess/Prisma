@@ -14,7 +14,7 @@
 		
 		<div class="pagination search_table">
 			<util:remotePaginate controller="search" action="list"
-				total="${decisionInstanceTotal}" update="list-decision" id="one-column-emphasis"/>
+				total="${decisionInstanceTotal}" update="list-decision" id="pagination"/>
 		</div>
 		
 		<g:render template="/common/table_results" />
