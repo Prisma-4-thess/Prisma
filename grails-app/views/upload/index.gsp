@@ -47,12 +47,14 @@
 			<g:datePicker name="date" precision="day" default="none"
 				noSelection="[' ':'-No Selection-']" />
 			<br />
-			<input type="file" name="myFile" />
-			<richui:map showStartMarker="false" markers="${mark}" zoomLevel="11" />
-			${mark[0].latitude}
-			<input type="hidden" name="lat" value="${mark[0].latitude}"/>
+			<input type="text" id="latitude" name="latitude" />
+			<input type="text" id="longitude" name="longitude" />
+			
+<richui:googlemaps mapStyle="width: 350px; height: 200px;" style="width: 300px;" 
+               lat="${address?.latitude}" lng="${address?.longitude}" latId="latitude" lngId="longitude" draggable="true" />    
 			<input type="submit" />
 		</g:uploadForm>
+		
 	</div>
 </body>
 </html>

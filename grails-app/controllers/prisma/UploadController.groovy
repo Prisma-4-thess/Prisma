@@ -4,14 +4,14 @@ import grails.plugin.springsecurity.annotation.Secured
 class UploadController {
 
 	def index() {
-		def marker=new Map[1]
-		marker[0] = [latitude:'40', longitude:'36', draggable:'true',description:'ds']
-		[typ:Type.list(),tag:Tag.list(),un:Unit.list(),mark:marker]
+		 def marker=new Map[1]
+		def address = [latitude:'40', longitude:'36']
+		[typ:Type.list(),tag:Tag.list(),un:Unit.list(),address:address,t:'a']
 	}
 	def error(){
 	}
 	def upload(){
-		println params.lat
+		println 'lat'+params.latitude
 		def f = request.getFile('myFile')
 		if (f.empty) {
 			flash.message = 'file cannot be empty'
