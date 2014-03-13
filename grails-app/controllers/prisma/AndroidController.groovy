@@ -128,4 +128,24 @@ class AndroidController {
 		def res= [marker:marker]
 		render res as JSON
 	}
+	def predef(){
+		def dec=new Decision()
+		def geo=new Geo()
+		dec=Decision.get(params.did)
+		geo=Geo.get(params.gid)
+		def p=new Predefined()
+		p.decision=dec
+		p.geo=geo
+		def res
+		if(p.validate()){
+			p.save(flush: true)
+		res=[status:'success']
+		}else{
+		res=[status:'fail']
+		}
+		render res as JSON
+	}
+	def userdef(){
+		
+	}
 }
