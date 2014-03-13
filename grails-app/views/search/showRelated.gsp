@@ -5,19 +5,30 @@
 <body>
 	<div id="timelineContainer" class="timelineContainer">
 		<div class="timelineMajor">
-			<h2 class="timelineMajorMarker">${dec?.ada}</h2>
+			<h2 class="timelineMajorMarker">
+				${dec?.ada}
+			</h2>
 			<g:each in="${relDec}">
-			<dl class="timelineMinor">
-				<dt id="${it?.ada}">
-					<a>${it?.ada}</a>
-				</dt>
-				<dd class="timelineEvent" id="${it?.ada+"EX"}" style="display: none;">
-					<p>${it?.subject}</p>
-				</dd>
-				<!-- /.timelineEvent -->
-			</dl>
+				<dl class="timelineMinor">
+					<dt id="${it?.ada}">
+						<a>
+							${it?.ada}
+						</a>
+
+					</dt>
+					<dd class="timelineEvent" id="${it?.ada+"EX"}"
+						style="display: none;">
+						<p>
+							${it?.date}
+						</p>
+						<p>
+							${it?.subject}
+						</p>
+					</dd>
+					<!-- /.timelineEvent -->
+				</dl>
 			</g:each>
-			
+
 		</div>
 		<script>
 			$(document).ready(function() {
