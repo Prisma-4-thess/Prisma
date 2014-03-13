@@ -319,11 +319,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							url="[controller:'contact', action:'index']">
 
 							<input name="name" type="text" class="textbox"
-								value="Your Name" onfocus="this.value = '';"
-								onblur="if (this.value == '') {this.value = 'Your  Name';}" />
+								value="Ονοματεπώνυμο" onfocus="this.value = '';"
+								onblur="if (this.value == '') {this.value = 'Ονοματεπώνυμο';}" />
 							<input name="email" type="text" class="textbox"
-								value="Your Email" onfocus="this.value = '';"
-								onblur="if (this.value == '') {this.value = 'Your Email';}" />
+								value="Email" onfocus="this.value = '';"
+								onblur="if (this.value == '') {this.value = 'Email';}" />
 
 							<%--<g:textField name="email" type="text" class="textbox"
 								value="Your Email" onfocus="this.value = '';"
@@ -332,8 +332,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="clear"></div>
 
 							<div>
-								<textarea name="message" value="Your Message:" onfocus="this.value = '';"
-									onblur="if (this.value == '') {this.value = 'Your Message';}">Your Message...</textarea>
+								<textarea name="message" value="Το μήνυμά σας:" onfocus="this.value = '';"
+									onblur="if (this.value == '') {this.value = 'Το μήνυμά σας...';}">Το μήνυμά σας...</textarea>
 							</div>
 							<%--<span><input type="submit" class="" value="Submit"></span>
 							--%>
