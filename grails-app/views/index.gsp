@@ -85,7 +85,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="gallery">
 						<div class="clear"></div>
 						<g:formRemote id="searchForm" name="full_search"
-							url="[controller:'search', action:'searchfull']" update="results" after="hideDecisionShowResults();">
+							url="[controller:'search', action:'searchfull']" update="results"
+							after="hideDecisionShowResults();">
 							<div class="container">
 								<h2>Αναζήτηση</h2>
 								<p>Πραγματοποιήστε σύνθετες αναζητήσεις, αναλόγως τι
@@ -99,15 +100,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											document
 													.getElementById("portfoliolist").style["display"] = "inline-block";
 										}
-										function hideResultsShowDecision(){
+										function hideResultsShowDecision() {
 											document.getElementById("results").style["display"] = "none";
 											document.getElementById("decision").style["display"] = "block";
-											}
+										}
 
-										function hideDecisionShowResults(){
+										function hideDecisionShowResults() {
 											document.getElementById("results").style["display"] = "block";
 											document.getElementById("decision").style["display"] = "none";
-											}
+										}
 									</script>
 									<ul id="filters" class="clearfix">
 										<li><span class="filter" data-filter="ada"
@@ -172,12 +173,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<li><div class="portfolio fromDate" data-cat="fromDate">
 													<label for="fromDate">From Date:<br /></label>
 													<g:datePicker name="fromDate" precision="day"
-														noSelection="['':'-No Selection-']" default="none" years="${Calendar.instance.get(Calendar.YEAR)..2010}"/>
+														noSelection="['':'-No Selection-']" default="none"
+														years="${Calendar.instance.get(Calendar.YEAR)..2010}" />
 												</div></li>
 											<li><div class="portfolio toDate" data-cat="toDate">
 													<label for="toDate">To Date:<br /></label>
 													<g:datePicker name="toDate" precision="day"
-														noSelection="['':'-No Selection-']" default="none" years="${Calendar.instance.get(Calendar.YEAR)..2010}"/>
+														noSelection="['':'-No Selection-']" default="none"
+														years="${Calendar.instance.get(Calendar.YEAR)..2010}" />
 												</div></li>
 											<li><input name="pageId" type="hidden" value="home" /></li>
 										</ul>
@@ -312,23 +315,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="section group">
 				<div class="col span_2_of_3">
 					<div class="contact-form">
-						<form method="post" action="#">
+						<g:formRemote id="contactForm" name="contact_form"
+							url="[controller:'contact', action:'index']">
 
-							<input type="text" class="textbox" value="Your Name"
-								onfocus="this.value = '';"
-								onblur="if (this.value == '') {this.value = 'Your  Name';}">
-							<input type="text" class="textbox" value="Your Email"
-								onfocus="this.value = '';"
-								onblur="if (this.value == '') {this.value = 'Your Email';}">
+							<input name="name" type="text" class="textbox"
+								value="Your Name" onfocus="this.value = '';"
+								onblur="if (this.value == '') {this.value = 'Your  Name';}" />
+							<input name="email" type="text" class="textbox"
+								value="Your Email" onfocus="this.value = '';"
+								onblur="if (this.value == '') {this.value = 'Your Email';}" />
+
+							<%--<g:textField name="email" type="text" class="textbox"
+								value="Your Email" onfocus="this.value = '';"
+								onblur="if (this.value == '') {this.value = 'Your Email';}" />
+							--%>
 							<div class="clear"></div>
 
 							<div>
-								<textarea value="Your Message:" onfocus="this.value = '';"
+								<textarea name="message" value="Your Message:" onfocus="this.value = '';"
 									onblur="if (this.value == '') {this.value = 'Your Message';}">Your Message...</textarea>
 							</div>
-							<span><input type="submit" class="" value="Submit"></span>
+							<%--<span><input type="submit" class="" value="Submit"></span>
+							--%>
+							<span><g:submitButton name="Submit" type="submit" class=""
+									value="Submit" /></span>
 							<div class="clear"></div>
-						</form>
+						</g:formRemote>
 					</div>
 				</div>
 				<div class="col span_1_of_3">

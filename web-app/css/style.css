@@ -1314,6 +1314,11 @@ body {
 .mapViewClass>div img {
 	max-width: none;
 }
+#portfoliolist .yui-ac-bd li{
+	display: inline-block;
+	
+}
+
 
 #mapView {
 	width: 100%;
