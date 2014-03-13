@@ -19,9 +19,6 @@
 					</g:if> <g:else>
 						<g:remoteLink before="hideDecisionShowResults();">←</g:remoteLink>
 					</g:else></th>
-				<th><g:if test="${relDec}">
-					<g:remoteLink action="showRelated" params="[decision:decision,relDec:relDec]" update="related">Relative</g:remoteLink>
-					</g:if></th>
 			</tr>
 			<g:if test="${dec2}">
 
@@ -135,15 +132,32 @@
 					<td>
 				</tr>
 			</g:if>
-			<td><a href="${decision.documentUrl}">Pdf Απόφασης</a></td>
+			<tr>
+				<td><a href="${decision.documentUrl}">Pdf Απόφασης</a></td>
+			</tr>
+			<tr>
+				<td><g:if test="${relDec}">
+						<g:remoteLink action="showRelated"
+							params="['decisionId':decision.id]" update="related">Σχετικές αποφάσεις</g:remoteLink>
+					</g:if></td>
+			</tr>
+			<tr>
+				<th><g:if test="${source=="map"}">
+						<g:link mapping="rootUrl">←</g:link>
+					</g:if> <g:else>
+						<g:remoteLink before="hideDecisionShowResults();">←</g:remoteLink>
+					</g:else></th>
+			</tr>
 		</table>
-		
+
 		<div id="related"></div>
-		
-		<g:remoteLink controller="search" action="blog" id="${decision.ada}"
-			update="blog">enable blog</g:remoteLink>
-		<div id="blog" class="blog">
-			<p>Η λειτουργία του σχολιασμού είναι ανενεργή</p>
+
+		<div id="comments" style="display: none;">
+			<g:remoteLink controller="search" action="blog" id="${decision.ada}"
+				update="blog">enable blog</g:remoteLink>
+			<div id="blog" class="blog">
+				<p>Η λειτουργία του σχολιασμού είναι ανενεργή</p>
+			</div>
 		</div>
 	</div>
 </body>

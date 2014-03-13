@@ -189,17 +189,19 @@ class SearchController {
 				eq("ada",dec.ada)
 			}
 		}
-		
+
 		def relativeDecisions = new RelativeDecision()
-		relativeDecisions = RelativeDecision.createCriteria().list{
-			eq("finalDec",dec)
-		}
+		relativeDecisions = RelativeDecision.createCriteria().list{ eq("finalDec",dec) }
 		//println "relative decisions: "+relativeDecisions.relatedDec
 		[decision:dec,ext:dec_ext,org:org,dec2:dec2,relDec:relativeDecisions.relatedDec,source:params.source]
 	}
 	def showRelated(){
-		println "decision: "+ params.decision+" related: "+ params.relDec
-		[decision:params.decision,relDec:params.relDec]
+
+		def dec=Decision.get(params.decisionId)
+		def relativeDecisions = new RelativeDecision()
+		relativeDecisions = RelativeDecision.createCriteria().list{ eq("finalDec",dec) }
+		println "decision: "+ dec+" related: "+ relativeDecisions.relatedDec
+		[dec:dec,relDec:relativeDecisions.relatedDec]
 	}
 
 	def list() {
