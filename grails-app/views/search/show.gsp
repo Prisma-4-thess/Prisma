@@ -19,6 +19,9 @@
 					</g:if> <g:else>
 						<g:remoteLink before="hideDecisionShowResults();">←</g:remoteLink>
 					</g:else></th>
+				<th><g:if test="${relDec}">
+					<g:remoteLink action="showRelated" params="[decision:decision,relDec:relDec]" update="related">Relative</g:remoteLink>
+					</g:if></th>
 			</tr>
 			<g:if test="${dec2}">
 
@@ -134,6 +137,9 @@
 			</g:if>
 			<td><a href="${decision.documentUrl}">Pdf Απόφασης</a></td>
 		</table>
+		
+		<div id="related"></div>
+		
 		<g:remoteLink controller="search" action="blog" id="${decision.ada}"
 			update="blog">enable blog</g:remoteLink>
 		<div id="blog" class="blog">
