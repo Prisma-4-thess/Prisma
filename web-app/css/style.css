@@ -1294,6 +1294,7 @@ body {
 
 #results {
 	/*float: right;*/
+	
 }
 
 #portfoliolist {
@@ -1301,23 +1302,29 @@ body {
 }
 
 /* ---Sbond--- */
-#map{
+#map {
 	
 }
-.mapViewClass{
+
+.mapViewClass {
 	width: 100%;
-	height:30em;
-}
-#mapView{
-	width: 100%;
-	height:30em;
+	height: 30em;
 }
 
-div.blog{
-	background-color:#C2FFF3;
+.mapViewClass>div img {
+	max-width: none;
 }
 
-#pagination{
+#mapView {
+	width: 100%;
+	height: 30em;
+}
+
+div.blog {
+	background-color: #C2FFF3;
+}
+
+#pagination {
 	font-size: 12px;
 	margin: 0.5em;
 	width: 100%;
