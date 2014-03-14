@@ -2,7 +2,7 @@ package prisma
 
 import org.springframework.dao.DataIntegrityViolationException
 import grails.plugin.springsecurity.annotation.Secured
-@Secured(['permitAll'])
+@Secured(['ROLE_ADMIN'])
 class UserdefgeoController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
