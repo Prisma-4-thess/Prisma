@@ -133,7 +133,8 @@
 				</tr>
 			</g:if>
 			<tr>
-				<td><a href="${decision.documentUrl}" target="_blank">Pdf Απόφασης</a></td>
+				<td><a href="${decision.documentUrl}" target="_blank">Pdf
+						Απόφασης</a></td>
 			</tr>
 			<tr>
 				<td><g:if test="${relDec}">

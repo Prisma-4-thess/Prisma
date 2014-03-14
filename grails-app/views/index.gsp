@@ -326,7 +326,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									var mes = ${mes}
 							</g:javascript>
 							<script type="text/javascript">
-									function pop() {								
+								function pop() {
 									$('#contact_resp').fadeIn('slow');
 									$('#contact_resp').delay(2000).fadeOut(
 											'slow');
