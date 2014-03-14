@@ -21,10 +21,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="header">
 				<!--------start-logo------>
 				<div class="logo">
-					<g:link mapping="rootUrl">
-						<img src="${resource(dir: 'images', file: 'site-logo.png')}"
-							alt="" />
-					</g:link>
+
+					<img src="${resource(dir: 'images', file: 'site-logo.png')}" alt="" />
+
 				</div>
 				<!--------end-logo--------->
 
@@ -298,14 +297,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!---------end-about------------>
-	<!---------start-map------------>
-	<div id="map">
-		<script type="text/javascript">
-			<g:remoteFunction controller="map" action="homepage" update="mapView"/>;
-		</script>
-		<div id="mapView"></div>
-	</div>
-	<!---------end-map------------>
+
 	<!---------start-contact------------>
 	<div class="contact" id="contact">
 		<div class="wrap">
@@ -321,8 +313,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<input name="name" type="text" class="textbox"
 								value="Ονοματεπώνυμο" onfocus="this.value = '';"
 								onblur="if (this.value == '') {this.value = 'Ονοματεπώνυμο';}" />
-							<input name="email" type="text" class="textbox"
-								value="Email" onfocus="this.value = '';"
+							<input name="email" type="text" class="textbox" value="Email"
+								onfocus="this.value = '';"
 								onblur="if (this.value == '') {this.value = 'Email';}" />
 
 							<%--<g:textField name="email" type="text" class="textbox"
@@ -332,7 +324,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="clear"></div>
 
 							<div>
-								<textarea name="message" value="Το μήνυμά σας:" onfocus="this.value = '';"
+								<textarea name="message" value="Το μήνυμά σας:"
+									onfocus="this.value = '';"
 									onblur="if (this.value == '') {this.value = 'Το μήνυμά σας...';}">Το μήνυμά σας...</textarea>
 							</div>
 							<%--<span><input type="submit" class="" value="Submit"></span>
@@ -388,6 +381,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 
 	</div>
+
+	<!---------start-map------------>
+	<div id="map">
+		<script type="text/javascript">
+			<g:remoteFunction controller="map" action="homepage" update="mapView"/>;
+		</script>
+		<div id="mapView"></div>
+	</div>
+	<!---------end-map------------>
 
 	<!----start-footer---------->
 	<div class="footer-bottom">
