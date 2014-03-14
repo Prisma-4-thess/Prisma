@@ -309,7 +309,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="contact-form">
 						<g:formRemote id="contactForm" name="contact_form"
 							url="[controller:'Maincontact', action:'index']"
-							onComplete="pop()" update="contact_resp">
+							onComplete="pop();" update="contact_resp">
 
 							<input name="name" type="text" class="textbox"
 								value="Ονοματεπώνυμο" onfocus="this.value = '';"
@@ -317,16 +317,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<input name="email" type="text" class="textbox" value="Email"
 								onfocus="this.value = '';"
 								onblur="if (this.value == '') {this.value = 'Email';}" />
-							<div id="contact_resp">
+							
 								<g:javascript>
-var mes = ${mes}
+									var mes = ${mes}
 								</g:javascript>
-								<script>
+									<script type="text/javascript">
 									function pop() {
-										alert(mes);
+										//alert(${mes});
+										 $('#contact_resp').fadeIn('slow');
+										 $('#contact_resp').delay(2000).fadeOut('slow');
 									}
 								</script>
-							</div>
+							
 							<%--<g:textField name="email" type="text" class="textbox"
 								value="Your Email" onfocus="this.value = '';"
 								onblur="if (this.value == '') {this.value = 'Your Email';}" />
@@ -340,8 +342,11 @@ var mes = ${mes}
 							</div>
 							<%--<span><input type="submit" class="" value="Submit"></span>
 							--%>
+							<div>
+							<span id="contact_resp" style="display:none;"></span>
 							<span><g:submitButton name="Submit" type="submit" class=""
-									value="Submit" /></span>
+									value="Αποστολη" /></span>
+									</div>
 							<div class="clear"></div>
 						</g:formRemote>
 					</div>
