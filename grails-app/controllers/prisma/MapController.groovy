@@ -33,7 +33,7 @@ class MapController {
 	def homepage() {
 		def decisionG=new Decision()
 		decisionG=Decision.createCriteria().list{ isNotNull("geo") }
-		println 'size'+decisionG.size()
+		println 'size: '+decisionG.size()
 		def lat,lon,dr,ds
 		def marker=new Map[decisionG.size()]
 		int i=0

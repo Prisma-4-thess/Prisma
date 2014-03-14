@@ -21,10 +21,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="header">
 				<!--------start-logo------>
 				<div class="logo">
-					<g:link mapping="rootUrl">
-						<img src="${resource(dir: 'images', file: 'site-logo.png')}"
-							alt="" />
-					</g:link>
+
+					<img src="${resource(dir: 'images', file: 'site-logo.png')}" alt="" />
+
 				</div>
 				<!--------end-logo--------->
 
@@ -298,14 +297,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!---------end-about------------>
-	<!---------start-map------------>
-	<div id="map">
-		<script type="text/javascript">
-			<g:remoteFunction controller="map" action="homepage" update="mapView"/>;
-		</script>
-		<div id="mapView"></div>
-	</div>
-	<!---------end-map------------>
+
 	<!---------start-contact------------>
 	<div class="contact" id="contact">
 		<div class="wrap">
@@ -399,6 +391,15 @@ var mes = ${mes}
 		</div>
 
 	</div>
+
+	<!---------start-map------------>
+	<div id="map">
+		<script type="text/javascript">
+			<g:remoteFunction controller="map" action="homepage" update="mapView"/>;
+		</script>
+		<div id="mapView"></div>
+	</div>
+	<!---------end-map------------>
 
 	<!----start-footer---------->
 	<div class="footer-bottom">
