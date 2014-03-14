@@ -28,7 +28,7 @@
 		<g:each in="${results}" status="i" var="decisionInstance">
 			<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
-				<td><g:remoteLink action="show" id="${decisionInstance.id}" update="decision" before="hideResultsShowDecision();" params="['source':source]">
+				<td><g:remoteLink action="show" id="${decisionInstance.id}" update="decision" onComplete="hideResultsShowDecision();" params="['source':source]">
 						${decisionInstance.ada}
 					</g:remoteLink></td>
 
