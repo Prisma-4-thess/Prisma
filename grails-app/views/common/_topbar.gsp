@@ -2,9 +2,15 @@
 
 <sec:ifLoggedIn>
 
-	<li><g:link url="/Prisma/admin_panel">
-			${sec.username()}
-		</g:link></li>|<li><g:link controller="logout" action="index">
+	<li><g:if test="sec.username()=='admin'">
+			<g:link mapping="adminPanel">
+				${sec.username()}
+			</g:link>
+		</g:if> <g:else>
+			<g:link url="#">
+				${sec.username()}
+			</g:link>
+		</g:else></li>|<li><g:link controller="logout" action="index">
 			<g:message code="topbar.logout" />
 		</g:link></li>
 </sec:ifLoggedIn>
