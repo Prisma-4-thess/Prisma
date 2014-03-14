@@ -316,25 +316,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col span_2_of_3">
 					<div class="contact-form">
 						<g:formRemote id="contactForm" name="contact_form"
-							url="[controller:'Maincontact', action:'index']" onComplete="pop()" update="contact_resp">
+							url="[controller:'Maincontact', action:'index']"
+							onComplete="pop()" update="contact_resp">
 
 							<input name="name" type="text" class="textbox"
 								value="Ονοματεπώνυμο" onfocus="this.value = '';"
 								onblur="if (this.value == '') {this.value = 'Ονοματεπώνυμο';}" />
-							<input name="email" type="text" class="textbox"
-								value="Email" onfocus="this.value = '';"
+							<input name="email" type="text" class="textbox" value="Email"
+								onfocus="this.value = '';"
 								onblur="if (this.value == '') {this.value = 'Email';}" />
-<div id="contact_resp">
-<g:javascript>
-var mes = ${mes} 
-</g:javascript>
-<script>
-function pop()
-{
-alert(mes);
-}
-</script>
-</div>
+							<div id="contact_resp">
+								<g:javascript>
+var mes = ${mes}
+								</g:javascript>
+								<script>
+									function pop() {
+										alert(mes);
+									}
+								</script>
+							</div>
 							<%--<g:textField name="email" type="text" class="textbox"
 								value="Your Email" onfocus="this.value = '';"
 								onblur="if (this.value == '') {this.value = 'Your Email';}" />
@@ -342,7 +342,8 @@ alert(mes);
 							<div class="clear"></div>
 
 							<div>
-								<textarea name="message" value="Το μήνυμά σας:" onfocus="this.value = '';"
+								<textarea name="message" value="Το μήνυμά σας:"
+									onfocus="this.value = '';"
 									onblur="if (this.value == '') {this.value = 'Το μήνυμά σας...';}">Το μήνυμά σας...</textarea>
 							</div>
 							<%--<span><input type="submit" class="" value="Submit"></span>
