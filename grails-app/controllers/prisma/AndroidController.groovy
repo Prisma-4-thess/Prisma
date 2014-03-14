@@ -146,6 +146,26 @@ class AndroidController {
 		render res as JSON
 	}
 	def userdef(){
-		
+		def geoD=new Userdefgeo()
+		def dec=new Userdefdec()
+		geoD.latitude=params.lat.toDouble()
+		geoD.longitude=params.lng.toDouble()
+		geoD.namegrk=params.ngrk
+		geoD.address=params.adr
+		def res
+		if(geoD.validate()){
+			geoD.save(flush: true)
+			dec.decision=Decision.get(params.did)
+			dec.geo=Userdefgeo.get(geoD.id)
+			if(dec.validate()){
+				dec.save(flush: true)
+				res=[status:'success']
+			}else{
+			res=[status:'fail']
+			}
+		}else{
+		res=[status:'fail']
+		}
+		render res as JSON
 	}
 }
