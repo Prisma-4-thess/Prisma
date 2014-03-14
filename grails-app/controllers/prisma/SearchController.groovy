@@ -8,6 +8,7 @@ class SearchController {
 	def decision = new Decision()
 	def offset = "0"
 	def static maxToShow = 10
+	def static maxResults = 500
 
 	def index() {
 	}
@@ -26,6 +27,7 @@ class SearchController {
 		def c = Decision.createCriteria()
 		decision = c.list {
 			like("ada","%"+params.ada+"%")
+			maxResults(maxResults)
 		}
 		def toShow = Math.min(maxToShow, decision.size())
 		println "toShow: "+toShow
@@ -63,6 +65,7 @@ class SearchController {
 			if(params.fromDate!=null){
 				ge("date",params.fromDate)
 			}
+			maxResults(maxResults)
 		}
 		def toShow = Math.min(maxToShow, decision.size())
 		println "toShow: "+toShow
@@ -110,6 +113,7 @@ class SearchController {
 			if(params.fromDate!=null){
 				ge("date",params.fromDate)
 			}
+			maxResults(maxResults)
 		}
 
 		def toShow = Math.min(maxToShow, decision.size())
@@ -159,6 +163,7 @@ class SearchController {
 				if(!params.signer.empty) like("firstName","%"+first+"%")
 				if(!params.signer.empty) like("lastName","%"+last+"%")
 			}
+			maxResults(maxResults)
 		}
 		def toShow = Math.min(maxToShow, decision.size())
 		println "toShow: "+toShow
