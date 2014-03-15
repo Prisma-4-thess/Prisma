@@ -72,15 +72,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="main">
 				<!-- start gallery  -->
 				<div class="gallery1">
-					<!--start-mfp -->
-					<!-- <div id="small-dialog1" class="mfp-hide">
-								<div class="pop_up">
-									<h2>Lorem ipsum sit amet</h2>
-									<img src="web/images/icon1.png" alt=""/>
-									<p class="para">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-								</div>
-							</div> -->
-					<!--end-mfp -->
 					<!---start-content---->
 					<div class="gallery">
 						<div class="clear"></div>
