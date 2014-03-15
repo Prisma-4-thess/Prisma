@@ -1337,6 +1337,38 @@ div.blog {
 	border-collapse: collapse;
 }
 
+.contact-form #contact_resp {
+	font-family: 'Ubuntu', sans-serif;
+	color: #fff;
+	padding: 0.8em 1.5em;
+	background: #1BBC9B;
+	border: 1px solid #1BBC9B;
+	/*display: block;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;*/
+	cursor: default;
+	font-size: 1em;
+	outline: none;
+	text-transform: uppercase;
+	float: left;
+	margin-right: 2%;
+	vertical-align:baseline;
+	}
+	
+	.spinner {
+	background: url(../images/spinner_alt.gif) 50% 50% no-repeat transparent;
+	/* height: 16px;
+	width: 16px; */
+	padding: 0.5em;
+	position: absolute;
+	/* right: 0;
+	top: 0; */
+	text-indent: -9999px;
+}
+
 /* ============ TIMELINE ============= */
 .timelineContainer {
 	border-left: 2px solid #ccc;

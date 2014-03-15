@@ -5,7 +5,7 @@
 <meta name="layout" content="homepage_main" />
 <link rel="stylesheet" type="text/css"
 	href="${resource(dir: 'css', file: 'table.css')}" />
-<resource:richTextEditor type="medium" />
+
 
 
 <g:javascript library="jquery" />
@@ -16,8 +16,10 @@
 			<tr>
 				<th><g:if test="${source=="map"}">
 						<g:link mapping="rootUrl">←</g:link>
-					</g:if> <g:else>
-						<g:remoteLink before="hideDecisionShowResults();">←</g:remoteLink>
+					</g:if> <g:elseif test="${source=="home"}">
+						<g:remoteLink onComplete="hideDecisionShowResults();">←</g:remoteLink>
+					</g:elseif> <g:else>
+						<g:link mapping="admin_panel">←</g:link>
 					</g:else></th>
 			</tr>
 			<g:if test="${dec2}">
@@ -27,7 +29,8 @@
 						<th><font color="red">Η παρούσα απόφαση έχει διορθωθεί
 								από την: <g:remoteLink controller="search" action="show"
 									id="${it.id}" update="decision"
-									before="hideResultsShowDecision();">
+									onComplete="hideResultsShowDecision();"
+									params="['source':source]">
 									${it.ada}
 								</g:remoteLink>
 						</font></th>
@@ -133,7 +136,8 @@
 				</tr>
 			</g:if>
 			<tr>
-				<td><a href="${decision.documentUrl}" target="_blank">Pdf Απόφασης</a></td>
+				<td><a href="${decision.documentUrl}" target="_blank">Pdf
+						Απόφασης</a></td>
 			</tr>
 			<tr>
 				<td><g:if test="${relDec}">
@@ -145,7 +149,7 @@
 				<th><g:if test="${source=="map"}">
 						<g:link mapping="rootUrl">←</g:link>
 					</g:if> <g:else>
-						<g:remoteLink before="hideDecisionShowResults();">←</g:remoteLink>
+						<g:remoteLink onComplete="hideDecisionShowResults();">←</g:remoteLink>
 					</g:else></th>
 			</tr>
 		</table>

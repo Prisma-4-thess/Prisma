@@ -34,8 +34,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li class="active"><a href="#home" class="scroll">Home</a></li>
 						<li><a href="#portfolio" class="scroll">Αναζητηση</a></li>
 						<li><a href="#about" class="scroll">Σχετικα με εμας</a></li>
-						<li><a href="#map" class="scroll">Χαρτης</a></li>
 						<li><a href="#contact" class="scroll">Eπικοινωνια</a></li>
+						<li><a href="#map" class="scroll">Χαρτης</a></li>
 						<li><g:render template="/common/topbar" /></li>
 						<div class="clear"></div>
 					</ul>
@@ -85,7 +85,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="clear"></div>
 						<g:formRemote id="searchForm" name="full_search"
 							url="[controller:'search', action:'searchfull']" update="results"
-							after="hideDecisionShowResults();">
+							onComplete="hideDecisionShowResults();">
 							<div class="container">
 								<h2>Αναζήτηση</h2>
 								<p>Πραγματοποιήστε σύνθετες αναζητήσεις, αναλόγως τι
@@ -123,6 +123,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											onClick="clearAll();">Πληρης</span></li>
 										<li><g:submitButton class="search_button" name=" " /></li>
 										<li><input type='reset' class="clear_button" value=' ' /></li>
+										<li><div id="spinner" class="spinner"
+												style="display: none;">
+												<g:message code="spinner.alt" default="Loading&hellip;" />
+											</div></li>
 									</ul>
 
 								</div>
@@ -309,7 +313,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="contact-form">
 						<g:formRemote id="contactForm" name="contact_form"
 							url="[controller:'Maincontact', action:'index']"
-							onComplete="pop()" update="contact_resp">
+							onComplete="pop();" update="contact_resp">
 
 							<input name="name" type="text" class="textbox"
 								value="Ονοματεπώνυμο" onfocus="this.value = '';"
@@ -317,16 +321,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<input name="email" type="text" class="textbox" value="Email"
 								onfocus="this.value = '';"
 								onblur="if (this.value == '') {this.value = 'Email';}" />
-							<div id="contact_resp">
-								<g:javascript>
-var mes = ${mes}
-								</g:javascript>
-								<script>
-									function pop() {
-										alert(mes);
-									}
-								</script>
-							</div>
+
+							<g:javascript>
+									var mes = ${mes}
+							</g:javascript>
+							<script type="text/javascript">
+								function pop() {
+									$('#contact_resp').fadeIn('slow');
+									$('#contact_resp').delay(2000).fadeOut(
+											'slow');
+								}
+							</script>
+
 							<%--<g:textField name="email" type="text" class="textbox"
 								value="Your Email" onfocus="this.value = '';"
 								onblur="if (this.value == '') {this.value = 'Your Email';}" />
@@ -340,8 +346,10 @@ var mes = ${mes}
 							</div>
 							<%--<span><input type="submit" class="" value="Submit"></span>
 							--%>
-							<span><g:submitButton name="Submit" type="submit" class=""
-									value="Submit" /></span>
+							<div>
+								<span id="contact_resp" style="display: none;"></span> <span><g:submitButton
+										name="Submit" type="submit" class="" value="Αποστολη" /></span>
+							</div>
 							<div class="clear"></div>
 						</g:formRemote>
 					</div>

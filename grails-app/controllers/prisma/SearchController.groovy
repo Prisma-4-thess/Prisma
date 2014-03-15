@@ -8,6 +8,7 @@ class SearchController {
 	def decision = new Decision()
 	def offset = "0"
 	def static maxToShow = 10
+	def static maxResults = 500
 
 	def index() {
 	}
@@ -26,6 +27,7 @@ class SearchController {
 		def c = Decision.createCriteria()
 		decision = c.list {
 			like("ada","%"+params.ada+"%")
+			maxResults(maxResults)
 		}
 		def toShow = Math.min(maxToShow, decision.size())
 		println "toShow: "+toShow
@@ -63,6 +65,7 @@ class SearchController {
 			if(params.fromDate!=null){
 				ge("date",params.fromDate)
 			}
+			maxResults(maxResults)
 		}
 		def toShow = Math.min(maxToShow, decision.size())
 		println "toShow: "+toShow
@@ -110,6 +113,7 @@ class SearchController {
 			if(params.fromDate!=null){
 				ge("date",params.fromDate)
 			}
+			maxResults(maxResults)
 		}
 
 		def toShow = Math.min(maxToShow, decision.size())
@@ -159,6 +163,7 @@ class SearchController {
 				if(!params.signer.empty) like("firstName","%"+first+"%")
 				if(!params.signer.empty) like("lastName","%"+last+"%")
 			}
+			maxResults(maxResults)
 		}
 		def toShow = Math.min(maxToShow, decision.size())
 		println "toShow: "+toShow
@@ -210,7 +215,8 @@ class SearchController {
 		def toShow = Math.min(Math.abs(decision.size() - params.offset.toInteger()),maxToShow)
 		println "toShow: "+toShow
 		println "remaining: "+ (decision.size())
-		render (template:"/common/decision_list", model:[results:decision.subList(params.offset.toInteger(),params.offset.toInteger() + toShow), decisionInstanceTotal:(decision.size())])
+		println "source: "+params.source
+		render (template:"/common/decision_list", model:[results:decision.subList(params.offset.toInteger(),params.offset.toInteger() + toShow), decisionInstanceTotal:(decision.size()), source:params.source])
 	}
 
 	def sort(){
@@ -233,7 +239,7 @@ class SearchController {
 
 		def toShow = Math.min(Math.abs(decision.size() - offset.toInteger()),maxToShow)
 		println offset+":"+toShow
-		render (template:"/common/table_results", model:[results:decision.subList(offset.toInteger(),offset.toInteger() + toShow), decisionInstanceTotal:(decision.size())])
+		render (template:"/common/table_results", model:[results:decision.subList(offset.toInteger(),offset.toInteger() + toShow), decisionInstanceTotal:(decision.size()), source:params.source])
 	}
 	def blog(){
 		def posts=new Post()

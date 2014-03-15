@@ -14,7 +14,7 @@
 		
 		<div class="pagination search_table">
 			<util:remotePaginate controller="search" action="list"
-				total="${decisionInstanceTotal}" update="list-decision" id="pagination"/>
+				total="${decisionInstanceTotal}" params="['source':source]" update="list-decision" id="pagination"/>
 		</div>
 		
 		<g:render template="/common/table_results" model="['source':source]"/>
@@ -23,5 +23,6 @@
 </g:if>
 <g:else>
 	<p>Καμία απόφαση δεν ταιριάζει στην αναζήτησή σας</p>
+	<p><img alt="" src="${resource(dir: 'images', file: 'spinner_alt.png')}"></p>
 </g:else>
 </body>
