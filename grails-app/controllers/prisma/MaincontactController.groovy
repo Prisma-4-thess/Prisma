@@ -9,6 +9,6 @@ class MaincontactController {
 		c.email=params.email
 		c.message=params.message
 		c.save(flush:true,failOnError:true)
-		[mes:'test']
-	}
+    [mes:'test']
+}
 }

@@ -131,52 +131,52 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<div id="portfoliolist">
 										<ul>
 											<li><div class="portfolio ada" data-cat="ada">
-													<label for="ada">ADA:<br /></label>
+													<label for="ada">ΑΔΑ:<br /></label>
 													<g:textField name="ada" />
 												</div></li>
 											<li><div class="portfolio prot_num" data-cat="prot_num">
-													<label for="prot_num">Protocol Number:<br /></label>
+													<label for="prot_num">Αριθμός Πρωτοκόλου:<br /></label>
 													<g:textField name="prot_num" />
 												</div></li>
 											<li><div class="portfolio unit" data-cat="unit">
-													<label for="unit">Unit:</label>
+													<label for="unit">Μονάδα:</label>
 													<richui:autoComplete name="unit"
 														action="${createLinkTo('dir': 'ajax/unitAJAX')}"
 														onItemSelect="${remoteFunction(controller: 'ajax' , action: 'selUn', params: '\'id=\' + id')}" />
 												</div></li>
 											<li><div class="portfolio org" data-cat="org">
-													<label for="org">Organization:</label>
+													<label for="org">Οργανισμός:</label>
 													<richui:autoComplete name="org"
 														action="${createLinkTo('dir': 'ajax/orgAJAX')}"
 														onItemSelect="${remoteFunction(controller: 'ajax' , action: 'selOrg', params: '\'id=\' + id')}" />
 												</div></li>
 											<li><div class="portfolio signer" data-cat="signer">
-													<label for="signer">Signer:</label>
+													<label for="signer">Τελικός Υπογράφων:</label>
 													<richui:autoComplete name="signer"
 														action="${createLinkTo('dir': 'ajax/signerAJAX')}" />
 												</div></li>
 											<li><div class="portfolio subject" data-cat="subject">
-													<label for="subject">Subject:<br /></label>
+													<label for="subject">Θέμα:<br /></label>
 													<g:textField name="subject" />
 												</div></li>
 											<li><div class="portfolio type" data-cat="type">
-													<label for="type">Type:</label>
+													<label for="type">Τύπος Απόφασης:</label>
 													<richui:autoComplete name="type"
 														action="${createLinkTo('dir': 'ajax/typeAJAX')}" />
 												</div></li>
 											<li><div class="portfolio tag" data-cat="tag">
-													<label for="tag">Tag:</label>
+													<label for="tag">Θεματική Ενότητα:</label>
 													<richui:autoComplete name="tag"
 														action="${createLinkTo('dir': 'ajax/tagAJAX')}" />
 												</div></li>
 											<li><div class="portfolio fromDate" data-cat="fromDate">
-													<label for="fromDate">From Date:<br /></label>
+													<label for="fromDate">Από Ημερομηνία:<br /></label>
 													<g:datePicker name="fromDate" precision="day"
 														noSelection="['':'-No Selection-']" default="none"
 														years="${Calendar.instance.get(Calendar.YEAR)..2010}" />
 												</div></li>
 											<li><div class="portfolio toDate" data-cat="toDate">
-													<label for="toDate">To Date:<br /></label>
+													<label for="toDate">Έως Ημερομηνία<br /></label>
 													<g:datePicker name="toDate" precision="day"
 														noSelection="['':'-No Selection-']" default="none"
 														years="${Calendar.instance.get(Calendar.YEAR)..2010}" />
