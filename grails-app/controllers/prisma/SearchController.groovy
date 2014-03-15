@@ -100,7 +100,15 @@ class SearchController {
 			}
 			unit{
 				organization{
-					like("label","%"+params.org+"%")
+					if(params.org!="null"){
+						println params.org
+						like("label",params.org)
+					}
+					else{
+						println "no org selected"
+						like("label","Δήμος Θεσσαλονίκης")
+						like("label","Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης")
+					}
 				}
 			}
 			signer{
@@ -156,7 +164,15 @@ class SearchController {
 			}
 			unit{
 				organization{
-					like("label","%"+params.org+"%")
+					if(params.org!="null"){
+						println params.org
+						like("label",params.org)
+					}
+					else{
+						println "no org selected"
+						like("label","Δήμος Θεσσαλονίκης")
+						like("label","Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης")
+					}
 				}
 			}
 			signer{
@@ -166,6 +182,7 @@ class SearchController {
 			maxResults(maxResults)
 		}
 		def toShow = Math.min(maxToShow, decision.size())
+
 		println "toShow: "+toShow
 		println "source: "+params.pageId
 
