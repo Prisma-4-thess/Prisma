@@ -33,7 +33,7 @@
 				alt="Grails" />
 		</g:link>
 
-		<g:render template="/common/topbar" />
+		<g:render template="/common/topbar_admin_panel" />
 
 	</div>
 

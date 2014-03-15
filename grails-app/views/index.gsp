@@ -134,9 +134,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 									<div id="portfoliolist">
 										<ul>
-											<li><div class="portfolio ada" data-cat="ada">
+											<li><div id="adaLabel" class="portfolio ada" data-cat="ada">
 													<label for="ada">ΑΔΑ:<br /></label>
 													<g:textField name="ada" />
+													<div class="popup">some text here</div>
 												</div></li>
 											<li><div class="portfolio prot_num" data-cat="prot_num">
 													<label for="prot_num">Αριθμός Πρωτοκόλου:<br /></label>
@@ -150,7 +151,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 												</div></li>
 											<li><div class="portfolio org" data-cat="org">
 													<label for="org">Οργανισμός:</label>
-													<g:select name="org" from="${['Δήμος Θεσσαλονίκης','Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης']}" 
+													<g:select id="org" class="dropdownMenu" name="org" from="${['Δήμος Θεσσαλονίκης','Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης']}" 
 													noSelection="${[null: 'Επιλέξτε Οργανισμό']}"
 													onchange="${remoteFunction(controller:'ajax',action:'selOrg',params:'\'id=\' + this.value') }"/>
 												</div></li>
@@ -173,15 +174,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<richui:autoComplete name="tag"
 														action="${createLinkTo('dir': 'ajax/tagAJAX')}" />
 												</div></li>
-											<li><div class="portfolio fromDate" data-cat="fromDate">
+											<li><div id="fromDate" class="portfolio fromDate" data-cat="fromDate">
 													<label for="fromDate">Από Ημερομηνία:<br /></label>
-													<g:datePicker name="fromDate" precision="day"
+													<g:datePicker id="datePicker" name="fromDate" precision="day"
 														noSelection="['':'-No Selection-']" default="none"
 														years="${Calendar.instance.get(Calendar.YEAR)..2010}" />
 												</div></li>
-											<li><div class="portfolio toDate" data-cat="toDate">
+											<li><div id="toDate" class="portfolio toDate" data-cat="toDate">
 													<label for="toDate">Έως Ημερομηνία<br /></label>
-													<g:datePicker name="toDate" precision="day"
+													<g:datePicker id="datePicker" class="dropdownMenu" name="toDate" precision="day"
 														noSelection="['':'-No Selection-']" default="none"
 														years="${Calendar.instance.get(Calendar.YEAR)..2010}" />
 												</div></li>

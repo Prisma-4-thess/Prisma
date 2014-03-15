@@ -1314,11 +1314,10 @@ body {
 .mapViewClass>div img {
 	max-width: none;
 }
-#portfoliolist .yui-ac-bd li{
-	display: inline-block;
-	
-}
 
+#portfoliolist .yui-ac-bd li {
+	display: inline-block;
+}
 
 #mapView {
 	width: 100%;
@@ -1355,10 +1354,10 @@ div.blog {
 	text-transform: uppercase;
 	float: left;
 	margin-right: 2%;
-	vertical-align:baseline;
-	}
-	
-	.spinner {
+	vertical-align: baseline;
+}
+
+.spinner {
 	background: url(../images/spinner_alt.gif) 50% 50% no-repeat transparent;
 	/* height: 16px;
 	width: 16px; */
@@ -1367,6 +1366,29 @@ div.blog {
 	/* right: 0;
 	top: 0; */
 	text-indent: -9999px;
+}
+
+#adaLabel .popup {
+	display: none;
+}
+
+#adaLabel:hover .popup {
+	display: inline;
+	position: absolute;
+}
+
+#org.dropdownMenu {
+	width: 100%;
+	/*border: 0;*/
+	font: inherit;
+}
+
+#fromDate.fromDate,#toDate.toDate {
+	width: 100%;
+}
+
+#datePicker_day,#datePicker_month,#datePicker_year {
+	font: inherit;
 }
 
 /* ============ TIMELINE ============= */
