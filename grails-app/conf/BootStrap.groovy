@@ -6,6 +6,7 @@ class BootStrap {
 
     def init = { servletContext ->
 		def adminRole = createRole('ROLE_ADMIN')
+		def userRole = createRole('ROLE_USER')
 		User admin = createUser('admin', adminRole)
     }
 		private User createUser(username, role) {

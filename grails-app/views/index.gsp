@@ -150,9 +150,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 												</div></li>
 											<li><div class="portfolio org" data-cat="org">
 													<label for="org">Οργανισμός:</label>
-													<richui:autoComplete name="org"
-														action="${createLinkTo('dir': 'ajax/orgAJAX')}"
-														onItemSelect="${remoteFunction(controller: 'ajax' , action: 'selOrg', params: '\'id=\' + id')}" />
+													<g:select name="org" from="${['Δήμος Θεσσαλονίκης','Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης']}" 
+													noSelection="${[null: 'Επιλέξτε Οργανισμό']}"
+													onchange="${remoteFunction(controller:'ajax',action:'selOrg',params:'\'id=\' + this.value') }"/>
 												</div></li>
 											<li><div class="portfolio signer" data-cat="signer">
 													<label for="signer">Τελικός Υπογράφων:</label>

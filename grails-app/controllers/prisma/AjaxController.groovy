@@ -83,9 +83,6 @@ class AjaxController {
 		}
 	}
 	def unitAJAX(){
-		if(params.query.isEmpty()){
-			uni=null
-		}
 		println 'test'+organ
 		def units = new Unit();
 		if(organ!=null){
@@ -101,6 +98,9 @@ class AjaxController {
 			println 'in'
 			units=Unit.createCriteria().list{
 				like("label","%"+params.query+"%")
+				organization{
+				'in'("label",["Δήμος Θεσσαλονίκης","Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης"])
+				}
 				maxResults(10)
 			}
 		}
@@ -137,48 +137,11 @@ class AjaxController {
 			}
 		}
 	}
-	def orgAJAX(){
-		println 'q:'+params.query
-		println 'o:'+organ
-		println 'u:'+uni
-		def orgs=new Organization()
-		if(params.query.isEmpty()){
-			organ=null
-		}
-		if(!uni.toString().equals("<empty label>")&&uni!=null){
-			println 'unin'
-			orgs = Organization.createCriteria().list{
-				like("label","%"+params.query+"%")
-				units{
-					eq("id",uni.id)
-				}
-				maxResults(10)
-			}
-		}
-		else{
-			println 'unout'
-			orgs = Organization.createCriteria().list{
-				like("label","%"+params.query+"%")
-				maxResults(10)
-			}
-		}
-		//Create XML response
-		render(contentType: "text/xml") {
-			results() {
-				orgs.each {org ->
-					result(){
-						Type:
-						name(org.label)
-						//Optional id which will be available in onItemSelect
-						id(org.id)
-					}
-				}
-			}
-		}
-	}
+	
 	def selOrg(){
-		organ=Organization.get(params.id)
-		println 'test2'+organ
+organ=Organization.findByLabel(params.id)
+//		organ=Organization.get(params.id)
+		println 'test2mylo:'+params.id
 
 	}
 	def selUn(){
