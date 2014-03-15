@@ -1,8 +1,6 @@
-
-
 <sec:ifLoggedIn>
 
-	<li><g:if test="sec.username()=='admin'">
+	<li><g:if test="sec.role()=='ROLE_ADMIN'">
 			<g:link mapping="adminPanel">
 				${sec.username()}
 			</g:link>

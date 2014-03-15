@@ -58,7 +58,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</h2>
 				<p>H διαδικτυακή διακυβέρνηση στα καλύτερά της</p>
 				<a href="#portfolio" class="da-link scroll">Αναζητηση</a> <a
-					href="#portfolio" class="scroll"><span class="da-img"> </span>
+					href="#portfolio" class="scroll"> <span class="da-img">
+				</span>
 				</a>
 			</div>
 			<!---//End-da-slider---->
@@ -134,10 +135,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 									<div id="portfoliolist">
 										<ul>
-											<li><div id="adaLabel" class="portfolio ada" data-cat="ada">
+											<li><div class="portfolio ada" data-cat="ada">
 													<label for="ada">ΑΔΑ:<br /></label>
 													<g:textField name="ada" />
-													<div class="popup">some text here</div>
+													<%--<div class="popup">some text here</div>
+												--%>
 												</div></li>
 											<li><div class="portfolio prot_num" data-cat="prot_num">
 													<label for="prot_num">Αριθμός Πρωτοκόλου:<br /></label>
@@ -151,9 +153,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 												</div></li>
 											<li><div class="portfolio org" data-cat="org">
 													<label for="org">Οργανισμός:</label>
-													<g:select id="org" class="dropdownMenu" name="org" from="${['Δήμος Θεσσαλονίκης','Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης']}" 
-													noSelection="${[null: 'Επιλέξτε Οργανισμό']}"
-													onchange="${remoteFunction(controller:'ajax',action:'selOrg',params:'\'id=\' + this.value') }"/>
+													<g:select id="org" class="dropdownMenu" name="org"
+														from="${['Δήμος Θεσσαλονίκης','Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης']}"
+														noSelection="${[null: 'Επιλέξτε Οργανισμό']}"
+														onchange="${remoteFunction(controller:'ajax',action:'selOrg',params:'\'id=\' + this.value') }" />
 												</div></li>
 											<li><div class="portfolio signer" data-cat="signer">
 													<label for="signer">Τελικός Υπογράφων:</label>
@@ -174,15 +177,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<richui:autoComplete name="tag"
 														action="${createLinkTo('dir': 'ajax/tagAJAX')}" />
 												</div></li>
-											<li><div id="fromDate" class="portfolio fromDate" data-cat="fromDate">
+											<li><div id="fromDate" class="portfolio fromDate"
+													data-cat="fromDate">
 													<label for="fromDate">Από Ημερομηνία:<br /></label>
-													<g:datePicker id="datePicker" name="fromDate" precision="day"
-														noSelection="['':'-No Selection-']" default="none"
+													<g:datePicker id="datePicker" name="fromDate"
+														precision="day" noSelection="['':'-No Selection-']"
+														default="none"
 														years="${Calendar.instance.get(Calendar.YEAR)..2010}" />
 												</div></li>
-											<li><div id="toDate" class="portfolio toDate" data-cat="toDate">
+											<li><div id="toDate" class="portfolio toDate"
+													data-cat="toDate">
 													<label for="toDate">Έως Ημερομηνία<br /></label>
-													<g:datePicker id="datePicker" class="dropdownMenu" name="toDate" precision="day"
+													<g:datePicker id="datePicker" class="dropdownMenu"
+														name="toDate" precision="day"
 														noSelection="['':'-No Selection-']" default="none"
 														years="${Calendar.instance.get(Calendar.YEAR)..2010}" />
 												</div></li>
