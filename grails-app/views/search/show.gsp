@@ -16,8 +16,10 @@
 			<tr>
 				<th><g:if test="${source=="map"}">
 						<g:link mapping="rootUrl">←</g:link>
-					</g:if> <g:else>
+					</g:if> <g:elseif test="${source=="home"}">
 						<g:remoteLink onComplete="hideDecisionShowResults();">←</g:remoteLink>
+					</g:elseif> <g:else>
+						<g:link mapping="admin_panel">←</g:link>
 					</g:else></th>
 			</tr>
 			<g:if test="${dec2}">

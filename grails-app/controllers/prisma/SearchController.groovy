@@ -215,7 +215,8 @@ class SearchController {
 		def toShow = Math.min(Math.abs(decision.size() - params.offset.toInteger()),maxToShow)
 		println "toShow: "+toShow
 		println "remaining: "+ (decision.size())
-		render (template:"/common/decision_list", model:[results:decision.subList(params.offset.toInteger(),params.offset.toInteger() + toShow), decisionInstanceTotal:(decision.size())])
+		println "source: "+params.source
+		render (template:"/common/decision_list", model:[results:decision.subList(params.offset.toInteger(),params.offset.toInteger() + toShow), decisionInstanceTotal:(decision.size()), source:params.source])
 	}
 
 	def sort(){
