@@ -4,21 +4,24 @@
 
 			<util:remoteSortableColumn property="ada"
 				update="one-column-emphasis" action="sort"
-				title="${message(code: 'decision.ada.label', default: 'Ada')}" />
+				title="${message(code: 'decision.ada.label', default: 'Ada')}"
+				params="['source':source]" />
 
 			<th><g:message code="decision.decisionToCorrect.label"
 					default="Decision To Correct" /></th>
 
 			<util:remoteSortableColumn property="date"
 				update="one-column-emphasis" action="sort"
-				title="${message(code: 'decision.date.label', default: 'Date')}" />
+				title="${message(code: 'decision.date.label', default: 'Date')}"
+				params="['source':source]" />
 
 			<%--<g:sortableColumn property="documentUrl"
-						title="${message(code: 'decision.documentUrl.label', default: 'Document Url')}" />
+						title="${message(code: 'decision.documentUrl.label', default: 'Document Url')}" params="['source':source]"/>
 					--%>
 			<util:remoteSortableColumn property="protocolNumber"
 				update="one-column-emphasis" action="sort"
-				title="${message(code: 'decision.protocolNumber.label', default: 'Protocol Number')}" />
+				title="${message(code: 'decision.protocolNumber.label', default: 'Protocol Number')}"
+				params="['source':source]" />
 
 			<th><g:message code="decision.signer.label" default="Signer" /></th>
 

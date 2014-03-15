@@ -239,7 +239,7 @@ class SearchController {
 
 		def toShow = Math.min(Math.abs(decision.size() - offset.toInteger()),maxToShow)
 		println offset+":"+toShow
-		render (template:"/common/table_results", model:[results:decision.subList(offset.toInteger(),offset.toInteger() + toShow), decisionInstanceTotal:(decision.size())])
+		render (template:"/common/table_results", model:[results:decision.subList(offset.toInteger(),offset.toInteger() + toShow), decisionInstanceTotal:(decision.size()), source:params.source])
 	}
 	def blog(){
 		def posts=new Post()

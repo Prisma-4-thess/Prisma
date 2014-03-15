@@ -29,7 +29,8 @@
 						<th><font color="red">Η παρούσα απόφαση έχει διορθωθεί
 								από την: <g:remoteLink controller="search" action="show"
 									id="${it.id}" update="decision"
-									onComplete="hideResultsShowDecision();">
+									onComplete="hideResultsShowDecision();"
+									params="['source':source]">
 									${it.ada}
 								</g:remoteLink>
 						</font></th>
