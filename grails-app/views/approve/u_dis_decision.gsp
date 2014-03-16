@@ -1,1 +1,1 @@
-<font color="red">Disapproved</font>
+<font color="red">Απορρίφθηκε</font>

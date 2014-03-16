@@ -19,10 +19,10 @@
 					<div id="${it.decision.id}">
 						<g:remoteLink action="u_app_decision"
 							params="[geo_id:geo_id ,old_geo_id:old_geo_id]" id="${it.id}"
-							update="${it.decision.id}">Approve</g:remoteLink>
+							update="${it.decision.id}">Έγκριση</g:remoteLink>
 						<g:remoteLink action="u_dis_decision"
 							params="[geo_id:geo_id ,old_geo_id:old_geo_id]" id="${it.id}"
-							update="${it.decision.id}">Disapprove</g:remoteLink>
+							update="${it.decision.id}">Απόρριψη</g:remoteLink>
 					</div>
 				</td>
 			</tr>
