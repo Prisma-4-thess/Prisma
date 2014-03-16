@@ -1396,7 +1396,7 @@ div.blog {
 	padding: 25px 0;
 	background: #303441;
 	bottom: 0px;
-	position: fixed; /* makes footer always visible at the bottom*/
+	/*position: fixed; /* makes footer always visible at the bottom*/
 	width: 100%;
 }
 

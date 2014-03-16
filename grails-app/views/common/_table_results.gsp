@@ -9,8 +9,7 @@
 
 			<%--<th><g:message code="decision.decisionToCorrect.label"
 					default="Decision To Correct" /></th>--%>
-			<th><g:message code="decision.tags.label"
-					default="Θεματική Ενότητα" /></th>
+			<th><g:message code="decision.subject.label" default="Θέμα" /></th>
 
 			<util:remoteSortableColumn property="protocolNumber"
 				controller="search" update="one-column-emphasis" action="sort"
@@ -28,7 +27,7 @@
 			<th><g:message code="decision.unit.label" default="Μονάδα" /></th>
 
 			<%--<th><g:message code="decision.signer.label" default="Signer" /></th>--%>
-			</tr>
+		</tr>
 	</thead>
 	<tbody>
 		<g:each in="${results}" status="i" var="decisionInstance">
@@ -40,13 +39,13 @@
 							params="['source':source]">
 							${decisionInstance.ada}
 						</g:remoteLink>
-					</g:if> <g:if test="${source=='map'}">
+					</g:if> <g:elseif test="${source=='map'}">
 						<g:remoteLink controller="search" action="show"
 							id="${decisionInstance.id}" update="decision"
 							params="['source':source]">
 							${decisionInstance.ada}
 						</g:remoteLink>
-					</g:if> <g:else>
+					</g:elseif> <g:else>
 						<g:link controller="search" action="show"
 							id="${decisionInstance.id}" params="['source':source]"
 							target="_blank">
@@ -57,22 +56,22 @@
 					${decisionInstance.decisionToCorrect}
 				</td>--%>
 				<td>
-					<g:each in="${decisionInstance.tags}">
-					${it}
-					<br/>
-					</g:each>
-						
-				</td>
+					<%--<g:each in="${decisionInstance.tags}" var="tag">
+						${tag}
+
+					</g:each></td>
+				--%> ${decisionInstance.subject.take(85)}<g:if
+						test="${decisionInstance.subject.length()>85}">...</g:if>
 				<td>
 					${decisionInstance.protocolNumber}
 				</td>
-				<td><g:formatDate date="${decisionInstance.date}"/></td>
+				<td><g:formatDate date="${decisionInstance.date}" /></td>
 
 				<%--<td>
 							${decisionInstance.documentUrl}
 						</td>
 						--%>
-				
+
 
 				<%--<td>
 					${decisionInstance.signer}

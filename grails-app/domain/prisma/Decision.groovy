@@ -24,6 +24,11 @@ class Decision {
 	}
 	static mapping = {
 		subject type: 'text'
-		signer lazy: false
-	 }
+		//signer lazy: false
+		tags lazy: false
+		/*unit lazy: false
+		date lazy: false
+		protocolNumber lazy: false
+		ada lazy: false*/
+	}
 }

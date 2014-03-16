@@ -2,6 +2,11 @@ package prisma
 import grails.plugin.springsecurity.annotation.Secured
 @Secured(['permitAll'])
 class MapController {
+	static scope = "session"
+	def decisions = new Decision()
+	def offset = "0"
+	def static maxToShow = 10
+	
 	def index() {
 		def decisionG=new Decision()
 		decisionG=Decision.createCriteria().list{ isNotNull("geo") }
@@ -48,12 +53,24 @@ class MapController {
 		render(template:"/common/map", model:[mark:marker])
 	}
 	def show_geo(){
-		def decisions=new Decision()
+		//def decisions=new Decision()
 		decisions=Decision.createCriteria().list{
 			geo{
 				eq("id",params.id.toLong())
 			}
+			order("date","desc")
 		}
-		render(view:"/map/markerList", model:[results:decisions,decisionInstanceTotal:decisions.size(),source:"map"])
+		def toShow = Math.min(maxToShow, decisions.size())
+		render(view:"/map/markerList", model:[results:decisions.subList(0, toShow),decisionInstanceTotal:decisions.size(),source:"map"])
 	}
+	
+	def list() {
+		
+				offset=params.offset
+				def toShow = Math.min(Math.abs(decisions.size() - params.offset.toInteger()),maxToShow)
+				println "toShow: "+toShow
+				println "remaining: "+ (decisions.size())
+				println "source: "+params.source
+				render (template:"/common/decision_list", model:[results:decisions.subList(params.offset.toInteger(),params.offset.toInteger() + toShow), decisionInstanceTotal:(decisions.size()), source:params.source])
+			}
 }
