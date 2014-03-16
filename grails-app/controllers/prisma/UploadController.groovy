@@ -4,7 +4,7 @@ import grails.plugin.springsecurity.annotation.Secured
 class UploadController {
 
 	def index() {
-		 def marker=new Map[1]
+		def marker=new Map[1]
 		def address = [latitude:'40', longitude:'36']
 		[typ:Type.list(),tag:Tag.list(),un:Unit.list(),geo:Geo.list()]
 	}
@@ -27,17 +27,17 @@ class UploadController {
 		dec.type=Type.createCriteria().get{eq("label",params.type)}
 		dec.unit=Unit.createCriteria().get{
 			and{
-			organization{
-				eq("label",params.org)
-			}
-			eq("label",params.unit)
+				organization{
+					eq("label",params.org)
+				}
+				eq("label",params.unit)
 			}
 		}
 		dec.tags=Tag.createCriteria().list{eq("label",params.tag)}
 		dec.signer=Signer.createCriteria().get{
 			and{
-			eq("firstName",first)
-			eq("lastName",last)
+				eq("firstName",first)
+				eq("lastName",last)
 			}
 		}
 		//		dec.date=Date.fromString(params.date)
@@ -49,5 +49,4 @@ class UploadController {
 		render (view:"success", model:[documentUrl:params.ada])
 
 	}
-	
 }
