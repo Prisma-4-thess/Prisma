@@ -18,8 +18,8 @@
 					σημείο ${mark[0].description }; </i>
 			</font></td>
 			<td><g:remoteLink action="geo_approved" id="${geo_id}"
-					update="next">Approve</g:remoteLink> <g:remoteLink
-					action="geo_disapproved" id="${geo_id}" update="next">Disapprove</g:remoteLink></td>
+					update="next">Έγκριση</g:remoteLink> <g:remoteLink
+					action="geo_disapproved" id="${geo_id}" update="next">Απόρριψη</g:remoteLink></td>
 		</tr>
 	</table>
 	<div id="next"></div>

@@ -32,9 +32,9 @@
 							<td>
 								<div id="${it.decision.id}">
 									<g:remoteLink action="app_decision" id="${it.id}"
-										update="${it.decision.id}">Approve</g:remoteLink>
+										update="${it.decision.id}">Έγκριση</g:remoteLink>
 									<g:remoteLink action="dis_decision" id="${it.id}"
-										update="${it.decision.id}">Disapprove</g:remoteLink>
+										update="${it.decision.id}">Απόρριψη</g:remoteLink>
 								</div>
 							</td>
 						</tr>
