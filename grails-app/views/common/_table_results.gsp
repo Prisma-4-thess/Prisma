@@ -37,7 +37,7 @@
 							${decisionInstance.ada}
 						</g:remoteLink>
 					</g:if> <g:else>
-						<g:link action="show" id="${decisionInstance.id}"
+						<g:link controller="search" action="show" id="${decisionInstance.id}"
 							params="['source':source]" target="_blank">
 							${decisionInstance.ada}
 						</g:link>
