@@ -79,12 +79,12 @@ class SearchController {
 
 		/*println params.prot_num
 		 println params.unit
-		 println params.org
+		
 		 println params.signer_first
 		 println params.signer_last
 		 println params.fromDate
 		 println params.toDate*/
-
+		
 		decision = new Decision()
 		offset = "0"
 		def (first,last)=params.signer.tokenize(' ')
@@ -123,7 +123,7 @@ class SearchController {
 	}
 	def searchfull(){
 
-
+		println 'test'+params.org
 		//		println "numberOfResults: "+params.numberOfResults
 		decision = new Decision()
 		offset = "0"

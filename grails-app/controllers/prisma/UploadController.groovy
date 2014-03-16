@@ -45,7 +45,7 @@ class UploadController {
 		dec.documentUrl=params.ada
 		dec.geo=Geo.findByNamegrk(params.geo)
 		dec.url='pdf/'+params.ada
-		dec.save(flush: true,failOnError:true)
+		dec.save(flush: true)
 		render (view:"success", model:[documentUrl:params.ada])
 
 	}

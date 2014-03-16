@@ -3,6 +3,7 @@ import grails.converters.JSON
 import grails.plugin.springsecurity.annotation.Secured
 @Secured(['permitAll'])
 class AndroidController {
+	def static maxResults = 100
 
 	def index() {
 		def geo1=new Geo()
@@ -55,6 +56,7 @@ class AndroidController {
 			geo{
 				eq("id",params.id.toLong())
 			}
+			maxResults(maxResults)
 		}
 		def ada,sub,id
 		def marker=new Map[geoD.size()]
@@ -111,6 +113,7 @@ class AndroidController {
 		def c = Decision.createCriteria()
 		decision = c.list {
 			like("ada","%"+params.id+"%")
+			maxResults(maxResults)
 		}
 		def marker=new Map[decision.size()]
 		decision.each{ g ->
