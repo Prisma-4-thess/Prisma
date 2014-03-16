@@ -4,28 +4,31 @@
 
 			<util:remoteSortableColumn property="ada" controller="search"
 				update="one-column-emphasis" action="sort"
-				title="${message(code: 'decision.ada.label', default: 'Ada')}"
+				title="${message(code: 'decision.ada.label', default: 'ΑΔΑ')}"
 				params="['source':source]" />
 
-			<th><g:message code="decision.decisionToCorrect.label"
-					default="Decision To Correct" /></th>
+			<%--<th><g:message code="decision.decisionToCorrect.label"
+					default="Decision To Correct" /></th>--%>
+			<th><g:message code="decision.tags.label"
+					default="Θεματική Ενότητα" /></th>
+
+			<util:remoteSortableColumn property="protocolNumber"
+				controller="search" update="one-column-emphasis" action="sort"
+				title="${message(code: 'decision.protocolNumber.label', default: 'Αριθμός Προτ.')}"
+				params="['source':source]" />
 
 			<util:remoteSortableColumn property="date" controller="search"
 				update="one-column-emphasis" action="sort"
-				title="${message(code: 'decision.date.label', default: 'Date')}"
+				title="${message(code: 'decision.date.label', default: 'Ημερομηνία')}"
 				params="['source':source]" />
 
 			<%--<g:sortableColumn property="documentUrl"
 						title="${message(code: 'decision.documentUrl.label', default: 'Document Url')}" params="['source':source]"/>
 					--%>
-			<util:remoteSortableColumn property="protocolNumber"
-				controller="search" update="one-column-emphasis" action="sort"
-				title="${message(code: 'decision.protocolNumber.label', default: 'Protocol Number')}"
-				params="['source':source]" />
+			<th><g:message code="decision.unit.label" default="Μονάδα" /></th>
 
-			<th><g:message code="decision.signer.label" default="Signer" /></th>
-
-		</tr>
+			<%--<th><g:message code="decision.signer.label" default="Signer" /></th>--%>
+			</tr>
 	</thead>
 	<tbody>
 		<g:each in="${results}" status="i" var="decisionInstance">
@@ -50,24 +53,33 @@
 							${decisionInstance.ada}
 						</g:link>
 					</g:else></td>
-				<td>
+				<%--<td>
 					${decisionInstance.decisionToCorrect}
+				</td>--%>
+				<td>
+					<g:each in="${decisionInstance.tags}">
+					${it}
+					<br/>
+					</g:each>
+						
 				</td>
-
-				<td><g:formatDate date="${decisionInstance.date}" /></td>
+				<td>
+					${decisionInstance.protocolNumber}
+				</td>
+				<td><g:formatDate date="${decisionInstance.date}"/></td>
 
 				<%--<td>
 							${decisionInstance.documentUrl}
 						</td>
 						--%>
-				<td>
-					${decisionInstance.protocolNumber}
-				</td>
+				
 
-				<td>
+				<%--<td>
 					${decisionInstance.signer}
+				</td>--%>
+				<td>
+					${decisionInstance.unit}
 				</td>
-
 			</tr>
 		</g:each>
 	</tbody>
