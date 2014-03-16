@@ -9,16 +9,18 @@ class Select_panelController {
 	}
 	def select(){
 		if (SpringSecurityUtils.ifAllGranted('ROLE_ADMIN')) {
-			redirect controller:'admin_panel'
+			println "admin"
+			redirect mapping:'adminPanel'
 		}
 		if (SpringSecurityUtils.ifAllGranted('ROLE_MODERATOR')) {
-			redirect controller:'mod_panel'
+			redirect mapping:'modPanel'
 		}
 		if (SpringSecurityUtils.ifAllGranted('ROLE_UPLOADER')) {
-			redirect controller:'up_panel'
+			redirect mapping:'upPanel'
 		}
 		if (SpringSecurityUtils.ifAllGranted('ROLE_USER')) {
-			redirect(uri: "/")
+			println "user"
+			redirect mapping:'rootUrl'
 		}
 	}
 }

@@ -1,16 +1,25 @@
 
 
 <sec:ifLoggedIn>
-
-	<g:if test="sec.username()=='admin'">
+<sec:ifAllGranted roles="ROLE_ADMIN">
 			<g:link mapping="adminPanel">
 				${sec.username()}
 			</g:link>
-		</g:if> <g:else>
+		</sec:ifAllGranted> <sec:ifAllGranted roles="ROLE_USER">
 			<g:link url="#">
 				${sec.username()}
 			</g:link>
-		</g:else>|<g:link controller="logout" action="index">
+		</sec:ifAllGranted>
+		<sec:ifAllGranted roles="ROLE_MODERATOR">
+			<g:link mapping="modPanel">
+				${sec.username()}
+			</g:link>
+		</sec:ifAllGranted>
+		<sec:ifAllGranted roles="ROLE_UPLOADER">
+			<g:link mapping="upPanel">
+				${sec.username()}
+			</g:link>
+		</sec:ifAllGranted> | <g:link controller="logout" action="index">
 			<g:message code="topbar.logout" />
 		</g:link>
 </sec:ifLoggedIn>
