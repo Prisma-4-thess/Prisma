@@ -1,8 +1,4 @@
-<head>
-<link rel="stylesheet" type="text/css"
-	href="${resource(dir: 'css', file: 'table.css')}" />
-</head>
-<body>
+
 <g:if test="${results}">
 	<div id="list-decision" class="content scaffold-list" role="main">
 
@@ -25,4 +21,3 @@
 	<p>Καμία απόφαση δεν ταιριάζει στην αναζήτησή σας</p>
 	<p><img alt="" src="${resource(dir: 'images', file: 'spinner_alt.png')}"></p>
 </g:else>
-</body>

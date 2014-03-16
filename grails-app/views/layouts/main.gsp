@@ -23,6 +23,8 @@
 	type="text/css">
 <link rel="stylesheet"
 	href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
+	<link rel="stylesheet" type="text/css"
+	href="${resource(dir: 'css', file: 'table.css')}"/>
 <g:layoutHead />
 <r:layoutResources />
 </head>
