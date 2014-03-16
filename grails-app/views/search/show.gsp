@@ -15,8 +15,8 @@
 		<table id="one-column-emphasis" class="search_table">
 			<tr>
 				<th><g:if test="${source=="map"}">
-						<g:link mapping="rootUrl">←</g:link>
-					</g:if> <g:elseif test="${source=="home"}">
+						<%--<g:link mapping="rootUrl">←</g:link>
+					--%></g:if> <g:elseif test="${source=="home"}">
 						<g:remoteLink onComplete="hideDecisionShowResults();">←</g:remoteLink>
 					</g:elseif> <g:else>
 						<g:link mapping="admin_panel">←</g:link>
@@ -147,8 +147,8 @@
 			</tr>
 			<tr>
 				<th><g:if test="${source=="map"}">
-						<g:link mapping="rootUrl">←</g:link>
-					</g:if> <g:else>
+						<%--<g:link mapping="rootUrl">←</g:link>
+					--%></g:if> <g:else>
 						<g:remoteLink onComplete="hideDecisionShowResults();">←</g:remoteLink>
 					</g:else></th>
 			</tr>

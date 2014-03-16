@@ -197,13 +197,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 					</div>
 					<!-- container -->
-					<script type="text/javascript"
+					<%--<script type="text/javascript"
 						src="${resource(dir: 'js', file: 'fliplightbox.min.js')}"></script>
 					<script type="text/javascript">
 						$('body').flipLightBox()
 					</script>
 
-					<div class="clear"></div>
+					--%><div class="clear"></div>
 
 				</div>
 
@@ -319,10 +319,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<input name="email" type="text" class="textbox" value="Email"
 								onfocus="this.value = '';"
 								onblur="if (this.value == '') {this.value = 'Email';}" />
-
-							<g:javascript>
-									var mes = ${mes}
-							</g:javascript>
 							<script type="text/javascript">
 								function pop() {
 									$('#contact_resp').fadeIn('slow');
@@ -401,9 +397,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!---------start-map------------>
 	<div id="map">
 		<script type="text/javascript">
-			<g:remoteFunction controller="map" action="homepage" update="mapView"/>;
-		</script>
-		<div id="mapView"></div>
+			<g:remoteFunction controller="map" action="homepage" update="mapView"/>
+			</script>
+		<div id="mapView"></div>		
 	</div>
 	<!---------end-map------------>
 

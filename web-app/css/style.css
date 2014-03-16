@@ -1391,6 +1391,19 @@ div.blog {
 	font: inherit;
 }
 
+/*--footer--*/
+.footer-bottom-global {
+	padding: 25px 0;
+	background: #303441;
+	bottom: 0px;
+	position: fixed; /* makes footer always visible at the bottom*/
+	width: 100%;
+}
+
+.nav-left{
+	float: left;
+}
+
 /* ============ TIMELINE ============= */
 .timelineContainer {
 	border-left: 2px solid #ccc;

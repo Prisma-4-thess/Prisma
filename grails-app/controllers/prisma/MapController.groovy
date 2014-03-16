@@ -54,6 +54,6 @@ class MapController {
 				eq("id",params.id.toLong())
 			}
 		}
-		render(template:"/common/decision_list", model:[results:decisions,decisionInstanceTotal:decisions.size(),source:"map"])
+		render(view:"/map/markerList", model:[results:decisions,decisionInstanceTotal:decisions.size(),source:"map"])
 	}
 }
