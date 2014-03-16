@@ -16,7 +16,8 @@
 			<tr>
 				<th><g:if test="${source=="map"}">
 						<%--<g:link mapping="rootUrl">←</g:link>
-					--%></g:if> <g:elseif test="${source=="home"}">
+					--%>
+					</g:if> <g:elseif test="${source=="home"}">
 						<g:remoteLink onComplete="hideDecisionShowResults();">←</g:remoteLink>
 					</g:elseif> <g:else>
 						<g:link mapping="admin_panel">←</g:link>
@@ -135,10 +136,23 @@
 					<td>
 				</tr>
 			</g:if>
+			<g:if test="${decision.geo}">
+				<tr>
+					<td>Θέση</td>
+					<td>
+					<td><g:link controller="map" action="show_geo"
+							params="['source':source]" id="${decision.geo.id}"
+							target="_blank">
+							${decision.geo}
+						</g:link>
+					<td></td>
+				</tr>
+			</g:if>
 			<tr>
 				<td><a href="${decision.documentUrl}" target="_blank">Pdf
 						Απόφασης</a></td>
 			</tr>
+
 			<tr>
 				<td><g:if test="${relDec}">
 						<g:remoteLink action="showRelated"
@@ -148,7 +162,8 @@
 			<tr>
 				<th><g:if test="${source=="map"}">
 						<%--<g:link mapping="rootUrl">←</g:link>
-					--%></g:if> <g:else>
+					--%>
+					</g:if> <g:else>
 						<g:remoteLink onComplete="hideDecisionShowResults();">←</g:remoteLink>
 					</g:else></th>
 			</tr>
