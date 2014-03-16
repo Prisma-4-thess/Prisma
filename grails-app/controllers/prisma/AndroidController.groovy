@@ -25,8 +25,9 @@ class AndroidController {
 			}
 			co=c.size()
 			if(co>0){
-			marker.add([latitude:lat, longitude:lon, namegrk:namegrk,id:geoid,counter:co,address:address])
-			i++}
+				marker.add([latitude:lat, longitude:lon, namegrk:namegrk,id:geoid,counter:co,address:address])
+				i++
+			}
 		}
 		def res= [marker:marker]
 		render res as JSON
@@ -142,9 +143,9 @@ class AndroidController {
 		def res
 		if(p.validate()){
 			p.save(flush: true)
-		res=[status:'success']
+			res=[status:'success']
 		}else{
-		res=[status:'fail']
+			res=[status:'fail']
 		}
 		render res as JSON
 	}
@@ -164,10 +165,10 @@ class AndroidController {
 				dec.save(flush: true)
 				res=[status:'success']
 			}else{
-			res=[status:'fail']
+				res=[status:'fail']
 			}
 		}else{
-		res=[status:'fail']
+			res=[status:'fail']
 		}
 		render res as JSON
 	}
