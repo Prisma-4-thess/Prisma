@@ -1,6 +1,8 @@
+
+
 <sec:ifLoggedIn>
 
-	<li><g:if test="sec.role()=='ROLE_ADMIN'">
+	<g:if test="sec.username()=='admin'">
 			<g:link mapping="adminPanel">
 				${sec.username()}
 			</g:link>
@@ -8,9 +10,9 @@
 			<g:link url="#">
 				${sec.username()}
 			</g:link>
-		</g:else></li>|<li><g:link controller="logout" action="index">
+		</g:else>|<g:link controller="logout" action="index">
 			<g:message code="topbar.logout" />
-		</g:link></li>
+		</g:link>
 </sec:ifLoggedIn>
 
 <sec:ifNotLoggedIn>

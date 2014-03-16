@@ -12,7 +12,7 @@
 	transition: all 0.9s ease-in-out;
 }
 
-.ch-img-1 { 
+/* .ch-img-1 { 
 	background-image: url(../images/icon1.png);
 }
 
@@ -41,7 +41,7 @@
 .ch-img-8 { 
 	background-image: url(../images/icon2.png) ;
 }
-
+ */
 
 .ch-info {
 	position: absolute;

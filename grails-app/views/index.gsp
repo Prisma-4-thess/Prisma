@@ -58,7 +58,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</h2>
 				<p>H διαδικτυακή διακυβέρνηση στα καλύτερά της</p>
 				<a href="#portfolio" class="da-link scroll">Αναζητηση</a> <a
-					href="#portfolio" class="scroll"><span class="da-img"> </span>
+					href="#portfolio" class="scroll"> <span class="da-img">
+				</span>
 				</a>
 			</div>
 			<!---//End-da-slider---->
@@ -71,15 +72,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="main">
 				<!-- start gallery  -->
 				<div class="gallery1">
-					<!--start-mfp -->
-					<!-- <div id="small-dialog1" class="mfp-hide">
-								<div class="pop_up">
-									<h2>Lorem ipsum sit amet</h2>
-									<img src="web/images/icon1.png" alt=""/>
-									<p class="para">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-								</div>
-							</div> -->
-					<!--end-mfp -->
 					<!---start-content---->
 					<div class="gallery">
 						<div class="clear"></div>
@@ -137,6 +129,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<li><div class="portfolio ada" data-cat="ada">
 													<label for="ada">ΑΔΑ:<br /></label>
 													<g:textField name="ada" />
+													<%--<div class="popup">some text here</div>
+												--%>
 												</div></li>
 											<li><div class="portfolio prot_num" data-cat="prot_num">
 													<label for="prot_num">Αριθμός Πρωτοκόλου:<br /></label>
@@ -150,9 +144,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 												</div></li>
 											<li><div class="portfolio org" data-cat="org">
 													<label for="org">Οργανισμός:</label>
-													<g:select name="org" from="${['Δήμος Θεσσαλονίκης','Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης']}" 
-													noSelection="${[null: 'Επιλέξτε Οργανισμό']}"
-													onchange="${remoteFunction(controller:'ajax',action:'selOrg',params:'\'id=\' + this.value') }"/>
+													<g:select id="org" class="dropdownMenu" name="org"
+														from="${['Δήμος Θεσσαλονίκης','Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης']}"
+														noSelection="${[null: 'Επιλέξτε Οργανισμό']}" />
 												</div></li>
 											<li><div class="portfolio signer" data-cat="signer">
 													<label for="signer">Τελικός Υπογράφων:</label>
@@ -173,15 +167,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<richui:autoComplete name="tag"
 														action="${createLinkTo('dir': 'ajax/tagAJAX')}" />
 												</div></li>
-											<li><div class="portfolio fromDate" data-cat="fromDate">
+											<li><div id="fromDate" class="portfolio fromDate"
+													data-cat="fromDate">
 													<label for="fromDate">Από Ημερομηνία:<br /></label>
-													<g:datePicker name="fromDate" precision="day"
-														noSelection="['':'-No Selection-']" default="none"
+													<g:datePicker id="datePicker" name="fromDate"
+														precision="day" noSelection="['':'-No Selection-']"
+														default="none"
 														years="${Calendar.instance.get(Calendar.YEAR)..2010}" />
 												</div></li>
-											<li><div class="portfolio toDate" data-cat="toDate">
+											<li><div id="toDate" class="portfolio toDate"
+													data-cat="toDate">
 													<label for="toDate">Έως Ημερομηνία<br /></label>
-													<g:datePicker name="toDate" precision="day"
+													<g:datePicker id="datePicker" class="dropdownMenu"
+														name="toDate" precision="day"
 														noSelection="['':'-No Selection-']" default="none"
 														years="${Calendar.instance.get(Calendar.YEAR)..2010}" />
 												</div></li>
@@ -306,7 +304,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="contact" id="contact">
 		<div class="wrap">
 			<h2>Επικοινωνία</h2>
-			<h4>Βοηθήστε μας να γίνουμε καλύτεροι. Στείλτε τις προτάσεις και
+			<h4>Βοηθήστε μας να γίνουμε καλύτεροι. Στείλτε μας τις προτάσεις και
 				τα σχόλιά σας.</h4>
 			<div class="section group">
 				<div class="col span_2_of_3">

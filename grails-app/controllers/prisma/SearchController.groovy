@@ -27,6 +27,7 @@ class SearchController {
 		def c = Decision.createCriteria()
 		decision = c.list {
 			like("ada","%"+params.ada+"%")
+			order("date","desc")
 			maxResults(maxResults)
 		}
 		def toShow = Math.min(maxToShow, decision.size())
@@ -65,6 +66,7 @@ class SearchController {
 			if(params.fromDate!=null){
 				ge("date",params.fromDate)
 			}
+			order("date","desc")
 			maxResults(maxResults)
 		}
 		def toShow = Math.min(maxToShow, decision.size())
@@ -100,7 +102,15 @@ class SearchController {
 			}
 			unit{
 				organization{
-					like("label","%"+params.org+"%")
+					if(params.org!="null"){
+						println params.org
+						like("label",params.org)
+					}
+					else{
+						println "no org selected"
+						like("label","Δήμος Θεσσαλονίκης")
+						like("label","Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης")
+					}
 				}
 			}
 			signer{
@@ -113,6 +123,7 @@ class SearchController {
 			if(params.fromDate!=null){
 				ge("date",params.fromDate)
 			}
+			order("date","desc")
 			maxResults(maxResults)
 		}
 
@@ -156,16 +167,26 @@ class SearchController {
 			}
 			unit{
 				organization{
-					like("label","%"+params.org+"%")
+					if(params.org!="null"){
+						println params.org
+						like("label",params.org)
+					}
+					else{
+						println "no org selected"
+						like("label","Δήμος Θεσσαλονίκης")
+						like("label","Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης")
+					}
 				}
 			}
 			signer{
 				if(!params.signer.empty) like("firstName","%"+first+"%")
 				if(!params.signer.empty) like("lastName","%"+last+"%")
 			}
+			order("date","desc")
 			maxResults(maxResults)
 		}
 		def toShow = Math.min(maxToShow, decision.size())
+
 		println "toShow: "+toShow
 		println "source: "+params.pageId
 
