@@ -169,12 +169,11 @@ class SearchController {
 				organization{
 					if(params.org!="null"){
 						println params.org
-						like("label",params.org)
+						eq("label",params.org)
 					}
 					else{
 						println "no org selected"
-						like("label","Δήμος Θεσσαλονίκης")
-						like("label","Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης")
+						'in'("label",["Δήμος Θεσσαλονίκης","Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης"])
 					}
 				}
 			}
