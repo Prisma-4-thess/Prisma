@@ -6,6 +6,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="body">uploader panel</div>
+	<div class="body" align="center">
+	<table>
+	<thead><h1>Uploader Panel</h1></thead>
+	<tr><td><g:link controller="geo" action="list">Προσθήκη νέας τοποθεσίας</g:link></td></tr><br>
+	<tr><td><g:link controller="upload" action="index">Προσθήκη νέας απόφασης</g:link><td></tr>
+	</table>
+	</div>
 </body>
 </html>
