@@ -2,7 +2,7 @@
 	<thead>
 		<tr>
 
-			<util:remoteSortableColumn property="ada" controller="search"
+			<util:remoteSortableColumn property="ada"
 				update="one-column-emphasis" action="sort"
 				title="${message(code: 'decision.ada.label', default: 'ΑΔΑ')}"
 				params="['source':source]" />
@@ -12,11 +12,11 @@
 			<th><g:message code="decision.subject.label" default="Θέμα" /></th>
 
 			<util:remoteSortableColumn property="protocolNumber"
-				controller="search" update="one-column-emphasis" action="sort"
+				update="one-column-emphasis" action="sort"
 				title="${message(code: 'decision.protocolNumber.label', default: 'Αριθμός Προτ.')}"
 				params="['source':source]" />
 
-			<util:remoteSortableColumn property="date" controller="search"
+			<util:remoteSortableColumn property="date"
 				update="one-column-emphasis" action="sort"
 				title="${message(code: 'decision.date.label', default: 'Ημερομηνία')}"
 				params="['source':source]" />

@@ -83,4 +83,27 @@ class MapController {
 		println "source: "+params.source
 		render (template:"/common/decision_list", model:[results:decisions.subList(params.offset.toInteger(),params.offset.toInteger() + toShow), decisionInstanceTotal:(decisions.size()), source:params.source])
 	}
+	
+	def sort(){
+		
+				/*def c = Decision.createCriteria()
+				 decision = c.list {
+				 eq("ada",decision.ada)
+				 order(params.sort,params.order)
+				 }*/
+		
+				//		decision = decision.ada.sort{it.size()}
+				//		def sortedDecisions = Decision.list(params)
+				if(offset==null) offset="0";
+				def c = Decision.createCriteria()
+				decisions = c.list {
+					'in'("ada",decisions.ada)
+					order(params.sort,params.order)
+				}
+		
+		
+				def toShow = Math.min(Math.abs(decisions.size() - offset.toInteger()),maxToShow)
+				println offset+":"+toShow
+				render (template:"/common/table_results", model:[results:decisions.subList(offset.toInteger(),offset.toInteger() + toShow), decisionInstanceTotal:(decisions.size()), source:params.source])
+			}
 }

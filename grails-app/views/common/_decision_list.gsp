@@ -9,16 +9,8 @@
 		</g:if>
 
 		<div class="pagination search_table">
-			<g:if test="${source=='map'}">
-				<util:remotePaginate controller="map" action="list"
-					total="${decisionInstanceTotal}" params="['source':source]"
-					update="list-decision" id="pagination" />
-			</g:if>
-			<g:else>
-				<util:remotePaginate controller="search" action="list"
-					total="${decisionInstanceTotal}" params="['source':source]"
-					update="list-decision" id="pagination" />
-			</g:else>
+			<util:remotePaginate action="list" total="${decisionInstanceTotal}"
+				params="['source':source]" update="list-decision" id="pagination" />
 		</div>
 
 		<g:render template="/common/table_results" model="['source':source]" />

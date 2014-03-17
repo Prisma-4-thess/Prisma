@@ -8,8 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <meta name="layout" content="homepage_main" />
-<resource:include components="map"
-	key="AIzaSyAtEbm91-pdOstp5VshIrJSreVvxqS3j4E" />
+<resource:map key="AIzaSyAtEbm91-pdOstp5VshIrJSreVvxqS3j4E" type="GoogleMaps"/>
 <g:javascript library="jquery" />
 <resource:autoComplete skin="default" />
 </head>
