@@ -6,9 +6,9 @@
 <title>Moderator Panel</title>
 </head>
 <body>
-	<div class="body">moderator panel
+	<div class="body">
 	<table>
-	<thead><h1>Uploader Panel</h1></thead>
+	<thead><h1>Moderator Panel</h1></thead>
 	<tr><td><g:link controller="approve" action="approve">Επιβεβαίωση προσφάτως συνδεδεμένων αποφάσεων και νέων τοποθεσιών</g:link></td></tr>
 	</table>
 	
