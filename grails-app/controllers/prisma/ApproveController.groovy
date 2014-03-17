@@ -1,10 +1,10 @@
 package prisma
 import grails.plugin.springsecurity.annotation.Secured
-@Secured(['ROLE_ADMIN'])
+@Secured(['ROLE_ADMIN','ROLE_MODERATOR'])
 class ApproveController {
 
 	def index() {
-		redirect(action:approve)
+		redirect(action:"approve")
 	}
 	def approve(){
 		def preDecToAp=new Predefined()
@@ -62,6 +62,18 @@ class ApproveController {
 			def geo1=Userdefgeo.get(params.old_geo_id)
 			geo1.delete(flush:true)
 		}
+	}
+	def geo_disapproved(){
+		def geo1=Userdefgeo.get(params.id)
+		def decs=Userdefdec.createCriteria().list{
+			geo{
+				eq("id",params.id.toLong())
+			}
+		}
+		decs.each {dec->
+			dec.delete(flush:true)
+		}
+		geo1.delete(flush:true)
 	}
 	def u_dis_decision(){
 		def dec=Userdefdec.get(params.id.toLong())
