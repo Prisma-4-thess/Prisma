@@ -142,7 +142,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 						<li><a href="/Prisma/#home">Home</a></li>
 						<li><a href="/Prisma/#portfolio">Αναζητηση</a></li>
-						<li><a href="/Prisma/#about">Σχετικα με εμας</a></li>
+						<li><a href="/Prisma/#about">Πληροφοριες</a></li>
 						<li><a href="/Prisma/#contact">Eπικοινωνια</a></li>
 						<li><a href="/Prisma/#map">Χαρτης</a></li>
 						<li><g:render template="/common/topbar" /></li>

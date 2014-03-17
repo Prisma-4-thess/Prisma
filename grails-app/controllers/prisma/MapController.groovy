@@ -12,19 +12,17 @@ class MapController {
 		decisionG=Decision.createCriteria().list{ isNotNull("geo") }
 		println 'size'+decisionG.size()
 		def lat,lon,dr,ds
-		def marker=new Map[decisionG.size()]
-		def tempMarker = new Map[1]
-		int i=0
+		def marker=[]
+		def tempMarker
 		decisionG.each{ dec ->
 			lat=dec.geo.latitude
 			lon=dec.geo.longitude
 			dr=false
 			ds='<a href="'+grailsApplication.config.grails.serverURL+'/map/show_geo/'+dec.geo.id+'/?source=map'+'" target="_blank">'+dec.geo+'</a>'
-			tempMarker[0] = [latitude:lat, longitude:lon, draggable:dr,description:ds]
-			if(!marker.contains(tempMarker[0])){
-				println "new marker"
-				marker[i] = [latitude:lat, longitude:lon, draggable:dr,description:ds]
-				i++
+			tempMarker = [latitude:lat, longitude:lon, draggable:dr,description:ds]
+			if(!marker.contains(tempMarker)){
+			//println "new marker: "+tempMarker
+				marker.add([latitude:lat, longitude:lon, draggable:dr,description:ds])
 			}
 		}
 
@@ -45,19 +43,17 @@ class MapController {
 		decisionG=Decision.createCriteria().list{ isNotNull("geo") }
 		println 'size: '+decisionG.size()
 		def lat,lon,dr,ds
-		def marker=new Map[decisionG.size()]
-		def tempMarker = new Map[1]
-		int i=0
+		def marker=[]
+		def tempMarker
 		decisionG.each{ dec ->
 			lat=dec.geo.latitude
 			lon=dec.geo.longitude
 			dr=false
 			ds='<a href="'+grailsApplication.config.grails.serverURL+'/map/show_geo/'+dec.geo.id+'/?source=map'+'" target="_blank">'+dec.geo+'</a>'
-			tempMarker[0] = [latitude:lat, longitude:lon, draggable:dr,description:ds]
-			if(!marker.contains(tempMarker[0])){
-				println "new marker"
-				marker[i] = [latitude:lat, longitude:lon, draggable:dr,description:ds]
-				i++
+			tempMarker = [latitude:lat, longitude:lon, draggable:dr,description:ds]
+			if(!marker.contains(tempMarker)){
+			//println "new marker: "+tempMarker
+				marker.add([latitude:lat, longitude:lon, draggable:dr,description:ds])
 			}
 		}
 		render(template:"/common/map", model:[mark:marker])
