@@ -13,7 +13,7 @@
 
 			<util:remoteSortableColumn property="protocolNumber"
 				update="one-column-emphasis" action="sort"
-				title="${message(code: 'decision.protocolNumber.label', default: 'Αριθμός Προτ.')}"
+				title="${message(code: 'decision.protocolNumber.label', default: 'Αριθμός Πρωτ.')}"
 				params="['source':source]" />
 
 			<util:remoteSortableColumn property="date"

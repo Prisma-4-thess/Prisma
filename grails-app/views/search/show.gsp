@@ -15,12 +15,19 @@
 		<g:each in="${dec2}">
 			<tr>
 				<th><font color="red">Η παρούσα απόφαση έχει διορθωθεί
-						από την: <g:remoteLink controller="search" action="show"
-							id="${it.id}" update="decision"
-							onComplete="hideResultsShowDecision();"
-							params="['source':source]">
-							${it.ada}
-						</g:remoteLink>
+						από την: <g:if test="${source=='home'}">
+							<g:remoteLink controller="search" action="show" id="${it.id}"
+								update="decision" onComplete="hideResultsShowDecision();"
+								params="['source':source]">
+								${it.ada}
+							</g:remoteLink>
+						</g:if>
+						<g:else>
+							<g:remoteLink controller="search" action="show" id="${it.id}"
+								update="decision" params="['source':source]">
+								${it.ada}
+							</g:remoteLink>
+						</g:else>
 				</font></th>
 			</tr>
 		</g:each>
