@@ -18,17 +18,24 @@
 		</ul>
 
 	</div>
-	<div id=search_params>
+	<div class="clear"></div>
+	<div class="gallery">
+		<div class="container">
+			<div id=search_params>
+				<div id="spinner" class="spinner" style="display: none;">
+					<g:message code="spinner.alt" default="Loading&hellip;" />
+				</div>
+				<div class="clear"></div>
+				<div id="results">
 
-		<div id="results">
-			<div id="spinner" class="spinner" style="display: none;">
-				<g:message code="spinner.alt" default="Loading&hellip;" />
+					<g:render template="/common/decision_list"
+						model="['source':source]" />
+				</div>
+
+				<div id="decision"></div>
 			</div>
-			<g:render template="/common/decision_list" model="['source':source]" />
 		</div>
-
-		<div id="decision"></div>
 	</div>
-
+	<div class="clear"></div>
 </body>
 </html>

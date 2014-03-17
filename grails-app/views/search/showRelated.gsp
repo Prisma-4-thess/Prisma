@@ -19,7 +19,8 @@
 					<dd class="timelineEvent" id="${it?.ada+"EX"}"
 						style="display: none;">
 						<p>
-							${it?.date}
+						<g:formatDate date="${it?.date}" />
+							
 						</p>
 						<p>
 							${it?.subject}
