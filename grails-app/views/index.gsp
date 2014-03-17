@@ -238,7 +238,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div class="desc">
 						<h3>Δήμος Θεσσαλονίκης</h3>
-						<p>συμμετέχω</p>
+						<p>συμβάλλω</p>
 						<p id="desc-text">Ο Δήμος Θεσσαλονίκης στην υπηρεσία του δημότη. Με στόχο τη
 							διαμόρφωση της σύγχρονης, ευρωπαϊκής Θεσσαλονίκης προωθούμε την
 							ανάπτυξη πρωτοβουλιών που ενισχύουν την ενεργό συμμετοχή του
@@ -259,7 +259,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</ul>
 							</div>
 						--%></span> <img class="post-person"
-							src="${resource(dir: 'images', file: 'diaugeia_logo.JPG')}">
+							src="${resource(dir: 'images', file: 'diaugeia_logo.jpg')}">
 					</div>
 					<div class="desc">
 						<h3>Δι@ύγεια</h3>
@@ -288,10 +288,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div class="desc">
 						<h3>Prisma</h3>
-						<p>πράττω</p>
+						<p>συμμετέχω</p>
 						<p id="desc-text">Το Prisma προσφέρει έναν ευκολότερο τρόπο εύρεσης των
 							επιθυμητών αποφάσεων. Ακόμη, δίνεται ιδιαίτερη έμφαση στο
-							γεωγραφικό προσδιορισμό και τη γεωσυσχέτιση των αποφάσεων μέσω
+							γεωγραφικό προσδιορισμό και τη γεωγραφική συσχέτιση των αποφάσεων μέσω
 							της εφαρμογής κινητού. Γίνε και εσύ μέλος του και πάρε τη
 							διακυβέρνηση του δήμου στα χέρια σου.</p>
 					</div>
