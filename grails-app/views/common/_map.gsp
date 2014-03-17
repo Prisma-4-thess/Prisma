@@ -1,1 +1,1 @@
-<richui:map markers="${mark}" zoomLevel="12" class="mapViewClass" style="mapView" mapStyleClass="mapViewClass" mapStyle="mapView"/>
+<richui:map markers="${mark}" zoomLevel="13" class="mapViewClass" style="mapView" mapStyleClass="mapViewClass" mapStyle="mapView"/>

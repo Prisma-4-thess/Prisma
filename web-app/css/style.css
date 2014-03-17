@@ -1400,8 +1400,12 @@ div.blog {
 	width: 100%;
 }
 
-.nav-left{
+.nav-left {
 	float: left;
+}
+
+ #desc-text{
+	text-align: center;
 }
 
 /* ============ TIMELINE ============= */
