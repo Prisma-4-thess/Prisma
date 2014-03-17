@@ -8,7 +8,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <meta name="layout" content="homepage_main" />
-<resource:map key="AIzaSyAtEbm91-pdOstp5VshIrJSreVvxqS3j4E" type="GoogleMaps"/>
+<resource:map key="AIzaSyAtEbm91-pdOstp5VshIrJSreVvxqS3j4E"
+	type="GoogleMaps" />
 <g:javascript library="jquery" />
 <resource:autoComplete skin="default" />
 </head>
@@ -201,7 +202,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						$('body').flipLightBox()
 					</script>
 
-					--%><div class="clear"></div>
+					--%>
+					<div class="clear"></div>
 
 				</div>
 
@@ -235,12 +237,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							src="${resource(dir: 'images', file: 'slider_image_ody.jpg')}">
 					</div>
 					<div class="desc">
-						<h3>Η δύναμη του Δήμου</h3>
-						<p>είσαι μέρος του</p>
-						<p>Lorem Ipsum is simply dummy text of the printing and
-							typesetting industry.Sed ut perspiciatis unde omnis iste natus
-							error sit voluptatem,Sed ut perspiciatis unde omnis iste natus
-							error sit voluptatem.</p>
+						<h3>Δήμος Θεσσαλονίκης</h3>
+						<p>συμμετέχω</p>
+						<p>Ο Δήμος Θεσσαλονίκης στην υπηρεσία του δημότη. Με στόχο τη
+							διαμόρφωση της σύγχρονης, ευρωπαϊκής Θεσσαλονίκης προωθούμε την
+							ανάπτυξη πρωτοβουλιών που ενισχύουν την ενεργό συμμετοχή του
+							δημότη στη ζωή της πόλης και στο δημοκρατικό διάλογο.</p>
 					</div>
 
 				</div>
@@ -260,12 +262,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							src="${resource(dir: 'images', file: 'justice.jpg')}">
 					</div>
 					<div class="desc">
-						<h3>Η δύναμη της Δικαιοσύνης</h3>
-						<p>είσαι γρανάζι της</p>
-						<p>Lorem Ipsum is simply dummy text of the printing and
-							typesetting industry.Sed ut perspiciatis unde omnis iste natus
-							error sit voluptatem,Sed ut perspiciatis unde omnis iste natus
-							error sit voluptatem.</p>
+						<h3>Δι@ύγεια</h3>
+						<p>γνωρίζω</p>
+						<p>Το Πρόγραμμα Δι@ύγεια στοχεύει στην επίτευξη της μέγιστης
+							δυνατής δημοσιότητας της κυβερνητικής πολιτικής και της
+							διοικητικής δραστηριότητας, τη διασφάλιση της διαφάνειας και την
+							εμπέδωση της υπευθυνότητας και της λογοδοσίας από την πλευρά των
+							φορέων άσκησης της δημόσιας εξουσίας.</p>
 					</div>
 				</div>
 				<div class="grid">
@@ -284,12 +287,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							src="${resource(dir: 'images', file: 'hands.png')}">
 					</div>
 					<div class="desc">
-						<h3>Η δύναμη της Δημοκρατίας</h3>
-						<p>είσαι ηλίθιος</p>
-						<p>Lorem Ipsum is simply dummy text of the printing and
-							typesetting industry.Sed ut perspiciatis unde omnis iste natus
-							error sit voluptatem,Sed ut perspiciatis unde omnis iste natus
-							error sit voluptatem.</p>
+						<h3>Prisma</h3>
+						<p>πράττω</p>
+						<p>Το Prisma προσφέρει έναν ευκολότερο τρόπο εύρεσης των
+							επιθυμητών αποφάσεων. Ακόμη, δίνεται ιδιαίτερη έμφαση στο
+							γεωγραφικό προσδιορισμό και τη γεωσυσχέτιση των αποφάσεων μέσω
+							της εφαρμογής κινητού. Γίνε και εσύ μέλος του και πάρε τη
+							διακυβέρνηση του δήμου τα χέρια σου.</p>
 					</div>
 				</div>
 				<div class="clear"></div>
@@ -302,8 +306,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="contact" id="contact">
 		<div class="wrap">
 			<h2>Επικοινωνία</h2>
-			<h4>Βοηθήστε μας να γίνουμε καλύτεροι. Στείλτε μας τις προτάσεις και
-				τα σχόλιά σας.</h4>
+			<h4>Βοηθήστε μας να γίνουμε καλύτεροι. Στείλτε μας τις προτάσεις
+				και τα σχόλιά σας.</h4>
 			<div class="section group">
 				<div class="col span_2_of_3">
 					<div class="contact-form">
@@ -396,8 +400,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div id="map">
 		<script type="text/javascript">
 			<g:remoteFunction controller="map" action="homepage" update="mapView"/>
-			</script>
-		<div id="mapView"></div>		
+		</script>
+		<div id="mapView"></div>
 	</div>
 	<!---------end-map------------>
 
