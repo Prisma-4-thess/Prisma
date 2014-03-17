@@ -224,7 +224,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="grid">
 					<div class="dc_zoom_css">
 						<span class="roll_css6">
-							<div class="social">
+							<%--<div class="social">
 								<ul>
 									<li><a class="sharefacebook" href="#"> </a></li>
 									<li><a class="sharetwitter" href="#"> </a></li>
@@ -233,7 +233,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<div class="clear"></div>
 								</ul>
 							</div>
-						</span> <img class="post-person"
+						--%></span> <img class="post-person"
 							src="${resource(dir: 'images', file: 'slider_image_ody.jpg')}">
 					</div>
 					<div class="desc">
@@ -248,7 +248,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="grid">
 					<div class="dc_zoom_css">
-						<span class="roll_css6">
+						<span class="roll_css6"><%--
 							<div class="social">
 								<ul>
 									<li><a class="sharefacebook" href="#"> </a></li>
@@ -258,8 +258,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<div class="clear"></div>
 								</ul>
 							</div>
-						</span> <img class="post-person"
-							src="${resource(dir: 'images', file: 'justice.jpg')}">
+						--%></span> <img class="post-person"
+							src="${resource(dir: 'images', file: 'diaugeia_logo.JPG')}">
 					</div>
 					<div class="desc">
 						<h3>Δι@ύγεια</h3>
@@ -274,7 +274,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="grid">
 					<div class="dc_zoom_css">
 						<span class="roll_css6">
-							<div class="social">
+							<%--<div class="social">
 								<ul>
 									<li><a class="sharefacebook" href="#"> </a></li>
 									<li><a class="sharetwitter" href="#"> </a></li>
@@ -283,8 +283,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<div class="clear"></div>
 								</ul>
 							</div>
-						</span> <img class="post-person"
-							src="${resource(dir: 'images', file: 'hands.png')}">
+						--%></span> <img class="post-person"
+							src="${resource(dir: 'images', file: 'logo-about.png')}">
 					</div>
 					<div class="desc">
 						<h3>Prisma</h3>
