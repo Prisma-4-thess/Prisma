@@ -2,29 +2,31 @@
 	<thead>
 		<tr>
 
-			<util:remoteSortableColumn property="ada" controller="search"
+			<util:remoteSortableColumn property="ada"
 				update="one-column-emphasis" action="sort"
-				title="${message(code: 'decision.ada.label', default: 'Ada')}"
+				title="${message(code: 'decision.ada.label', default: 'ΑΔΑ')}"
 				params="['source':source]" />
 
-			<th><g:message code="decision.decisionToCorrect.label"
-					default="Decision To Correct" /></th>
+			<%--<th><g:message code="decision.decisionToCorrect.label"
+					default="Decision To Correct" /></th>--%>
+			<th><g:message code="decision.subject.label" default="Θέμα" /></th>
 
-			<util:remoteSortableColumn property="date" controller="search"
+			<util:remoteSortableColumn property="protocolNumber"
 				update="one-column-emphasis" action="sort"
-				title="${message(code: 'decision.date.label', default: 'Date')}"
+				title="${message(code: 'decision.protocolNumber.label', default: 'Αριθμός Πρωτ.')}"
+				params="['source':source]" />
+
+			<util:remoteSortableColumn property="date"
+				update="one-column-emphasis" action="sort"
+				title="${message(code: 'decision.date.label', default: 'Ημερομηνία')}"
 				params="['source':source]" />
 
 			<%--<g:sortableColumn property="documentUrl"
 						title="${message(code: 'decision.documentUrl.label', default: 'Document Url')}" params="['source':source]"/>
 					--%>
-			<util:remoteSortableColumn property="protocolNumber"
-				controller="search" update="one-column-emphasis" action="sort"
-				title="${message(code: 'decision.protocolNumber.label', default: 'Protocol Number')}"
-				params="['source':source]" />
+			<th><g:message code="decision.unit.label" default="Μονάδα" /></th>
 
-			<th><g:message code="decision.signer.label" default="Signer" /></th>
-
+			<%--<th><g:message code="decision.signer.label" default="Signer" /></th>--%>
 		</tr>
 	</thead>
 	<tbody>
@@ -37,37 +39,46 @@
 							params="['source':source]">
 							${decisionInstance.ada}
 						</g:remoteLink>
-					</g:if> <g:if test="${source=='map'}">
+					</g:if> <g:elseif test="${source=='map'}">
 						<g:remoteLink controller="search" action="show"
 							id="${decisionInstance.id}" update="decision"
 							params="['source':source]">
 							${decisionInstance.ada}
 						</g:remoteLink>
-					</g:if> <g:else>
+					</g:elseif> <g:else>
 						<g:link controller="search" action="show"
 							id="${decisionInstance.id}" params="['source':source]"
 							target="_blank">
 							${decisionInstance.ada}
 						</g:link>
 					</g:else></td>
-				<td>
+				<%--<td>
 					${decisionInstance.decisionToCorrect}
-				</td>
+				</td>--%>
+				<td>
+					<%--<g:each in="${decisionInstance.tags}" var="tag">
+						${tag}
 
+					</g:each></td>
+				--%> ${decisionInstance.subject.take(85)}<g:if
+						test="${decisionInstance.subject.length()>85}">...</g:if>
+				<td>
+					${decisionInstance.protocolNumber}
+				</td>
 				<td><g:formatDate date="${decisionInstance.date}" /></td>
 
 				<%--<td>
 							${decisionInstance.documentUrl}
 						</td>
 						--%>
-				<td>
-					${decisionInstance.protocolNumber}
-				</td>
 
-				<td>
+
+				<%--<td>
 					${decisionInstance.signer}
+				</td>--%>
+				<td>
+					${decisionInstance.unit}
 				</td>
-
 			</tr>
 		</g:each>
 	</tbody>

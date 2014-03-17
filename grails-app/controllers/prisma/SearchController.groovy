@@ -102,14 +102,13 @@ class SearchController {
 			}
 			unit{
 				organization{
-					if(params.org!="null"){
+					if(params.org!="null" && !params.org.empty){
 						println params.org
 						like("label",params.org)
 					}
 					else{
 						println "no org selected"
-						like("label","Δήμος Θεσσαλονίκης")
-						like("label","Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης")
+						'in'("label",["Δήμος Θεσσαλονίκης","Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης"])
 					}
 				}
 			}
@@ -167,7 +166,7 @@ class SearchController {
 			}
 			unit{
 				organization{
-					if(params.org!="null"){
+					if(params.org!="null" && !params.org.empty){
 						println params.org
 						eq("label",params.org)
 					}

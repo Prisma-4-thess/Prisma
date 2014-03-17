@@ -8,8 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <meta name="layout" content="homepage_main" />
-<resource:include components="map"
-	key="AIzaSyAtEbm91-pdOstp5VshIrJSreVvxqS3j4E" />
+<resource:map key="AIzaSyAtEbm91-pdOstp5VshIrJSreVvxqS3j4E" type="GoogleMaps"/>
 <g:javascript library="jquery" />
 <resource:autoComplete skin="default" />
 </head>
@@ -54,9 +53,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!-------start-da-slider-->
 			<div class="da-slide">
 				<h2>
-					<span>Είμαστε το</span> Prisma
+					<span>Καλωσήρθατε στο </span>Prisma
 				</h2>
-				<p>H διαδικτυακή διακυβέρνηση στα καλύτερά της</p>
+				<p>Γνωρίστε τη νέα πύλη διαδικτυακής διακυβέρνησης</p>
 				<a href="#portfolio" class="da-link scroll">Αναζητηση</a> <a
 					href="#portfolio" class="scroll"> <span class="da-img">
 				</span>
@@ -80,8 +79,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							onComplete="hideDecisionShowResults();">
 							<div class="container">
 								<h2>Αναζήτηση</h2>
-								<p>Πραγματοποιήστε σύνθετες αναζητήσεις, αναλόγως τι
-									ψάχνετε.</p>
+								<p>Επιλέξτε το είδος αναζήτησης που προτιμάτε</p>
 								<div class="search_table">
 									<script type="text/javascript">
 										function clearAll() {
@@ -218,8 +216,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="about" id="about">
 		<div class="wrap">
 			<h2>Τι είναι το Prisma</h2>
-			<p>Με το Prisma θέλουμε να δόσουμε την δυνατότητα στον πολίτη να
-				είναι μέρος της διακυβέρνησης του τόπου του.</p>
+			<p>Με το Prisma θέλουμε να δώσουμε την δυνατότητα στον πολίτη να
+				είναι μέρος της διακυβέρνησης του τόπου του</p>
 			<div class="about-grids">
 				<div class="grid">
 					<div class="dc_zoom_css">
@@ -355,9 +353,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li><img
 								src="${resource(dir: 'images', file: 'location.png')}" alt="" />
 								<div class="extra-wrap">
-									<p>Lorem ipsum consectetu</p>
-									<p>12345-Lorem ipsum consectetu</p>
-									<p>Lorem ipsum , consectetu</p>
+									<p>Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης</p>
+									<p>Τ.Κ. 546 21</p>
+									<p>Θεσσαλονίκη , Ελλάδα</p>
 								</div>
 								<div class="clear"></div></li>
 
@@ -377,7 +375,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								alt="" />
 								<div class="extra-wrap">
 									<p>
-										<a href="mailto:info@mycompany.com"> info(at)appstore.com</a>
+										<a href="mailto:info@mycompany.com"> spydiko(at)gmail.com</a>
 									</p>
 								</div>
 								<div class="clear"></div></li>

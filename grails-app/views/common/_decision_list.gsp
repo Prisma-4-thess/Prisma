@@ -7,17 +7,19 @@
 				${flash.message}
 			</div>
 		</g:if>
-		
+
 		<div class="pagination search_table">
-			<util:remotePaginate controller="search" action="list"
-				total="${decisionInstanceTotal}" params="['source':source]" update="list-decision" id="pagination"/>
+			<util:remotePaginate action="list" total="${decisionInstanceTotal}"
+				params="['source':source]" update="list-decision" id="pagination" />
 		</div>
-		
-		<g:render template="/common/table_results" model="['source':source]"/>
-		
+
+		<g:render template="/common/table_results" model="['source':source]" />
+
 	</div>
 </g:if>
 <g:else>
 	<p>Καμία απόφαση δεν ταιριάζει στην αναζήτησή σας</p>
-	<p><img alt="" src="${resource(dir: 'images', file: 'spinner_alt.png')}"></p>
+	<p>
+		<img alt="" src="${resource(dir: 'images', file: 'spinner_alt.png')}">
+	</p>
 </g:else>

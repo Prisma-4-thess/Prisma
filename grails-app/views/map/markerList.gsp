@@ -10,17 +10,23 @@
 </head>
 <body>
 
-
 	<div class="nav nav-left">
 		<ul>
-			<li class="active"><a>
-					${results[0].geo}
+			<li class="active"><a> ${results[0].geo}
 			</a></li>
+
 		</ul>
+
 	</div>
 	<div id=search_params>
 
-		<g:render template="/common/decision_list" model="['source':source]" />
+		<div id="results">
+			<div id="spinner" class="spinner" style="display: none;">
+				<g:message code="spinner.alt" default="Loading&hellip;" />
+			</div>
+			<g:render template="/common/decision_list" model="['source':source]" />
+		</div>
+
 		<div id="decision"></div>
 	</div>
 
