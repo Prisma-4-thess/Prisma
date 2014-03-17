@@ -139,11 +139,11 @@ class SearchController {
 		offset = "0"
 		def (first,last)=params.signer.tokenize(' ')
 		def c = Decision.createCriteria()
-
+		
 		decision = c.list {
 
 			like("ada","%"+params.ada+"%")
-			like("subject","%"+params.subject+"%")
+			like("subject","%"+params.subject.replaceAll(" ", "%")+"%")
 			type{
 				like("label","%"+params.type+"%")
 			}
