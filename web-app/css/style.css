@@ -1366,16 +1366,14 @@ div.blog {
 	/* right: 0;
 	top: 0; */
 	text-indent: -9999px;
-
 }
 
-@-moz-document url-prefix() { 
-.spinner {
-     padding-left: 1.5em;
-     padding-right: 1.5em;
-  }
+@
+-moz-document url-prefix () { .spinner { padding-left:1.5em;
+	padding-right: 1.5em;
 }
 
+}
 #adaLabel .popup {
 	display: none;
 }
