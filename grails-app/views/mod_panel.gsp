@@ -6,7 +6,7 @@
 <title>Moderator Panel</title>
 </head>
 <body>
-	<div class="body">
+	<div class="body" align="center">
 	<table>
 	<thead><h1>Moderator Panel</h1></thead>
 	<tr><td><g:link controller="approve" action="approve">Επιβεβαίωση προσφάτως συνδεδεμένων αποφάσεων και νέων τοποθεσιών</g:link></td></tr>
