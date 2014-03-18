@@ -13,22 +13,25 @@
 	<div class="body">
 		
 		<div id="map-canvas" class="mapViewClass" style="mapView"></div>
+		<div class="addGeo-form" id="form">
+		<g:formRemote name="submitGeoForm"
+				url="[controller:'defineGeo', action:'submitGeo']" update="response">
 		<div class="nav nav-left">
 		<ul>
 			<li class="active"><a>${params.decisionName}
 		</a></li>
+		<li><g:submitButton class="search_button" name=" " /></li>
 
 		</ul>
 
 	</div>
 	<div class="clear"></div>
-		<div id="form">
-			<g:formRemote name="submitGeoForm"
-				url="[controller:'defineGeo', action:'submitGeo']" update="response">
+		
+			
 
 				<input name="decisionId" type="hidden" value="${params.decisionId}" />
 
-				<g:textField id="lat" name="lat" value="Latitude"
+				<g:textField id="lat" name="lat" value="Latitude" class="textbox"
 					onfocus="this.value = '';"
 					onblur="if (this.value == '') {this.value = 'Latitude';}" />
 				<g:textField id="lng" name="lng" value="Longitude"
@@ -39,26 +42,32 @@
 				<g:textField id="namegrk" name="namegrk" value="Όνομασία Θέσης"
 					onfocus="this.value = '';"
 					onblur="if (this.value == '') {this.value = 'Ονομασία Θέσης';}" />
-				<g:submitButton class="search_button" name=" " />
+				
 			</g:formRemote>
 		</div>
+		<div class="clear"></div>
 		<div id="suggestions"></div>
 		<div id="response"></div>
-		
+		<div class="clear"></div>
 		<script type="text/javascript">
+			var map;
+			var marker;
 			function initializeMap() {
+
+				
+				
 				var centerLatLng = new google.maps.LatLng(40.62644611279105,22.948425953242577)
 				var mapOptions = {
 					zoom : 13,
 					center : centerLatLng
 				};
 
-				var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+				map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 				placeMarker(centerLatLng, map);
 			}
 
 			function placeMarker(location, map) {
-				var marker = new google.maps.Marker({
+				marker = new google.maps.Marker({
 					position : location,
 					map : map,
 					draggable : true,
@@ -75,6 +84,7 @@
 		    				data: "lat=" + event.latLng.lat()+"&lng="+event.latLng.lng(),
 		   					success: function (data) {
 		   						document.getElementById('suggestions').replaceWith($('#suggestions').html(data));
+		   						//$("#suggestions").replaceWith($("#suggestions").html(data));
 		    				}
 						});
 					});
@@ -99,6 +109,16 @@
 						}
 					});
 			}
+
+			function updateFields(name,lat,lng,addr){
+				
+				document.getElementById('lat').value = lat;
+				document.getElementById('lng').value = lng;
+				document.getElementById('address').value = addr;
+				document.getElementById('namegrk').value = name;
+				marker.setMap(null);
+				placeMarker(new google.maps.LatLng(lat,lng),map);
+				}
 
 			initializeMap();
 		</script>
