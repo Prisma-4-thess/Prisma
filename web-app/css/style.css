@@ -1427,6 +1427,17 @@ div.blog {
 	border: 2px solid #CACACA;
 }
 
+#suggestionButtons{
+	display: table;
+
+}
+.suggestionButton{
+border: 0px;
+padding: 0.4em;
+font-family: 'Ubuntu', sans-serif;
+font-style: italic;
+}
+
 /* ============ TIMELINE ============= */
 .timelineContainer {
 	border-left: 2px solid #ccc;
