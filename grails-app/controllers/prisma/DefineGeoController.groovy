@@ -2,10 +2,11 @@ package prisma
 import grails.plugin.springsecurity.annotation.Secured
 @Secured(['ROLE_ADMIN','ROLE_USER'])
 class DefineGeoController {
-
+def thres=0.001
 	def index() {
 	}
 	def submitGeo(){
+		if(params.defined_geo==null){
 		def udg=new Userdefgeo()
 		udg.latitude=params.lat.toDouble()
 		udg.longitude=params.lng.toDouble()
@@ -16,6 +17,11 @@ class DefineGeoController {
 		udd.decision=Decision.get(params.decisionId.toLong())
 		udd.geo=udg
 		udd.save(flush:true)
+		}else{
+		def pre=new Predefined()
+		pre.decision=Decision.get(params.decisionId.toLong())
+		pre.geo=Geo.findByNamegrk(params.defined_geo)
+		}
 	}
 	def nearGeo(){
 		def geos=[]
@@ -25,5 +31,6 @@ class DefineGeoController {
 				geos.add(g)
 			}
 		}
+		[geo_list:geos]
 	}
 }
