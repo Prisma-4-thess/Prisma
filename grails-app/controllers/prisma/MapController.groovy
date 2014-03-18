@@ -11,18 +11,20 @@ class MapController {
 		def decisionG=new Decision()
 		decisionG=Decision.createCriteria().list{ isNotNull("geo") }
 		println 'size'+decisionG.size()
-		def lat,lon,dr,ds
+		def lat,lon,dr,serverURL, geoID, geoName
 		def marker=[]
 		def tempMarker
 		decisionG.each{ dec ->
 			lat=dec.geo.latitude
 			lon=dec.geo.longitude
 			dr=false
-			ds='<a href="'+grailsApplication.config.grails.serverURL+'/map/show_geo/'+dec.geo.id+'/?source=map" target="_blank">'+dec.geo+'</a>'
-			tempMarker = [latitude:lat, longitude:lon, draggable:dr,description:ds]
+			serverURL=grailsApplication.config.grails.serverURL
+			geoID=dec.geo.id
+			geoName=dec.geo
+			tempMarker = [latitude:lat, longitude:lon, draggable:dr,serverURL:serverURL,geoID:geoID,geoName:geoName]
 			if(!marker.contains(tempMarker)){
 				//println "new marker: "+tempMarker
-				marker.add([latitude:lat, longitude:lon, draggable:dr,description:ds])
+				marker.add([latitude:lat, longitude:lon, draggable:dr,serverURL:serverURL,geoID:geoID,geoName:geoName])
 			}
 		}
 

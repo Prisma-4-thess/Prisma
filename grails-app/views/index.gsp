@@ -13,11 +13,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 --%><g:javascript library="jquery" />
 <resource:autoComplete skin="default" />
 <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH_oa4EC3VCWeqeMvTFkQC697gcs_ncyk&sensor=false">
-      
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH_oa4EC3VCWeqeMvTFkQC697gcs_ncyk&sensor=false">      
     </script>
-     <script src="http://maps.google.com/maps/api/js?sensor=false" 
-          type="text/javascript"></script>
+
 </head>
 
 <body>

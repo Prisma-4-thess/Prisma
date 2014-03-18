@@ -1,7 +1,7 @@
 <script type="text/javascript">
 
 
-function initialize() {
+function initializeMap() {
 	
 	var mapOptions = {
 	    zoom: 13,
@@ -38,5 +38,5 @@ function initialize() {
 
 </g:each>
 }
-initialize();
+initializeMap();
 </script>
