@@ -7,8 +7,8 @@ class DefineGeoController {
 	}
 	def submitGeo(){
 		def udg=new Userdefgeo()
-		udg.latitude=params.lat
-		udg.longitude=params.lng
+		udg.latitude=params.lat.toDouble()
+		udg.longitude=params.lng.toDouble()
 		udg.address=params.address
 		udg.namegrk=params.namegrk
 		udg.save(flush:true)
