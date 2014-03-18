@@ -125,7 +125,7 @@
 				</p>
 
 				<p>
-					<input id="submit" type='submit' value="Εγγραφή" />
+					<input id="submit" type='submit' value="Υποβολή" />
 				</p>
 			</g:formRemote>
 		</div>
