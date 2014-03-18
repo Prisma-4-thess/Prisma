@@ -21,8 +21,7 @@
 								params="['source':source]">
 								${it.ada}
 							</g:remoteLink>
-						</g:if>
-						<g:else>
+						</g:if> <g:else>
 							<g:remoteLink controller="search" action="show" id="${it.id}"
 								update="decision" params="['source':source]">
 								${it.ada}
@@ -130,28 +129,36 @@
 			<td>
 		</tr>
 	</g:if>
-	<g:if test="${decision.geo}">
-		<tr>
-			<td>Θέση</td>
-			<td>
-			<td><g:link controller="map" action="show_geo"
+
+	<tr>
+		<td>Θέση</td>
+		<td>
+		<td><g:if test="${decision.geo}">
+				<g:link controller="map" action="show_geo"
 					params="['source':source]" id="${decision.geo.id}" target="_blank">
 					${decision.geo}
 				</g:link>
-			<td></td>
-		</tr>
-	</g:if>
+			</g:if> <g:else>
+				<g:link controller="defineGeo" action="index"
+					params="['source':source,'decisionId':decision.id]"
+					id="${decision.id}" target="_blank">
+					Πρόσθεσε Τοποθεσία
+				</g:link>
+			</g:else>
+		<td></td>
+	</tr>
+
 	<tr>
 		<td><a href="${decision.documentUrl}" target="_blank">Pdf
 				Απόφασης</a></td>
 	</tr>
-
-	<tr>
-		<td><g:if test="${relDec}">
-				<g:remoteLink action="showRelated"
+	<g:if test="${relDec}">
+		<tr>
+			<td><g:remoteLink action="showRelated"
 					params="['decisionId':decision.id]" update="related">Σχετικές αποφάσεις</g:remoteLink>
-			</g:if></td>
-	</tr>
+			</td>
+		</tr>
+	</g:if>
 	<tr>
 		<th><g:if test="${source=="map"}">
 				<%--<g:link mapping="rootUrl">←</g:link>
