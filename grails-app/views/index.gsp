@@ -8,10 +8,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <meta name="layout" content="homepage_main" />
-<resource:map key="AIzaSyAtEbm91-pdOstp5VshIrJSreVvxqS3j4E"
+<%--<resource:map key="AIzaSyAtEbm91-pdOstp5VshIrJSreVvxqS3j4E"
 	type="GoogleMaps" />
-<g:javascript library="jquery" />
+--%><g:javascript library="jquery" />
 <resource:autoComplete skin="default" />
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH_oa4EC3VCWeqeMvTFkQC697gcs_ncyk&sensor=false">
+      
+    </script>
+     <script src="http://maps.google.com/maps/api/js?sensor=false" 
+          type="text/javascript"></script>
 </head>
 
 <body>
@@ -399,11 +405,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!---------start-map------------>
 	<div id="map">
 		<script type="text/javascript">
-			<g:remoteFunction controller="map" action="homepage" update="mapView"/>
+			<g:remoteFunction controller="map" action="homepage" update="markers"/>
 		</script>
-		<div id="mapView"></div>
+	<%--	<div id="mapView"></div>--%>
 	</div>
-	<!---------end-map------------>
+	
+    <div id="markers"></div>
+    <div id="map-canvas" class="mapViewClass" style="mapView"></div>
+    <!---------end-map------------>	
 
 	<!----start-footer---------->
 	<div class="footer-bottom">
@@ -440,6 +449,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!------end-footer------------>
+	
+
 
 </body>
 </html>
