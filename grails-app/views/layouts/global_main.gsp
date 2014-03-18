@@ -24,7 +24,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<link rel="stylesheet" type="text/css"
 	href="${resource(dir: 'css', file: 'table.css')}"/>
 
-<r:layoutResources />
+
 
 <script src="${resource(dir: 'js', file: 'jquery.min.js')}"></script>
 <!-- start gallery Script -->
@@ -117,7 +117,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	});
 </script>
 <g:javascript library="jquery" />
-
+<r:layoutResources />
 <g:layoutHead />
 
 </head>

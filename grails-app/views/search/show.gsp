@@ -140,8 +140,8 @@
 				</g:link>
 			</g:if> <g:else>
 				<g:link controller="defineGeo" action="index"
-					params="['source':source,'decisionId':decision.id]"
-					id="${decision.id}" target="_blank">
+					params="['source':source,'decisionId':decision.id,'decisionName':decision.ada]"
+					target="_blank">
 					Πρόσθεσε Τοποθεσία
 				</g:link>
 			</g:else>
