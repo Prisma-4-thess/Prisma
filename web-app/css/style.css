@@ -1411,6 +1411,22 @@ div.blog {
 	text-align: center;
 }
 
+.addGeo-form input[type="text"],.addGeo-form textarea {
+	padding: 15px;
+	display: block;
+	width: 43%;
+	background: #fff;
+	outline: none;
+	color: #888282;
+	font-size: 0.8125em;
+	-webkit-appearance: none;
+	float: left;
+	margin-right: 2em;
+	font-family: 'Ubuntu', sans-serif;
+	font-style: italic;
+	border: 2px solid #CACACA;
+}
+
 /* ============ TIMELINE ============= */
 .timelineContainer {
 	border-left: 2px solid #ccc;
