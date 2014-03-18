@@ -3,7 +3,7 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['ROLE_ADMIN','ROLE_USER'])
 class DefineGeoController {
 
-    def index() { 
+	def index() {
 	}
 	def submitGeo(){
 		def udg=new Userdefgeo()
@@ -16,5 +16,14 @@ class DefineGeoController {
 		udd.decision=Decision.get(params.decisionId.toLong())
 		udd.geo=udg
 		udd.save(flush:true)
+	}
+	def nearGeo(){
+		def geos=[]
+		def geo=Geo.all
+		geo.each {g->
+			if(Math.abs(g.latitude-params.lat)<thres&&Math.abs(g.longitude-params.lng)<thres){
+				geos.add(g)
+			}
+		}
 	}
 }
