@@ -9,6 +9,7 @@ String toString(){
 	return namegrk
 	}
     static constraints = {
-		address(nullable:true,blank:false)
+		address(nullable:true)
+		namegrk(nullable:false,blank:false)
     }
 }
