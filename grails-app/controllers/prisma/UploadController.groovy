@@ -11,7 +11,8 @@ class UploadController {
 	def error(){
 	}
 	def upload(){
-		println 'lat'+params.latitude
+		println 'lat: '+params.lat
+		
 		def f = request.getFile('myFile')
 		if (f.empty) {
 			flash.message = 'file cannot be empty'
