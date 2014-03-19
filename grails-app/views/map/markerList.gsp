@@ -18,7 +18,6 @@
 		</ul>
 
 	</div>
-	<div class="clear"></div>
 	<div class="gallery">
 		<div class="container">
 			<div id=search_params>
