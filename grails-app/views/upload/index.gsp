@@ -5,8 +5,6 @@
 <meta name="layout" content="main" />
 <title>Upload Decision</title>
 <resource:autoComplete skin="default" />
-<resource:include components="map"
-	key="AIzaSyAtEbm91-pdOstp5VshIrJSreVvxqS3j4E" />
 <g:javascript library="jquery" />
 </head>
 <body>
@@ -43,10 +41,6 @@
 			<richui:autoComplete name="signer"
 				action="${createLinkTo('dir': 'ajax/signerAJAX')}" />
 			<br />
-			<label for="geo">Geo:</label>
-			<richui:autoComplete name="geo"
-				action="${createLinkTo('dir': 'ajax/geoAJAX')}" />
-			<br />
 			<label for="date">Date:</label>
 			<g:datePicker name="date" precision="day" default="none"
 				noSelection="[' ':'-No Selection-']"
@@ -54,6 +48,8 @@
 			<br />
 			<input type="file" name="myFile">
 			<input type="submit" />
+			<g:remoteLink controller="upload" action="geoDef" update="geoDef">Προσθήκη Γεωγραφικού Προσδιορισμού</g:remoteLink>
+			<div id="geoDef"></div>
 		</g:uploadForm>
 
 	</div>

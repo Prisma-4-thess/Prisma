@@ -8,6 +8,9 @@ class UploadController {
 		def address = [latitude:'40', longitude:'36']
 		[typ:Type.list(),tag:Tag.list(),un:Unit.list(),geo:Geo.list()]
 	}
+	def geoDef(){
+		
+	}
 	def error(){
 	}
 	def upload(){
