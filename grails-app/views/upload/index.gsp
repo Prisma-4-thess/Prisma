@@ -5,12 +5,9 @@
 <meta name="layout" content="main" />
 <title>Upload Decision</title>
 <resource:autoComplete skin="default" />
-<<<<<<< HEAD
-=======
 <script type="text/javascript"
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH_oa4EC3VCWeqeMvTFkQC697gcs_ncyk&sensor=false">
 </script>
->>>>>>> 8ef6853b2805e0ccecbdcdd17eaada3b4231e246
 <g:javascript library="jquery" />
 </head>
 <body>
@@ -75,9 +72,10 @@
 				</ul>
 			</div>
 			<div class="clear"><br/></div>
-			<richui:autoComplete name="org"
-				action="${createLinkTo('dir': 'ajax/orgAJAX')}"
-				onItemSelect="${remoteFunction(controller: 'ajax' , action: 'selOrg', params: '\'id=\' + id')}" />
+													<g:select id="org" class="dropdownMenu" name="org"
+														from="${['Δήμος Θεσσαλονίκης','Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης']}"
+														noSelection="${[null: 'Επιλέξτε Οργανισμό']}" 
+														onchange="${remoteFunction(controller:'ajax',action:'selOrg',params:'\'id=\' + this.value') }"/>
 				<div class="clear"><br/></div>
 			<div class="nav nav-left">
 				<ul>

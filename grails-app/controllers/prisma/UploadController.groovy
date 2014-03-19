@@ -14,8 +14,6 @@ class UploadController {
 	def error(){
 	}
 	def upload(){
-		println 'lat: '+params.lat
-		
 		def f = request.getFile('myFile')
 		if (f.empty) {
 			flash.message = 'file cannot be empty'
@@ -23,6 +21,24 @@ class UploadController {
 			return
 		}
 		def dec=new Decision()
+		println 'lat: '+params.lat
+		def predGeo=Geo.createCriteria().get{
+			and{
+				eq('latitude',params.lat.toDouble())
+				eq('longitude',params.lng.toDouble())
+				eq('namegrk',params.namegrk)
+			}
+		}
+		if(predGeo!=null){
+			dec.geo=predGeo
+		}else{
+			def geo1=new Geo()
+			geo1.latitude=params.lat
+			geo1.longitude=params.lng
+			geo1.address=params.address
+			geo1.namegrk=params.namegrk
+			dec.geo=geo1
+		}
 		dec.ada=params.ada
 		f.transferTo(new File('web-app/pdf/'+params.ada))
 		dec.protocolNumber=params.prot
@@ -47,7 +63,6 @@ class UploadController {
 		//		dec.date=Date.fromString(params.date)
 		dec.date = params.date
 		dec.documentUrl=params.ada
-		dec.geo=Geo.findByNamegrk(params.geo)
 		dec.url='pdf/'+params.ada
 		dec.save(flush: true)
 		render (view:"success", model:[documentUrl:params.ada])

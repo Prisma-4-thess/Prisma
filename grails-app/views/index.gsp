@@ -149,7 +149,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<label for="org">Οργανισμός:</label>
 													<g:select id="org" class="dropdownMenu" name="org"
 														from="${['Δήμος Θεσσαλονίκης','Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης']}"
-														noSelection="${[null: 'Επιλέξτε Οργανισμό']}" />
+														noSelection="${[null: 'Επιλέξτε Οργανισμό']}" 
+														onchange="${remoteFunction(controller:'ajax',action:'selOrg',params:'\'id=\' + this.value') }"/>
 												</div></li>
 											<li><div class="portfolio signer" data-cat="signer">
 													<label for="signer">Τελικός Υπογράφων:</label>
