@@ -1393,6 +1393,9 @@ div.blog {
 #datePicker_day,#datePicker_month,#datePicker_year {
 	font: inherit;
 }
+.defineGeoInstructions{
+	padding: 1em;
+}
 
 /*--footer--*/
 .footer-bottom-global {

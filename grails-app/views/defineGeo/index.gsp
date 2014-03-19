@@ -26,7 +26,13 @@
 						</ul>
 
 					</div>
-					<div class="clear"></div>
+					<div class="clear"><br/></div>
+					
+					<div class="defineGeoInstructions">
+						<p>Σύρτε τον marker του χάρτη στο σημείο που θέλετε να αντιστοιχίσετε την απόφαση.</p>
+						<p>Στο κάτω μέρος της οθόνης εμφανίζονται ήδη καταχωρημένες σχετικές θέσεις. Επιλέξτε μία από αυτές ή καταχωρήστε νέα επεξεργάζοντας τα παιδία εισαγωγής.</p>
+					</div>
+					<div class="clear"><br/></div>
 
 				<input name="decisionId" type="hidden" value="${params.decisionId}" />
 
@@ -44,10 +50,10 @@
 				
 			</g:formRemote>
 		</div>
-		<div class="clear"></div>
+		<div class="clear"><br/></div>
 		<div id="suggestions"></div>
 		
-		<div class="clear"></div>
+		<div class="clear"><br/></div>
 <script type="text/javascript">
 	var map;
 	var marker;

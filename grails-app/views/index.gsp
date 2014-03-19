@@ -26,7 +26,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!--------start-logo------>
 				<div class="logo">
 
-					<img src="${resource(dir: 'images', file: 'site-logo.png')}" alt="" />
+					<g:link mapping="rootUrl">
+						<img src="${resource(dir: 'images', file: 'site-logo.png')}"
+							alt="" />
+					</g:link>
 
 				</div>
 				<!--------end-logo--------->
@@ -62,7 +65,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</h2>
 				<p>Γνωρίστε τη νέα πύλη διαδικτυακής διακυβέρνησης</p>
 				<a href="#portfolio" class="da-link scroll">Αναζητηση</a> <a
-					href="#portfolio" class="scroll"> <span class="da-img">
+					href="/Prisma/apk/com.spydi2kood.prisma.apk"> <span class="da-img">
 				</span>
 				</a>
 			</div>
