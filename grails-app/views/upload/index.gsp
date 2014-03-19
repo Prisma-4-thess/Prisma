@@ -81,7 +81,7 @@
 				<div class="clear"><br/></div>
 			<div class="nav nav-left">
 				<ul>
-					<li>Τελικός Υπογράφον:</li>
+					<li>Τελικός Υπογράφων:</li>
 				</ul>
 			</div>
 			<div class="clear"><br/></div>
@@ -115,7 +115,7 @@
 				
 			
 		
-		<div class="clear"></div>
+		<div class="clear"><br/></div>
 		<div id="suggestions"></div>
 		
 		<div class="clear"></div>
@@ -130,6 +130,12 @@
 			<g:datePicker name="date" precision="day" default="none"
 				noSelection="[' ':'-No Selection-']"
 				years="${Calendar.instance.get(Calendar.YEAR)..2010}" />
+			<div class="clear"><br/></div>
+			<div class="nav nav-left">
+				<ul>
+					<li>Pdf Απόφασης:</li>
+				</ul>
+			</div>
 			<div class="clear"><br/></div>
 			<input type="file" name="myFile">
 			<div class="clear"><br/></div>
