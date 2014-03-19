@@ -138,8 +138,6 @@
 			<input type="file" name="myFile">
 			<div class="clear"><br/></div>
 			<input type="submit" />
-			<g:remoteLink controller="upload" action="geoDef" update="geoDef">Προσθήκη Γεωγραφικού Προσδιορισμού</g:remoteLink>
-			<div id="geoDef"></div>
 		</g:uploadForm>
 
 	</div>

@@ -20,23 +20,25 @@ class UploadController {
 			render(view: 'index')
 			return
 		}
-		def dec=new Decision()
-		println 'lat: '+params.lat
-		def predGeo=Geo.createCriteria().get{
-			and{
-				eq('latitude',params.lat.toDouble())
-				eq('longitude',params.lng.toDouble())
-				eq('namegrk',params.namegrk)
+		try{
+			def dec=new Decision()
+			println 'lat: '+params.lat
+			def predGeo=Geo.createCriteria().get{
+				and{
+					eq('latitude',params.lat.toDouble())
+					eq('longitude',params.lng.toDouble())
+					eq('namegrk',params.namegrk)
+				}
 			}
-		}
 		if(predGeo!=null){
 			dec.geo=predGeo
 		}else{
 			def geo1=new Geo()
-			geo1.latitude=params.lat
-			geo1.longitude=params.lng
+			geo1.latitude=params.lat.toDouble()
+			geo1.longitude=params.lng.toDouble()
 			geo1.address=params.address
 			geo1.namegrk=params.namegrk
+			geo1.save(flush:true)
 			dec.geo=geo1
 		}
 		dec.ada=params.ada
@@ -64,8 +66,12 @@ class UploadController {
 		dec.date = params.date
 		dec.documentUrl=params.ada
 		dec.url='pdf/'+params.ada
-		dec.save(flush: true)
-		render (view:"success", model:[documentUrl:params.ada])
-
+		dec.save(flush: true,failOnError:true)
+		println 't1'
+		[mes:'Επιτυχης καταχωρηση']
+		}catch (Exception e){
+		println 't2'
+			[mes:'Η καταχωρηση απετυχε. Συμπληρωστε ολα τα πεδια']
+		}
 	}
 }

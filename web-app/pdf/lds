@@ -1,0 +1,10 @@
+function bps=Bps(ecg)
+acf=autocorr(ecg,2000);
+[p,locs]=findpeaks(acf,'minpeakheight',0,'minpeakdistance',400)
+for i=1:length(p)
+loc=+locs(i);
+end
+RR=loc/length(p)
+%b=length(p)/4;
+%b=ceil(b);
+bps=60/(RR*(1/500));
