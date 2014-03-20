@@ -58,8 +58,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!------end-header------------>
 	<!-- start slider -->
 	<div class="video_bg">
-		<div id="video" class="wrap">
-			<video id="video1" onclick="playPause()" controls>
+		<div id="video" class="wrap" onclick="playPause()">
+			<video id="video1" >
 				<source src="/Prisma/videos/Prisma_vid.mp4" type="video/mp4">
 			</video>
 		</div>
