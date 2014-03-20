@@ -210,11 +210,31 @@ body {
 	transition: all 0.4s ease-in-out;
 }
 
+.da-video {
+	width: 50px;
+	height: 50px;
+	display: block;
+	margin: 2em auto 1em;
+	background: url(../images/video.png);
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+
 .da-img:hover {
 	width: 50px;
 	height: 50px;
 	display: block;
 	background: url(../images/android_inv_ourcolor.png);
+}
+
+.da-video:hover {
+	width: 50px;
+	height: 50px;
+	display: block;
+	background: url(../images/videohover.png);
 }
 /* start main_btm */
 .container h2 {
@@ -264,6 +284,13 @@ body {
 }
 
 .search_button {
+	width: 44px;
+	height: 40px;
+	background: url(../images/search.png);
+	background-size: 100% 100%;
+}
+
+.submit_button {
 	width: 44px;
 	height: 40px;
 	background: url(../images/right-move.png);
@@ -1054,6 +1081,9 @@ body {
 	.da-img {
 		margin: 1em auto 1em;
 	}
+	.da-video {
+		margin: 1em auto 1em;
+	}
 	.da-slide {
 		padding: 4% 0%;
 	}
@@ -1194,6 +1224,9 @@ body {
 	.da-img {
 		margin: 0.5em auto 0.5em;
 	}
+	.da-video {
+		margin: 0.5em auto 0.5em;
+	}
 	.da-slide {
 		padding: 4% 0%;
 	}
@@ -1308,7 +1341,7 @@ body {
 
 .mapViewClass {
 	width: 100%;
-	height: 30em;
+	height: 40em;
 }
 
 .mapViewClass>div img {
@@ -1367,7 +1400,7 @@ div.blog {
 	/* right: 0;
 	top: 0; */
 	text-indent: -9999px;
-	padding-left:1.5em;
+	padding-left: 1.5em;
 	padding-right: 1.5em;
 }
 
@@ -1393,7 +1426,8 @@ div.blog {
 #datePicker_day,#datePicker_month,#datePicker_year {
 	font: inherit;
 }
-.defineGeoInstructions{
+
+.defineGeoInstructions {
 	padding: 1em;
 }
 
@@ -1430,15 +1464,15 @@ div.blog {
 	border: 2px solid #CACACA;
 }
 
-#suggestionButtons{
+#suggestionButtons {
 	display: table;
-
 }
-.suggestionButton{
-border: 0px;
-padding: 0.4em;
-font-family: 'Ubuntu', sans-serif;
-font-style: italic;
+
+.suggestionButton {
+	border: 0px;
+	padding: 0.4em;
+	font-family: 'Ubuntu', sans-serif;
+	font-style: italic;
 }
 
 /* ============ TIMELINE ============= */

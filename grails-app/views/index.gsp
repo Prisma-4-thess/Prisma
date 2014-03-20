@@ -67,6 +67,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<a href="#portfolio" class="da-link scroll">Αναζητηση</a> <a
 					href="/Prisma/apk/com.spydi2kood.prisma.apk"> <span class="da-img">
 				</span>
+				</a><a
+					href="/Prisma/apk/com.spydi2kood.prisma.apk"> <span class="da-video">
+				</span>
 				</a>
 			</div>
 			<!---//End-da-slider---->

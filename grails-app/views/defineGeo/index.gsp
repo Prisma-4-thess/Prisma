@@ -20,7 +20,7 @@
 						<ul>
 							<li class="active"><a>${params.decisionName}
 						</a></li>
-							<li><g:submitButton class="search_button" name=" " /></li>
+							<li><g:submitButton class="submit_button" name=" " /></li>
 							<li id="responseContainer" class="active" style="display: none;"><a><span id="response"></span></a></li>
 
 						</ul>
