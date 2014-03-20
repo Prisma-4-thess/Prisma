@@ -63,7 +63,7 @@
 		<td>Ημερομηνία Έκδοσης
 		<td>
 		<td>
-			${decision.date}
+			<g:formatDate date="${decision.date}" />
 		
 		<td>
 	</tr>

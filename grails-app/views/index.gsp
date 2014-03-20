@@ -10,10 +10,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="layout" content="homepage_main" />
 <%--<resource:map key="AIzaSyAtEbm91-pdOstp5VshIrJSreVvxqS3j4E"
 	type="GoogleMaps" />
---%><g:javascript library="jquery" />
+--%>
+<g:javascript library="jquery" />
 <resource:autoComplete skin="default" />
 <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH_oa4EC3VCWeqeMvTFkQC697gcs_ncyk&sensor=false">      
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH_oa4EC3VCWeqeMvTFkQC697gcs_ncyk&sensor=false">      
     </script>
 
 </head>
@@ -56,25 +57,68 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<!------end-header------------>
 	<!-- start slider -->
+	<div class="video_bg">
+		<div id="video" class="wrap">
+			<video id="video1" onclick="playPause()" controls>
+				<source src="/Prisma/videos/Prisma_vid.mp4" type="video/mp4">
+			</video>
+		</div>
+	</div>
 	<div class="slider_bg">
-		<div class="wrap">
+
+		<div id="toHide" class="wrap">
 			<!-------start-da-slider-->
 			<div class="da-slide">
-				<h2>
+				<h2 id="toFadeH">
 					<span>Καλωσήρθατε στο </span>Prisma
 				</h2>
-				<p>Γνωρίστε τη νέα πύλη διαδικτυακής διακυβέρνησης</p>
-				<a href="#portfolio" class="da-link scroll">Αναζητηση</a> <a
-					href="/Prisma/apk/com.spydi2kood.prisma.apk"> <span class="da-img">
-				</span>
-				</a><a
-					href="/Prisma/apk/com.spydi2kood.prisma.apk"> <span class="da-video">
-				</span>
-				</a>
+				<p id="toFadeP">Γνωρίστε τη νέα πύλη διαδικτυακής διακυβέρνησης</p>
+				<a id="toFadeA" href="#portfolio" class="da-link scroll">Αναζητηση</a> <a id="apklink" href="/Prisma/apk/com.spydi2kood.prisma.apk"> <span
+					id="toFadeS1" class="da-img"> </span>
+				</a> <a><span id="toFadeS2" class="da-video" onclick="playPause()">
+				</span></a>
 			</div>
 			<!---//End-da-slider---->
 		</div>
 	</div>
+	<script type="text/javascript">
+var myVideo=document.getElementById("video1"); 
+
+function playPause()
+{ 
+	console.info("playPause()");
+	if (myVideo.paused){ 
+		myVideo.play();
+		$('#toFadeH').animate({ opacity: 0 });
+		$('#toFadeP').animate({ opacity: 0 });
+		$('#toFadeA').animate({ opacity: 0 });
+		$('#toFadeS1').animate({ opacity: 0 });
+		$('#toFadeS2').animate({ opacity: 0 });
+		document.getElementById("toHide").style["display"] = "none";
+		//$('#toHide').fadeOut('slow');
+		document.getElementById("video").style["display"] = "block";
+		//$('#video').delay(800).fadeIn('slow');
+		
+	}
+	else{ 
+		myVideo.pause();
+		//$('#video').fadeOut('slow');
+		//$('#toFade').fadeIn('slow');
+		document.getElementById("toHide").style["display"] = "block";
+		document.getElementById("video").style["display"] = "none";
+		$('#toFadeH').delay(500).animate({ opacity: 1 });
+		$('#toFadeP').delay(750).animate({ opacity: 1 });
+		$('#toFadeA').delay(1000).animate({ opacity: 1 });
+		$('#toFadeS1').delay(1250).animate({ opacity: 1 });
+		$('#toFadeS2').delay(1250).animate({ opacity: 1 });
+		//document.getElementById("toFadeH").style["visibility"] = "visible";
+		//document.getElementById("toFadeP").style["visibility"] = "visible";
+		//document.getElementById("toFadeS1").style["visibility"] = "visible";
+		//document.getElementById("toFadeS2").style["visibility"] = "visible";
+		
+	}
+} 
+</script>
 	<!-----end-slider-------->
 	<!--start portfolio------>
 	<div>
@@ -155,8 +199,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 													<label for="org">Οργανισμός:</label>
 													<g:select id="org" class="dropdownMenu" name="org"
 														from="${['Δήμος Θεσσαλονίκης','Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης']}"
-														noSelection="${[null: 'Επιλέξτε Οργανισμό']}" 
-														onchange="${remoteFunction(controller:'ajax',action:'selOrg',params:'\'id=\' + this.value') }"/>
+														noSelection="${[null: 'Επιλέξτε Οργανισμό']}"
+														onchange="${remoteFunction(controller:'ajax',action:'selOrg',params:'\'id=\' + this.value') }" />
 												</div></li>
 											<li><div class="portfolio signer" data-cat="signer">
 													<label for="signer">Τελικός Υπογράφων:</label>
@@ -234,8 +278,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="about-grids">
 				<div class="grid">
 					<div class="dc_zoom_css">
-						<span class="roll_css6">
-							<%--<div class="social">
+						<span class="roll_css6"> <%--<div class="social">
 								<ul>
 									<li><a class="sharefacebook" href="#"> </a></li>
 									<li><a class="sharetwitter" href="#"> </a></li>
@@ -250,16 +293,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="desc">
 						<h3>Δήμος Θεσσαλονίκης</h3>
 						<p>συμβάλλω</p>
-						<p id="desc-text">Ο Δήμος Θεσσαλονίκης στην υπηρεσία του δημότη. Με στόχο τη
-							διαμόρφωση της σύγχρονης, ευρωπαϊκής Θεσσαλονίκης προωθούμε την
-							ανάπτυξη πρωτοβουλιών που ενισχύουν την ενεργό συμμετοχή του
-							δημότη στη ζωή της πόλης και στο δημοκρατικό διάλογο.</p>
+						<p id="desc-text">Ο Δήμος Θεσσαλονίκης στην υπηρεσία του
+							δημότη. Με στόχο τη διαμόρφωση της σύγχρονης, ευρωπαϊκής
+							Θεσσαλονίκης προωθούμε την ανάπτυξη πρωτοβουλιών που ενισχύουν
+							την ενεργό συμμετοχή του δημότη στη ζωή της πόλης και στο
+							δημοκρατικό διάλογο.</p>
 					</div>
 
 				</div>
 				<div class="grid">
 					<div class="dc_zoom_css">
-						<span class="roll_css6"><%--
+						<span class="roll_css6"> <%--
 							<div class="social">
 								<ul>
 									<li><a class="sharefacebook" href="#"> </a></li>
@@ -269,23 +313,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<div class="clear"></div>
 								</ul>
 							</div>
-						--%></span> <img class="post-person"
+						--%>
+						</span> <img class="post-person"
 							src="${resource(dir: 'images', file: 'diaugeia_logo.jpg')}">
 					</div>
 					<div class="desc">
 						<h3>Δι@ύγεια</h3>
 						<p>γνωρίζω</p>
-						<p id="desc-text">Το Πρόγραμμα Δι@ύγεια στοχεύει στην επίτευξη της μέγιστης
-							δυνατής δημοσιότητας της κυβερνητικής πολιτικής και της
-							διοικητικής δραστηριότητας. Επίσης, έχει σκοπό τη διασφάλιση της διαφάνειας και την
-							εμπέδωση της υπευθυνότητας και της λογοδοσίας από την πλευρά των
-							φορέων άσκησης της δημόσιας εξουσίας.</p>
+						<p id="desc-text">Το Πρόγραμμα Δι@ύγεια στοχεύει στην επίτευξη
+							της μέγιστης δυνατής δημοσιότητας της κυβερνητικής πολιτικής και
+							της διοικητικής δραστηριότητας. Επίσης, έχει σκοπό τη διασφάλιση
+							της διαφάνειας και την εμπέδωση της υπευθυνότητας και της
+							λογοδοσίας από την πλευρά των φορέων άσκησης της δημόσιας
+							εξουσίας.</p>
 					</div>
 				</div>
 				<div class="grid">
 					<div class="dc_zoom_css">
-						<span class="roll_css6">
-							<%--<div class="social">
+						<span class="roll_css6"> <%--<div class="social">
 								<ul>
 									<li><a class="sharefacebook" href="#"> </a></li>
 									<li><a class="sharetwitter" href="#"> </a></li>
@@ -300,11 +345,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="desc">
 						<h3>Prisma</h3>
 						<p>συμμετέχω</p>
-						<p id="desc-text">Το Prisma προσφέρει έναν ευκολότερο τρόπο εύρεσης των
-							επιθυμητών αποφάσεων. Ακόμη, δίνεται ιδιαίτερη έμφαση στο
-							γεωγραφικό προσδιορισμό και τη γεωγραφική συσχέτιση των αποφάσεων μέσω
-							της εφαρμογής κινητού. Γίνε και εσύ μέλος του και πάρε τη
-							διακυβέρνηση του δήμου στα χέρια σου.</p>
+						<p id="desc-text">Το Prisma προσφέρει έναν ευκολότερο τρόπο
+							εύρεσης των επιθυμητών αποφάσεων. Ακόμη, δίνεται ιδιαίτερη έμφαση
+							στο γεωγραφικό προσδιορισμό και τη γεωγραφική συσχέτιση των
+							αποφάσεων μέσω της εφαρμογής κινητού. Γίνε και εσύ μέλος του και
+							πάρε τη διακυβέρνηση του δήμου στα χέρια σου.</p>
 					</div>
 				</div>
 				<div class="clear"></div>
@@ -412,12 +457,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<script type="text/javascript">
 			<g:remoteFunction controller="map" action="homepage" update="markers"/>
 		</script>
-	<%--	<div id="mapView"></div>--%>
+		<%--	<div id="mapView"></div>--%>
 	</div>
-	
-    <div id="markers"></div>
-    <div id="map-canvas" class="mapViewClass" style="mapView"></div>
-    <!---------end-map------------>	
+
+	<div id="markers"></div>
+	<div id="map-canvas" class="mapViewClass" style=""></div>
+	<!---------end-map------------>
 
 	<!----start-footer---------->
 	<div class="footer-bottom">
@@ -454,7 +499,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!------end-footer------------>
-	
+
 
 
 </body>
