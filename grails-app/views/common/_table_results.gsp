@@ -52,30 +52,14 @@
 							${decisionInstance.ada}
 						</g:link>
 					</g:else></td>
-				<%--<td>
-					${decisionInstance.decisionToCorrect}
-				</td>--%>
+				
 				<td>
-					<%--<g:each in="${decisionInstance.tags}" var="tag">
-						${tag}
-
-					</g:each></td>
-				--%> ${decisionInstance.subject.take(85)}<g:if
+				${decisionInstance.subject.take(85)}<g:if
 						test="${decisionInstance.subject.length()>85}">...</g:if>
 				<td>
 					${decisionInstance.protocolNumber}
 				</td>
 				<td><g:formatDate date="${decisionInstance.date}" /></td>
-
-				<%--<td>
-							${decisionInstance.documentUrl}
-						</td>
-						--%>
-
-
-				<%--<td>
-					${decisionInstance.signer}
-				</td>--%>
 				<td>
 					${decisionInstance.unit}
 				</td>

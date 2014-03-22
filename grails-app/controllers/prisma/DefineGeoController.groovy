@@ -31,6 +31,7 @@ class DefineGeoController {
 				def predefined=new Predefined()
 				predefined.decision=Decision.get(params.decisionId.toLong())
 				predefined.geo=predGeo
+				predefined.save(flush:true)
 			}
 			[mes:'Επιτυχης καταχωρηση']
 		}catch (Exception e){
