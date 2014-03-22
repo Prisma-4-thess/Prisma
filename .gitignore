@@ -23,3 +23,6 @@ stacktrace.log
 /pdf/
 /target-eclipse/
 /web-app/videos/
+
+# sensitive info
+/grails-app/conf/BootStrap.groovy
