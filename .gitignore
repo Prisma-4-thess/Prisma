@@ -25,4 +25,4 @@ stacktrace.log
 /web-app/videos/
 
 # sensitive info
-/grails-app/conf/BootStrap.groovy
+BootStrap.groovy
