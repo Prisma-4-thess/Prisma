@@ -58,7 +58,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!------end-header------------>
 	<!-- start slider -->
 	<div class="video_bg">
-	<img id="close_vid" src="${resource(dir: 'images', file: 'clear_button.jpg')}" class="close_vid" onclick="playPause()"/>
+	<img id="close_vid" src="${resource(dir: 'images', file: 'clear_button.jpg')}" class="close_vid" onclick="pause()"/>
 		<div id="video" class="wrap" >
 			<video id="video1" controls>
 				<source src="/Prisma/videos/Prisma_vid.mp4" type="video/mp4">
@@ -76,7 +76,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<p id="toFadeP">Γνωρίστε τη νέα πύλη διαδικτυακής διακυβέρνησης</p>
 				<a id="toFadeA" href="#portfolio" class="da-link scroll">Αναζητηση</a> <a id="apklink" href="/Prisma/apk/com.spydi2kood.prisma.apk"> <span
 					id="toFadeS1" class="da-img"> </span>
-				</a> <a><span id="toFadeS2" class="da-video" onclick="playPause()">
+				</a> <a><span id="toFadeS2" class="da-video" onclick="play()">
 				</span></a>
 			</div>
 			<!---//End-da-slider---->
@@ -85,10 +85,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script type="text/javascript">
 var myVideo=document.getElementById("video1"); 
 
-function playPause()
-{ 
+function play(){ 
 	console.info("playPause()");
-	if (myVideo.paused){ 
+	//if (myVideo.paused){ 
 		myVideo.play();
 		$('#toFadeH').animate({ opacity: 0 });
 		$('#toFadeP').animate({ opacity: 0 });
@@ -102,7 +101,8 @@ function playPause()
 		//$('#video').delay(800).fadeIn('slow');
 		
 	}
-	else{ 
+	function pause(){
+		//else{ 
 		myVideo.pause();
 		//$('#video').fadeOut('slow');
 		//$('#toFade').fadeIn('slow');
@@ -119,7 +119,7 @@ function playPause()
 		//document.getElementById("toFadeS1").style["visibility"] = "visible";
 		//document.getElementById("toFadeS2").style["visibility"] = "visible";
 		
-	}
+	
 } 
 </script>
 	<!-----end-slider-------->
