@@ -58,8 +58,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!------end-header------------>
 	<!-- start slider -->
 	<div class="video_bg">
-		<div id="video" class="wrap" onclick="playPause()">
-			<video id="video1" >
+	<img id="close_vid" src="${resource(dir: 'images', file: 'clear_button.jpg')}" class="close_vid" onclick="playPause()"/>
+		<div id="video" class="wrap" >
+			<video id="video1" controls>
 				<source src="/Prisma/videos/Prisma_vid.mp4" type="video/mp4">
 			</video>
 		</div>
@@ -97,6 +98,7 @@ function playPause()
 		document.getElementById("toHide").style["display"] = "none";
 		//$('#toHide').fadeOut('slow');
 		document.getElementById("video").style["display"] = "block";
+		document.getElementById("close_vid").style["display"] = "block";
 		//$('#video').delay(800).fadeIn('slow');
 		
 	}
@@ -106,6 +108,7 @@ function playPause()
 		//$('#toFade').fadeIn('slow');
 		document.getElementById("toHide").style["display"] = "block";
 		document.getElementById("video").style["display"] = "none";
+		document.getElementById("close_vid").style["display"] = "none";
 		$('#toFadeH').delay(500).animate({ opacity: 1 });
 		$('#toFadeP').delay(750).animate({ opacity: 1 });
 		$('#toFadeA').delay(1000).animate({ opacity: 1 });

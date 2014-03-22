@@ -304,6 +304,7 @@ body {
 	height: 40px;
 	background: url(../images/search.png);
 	background-size: 100% 100%;
+	cursor: pointer;
 }
 
 .submit_button {
@@ -318,6 +319,7 @@ body {
 	height: 40px;
 	background: url(../images/clear_button.jpg);
 	background-size: 100% 100%;
+	cursor: pointer;
 }
 
 #filters {
@@ -1448,6 +1450,11 @@ div.blog {
 
 .defineGeoInstructions {
 	padding: 1em;
+}
+
+.close_vid{
+	display:none;
+	float:right;
 }
 
 /*--footer--*/
