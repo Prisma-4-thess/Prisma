@@ -362,6 +362,7 @@ body {
 	margin: 0% 3%;
 	display: none;
 	float: left;
+	padding-bottom: 1em;
 }
 /* -- Dim: vertical search fields */
 #portfoliolist li {
