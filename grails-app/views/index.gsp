@@ -13,6 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 --%>
 <g:javascript library="jquery" />
 <resource:autoComplete skin="default" />
+<resource:tooltip  />
 <script type="text/javascript"
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH_oa4EC3VCWeqeMvTFkQC697gcs_ncyk&sensor=false">      
     </script>
@@ -184,19 +185,26 @@ function play(){
 										<ul>
 											<li><div class="portfolio ada" data-cat="ada">
 													<label for="ada">ΑΔΑ:<br /></label>
-													<g:textField name="ada" />
+													<g:textField name="ada"  title="Πληκτρολογείστε τον Αριθμό Διαδικτυακής Ανάρτησης 
+													της απόφασης που αναζητείτε."/>
+													<richui:tooltip id="ada" />
 													<%--<div class="popup">some text here</div>
 												--%>
 												</div></li>
 											<li><div class="portfolio prot_num" data-cat="prot_num">
 													<label for="prot_num">Αριθμός Πρωτοκόλου:<br /></label>
-													<g:textField name="prot_num" />
+													<g:textField name="prot_num"  title="Πληκρολογείστε τον Αριθμό Πρωτοκόλου της απόφασης που αναζητείτε."/>
+													<richui:tooltip id="prot_num" />
 												</div></li>
 											<li><div class="portfolio unit" data-cat="unit">
 													<label for="unit">Μονάδα:</label>
 													<richui:autoComplete name="unit"
+														title="Αρχίστε να πληκτρολογείτε το όνομα της μονάδας για την οποία επιθυμείτε να πραγματοποιήσετε αναζήτηση 
+														και θα εμφανιστούν προτάσεις από τις μονάδες που ανήκουν στον οργανισμό που έχετε επιλέξει. 
+														Αν δεν έχετε επιλέξει οργανισμό, εμφανίζονται προτάσεις μονάδων από όλους τους οργανισμούς."
 														action="${createLinkTo('dir': 'ajax/unitAJAX')}"
 														onItemSelect="${remoteFunction(controller: 'ajax' , action: 'selUn', params: '\'id=\' + id')}" />
+														<richui:tooltip id="unit" />
 												</div></li>
 											<li><div class="portfolio org" data-cat="org">
 													<label for="org">Οργανισμός:</label>
@@ -208,21 +216,34 @@ function play(){
 											<li><div class="portfolio signer" data-cat="signer">
 													<label for="signer">Τελικός Υπογράφων:</label>
 													<richui:autoComplete name="signer"
+														title="Αρχίστε να πληκτρολογείτε το όνομα του τελικού υπογράφων που υπέγραψε την απόφαση που
+														αναζητείται και διαλέξτε μία από τις προτάσεις που θα εμφανιστούν. 
+														Για καλύτερη αναζήτηση πληκτρολογείστε πρώτα το επίθετο του υπογράφων."
 														action="${createLinkTo('dir': 'ajax/signerAJAX')}" />
+															<richui:tooltip id="signer" />
 												</div></li>
 											<li><div class="portfolio subject" data-cat="subject">
 													<label for="subject">Θέμα:<br /></label>
-													<g:textField name="subject" />
+													<g:textField name="subject" 
+													title="Συμπληρώστε το πεδίο με λέξεις κλειδιά που περιγράφουν 
+													την απόφαση που αναζητείτε."/>
+													<richui:tooltip id="subject" />
 												</div></li>
 											<li><div class="portfolio type" data-cat="type">
 													<label for="type">Τύπος Απόφασης:</label>
 													<richui:autoComplete name="type"
+														title="Αρχιστε να πληκτρολογείτε τον τύπο της απόφασης που αναζητείτε 
+														και διαλέξτε μία από τις προτάσεις που θα εμφανιστούν."
 														action="${createLinkTo('dir': 'ajax/typeAJAX')}" />
+															<richui:tooltip id="type" />
 												</div></li>
 											<li><div class="portfolio tag" data-cat="tag">
 													<label for="tag">Θεματική Ενότητα:</label>
 													<richui:autoComplete name="tag"
+														title="Αρχίστε να πληκτρολογείτε την θεματική ενότητα που ανήκει η απόφαση που αναζητείτε
+														και επιλέξτε μία από τις προτάσεις που εμφανίζονται."
 														action="${createLinkTo('dir': 'ajax/tagAJAX')}" />
+														<richui:tooltip id="tag" />
 												</div></li>
 											<li><div id="fromDate" class="portfolio fromDate"
 													data-cat="fromDate">
