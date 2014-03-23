@@ -232,7 +232,7 @@ function play(){
 											<li><div class="portfolio type" data-cat="type">
 													<label for="type">Τύπος Απόφασης:</label>
 													<richui:autoComplete name="type"
-														title="Αρχιστε να πληκτρολογείτε τον τύπο της απόφασης που αναζητείτε 
+														title="Αρχίστε να πληκτρολογείτε τον τύπο της απόφασης που αναζητείτε 
 														και διαλέξτε μία από τις προτάσεις που θα εμφανιστούν."
 														action="${createLinkTo('dir': 'ajax/typeAJAX')}" />
 															<richui:tooltip id="type" />
