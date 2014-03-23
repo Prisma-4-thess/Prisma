@@ -1456,6 +1456,7 @@ div.blog {
 .close_vid{
 	display:none;
 	float:right;
+	cursor: pointer;
 }
 
 /*--footer--*/
