@@ -1503,6 +1503,11 @@ div.blog {
 	font-style: italic;
 }
 
+/*Override richui tooltips*/
+.bd{
+	max-width: 25em;
+}
+
 /* ============ TIMELINE ============= */
 .timelineContainer {
 	border-left: 2px solid #ccc;
