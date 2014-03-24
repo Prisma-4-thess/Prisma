@@ -81,12 +81,11 @@ class SearchController {
 
 		/*println params.prot_num
 		 println params.unit
-		
 		 println params.signer_first
 		 println params.signer_last
 		 println params.fromDate
 		 println params.toDate*/
-		
+
 		decision = new Decision()
 		offset = "0"
 		def (first,last)=params.signer.tokenize(' ')
@@ -108,7 +107,10 @@ class SearchController {
 					}
 					else{
 						println "no org selected"
-						'in'("label",["Δήμος Θεσσαλονίκης","Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης"])
+						'in'("label",[
+							"Δήμος Θεσσαλονίκης",
+							"Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης"
+						])
 					}
 				}
 			}
@@ -139,7 +141,7 @@ class SearchController {
 		offset = "0"
 		def (first,last)=params.signer.tokenize(' ')
 		def c = Decision.createCriteria()
-		
+
 		decision = c.list {
 
 			like("ada","%"+params.ada+"%")
@@ -172,7 +174,10 @@ class SearchController {
 					}
 					else{
 						println "no org selected"
-						'in'("label",["Δήμος Θεσσαλονίκης","Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης"])
+						'in'("label",[
+							"Δήμος Θεσσαλονίκης",
+							"Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης"
+						])
 					}
 				}
 			}
@@ -217,12 +222,14 @@ class SearchController {
 		def relativeDecisions = new RelativeDecision()
 		relativeDecisions = RelativeDecision.createCriteria().list{ eq("finalDec",dec) }
 		//println "relative decisions: "+relativeDecisions.relatedDec
-		def sim_dec=new Decision()
-		sim_dec=Decision.createCriteria().list{
-			eq("tags",dec.tags)
-			maxResults 15
+		def simDec=new Decision()
+		simDec=Decision.createCriteria().list{
+			tags{
+				'in'("label",dec.tags.label)
+			}
+			maxResults(maxToShow)
 		}
-		[decision:dec,ext:dec_ext,org:org,dec2:dec2,relDec:relativeDecisions.relatedDec,sim_dec:sim_dec,source:params.source]
+		[decision:dec,ext:dec_ext,org:org,dec2:dec2,relDec:relativeDecisions.relatedDec,simDec:simDec,source:params.source]
 	}
 	def showRelated(){
 
@@ -234,15 +241,17 @@ class SearchController {
 	}
 
 	def showSimilar(){
-				def dec=Decision.get(params.decisionId)
-				def sim_dec=new Decision()
-		sim_dec=Decision.createCriteria().list{
-			eq("tags",dec.tags)
-			maxResults 15
-		}
-				[dec:dec,sim_dec:sim_dec]
+		def dec=Decision.get(params.decisionId)
+		def simDec=new Decision()
+		simDec=Decision.createCriteria().list{
+			tags{
+				'in'("label",dec.tags.label)
 			}
-	
+			maxResults(maxToShow)
+		}
+		[dec:dec,simDec:simDec]
+	}
+
 	def list() {
 
 		offset=params.offset

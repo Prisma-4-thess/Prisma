@@ -159,6 +159,13 @@
 			</td>
 		</tr>
 	</g:if>
+	<g:if test="${simDec}">
+		<tr>
+			<td><g:remoteLink action="showSimilar"
+					params="['decisionId':decision.id]" update="similar">Παρόμοιες αποφάσεις</g:remoteLink>
+			</td>
+		</tr>
+	</g:if>
 	<tr>
 		<th><g:if test="${source=="map"}">
 				<%--<g:link mapping="rootUrl">←</g:link>
@@ -170,6 +177,7 @@
 </table>
 
 <div id="related"></div>
+<div id="similar"></div>
 
 <div id="comments" style="display: none;">
 	<g:remoteLink controller="search" action="blog" id="${decision.ada}"
