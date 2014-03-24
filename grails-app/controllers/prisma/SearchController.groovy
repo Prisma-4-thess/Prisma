@@ -217,7 +217,12 @@ class SearchController {
 		def relativeDecisions = new RelativeDecision()
 		relativeDecisions = RelativeDecision.createCriteria().list{ eq("finalDec",dec) }
 		//println "relative decisions: "+relativeDecisions.relatedDec
-		[decision:dec,ext:dec_ext,org:org,dec2:dec2,relDec:relativeDecisions.relatedDec,source:params.source]
+		def sim_dec=new Decision()
+		sim_dec=Decision.createCriteria().list{
+			eq("tags",dec.tags)
+			maxResults 15
+		}
+		[decision:dec,ext:dec_ext,org:org,dec2:dec2,relDec:relativeDecisions.relatedDec,sim_dec:sim_dec,source:params.source]
 	}
 	def showRelated(){
 
@@ -228,6 +233,16 @@ class SearchController {
 		[dec:dec,relDec:relativeDecisions.relatedDec]
 	}
 
+	def showSimilar(){
+				def dec=Decision.get(params.decisionId)
+				def sim_dec=new Decision()
+		sim_dec=Decision.createCriteria().list{
+			eq("tags",dec.tags)
+			maxResults 15
+		}
+				[dec:dec,sim_dec:sim_dec]
+			}
+	
 	def list() {
 
 		offset=params.offset
