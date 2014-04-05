@@ -79,7 +79,8 @@ environments {
 	}
 	production {
 		grails.logging.jul.usebridge = false
-		grails.serverURL = "http://83.212.109.124:80/Prisma"
+		grails.serverURL = "http://83.212.109.124:80/Prisma" //Spiros Okeanos
+		//grails.serverURL = "http://83.212.96.91:8080/Prisma" //Mitsos Okeanos
 	}
 }
 
@@ -124,6 +125,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/pdf/**':                     ['permitAll'],
 	'/**/apk/**':                     ['permitAll'],
 	'/**/videos/**':                     ['permitAll'],
+	'/**/team/**':                     ['permitAll'],
 	'/**/android/**':                     ['permitAll'],
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll']]

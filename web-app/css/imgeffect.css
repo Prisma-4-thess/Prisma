@@ -12,10 +12,9 @@
 	transition: all 0.9s ease-in-out;
 }
 
-/* .ch-img-1 { 
+ .ch-img-1 { 
 	background-image: url(../images/icon1.png);
 }
-
 .ch-img-2 { 
 	background-image: url(../images/icon2.png) ;
 }
@@ -41,7 +40,18 @@
 .ch-img-8 { 
 	background-image: url(../images/icon2.png) ;
 }
- */
+
+.ch-img-ete{
+	background-image: url(../images/ete.jpg) ;
+	background-size: 100% 100%;
+	border-radius: 0;
+}
+
+.ch-img-eot{
+	background-image: url(../images/eot.jpg) ;
+	background-size: 100% 100%;
+	border-radius: 0;
+}
 
 .ch-info {
 	position: absolute;

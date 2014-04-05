@@ -13,7 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 --%>
 <g:javascript library="jquery" />
 <resource:autoComplete skin="default" />
-<resource:tooltip  />
+<resource:tooltip />
 <script type="text/javascript"
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH_oa4EC3VCWeqeMvTFkQC697gcs_ncyk&sensor=false">      
     </script>
@@ -42,9 +42,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 						<li class="active"><a href="#home" class="scroll">Home</a></li>
 						<li><a href="#portfolio" class="scroll">Αναζητηση</a></li>
-						<li><a href="#about" class="scroll">Πληροφοριες</a></li>
-						<li><a href="#contact" class="scroll">Eπικοινωνια</a></li>
 						<li><a href="#map" class="scroll">Χαρτης</a></li>
+						<li><a href="#about" class="scroll">Πληροφοριες</a></li>
+						<li><a href="/Prisma/team/">Η ομαδα</a></li>
 						<li><g:render template="/common/topbar" /></li>
 						<div class="clear"></div>
 					</ul>
@@ -59,8 +59,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!------end-header------------>
 	<!-- start slider -->
 	<div class="video_bg">
-	<img id="close_vid" src="${resource(dir: 'images', file: 'clear_button.jpg')}" class="close_vid" onclick="pause()"/>
-		<div id="video" class="wrap" >
+		<img id="close_vid"
+			src="${resource(dir: 'images', file: 'clear_button.jpg')}"
+			class="close_vid" onclick="pause()" />
+		<div id="video" class="wrap">
 			<video id="video1" controls>
 				<source src="/Prisma/videos/Prisma_vid.mp4" type="video/mp4">
 			</video>
@@ -75,7 +77,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<span>Καλωσήρθατε στο </span>Prisma
 				</h2>
 				<p id="toFadeP">Γνωρίστε τη νέα πύλη διαδικτυακής διακυβέρνησης</p>
-				<a id="toFadeA" href="#portfolio" class="da-link scroll">Αναζητηση</a> <a id="apklink" href="/Prisma/apk/com.spydi2kood.prisma.apk"> <span
+				<a id="toFadeA" href="#portfolio" class="da-link scroll">Αναζητηση</a>
+				<a id="apklink" href="/Prisma/apk/com.spydi2kood.prisma.apk"> <span
 					id="toFadeS1" class="da-img"> </span>
 				</a> <a><span id="toFadeS2" class="da-video" onclick="play()">
 				</span></a>
@@ -87,7 +90,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 var myVideo=document.getElementById("video1"); 
 
 function play(){ 
-	console.info("playPause()");
+	console.info("play()");
 	//if (myVideo.paused){ 
 		myVideo.play();
 		$('#toFadeH').animate({ opacity: 0 });
@@ -185,15 +188,17 @@ function play(){
 										<ul>
 											<li><div class="portfolio ada" data-cat="ada">
 													<label for="ada">ΑΔΑ:<br /></label>
-													<g:textField name="ada"  title="Πληκτρολογείστε τον Αριθμό Διαδικτυακής Ανάρτησης 
-													της απόφασης που αναζητείτε."/>
+													<g:textField name="ada"
+														title="Πληκτρολογείστε τον Αριθμό Διαδικτυακής Ανάρτησης 
+													της απόφασης που αναζητείτε." />
 													<richui:tooltip id="ada" />
 													<%--<div class="popup">some text here</div>
 												--%>
 												</div></li>
 											<li><div class="portfolio prot_num" data-cat="prot_num">
 													<label for="prot_num">Αριθμός Πρωτοκόλου:<br /></label>
-													<g:textField name="prot_num"  title="Πληκρολογείστε τον Αριθμό Πρωτοκόλου της απόφασης που αναζητείτε."/>
+													<g:textField name="prot_num"
+														title="Πληκρολογείστε τον Αριθμό Πρωτοκόλου της απόφασης που αναζητείτε." />
 													<richui:tooltip id="prot_num" />
 												</div></li>
 											<li><div class="portfolio unit" data-cat="unit">
@@ -204,7 +209,7 @@ function play(){
 														Αν δεν έχετε επιλέξει οργανισμό, εμφανίζονται προτάσεις μονάδων από όλους τους οργανισμούς."
 														action="${createLinkTo('dir': 'ajax/unitAJAX')}"
 														onItemSelect="${remoteFunction(controller: 'ajax' , action: 'selUn', params: '\'id=\' + id')}" />
-														<richui:tooltip id="unit" />
+													<richui:tooltip id="unit" />
 												</div></li>
 											<li><div class="portfolio org" data-cat="org">
 													<label for="org">Οργανισμός:</label>
@@ -220,13 +225,13 @@ function play(){
 														αναζητείται και διαλέξτε μία από τις προτάσεις που θα εμφανιστούν. 
 														Για καλύτερη αναζήτηση πληκτρολογείστε πρώτα το επίθετο του υπογράφων."
 														action="${createLinkTo('dir': 'ajax/signerAJAX')}" />
-															<richui:tooltip id="signer" />
+													<richui:tooltip id="signer" />
 												</div></li>
 											<li><div class="portfolio subject" data-cat="subject">
 													<label for="subject">Θέμα:<br /></label>
-													<g:textField name="subject" 
-													title="Συμπληρώστε το πεδίο με λέξεις κλειδιά που περιγράφουν 
-													την απόφαση που αναζητείτε."/>
+													<g:textField name="subject"
+														title="Συμπληρώστε το πεδίο με λέξεις κλειδιά που περιγράφουν 
+													την απόφαση που αναζητείτε." />
 													<richui:tooltip id="subject" />
 												</div></li>
 											<li><div class="portfolio type" data-cat="type">
@@ -235,7 +240,7 @@ function play(){
 														title="Αρχίστε να πληκτρολογείτε τον τύπο της απόφασης που αναζητείτε 
 														και διαλέξτε μία από τις προτάσεις που θα εμφανιστούν."
 														action="${createLinkTo('dir': 'ajax/typeAJAX')}" />
-															<richui:tooltip id="type" />
+													<richui:tooltip id="type" />
 												</div></li>
 											<li><div class="portfolio tag" data-cat="tag">
 													<label for="tag">Θεματική Ενότητα:</label>
@@ -243,7 +248,7 @@ function play(){
 														title="Αρχίστε να πληκτρολογείτε την θεματική ενότητα που ανήκει η απόφαση που αναζητείτε
 														και επιλέξτε μία από τις προτάσεις που εμφανίζονται."
 														action="${createLinkTo('dir': 'ajax/tagAJAX')}" />
-														<richui:tooltip id="tag" />
+													<richui:tooltip id="tag" />
 												</div></li>
 											<li><div id="fromDate" class="portfolio fromDate"
 													data-cat="fromDate">
@@ -292,6 +297,19 @@ function play(){
 
 	</div>
 	<!---End-gallery----->
+
+	<!---------start-map------------>
+	<div id="map">
+		<script type="text/javascript">
+			<g:remoteFunction controller="map" action="homepage" update="markers"/>
+		</script>
+		<%--	<div id="mapView"></div>--%>
+	</div>
+
+	<div id="markers"></div>
+	<div id="map-canvas" class="mapViewClass" style=""></div>
+	<!---------end-map------------>
+
 	<!-----start-about-------->
 
 	<div class="about" id="about">
@@ -409,10 +427,7 @@ function play(){
 								}
 							</script>
 
-							<%--<g:textField name="email" type="text" class="textbox"
-								value="Your Email" onfocus="this.value = '';"
-								onblur="if (this.value == '') {this.value = 'Your Email';}" />
-							--%>
+						
 							<div class="clear"></div>
 
 							<div>
@@ -423,8 +438,8 @@ function play(){
 							<%--<span><input type="submit" class="" value="Submit"></span>
 							--%>
 							<div>
-								<span id="contact_resp" style="display: none;"></span> <span><g:submitButton
-										name="Submit" type="submit" class="" value="Αποστολη" /></span>
+								<span id="contact_resp" style="display: none;"></span> <span>
+								<g:submitButton name="Submit" type="submit" class="" value="Αποστολη" /></span>
 							</div>
 							<div class="clear"></div>
 						</g:formRemote>
@@ -475,18 +490,7 @@ function play(){
 		</div>
 
 	</div>
-
-	<!---------start-map------------>
-	<div id="map">
-		<script type="text/javascript">
-			<g:remoteFunction controller="map" action="homepage" update="markers"/>
-		</script>
-		<%--	<div id="mapView"></div>--%>
-	</div>
-
-	<div id="markers"></div>
-	<div id="map-canvas" class="mapViewClass" style=""></div>
-	<!---------end-map------------>
+	<!---------end-contact------------>
 
 	<!----start-footer---------->
 	<div class="footer-bottom">

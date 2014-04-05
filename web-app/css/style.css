@@ -154,6 +154,12 @@ body {
 	background-size: 100% 100%;
 }
 
+/************Sbond***********/
+.news_slider_bg {
+	background: url('../images/spydi2kood.jpg') no-repeat;
+	background-size: cover;
+}
+
 #video {
 	display: none;
 	margin-left: auto;
@@ -196,7 +202,7 @@ body {
 	line-height: 1.4em;
 }
 
-.da-slide .da-link {
+.da-slide .da-link,.da-name {
 	background-color: #1BBC9B;
 	display: block;
 	color: #FFF;
@@ -208,7 +214,12 @@ body {
 	padding: 1em 2em;
 }
 
-.da-slide .da-link:hover {
+.da-name {
+	background-color: transparent;
+	text-transform: none;
+}
+
+.da-slide .da-link,.da-name:hover {
 	background: #01CAA1;
 }
 
@@ -802,7 +813,7 @@ body {
 	.da-slide h2 {
 		font-size: 2.6em;
 	}
-	.da-slide .da-link {
+	.da-slide .da-link,.da-name {
 		width: 13%;
 		padding: 0.8em 2em;
 	}
@@ -874,7 +885,7 @@ body {
 	.da-slide h2 {
 		font-size: 2.6em;
 	}
-	.da-slide .da-link {
+	.da-slide .da-link,.da-name {
 		width: 14%;
 		padding: 0.6em 1.8em;
 	}
@@ -959,7 +970,7 @@ body {
 	.da-slide h2 {
 		font-size: 2.5em;
 	}
-	.da-slide .da-link {
+	.da-slide .da-link,.da-name {
 		width: 14%;
 		padding: 0.6em 1.8em;
 		font-size: 0.9em;
@@ -1092,7 +1103,7 @@ body {
 	.da-slide h2 {
 		font-size: 2.1em;
 	}
-	.da-slide .da-link {
+	.da-slide .da-link,.da-name {
 		width: 20%;
 		padding: 0.6em 1.8em;
 		font-size: 0.9em;
@@ -1230,7 +1241,7 @@ body {
 	.da-slide h2 {
 		font-size: 1.6em;
 	}
-	.da-slide .da-link {
+	.da-slide .da-link,.da-name {
 		width: 30%;
 		padding: 0.6em 0.8em;
 		font-size: 0.9em;
@@ -1453,15 +1464,23 @@ div.blog {
 	padding: 1em;
 }
 
-.close_vid{
-	display:none;
-	float:right;
+.close_vid {
+	display: none;
+	float: right;
 	cursor: pointer;
+}
+
+.references {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
 }
 
 /*--footer--*/
 .footer-bottom-global {
 	padding: 25px 0;
+	margin-top: 2em;
 	background: #303441;
 	bottom: 0px;
 	/*position: fixed; /* makes footer always visible at the bottom*/
@@ -1504,7 +1523,7 @@ div.blog {
 }
 
 /*Override richui tooltips*/
-.bd{
+.bd {
 	max-width: 25em;
 }
 
@@ -1539,7 +1558,7 @@ a.expandAll:hover {
 
 div.timelineMajor {
 	clear: left;
-	/*Sbond*/	
+	/*Sbond*/
 	/*float: left;*/
 	margin: 0 0 12px;
 	width: 900px;
@@ -1548,7 +1567,7 @@ div.timelineMajor {
 .timelineMajor h2 {
 	background: url(../images/timeline_century_tick.gif) left center
 		no-repeat;
-	/*Sbond*/	
+	/*Sbond*/
 	/*font-family: Palatino, "Times New Roman", Times, serif;*/
 	cursor: pointer;
 	text-align: left;
@@ -1571,7 +1590,7 @@ div.timelineMajor {
 
 dl.timelineMinor {
 	clear: left;
-	/*Sbond*/	
+	/*Sbond*/
 	/*float: left;*/
 	margin: 0 12px 0 0;
 	padding: 4px 4px 4px 0;
@@ -1626,7 +1645,7 @@ dl.timelineMinor {
 
 .timelineEvent p {
 	clear: left;
-	/*Sbond*/	
+	/*Sbond*/
 	/*float: left;*/
 	line-height: 1.5em;
 	margin: 6px 0 10px;
