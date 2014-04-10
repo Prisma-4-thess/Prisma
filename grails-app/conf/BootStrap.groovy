@@ -15,7 +15,7 @@ class BootStrap {
 	}
 	private User createUser(username, role) {
 
-		def defaultPassword = ''
+		def defaultPassword = 'spydiko2014'
 
 		User user = User.findByUsername(username) ?: new User(
 				username: username,

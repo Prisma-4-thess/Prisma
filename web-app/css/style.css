@@ -271,6 +271,12 @@ body {
 	text-align: center;
 }
 
+.container h3 {
+	text-align: center;
+	font-size: 1.8em;
+	color: #444444;
+}
+
 .container p {
 	color: #444444;
 	font-size: 1em;
@@ -1196,6 +1202,9 @@ body {
 	.container h2 {
 		font-size: 1.8em;
 	}
+	container h3 {
+		font-size: 1.6em;
+	}
 	.desc p:nth-child(3) {
 		padding: 0em 1em 2em 1em;
 	}
@@ -1341,6 +1350,9 @@ body {
 	/****/
 	.container h2 {
 		font-size: 1.6em;
+	}
+	container h3 {
+		font-size: 1.4em;
 	}
 	.ch-grid li {
 		margin: 0px;
