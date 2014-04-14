@@ -1,7 +1,8 @@
 package prisma
 
-import org.springframework.dao.DataIntegrityViolationException
 import grails.plugin.springsecurity.annotation.Secured
+import org.springframework.dao.DataIntegrityViolationException
+
 @Secured(['ROLE_ADMIN'])
 class UserdefgeoController {
 
@@ -64,8 +65,8 @@ class UserdefgeoController {
         if (version != null) {
             if (userdefgeoInstance.version > version) {
                 userdefgeoInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
-                          [message(code: 'userdefgeo.label', default: 'Userdefgeo')] as Object[],
-                          "Another user has updated this Userdefgeo while you were editing")
+                        [message(code: 'userdefgeo.label', default: 'Userdefgeo')] as Object[],
+                        "Another user has updated this Userdefgeo while you were editing")
                 render(view: "edit", model: [userdefgeoInstance: userdefgeoInstance])
                 return
             }

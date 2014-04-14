@@ -1,7 +1,8 @@
 package prisma
 
-import org.springframework.dao.DataIntegrityViolationException
 import grails.plugin.springsecurity.annotation.Secured
+import org.springframework.dao.DataIntegrityViolationException
+
 @Secured(['permitAll'])
 class PredefinedController {
 
@@ -64,8 +65,8 @@ class PredefinedController {
         if (version != null) {
             if (predefinedInstance.version > version) {
                 predefinedInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
-                          [message(code: 'predefined.label', default: 'Predefined')] as Object[],
-                          "Another user has updated this Predefined while you were editing")
+                        [message(code: 'predefined.label', default: 'Predefined')] as Object[],
+                        "Another user has updated this Predefined while you were editing")
                 render(view: "edit", model: [predefinedInstance: predefinedInstance])
                 return
             }

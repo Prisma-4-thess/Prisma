@@ -1,7 +1,8 @@
 package prisma
 
-import org.springframework.dao.DataIntegrityViolationException
 import grails.plugin.springsecurity.annotation.Secured
+import org.springframework.dao.DataIntegrityViolationException
+
 @Secured(['ROLE_ADMIN'])
 class UserdefdecController {
 
@@ -64,8 +65,8 @@ class UserdefdecController {
         if (version != null) {
             if (userdefdecInstance.version > version) {
                 userdefdecInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
-                          [message(code: 'userdefdec.label', default: 'Userdefdec')] as Object[],
-                          "Another user has updated this Userdefdec while you were editing")
+                        [message(code: 'userdefdec.label', default: 'Userdefdec')] as Object[],
+                        "Another user has updated this Userdefdec while you were editing")
                 render(view: "edit", model: [userdefdecInstance: userdefdecInstance])
                 return
             }

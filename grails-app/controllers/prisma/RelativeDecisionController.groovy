@@ -1,7 +1,8 @@
 package prisma
 
-import org.springframework.dao.DataIntegrityViolationException
 import grails.plugin.springsecurity.annotation.Secured
+import org.springframework.dao.DataIntegrityViolationException
+
 @Secured(['ROLE_ADMIN'])
 class RelativeDecisionController {
 
@@ -64,8 +65,8 @@ class RelativeDecisionController {
         if (version != null) {
             if (relativeDecisionInstance.version > version) {
                 relativeDecisionInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
-                          [message(code: 'relativeDecision.label', default: 'RelativeDecision')] as Object[],
-                          "Another user has updated this RelativeDecision while you were editing")
+                        [message(code: 'relativeDecision.label', default: 'RelativeDecision')] as Object[],
+                        "Another user has updated this RelativeDecision while you were editing")
                 render(view: "edit", model: [relativeDecisionInstance: relativeDecisionInstance])
                 return
             }

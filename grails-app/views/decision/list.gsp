@@ -1,92 +1,95 @@
-
-<%@ page import="prisma.Decision"%>
+<%@ page import="prisma.Decision" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="layout" content="main">
-<g:set var="entityName"
-	value="${message(code: 'decision.label', default: 'Decision')}" />
-<title><g:message code="default.list.label" args="[entityName]" /></title>
+    <meta name="layout" content="main">
+    <g:set var="entityName"
+           value="${message(code: 'decision.label', default: 'Decision')}"/>
+    <title><g:message code="default.list.label" args="[entityName]"/></title>
 </head>
+
 <body>
-	<a href="#list-decision" class="skip" tabindex="-1"><g:message
-			code="default.link.skip.label" default="Skip to content&hellip;" /></a>
-	<div class="nav" role="navigation">
-		<ul>
-			<li><g:link mapping="adminPanel" class="home">
-					<g:message code="default.home.label" />
-				</g:link></li>
-			<li><g:link class="create" action="create">
-					<g:message code="default.new.label" args="[entityName]" />
-				</g:link></li>
-		</ul>
-	</div>
-	<div id="list-decision" class="content scaffold-list" role="main">
-		<h1>
-			<g:message code="default.list.label" args="[entityName]" />
-		</h1>
-		<g:if test="${flash.message}">
-			<div class="message" role="status">
-				${flash.message}
-			</div>
-		</g:if>
-		<table>
-			<thead>
-				<tr>
+<a href="#list-decision" class="skip" tabindex="-1"><g:message
+        code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 
-					<g:sortableColumn property="ada"
-						title="${message(code: 'decision.ada.label', default: 'Ada')}" />
+<div class="nav" role="navigation">
+    <ul>
+        <li><g:link mapping="adminPanel" class="home">
+            <g:message code="default.home.label"/>
+        </g:link></li>
+        <li><g:link class="create" action="create">
+            <g:message code="default.new.label" args="[entityName]"/>
+        </g:link></li>
+    </ul>
+</div>
 
-					<th><g:message code="decision.decisionToCorrect.label"
-							default="Decision To Correct" /></th>
+<div id="list-decision" class="content scaffold-list" role="main">
+    <h1>
+        <g:message code="default.list.label" args="[entityName]"/>
+    </h1>
+    <g:if test="${flash.message}">
+        <div class="message" role="status">
+            ${flash.message}
+        </div>
+    </g:if>
+    <table>
+        <thead>
+        <tr>
 
-					<th><g:message code="decision.geo.label" default="Geo" /></th>
+            <g:sortableColumn property="ada"
+                              title="${message(code: 'decision.ada.label', default: 'Ada')}"/>
 
-					<g:sortableColumn property="date"
-						title="${message(code: 'decision.date.label', default: 'Date')}" />
+            <th><g:message code="decision.decisionToCorrect.label"
+                           default="Decision To Correct"/></th>
 
-					<g:sortableColumn property="documentUrl"
-						title="${message(code: 'decision.documentUrl.label', default: 'Document Url')}" />
+            <th><g:message code="decision.geo.label" default="Geo"/></th>
 
-					<g:sortableColumn property="protocolNumber"
-						title="${message(code: 'decision.protocolNumber.label', default: 'Protocol Number')}" />
+            <g:sortableColumn property="date"
+                              title="${message(code: 'decision.date.label', default: 'Date')}"/>
 
-				</tr>
-			</thead>
-			<tbody>
-				<g:each in="${decisionInstanceList}" status="i"
-					var="decisionInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+            <g:sortableColumn property="documentUrl"
+                              title="${message(code: 'decision.documentUrl.label', default: 'Document Url')}"/>
 
-						<td><g:link action="show" id="${decisionInstance.id}">
-								${fieldValue(bean: decisionInstance, field: "ada")}
-							</g:link></td>
+            <g:sortableColumn property="protocolNumber"
+                              title="${message(code: 'decision.protocolNumber.label', default: 'Protocol Number')}"/>
 
-						<td>
-							${fieldValue(bean: decisionInstance, field: "decisionToCorrect")}
-						</td>
+        </tr>
+        </thead>
+        <tbody>
+        <g:each in="${decisionInstanceList}" status="i"
+                var="decisionInstance">
+            <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
-						<td>
-							${fieldValue(bean: decisionInstance, field: "geo")}
-						</td>
+                <td><g:link action="show" id="${decisionInstance.id}">
+                    ${fieldValue(bean: decisionInstance, field: "ada")}
+                </g:link></td>
 
-						<td><g:formatDate date="${decisionInstance.date}" /></td>
+                <td>
+                    ${fieldValue(bean: decisionInstance, field: "decisionToCorrect")}
+                </td>
 
-						<td>
-							${fieldValue(bean: decisionInstance, field: "documentUrl")}
-						</td>
+                <td>
+                    ${fieldValue(bean: decisionInstance, field: "geo")}
+                </td>
 
-						<td>
-							${fieldValue(bean: decisionInstance, field: "protocolNumber")}
-						</td>
+                <td><g:formatDate date="${decisionInstance.date}"/></td>
 
-					</tr>
-				</g:each>
-			</tbody>
-		</table>
-		<div class="pagination">
-			<g:paginate total="${decisionInstanceTotal}" />
-		</div>
-	</div>
+                <td>
+                    ${fieldValue(bean: decisionInstance, field: "documentUrl")}
+                </td>
+
+                <td>
+                    ${fieldValue(bean: decisionInstance, field: "protocolNumber")}
+                </td>
+
+            </tr>
+        </g:each>
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <g:paginate total="${decisionInstanceTotal}"/>
+    </div>
+</div>
 </body>
 </html>

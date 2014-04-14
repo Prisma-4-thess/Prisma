@@ -1,8 +1,9 @@
 package prisma
 
-import org.springframework.dao.DataIntegrityViolationException
 import grails.plugin.springsecurity.annotation.Secured
-@Secured(['ROLE_ADMIN','ROLE_UPLOADER'])
+import org.springframework.dao.DataIntegrityViolationException
+
+@Secured(['ROLE_ADMIN', 'ROLE_UPLOADER'])
 class GeoController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -64,8 +65,8 @@ class GeoController {
         if (version != null) {
             if (geoInstance.version > version) {
                 geoInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
-                          [message(code: 'geo.label', default: 'Geo')] as Object[],
-                          "Another user has updated this Geo while you were editing")
+                        [message(code: 'geo.label', default: 'Geo')] as Object[],
+                        "Another user has updated this Geo while you were editing")
                 render(view: "edit", model: [geoInstance: geoInstance])
                 return
             }

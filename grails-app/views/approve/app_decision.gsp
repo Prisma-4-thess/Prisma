@@ -1,1 +1,1 @@
- <font color="green">Εγκρίθηκε</font>
+<font color="green">Εγκρίθηκε</font>

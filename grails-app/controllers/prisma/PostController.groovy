@@ -1,7 +1,8 @@
 package prisma
 
-import org.springframework.dao.DataIntegrityViolationException
 import grails.plugin.springsecurity.annotation.Secured
+import org.springframework.dao.DataIntegrityViolationException
+
 @Secured(['permitAll'])
 class PostController {
 
@@ -64,8 +65,8 @@ class PostController {
         if (version != null) {
             if (postInstance.version > version) {
                 postInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
-                          [message(code: 'post.label', default: 'Post')] as Object[],
-                          "Another user has updated this Post while you were editing")
+                        [message(code: 'post.label', default: 'Post')] as Object[],
+                        "Another user has updated this Post while you were editing")
                 render(view: "edit", model: [postInstance: postInstance])
                 return
             }

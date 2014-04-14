@@ -1,7 +1,8 @@
 package prisma
 
-import org.springframework.dao.DataIntegrityViolationException
 import grails.plugin.springsecurity.annotation.Secured
+import org.springframework.dao.DataIntegrityViolationException
+
 @Secured(['ROLE_ADMIN'])
 class ContactController {
 
@@ -64,8 +65,8 @@ class ContactController {
         if (version != null) {
             if (contactInstance.version > version) {
                 contactInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
-                          [message(code: 'contact.label', default: 'Contact')] as Object[],
-                          "Another user has updated this Contact while you were editing")
+                        [message(code: 'contact.label', default: 'Contact')] as Object[],
+                        "Another user has updated this Contact while you were editing")
                 render(view: "edit", model: [contactInstance: contactInstance])
                 return
             }

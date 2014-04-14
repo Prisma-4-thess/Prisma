@@ -1,68 +1,71 @@
-
-<%@ page import="prisma.RelativeDecision"%>
+<%@ page import="prisma.RelativeDecision" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="layout" content="main">
-<g:set var="entityName"
-	value="${message(code: 'relativeDecision.label', default: 'RelativeDecision')}" />
-<title><g:message code="default.list.label" args="[entityName]" /></title>
+    <meta name="layout" content="main">
+    <g:set var="entityName"
+           value="${message(code: 'relativeDecision.label', default: 'RelativeDecision')}"/>
+    <title><g:message code="default.list.label" args="[entityName]"/></title>
 </head>
+
 <body>
-	<a href="#list-relativeDecision" class="skip" tabindex="-1"><g:message
-			code="default.link.skip.label" default="Skip to content&hellip;" /></a>
-	<div class="nav" role="navigation">
-		<ul>
-			<li><g:link mapping="adminPanel" class="home">
-					<g:message code="default.home.label" />
-				</g:link></li>
-			<li><g:link class="create" action="create">
-					<g:message code="default.new.label" args="[entityName]" />
-				</g:link></li>
-		</ul>
-	</div>
-	<div id="list-relativeDecision" class="content scaffold-list"
-		role="main">
-		<h1>
-			<g:message code="default.list.label" args="[entityName]" />
-		</h1>
-		<g:if test="${flash.message}">
-			<div class="message" role="status">
-				${flash.message}
-			</div>
-		</g:if>
-		<table>
-			<thead>
-				<tr>
+<a href="#list-relativeDecision" class="skip" tabindex="-1"><g:message
+        code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 
-					<th><g:message code="relativeDecision.finalDec.label"
-							default="Final Dec" /></th>
+<div class="nav" role="navigation">
+    <ul>
+        <li><g:link mapping="adminPanel" class="home">
+            <g:message code="default.home.label"/>
+        </g:link></li>
+        <li><g:link class="create" action="create">
+            <g:message code="default.new.label" args="[entityName]"/>
+        </g:link></li>
+    </ul>
+</div>
 
-					<th><g:message code="relativeDecision.relatedDec.label"
-							default="Related Dec" /></th>
+<div id="list-relativeDecision" class="content scaffold-list"
+     role="main">
+    <h1>
+        <g:message code="default.list.label" args="[entityName]"/>
+    </h1>
+    <g:if test="${flash.message}">
+        <div class="message" role="status">
+            ${flash.message}
+        </div>
+    </g:if>
+    <table>
+        <thead>
+        <tr>
 
-				</tr>
-			</thead>
-			<tbody>
-				<g:each in="${relativeDecisionInstanceList}" status="i"
-					var="relativeDecisionInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+            <th><g:message code="relativeDecision.finalDec.label"
+                           default="Final Dec"/></th>
 
-						<td><g:link action="show" id="${relativeDecisionInstance.id}">
-								${fieldValue(bean: relativeDecisionInstance, field: "finalDec")}
-							</g:link></td>
+            <th><g:message code="relativeDecision.relatedDec.label"
+                           default="Related Dec"/></th>
 
-						<td>
-							${fieldValue(bean: relativeDecisionInstance, field: "relatedDec")}
-						</td>
+        </tr>
+        </thead>
+        <tbody>
+        <g:each in="${relativeDecisionInstanceList}" status="i"
+                var="relativeDecisionInstance">
+            <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
-					</tr>
-				</g:each>
-			</tbody>
-		</table>
-		<div class="pagination">
-			<g:paginate total="${relativeDecisionInstanceTotal}" />
-		</div>
-	</div>
+                <td><g:link action="show" id="${relativeDecisionInstance.id}">
+                    ${fieldValue(bean: relativeDecisionInstance, field: "finalDec")}
+                </g:link></td>
+
+                <td>
+                    ${fieldValue(bean: relativeDecisionInstance, field: "relatedDec")}
+                </td>
+
+            </tr>
+        </g:each>
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <g:paginate total="${relativeDecisionInstanceTotal}"/>
+    </div>
+</div>
 </body>
 </html>

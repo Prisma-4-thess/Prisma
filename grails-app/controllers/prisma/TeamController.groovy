@@ -2,6 +2,6 @@ package prisma
 
 class TeamController {
 
-    def index() { }
+    def index() {}
 
 }
