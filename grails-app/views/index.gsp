@@ -22,7 +22,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <body>
 	<!----start-header---------->
-	<div class="header_bg">
+	<div class="home_header_bg">
 		<div class="wrap">
 			<div class="header">
 				<!--------start-logo------>
@@ -318,6 +318,60 @@ function play(){
 			<p>Με το Prisma θέλουμε να δώσουμε την δυνατότητα στον πολίτη να
 				είναι μέρος της διακυβέρνησης του τόπου του</p>
 			<div class="about-grids">
+				<%--<div class="grid">
+					<div class="dc_zoom_css">
+						<span class="roll_css6"> <div class="social">
+								<ul>
+									<li><a class="sharefacebook" href="#"> </a></li>
+									<li><a class="sharetwitter" href="#"> </a></li>
+									<li><a class="sharetgoogle" href="#"> </a></li>
+									<li><a class="sharedrible" href="#"> </a></li>
+									<div class="clear"></div>
+								</ul>
+							</div>
+						</span> <img class="post-person"
+							src="${resource(dir: 'images', file: 'slider_image_ody.jpg')}">
+					</div>
+					<div class="desc">
+						<h3>Δήμος Θεσσαλονίκης</h3>
+						<p>συμβάλλω</p>
+						<p id="desc-text">Ο Δήμος Θεσσαλονίκης στην υπηρεσία του
+							δημότη. Με στόχο τη διαμόρφωση της σύγχρονης, ευρωπαϊκής
+							Θεσσαλονίκης προωθούμε την ανάπτυξη πρωτοβουλιών που ενισχύουν
+							την ενεργό συμμετοχή του δημότη στη ζωή της πόλης και στο
+							δημοκρατικό διάλογο.</p>
+					</div>
+
+				</div>
+				--%>
+				<%--<div class="grid">
+					<div class="dc_zoom_css">
+						<span class="roll_css6"> 
+							<div class="social">
+								<ul>
+									<li><a class="sharefacebook" href="#"> </a></li>
+									<li><a class="sharetwitter" href="#"> </a></li>
+									<li><a class="sharetgoogle" href="#"> </a></li>
+									<li><a class="sharedrible" href="#"> </a></li>
+									<div class="clear"></div>
+								</ul>
+							</div>
+						
+						</span> <img class="post-person"
+							src="${resource(dir: 'images', file: 'diaugeia_logo.jpg')}">
+					</div>
+					<div class="desc">
+						<h3>Δι@ύγεια</h3>
+						<p>γνωρίζω</p>
+						<p id="desc-text">Το Πρόγραμμα Δι@ύγεια στοχεύει στην επίτευξη
+							της μέγιστης δυνατής δημοσιότητας της κυβερνητικής πολιτικής και
+							της διοικητικής δραστηριότητας. Επίσης, έχει σκοπό τη διασφάλιση
+							της διαφάνειας και την εμπέδωση της υπευθυνότητας και της
+							λογοδοσίας από την πλευρά των φορέων άσκησης της δημόσιας
+							εξουσίας.</p>
+					</div>
+				</div>
+				--%>
 				<div class="grid">
 					<div class="dc_zoom_css">
 						<span class="roll_css6"> <%--<div class="social">
@@ -335,39 +389,14 @@ function play(){
 					<div class="desc">
 						<h3>Δήμος Θεσσαλονίκης</h3>
 						<p>συμβάλλω</p>
-						<p id="desc-text">Ο Δήμος Θεσσαλονίκης στην υπηρεσία του
-							δημότη. Με στόχο τη διαμόρφωση της σύγχρονης, ευρωπαϊκής
-							Θεσσαλονίκης προωθούμε την ανάπτυξη πρωτοβουλιών που ενισχύουν
-							την ενεργό συμμετοχή του δημότη στη ζωή της πόλης και στο
-							δημοκρατικό διάλογο.</p>
-					</div>
-
-				</div>
-				<div class="grid">
-					<div class="dc_zoom_css">
-						<span class="roll_css6"> <%--
-							<div class="social">
-								<ul>
-									<li><a class="sharefacebook" href="#"> </a></li>
-									<li><a class="sharetwitter" href="#"> </a></li>
-									<li><a class="sharetgoogle" href="#"> </a></li>
-									<li><a class="sharedrible" href="#"> </a></li>
-									<div class="clear"></div>
-								</ul>
-							</div>
-						--%>
-						</span> <img class="post-person"
-							src="${resource(dir: 'images', file: 'diaugeia_logo.jpg')}">
-					</div>
-					<div class="desc">
-						<h3>Δι@ύγεια</h3>
-						<p>γνωρίζω</p>
-						<p id="desc-text">Το Πρόγραμμα Δι@ύγεια στοχεύει στην επίτευξη
-							της μέγιστης δυνατής δημοσιότητας της κυβερνητικής πολιτικής και
-							της διοικητικής δραστηριότητας. Επίσης, έχει σκοπό τη διασφάλιση
-							της διαφάνειας και την εμπέδωση της υπευθυνότητας και της
-							λογοδοσίας από την πλευρά των φορέων άσκησης της δημόσιας
-							εξουσίας.</p>
+						<p id="desc-text">Το Prisma προσφέρει έναν ευκολότερο τρόπο
+							εύρεσης των επιθυμητών αποφάσεων. Ακόμη, δίνεται ιδιαίτερη έμφαση
+							στο γεωγραφικό προσδιορισμό και τη γεωγραφική συσχέτιση των
+							αποφάσεων μέσω της εφαρμογής κινητού. Ο καθένας έχει δικαίωμα να
+							ενημερώνεται για τις οικονομικές, πολιτικές και κοινωνικές
+							εξελίξεις του τόπου του. Το Prisma είναι ο συνδετικός κρίκος της
+							πολιτείας με τον πολίτη. Είναι η εφαρμογή της δημοκρατίας στη
+							σύγχρονη μορφή της.</p>
 					</div>
 				</div>
 				<div class="grid">
@@ -382,22 +411,44 @@ function play(){
 								</ul>
 							</div>
 						--%></span> <img class="post-person"
+							src="${resource(dir: 'images', file: 'diaugeia_logo.jpg')}">
+					</div>
+					<div class="desc">
+						<h3>Δι@ύγεια</h3>
+						<p>γνωρίζω</p>
+						<p id="desc-text">Η εφαρμογή Prisma αποτελεί μία καινοτόμο
+							πύλη σε αποφάσεις σχετικές με το Δήμο Θεσσαλονίκης. Όλες οι
+							πληροφορίες αντλούνται απ’ ευθείας από το site της Δι@ύγειας και
+							φέρουν ισότιμης αξιοπιστίας. Κάθε απόφαση απαρτίζεται από το
+							μοναδικό Αριθμό Διαδικτιακής Ανάρτησης (ΑΔΑ), τον αριθμό
+							προτωκόλλου, το θέμα, τον τελικό υπογράφων, τον τύπο και την
+							κατηγορία - με αναλυτικά στοιχεία.</p>
+					</div>
+				</div>
+				<div class="grid">
+					<div class="dc_zoom_css">
+						<span class="roll_css6"> </span> <img class="post-person"
 							src="${resource(dir: 'images', file: 'logo-about.png')}">
 					</div>
 					<div class="desc">
 						<h3>Prisma</h3>
 						<p>συμμετέχω</p>
-						<p id="desc-text">Το Prisma προσφέρει έναν ευκολότερο τρόπο
-							εύρεσης των επιθυμητών αποφάσεων. Ακόμη, δίνεται ιδιαίτερη έμφαση
-							στο γεωγραφικό προσδιορισμό και τη γεωγραφική συσχέτιση των
-							αποφάσεων μέσω της εφαρμογής κινητού. Γίνε και εσύ μέλος του και
-							πάρε τη διακυβέρνηση του δήμου στα χέρια σου.</p>
+						<p id="desc-text">Σε σύγκριση με το σύστημα της Δι@ύγειας, το
+							Prisma προσφέρει έναν ευκολότερο τρόπο εύρεσης των επιθυμητών
+							αποφάσεων παρέχοντας τέσσερεις τρόπους αναζήτησης. Ακόμη, δίνεται
+							ιδιαίτερη έμφαση στο γεωγραφικό προσδιορισμό και τη γεωγραφική
+							συσχέτιση των αποφάσεων, παρέχοντας τη δυνατότητα οπτικοποίησής
+							τους στο χάρτη της Θεσσαλονίκης. Επιπλέον, δίνεται η δυνατότητα
+							στο χρήστη να συμβάλει στη γεωγραφική συσχέτιση αποφάσεων,
+							προτείνοντας ο ίδιος θέση για κάποια απόφαση.</p>
 					</div>
 				</div>
 				<div class="clear"></div>
+
 			</div>
 		</div>
 	</div>
+
 	<!---------end-about------------>
 
 	<!---------start-contact------------>
@@ -427,7 +478,7 @@ function play(){
 								}
 							</script>
 
-						
+
 							<div class="clear"></div>
 
 							<div>
@@ -439,7 +490,9 @@ function play(){
 							--%>
 							<div>
 								<span id="contact_resp" style="display: none;"></span> <span>
-								<g:submitButton name="Submit" type="submit" class="" value="Αποστολη" /></span>
+									<g:submitButton name="Submit" type="submit" class=""
+										value="Αποστολη" />
+								</span>
 							</div>
 							<div class="clear"></div>
 						</g:formRemote>
@@ -458,7 +511,7 @@ function play(){
 								</div>
 								<div class="clear"></div></li>
 
-							<li><img src="${resource(dir: 'images', file: 'phone.png')}"
+							<%--<li><img src="${resource(dir: 'images', file: 'phone.png')}"
 								alt="" />
 								<div class="extra-wrap">
 									<p>+1 800(Phone) 258 2598</p>
@@ -470,7 +523,7 @@ function play(){
 									<p>+1 500(Tax) 6343 8690</p>
 								</div>
 								<div class="clear"></div></li>
-							<li><img src="${resource(dir: 'images', file: 'mail.png')}"
+							--%><li><img src="${resource(dir: 'images', file: 'mail.png')}"
 								alt="" />
 								<div class="extra-wrap">
 									<p>

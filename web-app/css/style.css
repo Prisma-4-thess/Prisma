@@ -288,6 +288,11 @@ body {
 	margin-top: 4%;
 	display: block;
 }
+
+.header_bg {
+	border-bottom: 1em #303441;
+	border-bottom-style: solid;
+}
 /*---start-gallery-----*/
 .gallery {
 	margin-top: 4% 0%;
