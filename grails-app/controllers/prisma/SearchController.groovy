@@ -291,31 +291,6 @@ class SearchController {
         render(template: "/common/table_results", model: [results: decision.subList(offset.toInteger(), offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), source: params.source])
     }
 
-    def blog() {
-        def posts = new Post()
-        posts = Post.createCriteria().list {
-            decision {
-                eq("ada", params.id)
-            }
-        }
-        [posts: posts, ada: params.id]
-    }
 
-    def postit() {
-        def post = new Post()
-        println 'text' + params.text
-        post.firstName = params.first
-        post.lastName = params.last
-        post.text = params.text
-        post.decision = Decision.findByAda(params.ada)
-        post.save(flush: true, failOnError: true)
-        def posts = new Post()
-        posts = Post.createCriteria().list {
-            decision {
-                eq("ada", params.ada)
-            }
-        }
-        [posts: posts]
-    }
 }
 

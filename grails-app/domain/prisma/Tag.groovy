@@ -9,5 +9,6 @@ class Tag {
 	}
 	static constraints = {
 		label(nullable:false,blank:false)
+        decisions(nullable:true)
 	}
 }

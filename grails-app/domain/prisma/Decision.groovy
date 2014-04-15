@@ -7,12 +7,9 @@ class Decision {
 	String url
 	String documentUrl
 	Date date
-	Signer signer
-	Type type
 	Decision decisionToCorrect
-	static hasMany=[tags:Tag,posts:Post]
-	Unit unit
-	Geo geo
+    static belongsTo = [signer:Signer,type:Type,unit:Unit,geo:Geo]
+	static hasMany=[tags:Tag]
 	String toString(){
 		return ada
 	}
@@ -20,7 +17,7 @@ class Decision {
 		ada(nullable:false,blank:false,unique:true)
 		decisionToCorrect(nullable:true)
 		geo(nullable:true)
-		posts(nullable:true)
+
 	}
 	static mapping = {
 		subject type: 'text'

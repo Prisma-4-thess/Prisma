@@ -10,6 +10,7 @@ class Geo {
 	String phone
 	String dimos
 	String newSubCat
+    static hasMany = [decision:Decision]
 	String toString(){
 		return namegrk
 	}
@@ -23,5 +24,6 @@ class Geo {
 		phone(nullable:true)
 		dimos(nullable:true)
 		newSubCat(nullable:true)
+        decision(nullable:true)
 	}
 }
