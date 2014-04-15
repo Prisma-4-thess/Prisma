@@ -21,6 +21,8 @@ class Decision {
 	}
 	static mapping = {
 		subject type: 'text'
+
+        //Lazy loading turned off in order to show them.
 		signer lazy: false
 		tags lazy: false
 		unit lazy: false
