@@ -221,7 +221,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         <li><div class="portfolio org" data-cat="org">
                                             <label for="org">Οργανισμός:</label>
                                             <g:select id="org" class="dropdownMenu" name="org"
-                                                      from="${['Δήμος Θεσσαλονίκης', 'Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης']}"
+                                                      from="${prisma.Organization.findAllByToShow(true)}"
                                                       noSelection="${[null: 'Επιλέξτε Οργανισμό']}"
                                                       onchange="${remoteFunction(controller: 'ajax', action: 'selOrg', params: '\'id=\' + this.value')}"/>
                                         </div></li>

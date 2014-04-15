@@ -4,7 +4,7 @@ import grails.plugin.springsecurity.annotation.Secured
 
 @Secured(['permitAll'])
 class SearchController {
-    static scope = "session"
+    static scope = "session"    //TODO: New philosophy of search due to multiple tab problems.
     def decision = new Decision()
     def offset = "0"
     def static maxToShow = 10
@@ -111,10 +111,6 @@ class SearchController {
                         like("label", params.org)
                     } else {
                         println "no org selected"
-                        'in'("label", [
-                                "Δήμος Θεσσαλονίκης",
-                                "Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης"
-                        ])
                     }
                 }
             }
@@ -178,10 +174,6 @@ class SearchController {
                         eq("label", params.org)
                     } else {
                         println "no org selected"
-                        'in'("label", [
-                                "Δήμος Θεσσαλονίκης",
-                                "Αποκεντρωμένη Διοίκηση Μακεδονίας – Θράκης"
-                        ])
                     }
                 }
             }
@@ -211,11 +203,12 @@ class SearchController {
         }
 
         def org = new Organization()
-        org = Organization.createCriteria().get {
+        org = dec.unit.organization
+        /*org = Organization.createCriteria().get {
             units {
                 eq("id", dec.unit.id)
             }
-        }
+        }*/
 
         def dec2 = new Decision()
         dec2 = Decision.createCriteria().list {

@@ -6,7 +6,7 @@
         </g:if> <g:elseif test="${source == "home"}">
             <g:remoteLink onComplete="hideDecisionShowResults();">←</g:remoteLink>
         </g:elseif> <g:else>
-            <g:link mapping="admin_panel">←</g:link>
+            <g:link mapping="adminPanel">←</g:link>
         </g:else></th>
     </tr>
     <g:if test="${dec2}">
