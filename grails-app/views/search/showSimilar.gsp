@@ -1,9 +1,3 @@
-<head>
-    <script type="text/javascript"
-            src="${resource(dir: 'js', file: 'timeliner.js')}"></script>
-</head>
-
-<body>
 <div id="timelineContainer" class="timelineContainer">
     <div class="timelineMajor">
         <h2 class="timelineMajorMarker">
@@ -27,12 +21,20 @@
                     <p>
                         ${it?.subject}
                     </p>
+
+                  <p class="more">
+                        <g:link controller="search" action="show"
+                                id="${it?.id}" params="['source': 'similar']"
+                                style="display:block" target="_blank">Περισσότερα...</g:link>
+                  </p>
                 </dd>
                 <!-- /.timelineEvent -->
             </dl>
         </g:each>
 
     </div>
+    <script type="text/javascript"
+            src="${resource(dir: 'js', file: 'timeliner.js')}"></script>
     <script>
         $(document).ready(function () {
             $.timeliner({
@@ -43,4 +45,3 @@
     <!-- /.timelineMajor -->
 </div>
 <!-- /#timelineContainer -->
-</body>

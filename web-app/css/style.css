@@ -293,6 +293,10 @@ body {
 	border-bottom: 1em #303441;
 	border-bottom-style: solid;
 }
+
+.more a{
+    color: #01CAA1;
+}
 /*---start-gallery-----*/
 .gallery {
 	margin-top: 4% 0%;

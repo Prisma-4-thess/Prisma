@@ -227,7 +227,11 @@ class SearchController {
             }
             maxResults(maxToShow)
         }
-        [decision: dec, ext: dec_ext, org: org, dec2: dec2, relDec: relativeDecisions.relatedDec, simDec: simDec, source: params.source]
+        if ("similar".equals(params.source)) {
+            render(view: "/search/showInTab", model: [decision: dec, ext: dec_ext, org: org, dec2: dec2, relDec: relativeDecisions.relatedDec, simDec: simDec, source: params.source])
+        } else {
+            render(template: "/search/show", model: [decision: dec, ext: dec_ext, org: org, dec2: dec2, relDec: relativeDecisions.relatedDec, simDec: simDec, source: params.source])
+        }
     }
 
     def showRelated() {
