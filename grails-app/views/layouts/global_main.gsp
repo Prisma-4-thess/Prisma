@@ -164,39 +164,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <!----start-footer---------->
 <div class="footer-bottom-global">
-    <div class="wrap">
-        <%--<div class="copy">
-            <p class="copy">
-                &#169 2014 Template by <a href="http://w3layouts.com"
-                    target="_blank">w3layouts</a>
-            </p>
-        </div>
 
+    <g:render template="/common/footer"/>
 
-        --%>
-        <g:render template="/common/footer"/>
-        <script type="text/javascript">
-            $(document).ready(function () {
-
-                var defaults = {
-                    containerID: 'toTop', // fading element id
-                    containerHoverID: 'toTopHover', // fading element hover id
-                    scrollSpeed: 1200,
-                    easingType: 'linear'
-                };
-
-                $().UItoTop({
-                    easingType: 'easeOutQuart'
-                });
-
-            });
-        </script>
-        <a href="#" id="toTop" style="display: block;"><span
-                id="toTopHover" style="opacity: 1;"></span></a>
-        <script src="${resource(dir: 'js', file: 'jquery.scrollTo.js')}"></script>
-    </div>
 </div>
 <!------end-footer------------>
+
+<g:render template="/common/scrollToTop"/>
 
 <g:javascript library="application"/>
 <r:layoutResources/>

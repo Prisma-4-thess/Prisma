@@ -127,6 +127,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <g:layoutBody/>
 
+
+<!----start-footer---------->
+<div class="footer-bottom">
+
+
+        <g:render template="/common/footer"/>
+
+</div>
+<!------end-footer------------>
+
+<g:render template="/common/scrollToTop"/>
+
 <g:javascript library="application"/>
 <r:layoutResources/>
 </body>
