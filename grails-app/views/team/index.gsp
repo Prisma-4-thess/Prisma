@@ -16,8 +16,9 @@
 </div>
 
 <div class="clear"></div>
+%{--
 
-<div class="news_slider_bg" style="display: none;">
+<div class="news_slider_bg">
 
     <div id="toHide" class="wrap">
 
@@ -31,6 +32,7 @@
         <!---//End-da-slider---->
     </div>
 </div>
+--}%
 
 <!--start-mfp -->
 <div id="manwlas" class="mfp-hide">
