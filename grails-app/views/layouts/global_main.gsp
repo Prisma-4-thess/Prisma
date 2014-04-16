@@ -30,64 +30,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     <r:layoutResources/>
 
-    <script src="${resource(dir: 'js', file: 'jquery.min.js')}"></script>
-    <!-- start gallery Script -->
-    <script type="text/javascript"
-            src="${resource(dir: 'js', file: 'jquery.easing.min.js')}"></script>
-    <script type="text/javascript"
-            src="${resource(dir: 'js', file: 'jquery.mixitup.min.js')}"></script>
-    <script type="text/javascript">
-        $(function () {
-
-            var filterList = {
-
-                init: function () {
-
-                    // MixItUp plugin
-                    // http://mixitup.io
-                    $('#portfoliolist').mixitup({
-                        targetSelector: '.portfolio',
-                        filterSelector: '.filter',
-                        effects: [ 'fade' ],
-                        easing: 'snap',
-                        // call the hover effect
-                        onMixEnd: filterList.hoverEffect()
-                    });
-
-                },
-
-                hoverEffect: function () {
-
-                    // Simple parallax effect
-                    $('#portfoliolist .portfolio').hover(function () {
-                        $(this).find('.label').stop().animate({
-                            bottom: 0
-                        }, 200, 'easeOutQuad');
-                        $(this).find('img').stop().animate({
-                            top: 0
-                        }, 500, 'easeOutQuad');
-                    }, function () {
-                        $(this).find('.label').stop().animate({
-                            bottom: 0
-                        }, 200, 'easeInQuad');
-                        $(this).find('img').stop().animate({
-                            top: 0
-                        }, 300, 'easeOutQuad');
-                    });
-
-                }
-
-            };
-
-            // Run the show!
-            filterList.init();
-
-        });
-    </script>
-    <!-- Add fancyBox main JS and CSS files -->
-
-
-
 
 
     <g:javascript library="jquery"/>
@@ -145,6 +87,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!------end-footer------------>
 
 <g:render template="/common/scrollToTop"/>
+<script src="${resource(dir: 'js', file: 'jquery.min.js')}"></script>
+<!-- start gallery Script -->
+<script type="text/javascript"
+        src="${resource(dir: 'js', file: 'jquery.easing.min.js')}"></script>
+<script type="text/javascript"
+        src="${resource(dir: 'js', file: 'jquery.mixitup.min.js')}"></script>
 <script type="text/javascript" src="${resource(dir: 'js', file: 'functions.js')}"></script>
 <script type="text/javascript"
         src="${resource(dir: 'js', file: 'move-top.js')}"></script>
