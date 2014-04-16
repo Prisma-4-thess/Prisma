@@ -90,46 +90,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!---//End-da-slider---->
     </div>
 </div>
-<script type="text/javascript">
-    var myVideo = document.getElementById("video1");
 
-    function play() {
-        console.info("play()");
-        //if (myVideo.paused){
-        myVideo.play();
-        $('#toFadeH').animate({ opacity: 0 });
-        $('#toFadeP').animate({ opacity: 0 });
-        $('#toFadeA').animate({ opacity: 0 });
-        $('#toFadeS1').animate({ opacity: 0 });
-        $('#toFadeS2').animate({ opacity: 0 });
-        document.getElementById("toHide").style["display"] = "none";
-        //$('#toHide').fadeOut('slow');
-        document.getElementById("video").style["display"] = "block";
-        document.getElementById("close_vid").style["display"] = "block";
-        //$('#video').delay(800).fadeIn('slow');
-
-    }
-    function pause() {
-        //else{
-        myVideo.pause();
-        //$('#video').fadeOut('slow');
-        //$('#toFade').fadeIn('slow');
-        document.getElementById("toHide").style["display"] = "block";
-        document.getElementById("video").style["display"] = "none";
-        document.getElementById("close_vid").style["display"] = "none";
-        $('#toFadeH').delay(500).animate({ opacity: 1 });
-        $('#toFadeP').delay(750).animate({ opacity: 1 });
-        $('#toFadeA').delay(1000).animate({ opacity: 1 });
-        $('#toFadeS1').delay(1250).animate({ opacity: 1 });
-        $('#toFadeS2').delay(1250).animate({ opacity: 1 });
-        //document.getElementById("toFadeH").style["visibility"] = "visible";
-        //document.getElementById("toFadeP").style["visibility"] = "visible";
-        //document.getElementById("toFadeS1").style["visibility"] = "visible";
-        //document.getElementById("toFadeS2").style["visibility"] = "visible";
-
-
-    }
-</script>
 <!-----end-slider-------->
 <!--start portfolio------>
 <div>
@@ -157,15 +118,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         document
                                                 .getElementById("portfoliolist").style["display"] = "inline-block";
                                     }
-                                    function hideResultsShowDecision() {
-                                        document.getElementById("results").style["display"] = "none";
-                                        document.getElementById("decision").style["display"] = "block";
-                                    }
 
-                                    function hideDecisionShowResults() {
-                                        document.getElementById("results").style["display"] = "block";
-                                        document.getElementById("decision").style["display"] = "none";
-                                    }
                                 </script>
                                 <ul id="filters" class="clearfix">
                                     <li><span class="filter" data-filter="ada"
@@ -489,29 +442,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                   onComplete="pop();" update="contact_resp">
 
                         <input name="name" type="text" class="textbox"
-                               value="Ονοματεπώνυμο" onfocus="this.value = '';"
+                               value="Ονοματεπώνυμο" onfocus="if (this.value == 'Ονοματεπώνυμο') {
+                            this.value = '';
+                        }"
                                onblur="if (this.value == '') {
                                    this.value = 'Ονοματεπώνυμο';
                                }"/>
                         <input name="email" type="text" class="textbox" value="Email"
-                               onfocus="this.value = '';"
+                               onfocus="if (this.value == 'Email') {
+                                   this.value = '';
+                               }"
                                onblur="if (this.value == '') {
                                    this.value = 'Email';
                                }"/>
-                        <script type="text/javascript">
-                            function pop() {
-                                $('#contact_resp').fadeIn('slow');
-                                $('#contact_resp').delay(2000).fadeOut(
-                                        'slow');
-                            }
-                        </script>
-
 
                         <div class="clear"></div>
 
                         <div>
                             <textarea name="message" value="Το μήνυμά σας:"
-                                      onfocus="this.value = '';"
+                                      onfocus="if (this.value == 'Το μήνυμά σας...') {
+                                          this.value = '';
+                                      }"
                                       onblur="if (this.value == '') {
                                           this.value = 'Το μήνυμά σας...';
                                       }">Το μήνυμά σας...</textarea>
@@ -581,8 +532,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 </div>
 <!---------end-contact------------>
-
-
 
 </body>
 </html>

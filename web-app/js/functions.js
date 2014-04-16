@@ -85,3 +85,57 @@ $(function () {
     filterList.init();
 
 });
+
+/******Function for the video at homepage********/
+
+var myVideo = document.getElementById("video1");
+
+function play() {
+    console.info("play()");
+    myVideo.play();
+    $('#toFadeH').animate({ opacity: 0 });
+    $('#toFadeP').animate({ opacity: 0 });
+    $('#toFadeA').animate({ opacity: 0 });
+    $('#toFadeS1').animate({ opacity: 0 });
+    $('#toFadeS2').animate({ opacity: 0 });
+    document.getElementById("toHide").style["display"] = "none";
+    document.getElementById("video").style["display"] = "block";
+    document.getElementById("close_vid").style["display"] = "block";
+}
+function pause() {
+    myVideo.pause();
+    document.getElementById("toHide").style["display"] = "block";
+    document.getElementById("video").style["display"] = "none";
+    document.getElementById("close_vid").style["display"] = "none";
+    $('#toFadeH').delay(500).animate({ opacity: 1 });
+    $('#toFadeP').delay(750).animate({ opacity: 1 });
+    $('#toFadeA').delay(1000).animate({ opacity: 1 });
+    $('#toFadeS1').delay(1250).animate({ opacity: 1 });
+    $('#toFadeS2').delay(1250).animate({ opacity: 1 });
+}
+
+/******END - Function for the video at homepage********/
+
+/******Function clearing the form, and showing the results at homepage ********/
+
+function hideResultsShowDecision() {
+    document.getElementById("results").style["display"] = "none";
+    document.getElementById("decision").style["display"] = "block";
+}
+
+function hideDecisionShowResults() {
+    document.getElementById("results").style["display"] = "block";
+    document.getElementById("decision").style["display"] = "none";
+}
+
+/****** END - Function clearing the form, and showing the results at homepage ********/
+
+/******Contact response popup at homepage ********/
+
+function pop() {
+    $('#contact_resp').fadeIn('slow');
+    $('#contact_resp').delay(2000).fadeOut(
+        'slow');
+}
+
+/******END - Contact response popup at homepage ********/
