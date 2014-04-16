@@ -28,14 +28,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="${resource(dir: 'css', file: 'magnific-popup.css')}"
           rel="stylesheet" type="text/css">
 
-    <r:layoutResources/>
-
-
-
     <g:javascript library="jquery"/>
 
     <g:layoutHead/>
-
+    <r:layoutResources/>
 </head>
 
 <body>

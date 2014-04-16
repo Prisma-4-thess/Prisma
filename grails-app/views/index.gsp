@@ -11,7 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <%--<resource:map key="AIzaSyAtEbm91-pdOstp5VshIrJSreVvxqS3j4E"
         type="GoogleMaps" />
     --%>
-    <g:javascript library="jquery"/>
+
     <resource:autoComplete skin="default"/>
     <resource:tooltip/>
     <script type="text/javascript"

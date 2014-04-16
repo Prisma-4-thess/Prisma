@@ -5,7 +5,6 @@
     <meta name="layout" content="global_main"/>
     <resource:include components="map"
                       key="AIzaSyAtEbm91-pdOstp5VshIrJSreVvxqS3j4E"/>
-    <g:javascript library="jquery"/>
 
 </head>
 
