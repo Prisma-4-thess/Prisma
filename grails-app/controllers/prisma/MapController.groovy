@@ -4,8 +4,8 @@ import grails.plugin.springsecurity.annotation.Secured
 
 @Secured(['permitAll'])
 class MapController {
-    static scope = "session"
-    def decisions = new Decision()
+//    static scope = "session"
+    List<Decision> decision
     def offset = "0"
     def static maxToShow = 10
 
@@ -77,24 +77,29 @@ class MapController {
 
     def show_geo() {
         //def decisions=new Decision()
-        decisions = Decision.createCriteria().list {
+        decision = Decision.createCriteria().list {
             geo {
                 eq("id", params.id.toLong())
             }
             order("date", "desc")
         }
-        def toShow = Math.min(maxToShow, decisions.size())
-        render(view: "/map/markerList", model: [results: decisions.subList(0, toShow), decisionInstanceTotal: decisions.size(), source: "map"])
+        def toShow = Math.min(maxToShow, decision.size())
+
+        def timeStamp = new Date();
+        println timeStamp;
+        session.setAttribute((String) timeStamp, (Object) decision)
+
+        render(view: "/map/markerList", model: [results: decision.subList(0, toShow), decisionInstanceTotal: decision.size(), source: "map", timeStamp: timeStamp])
     }
 
     def list() {
-
+        decision = session.getAttribute(params.timeStamp)
         offset = params.offset
-        def toShow = Math.min(Math.abs(decisions.size() - params.offset.toInteger()), maxToShow)
+        def toShow = Math.min(Math.abs(decision.size() - params.offset.toInteger()), maxToShow)
         println "toShow: " + toShow
-        println "remaining: " + (decisions.size())
+        println "remaining: " + (decision.size())
         println "source: " + params.source
-        render(template: "/common/decision_list", model: [results: decisions.subList(params.offset.toInteger(), params.offset.toInteger() + toShow), decisionInstanceTotal: (decisions.size()), source: params.source])
+        render(template: "/common/decision_list", model: [results: decision.subList(params.offset.toInteger(), params.offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), source: params.source, timeStamp: params.timeStamp])
     }
 
     def sort() {
@@ -107,16 +112,20 @@ class MapController {
 
         //		decision = decision.ada.sort{it.size()}
         //		def sortedDecisions = Decision.list(params)
-        if (offset == null) offset = "0";
+        decision = session.getAttribute(params.timeStamp)
+
+        if (params.offset.empty) offset = "0";
+        else offset = params.offset
         def c = Decision.createCriteria()
-        decisions = c.list {
-            'in'("ada", decisions.ada)
+        decision = c.list {
+            'in'("ada", decision.ada)
             order(params.sort, params.order)
         }
 
+        session.setAttribute(params.timeStamp, decision)
 
-        def toShow = Math.min(Math.abs(decisions.size() - offset.toInteger()), maxToShow)
+        def toShow = Math.min(Math.abs(decision.size() - offset.toInteger()), maxToShow)
         println offset + ":" + toShow
-        render(template: "/common/table_results", model: [results: decisions.subList(offset.toInteger(), offset.toInteger() + toShow), decisionInstanceTotal: (decisions.size()), source: params.source])
+        render(template: "/common/table_results", model: [results: decision.subList(offset.toInteger(), offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), offset:offset, source: params.source, timeStamp: params.timeStamp])
     }
 }

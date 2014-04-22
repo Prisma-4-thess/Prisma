@@ -5,7 +5,7 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['permitAll'])
 class SearchController {
 //    static scope = "session"    //TODO: New philosophy of search due to multiple tab problems.
-    public List<Decision> decision
+    List<Decision> decision
     def offset = "0"
     def static maxToShow = 10
     def static maxResults = 500
@@ -193,9 +193,9 @@ class SearchController {
 //        flash.message = decision
         def timeStamp = new Date();
         println timeStamp;
-        session.setAttribute((String) timeStamp,(Object) decision)
+        session.setAttribute((String) timeStamp, (Object) decision)
 
-        [results: decision.subList(0, toShow), decisionInstanceTotal: decision.size(), source: params.pageId, timeStamp:timeStamp]
+        [results: decision.subList(0, toShow), decisionInstanceTotal: decision.size(), source: params.pageId, timeStamp: timeStamp]
     }
 
     def show() {
@@ -234,9 +234,9 @@ class SearchController {
             maxResults(maxToShow)
         }
         if ("similar".equals(params.source)) {
-            render(view: "/search/showInTab", model: [decision: dec, ext: dec_ext, org: org, dec2: dec2, relDec: relativeDecisions.relatedDec, simDec: simDec, source: params.source, timeStamp: params.timeStamp])
+            render(view: "/search/showInTab", model: [decision: dec, ext: dec_ext, org: org, dec2: dec2, relDec: relativeDecisions.relatedDec, simDec: simDec, source: params.source])
         } else {
-            render(template: "/search/show", model: [decision: dec, ext: dec_ext, org: org, dec2: dec2, relDec: relativeDecisions.relatedDec, simDec: simDec, source: params.source,timeStamp: params.timeStamp])
+            render(template: "/search/show", model: [decision: dec, ext: dec_ext, org: org, dec2: dec2, relDec: relativeDecisions.relatedDec, simDec: simDec, source: params.source])
         }
     }
 
@@ -265,7 +265,7 @@ class SearchController {
 //        decision = flash.message
 //        flash.message = decision
 
-        def timeStamp =  params.timeStamp
+        def timeStamp = params.timeStamp
         println timeStamp
         decision = session.getAttribute(params.timeStamp)
         offset = params.offset
@@ -273,7 +273,7 @@ class SearchController {
         println "toShow: " + toShow
         println "remaining: " + (decision.size())
         println "source: " + params.source
-        render(template: "/common/decision_list", model: [results: decision.subList(params.offset.toInteger(), params.offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), source: params.source,timeStamp:timeStamp])
+        render(template: "/common/decision_list", model: [results: decision.subList(params.offset.toInteger(), params.offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), source: params.source, timeStamp: timeStamp])
     }
 
     def sort() {
@@ -287,17 +287,19 @@ class SearchController {
         //		decision = decision.ada.sort{it.size()}
         //		def sortedDecisions = Decision.list(params)
         decision = session.getAttribute(params.timeStamp)
-        if (offset == null) offset = "0";
+        if (params.offset.empty) offset = "0";
+        else offset = params.offset
         def c = Decision.createCriteria()
         decision = c.list {
             'in'("ada", decision.ada)
             order(params.sort, params.order)
         }
 
+        session.setAttribute(params.timeStamp, decision)
 
         def toShow = Math.min(Math.abs(decision.size() - offset.toInteger()), maxToShow)
         println offset + ":" + toShow
-        render(template: "/common/table_results", model: [results: decision.subList(offset.toInteger(), offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), source: params.source,timeStamp:timeStamp])
+        render(template: "/common/table_results", model: [results: decision.subList(offset.toInteger(), offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), offset: offset, source: params.source, timeStamp: params.timeStamp])
     }
 
 

@@ -31,7 +31,7 @@
             <div id="results">
 
                 <g:render template="/common/decision_list"
-                          model="['source': source]"/>
+                          model="['source': source,'timeStamp': timeStamp]"/>
             </div>
 
             <div id="decision"></div>
