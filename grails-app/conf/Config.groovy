@@ -80,7 +80,7 @@ environments {
 	production {
 		grails.logging.jul.usebridge = false
 		//grails.serverURL = "http://83.212.109.124:80/Prisma" //Spiros Okeanos
-		grails.serverURL = "http://www.prisma.co.vu/Prisma" //Spiros Okeanos
+		grails.serverURL = "http://www.prisma4thess.gr/Prisma" //Spiros Okeanos
 		//grails.serverURL = "http://83.212.96.91:8080/Prisma" //Mitsos Okeanos
 		//grails.serverURL = "http://83.212.100.212:8080/Prisma" //Mulo Okeanos
 	}

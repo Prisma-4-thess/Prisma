@@ -31,6 +31,7 @@ grails.project.dependency.resolution = {
 		mavenLocal()
 		mavenCentral()
 		mavenRepo 'http://repo.spring.io/milestone'
+        mavenRepo "http://repo.grails.org/grails/core"
 
 		// uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
 		//mavenRepo "http://snapshots.repository.codehaus.org"
@@ -49,6 +50,7 @@ grails.project.dependency.resolution = {
 		compile ':spring-security-core:2.0-RC2'
 		compile ":richui:0.8"
 		compile ":remote-pagination:0.4.6"
+        compile ":searchable:0.6.4" //TODO: Change it to 6.6 to work with Grails 2.3.+
 		//		compile ":file-uploader:1.2.1"
 		// Uncomment these (or add new ones) to enable additional resources capabilities
 		//runtime ":zipped-resources:1.0"

@@ -1,6 +1,11 @@
 package prisma
 
 class Decision {
+   /* static searchable = {
+        subject boost: 2.0
+        signer component: true
+    }*/
+//    static searchable = true;
     String ada
     String protocolNumber
     String subject

@@ -4,8 +4,8 @@ import grails.plugin.springsecurity.annotation.Secured
 
 @Secured(['permitAll'])
 class SearchController {
-    static scope = "session"    //TODO: New philosophy of search due to multiple tab problems.
-    def decision = new Decision()
+//    static scope = "session"    //TODO: New philosophy of search due to multiple tab problems.
+    public List<Decision> decision
     def offset = "0"
     def static maxToShow = 10
     def static maxResults = 500
@@ -27,7 +27,7 @@ class SearchController {
 
     def searchada() {
 
-        decision = new Decision()
+//        decision = new Decision()
         offset = "0"
         def c = Decision.createCriteria()
         decision = c.list {
@@ -50,7 +50,7 @@ class SearchController {
          println "fromDate: "+params.fromDate
          println "toDate: "+params.toDate*/
 
-        decision = new Decision()
+//        decision = new Decision()
         offset = "0"
         def c = Decision.createCriteria()
 
@@ -91,7 +91,7 @@ class SearchController {
          println params.fromDate
          println params.toDate*/
 
-        decision = new Decision()
+//        decision = new Decision()
         offset = "0"
         def (first, last) = params.signer.tokenize(' ')
 
@@ -111,6 +111,7 @@ class SearchController {
                         like("label", params.org)
                     } else {
                         println "no org selected"
+                        eq("toShow", true)
                     }
                 }
             }
@@ -138,7 +139,7 @@ class SearchController {
 
         println 'test' + params.org
         //		println "numberOfResults: "+params.numberOfResults
-        decision = new Decision()
+//        decision = new Decision()
         offset = "0"
         def (first, last) = params.signer.tokenize(' ')
         def c = Decision.createCriteria()
@@ -174,6 +175,7 @@ class SearchController {
                         eq("label", params.org)
                     } else {
                         println "no org selected"
+                        eq("toShow", true)
                     }
                 }
             }
@@ -188,8 +190,12 @@ class SearchController {
 
         println "toShow: " + toShow
         println "source: " + params.pageId
+//        flash.message = decision
+        def timeStamp = new Date();
+        println timeStamp;
+        session.setAttribute((String) timeStamp,(Object) decision)
 
-        [results: decision.subList(0, toShow), decisionInstanceTotal: decision.size(), source: params.pageId]
+        [results: decision.subList(0, toShow), decisionInstanceTotal: decision.size(), source: params.pageId, timeStamp:timeStamp]
     }
 
     def show() {
@@ -228,9 +234,9 @@ class SearchController {
             maxResults(maxToShow)
         }
         if ("similar".equals(params.source)) {
-            render(view: "/search/showInTab", model: [decision: dec, ext: dec_ext, org: org, dec2: dec2, relDec: relativeDecisions.relatedDec, simDec: simDec, source: params.source])
+            render(view: "/search/showInTab", model: [decision: dec, ext: dec_ext, org: org, dec2: dec2, relDec: relativeDecisions.relatedDec, simDec: simDec, source: params.source, timeStamp: params.timeStamp])
         } else {
-            render(template: "/search/show", model: [decision: dec, ext: dec_ext, org: org, dec2: dec2, relDec: relativeDecisions.relatedDec, simDec: simDec, source: params.source])
+            render(template: "/search/show", model: [decision: dec, ext: dec_ext, org: org, dec2: dec2, relDec: relativeDecisions.relatedDec, simDec: simDec, source: params.source,timeStamp: params.timeStamp])
         }
     }
 
@@ -256,13 +262,18 @@ class SearchController {
     }
 
     def list() {
+//        decision = flash.message
+//        flash.message = decision
 
+        def timeStamp =  params.timeStamp
+        println timeStamp
+        decision = session.getAttribute(params.timeStamp)
         offset = params.offset
         def toShow = Math.min(Math.abs(decision.size() - params.offset.toInteger()), maxToShow)
         println "toShow: " + toShow
         println "remaining: " + (decision.size())
         println "source: " + params.source
-        render(template: "/common/decision_list", model: [results: decision.subList(params.offset.toInteger(), params.offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), source: params.source])
+        render(template: "/common/decision_list", model: [results: decision.subList(params.offset.toInteger(), params.offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), source: params.source,timeStamp:timeStamp])
     }
 
     def sort() {
@@ -275,6 +286,7 @@ class SearchController {
 
         //		decision = decision.ada.sort{it.size()}
         //		def sortedDecisions = Decision.list(params)
+        decision = session.getAttribute(params.timeStamp)
         if (offset == null) offset = "0";
         def c = Decision.createCriteria()
         decision = c.list {
@@ -285,7 +297,7 @@ class SearchController {
 
         def toShow = Math.min(Math.abs(decision.size() - offset.toInteger()), maxToShow)
         println offset + ":" + toShow
-        render(template: "/common/table_results", model: [results: decision.subList(offset.toInteger(), offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), source: params.source])
+        render(template: "/common/table_results", model: [results: decision.subList(offset.toInteger(), offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), source: params.source,timeStamp:timeStamp])
     }
 
 

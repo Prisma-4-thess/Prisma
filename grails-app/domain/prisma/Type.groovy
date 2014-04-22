@@ -1,6 +1,9 @@
 package prisma
 
 class Type {
+  /*  static searchable = {
+        only:['label']
+    }*/
 	String label
 
 	static hasMany = [extras: Extra, decisions:Decision]

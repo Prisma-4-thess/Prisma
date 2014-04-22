@@ -1,6 +1,9 @@
 package prisma
 
 class Tag {
+    /*static searchable = {
+        only:['label']
+    }*/
 	String label
 	static belongsTo= Decision
 	static hasMany=[decisions:Decision]

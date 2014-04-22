@@ -1,6 +1,9 @@
 package prisma
 
 class Unit {
+   /* static searchable = {
+        only:['label']
+    }*/
 	String label
     static hasMany = [decision:Decision]
 	static belongsTo=[organization:Organization]

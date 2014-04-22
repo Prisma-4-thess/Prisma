@@ -1,6 +1,11 @@
 package prisma
 
 class Signer {
+    static searchable = {
+        only: ['firstName', 'lastName', 'title']
+        lastName spellCheck : "include"
+    }
+//    static searchable = true
 	String firstName
 	String lastName
 	String title
