@@ -94,7 +94,7 @@ class MapController {
 
     def list() {
         decision = session.getAttribute(params.timeStamp)
-        offset = params.offset
+//        offset = params.offset
         def toShow = Math.min(Math.abs(decision.size() - params.offset.toInteger()), maxToShow)
         println "toShow: " + toShow
         println "remaining: " + (decision.size())
@@ -126,6 +126,6 @@ class MapController {
 
         def toShow = Math.min(Math.abs(decision.size() - offset.toInteger()), maxToShow)
         println offset + ":" + toShow
-        render(template: "/common/table_results", model: [results: decision.subList(offset.toInteger(), offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), offset:offset, source: params.source, timeStamp: params.timeStamp])
+        render(template: "/common/table_results", model: [results: decision.subList(offset.toInteger(), offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), offset: offset, source: params.source, timeStamp: params.timeStamp])
     }
 }

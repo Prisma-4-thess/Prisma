@@ -268,7 +268,7 @@ class SearchController {
         def timeStamp = params.timeStamp
         println timeStamp
         decision = session.getAttribute(params.timeStamp)
-        offset = params.offset
+//        offset = params.offset
         def toShow = Math.min(Math.abs(decision.size() - params.offset.toInteger()), maxToShow)
         println "toShow: " + toShow
         println "remaining: " + (decision.size())
