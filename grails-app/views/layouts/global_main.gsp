@@ -54,10 +54,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <ul>
 
                     <li><a href="/Prisma/#home">Home</a></li>
-                    <li><a href="/Prisma/#portfolio">Αναζητηση</a></li>
+                    <li><g:link controller="contextualSearch">Αναζητηση</g:link></li>
                     <li><a href="/Prisma/#map">Χαρτης</a></li>
                     <li><a href="/Prisma/#about">Πληροφοριες</a></li>
-                    <li><a href="/Prisma/team">Η ομαδα</a></li>
+                    <li><g:link controller="team">Η ομαδα</g:link></li>
                     <li><g:render template="/common/topbar"/></li>
 
                     <div class="clear"></div>
