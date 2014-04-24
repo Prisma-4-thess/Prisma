@@ -74,6 +74,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <g:layoutBody/>
 
+<div class="clear"></div>
 <!----start-footer---------->
 <div class="footer-bottom-global">
 
