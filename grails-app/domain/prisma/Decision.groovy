@@ -1,10 +1,12 @@
 package prisma
 
 class Decision {
-   /* static searchable = {
+    static searchable = {
         subject boost: 2.0
-        signer component: true
-    }*/
+        only = ['ada', 'subject', 'protocolNumber']
+        ada spellCheck: "include"
+        all termVector: "yes"
+    }
 //    static searchable = true;
     String ada
     String protocolNumber

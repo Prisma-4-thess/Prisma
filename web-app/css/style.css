@@ -1498,6 +1498,16 @@ div.blog {
 	float: none;
 }
 
+.search_form .contact-form input[type="text"]{
+    float:none;
+    margin-right: auto;
+    margin-left: auto;
+}
+.search_form .contact-form input[type="submit"]{
+    float:none;
+    margin-right: auto;
+    margin-left: auto;
+}
 /*--footer--*/
 .footer-bottom-global {
 	padding: 25px 0;
