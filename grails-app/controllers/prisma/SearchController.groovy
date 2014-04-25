@@ -305,7 +305,19 @@ class SearchController {
         println offset + ":" + toShow
         render(template: "/common/table_decisions", model: [results: decision.subList(offset.toInteger(), offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), offset: offset, source: params.source, timeStamp: params.timeStamp])
     }
+    def showSigner(){
+        def s = Signer.get(params.id)
+        [signer:s , signersDecisions:s.decisions]
+    }
+    def showType(){
+        def t  = Type.get(params.id)
+        [type:t, extraTypes:t.extras, decisionsFromType:t.decisions]
+    }
 
+    def showGeo() {
+        def g = Geo.get(params.id)
+        [geo:g, decisionsFromGeo:g.decisions]
+    }
 
 }
 
