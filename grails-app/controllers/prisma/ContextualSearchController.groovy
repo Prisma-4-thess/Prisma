@@ -9,43 +9,50 @@ class ContextualSearchController {
 
 
     }
-    def search(){
+
+    def search() {
         def query = "*" + params.query + "*"
 
-        def signers = Signer.search(query, defaultOperator: "or").results
+        ArrayList<Signer> signers = new ArrayList<>()
+        def resultsSigners = Signer.search(query, defaultOperator: "or").results
         println "Signer Suggestions: " + Signer.suggestQuery(query, escape: true, userFriendly: true, emulateCapitalisation: false, allowSame: true)
 
-        for (Signer signer : signers) {
+        for (Signer signer : resultsSigners) {
             def sign = Signer.findById(signer.getId())
             println "Signer: " + sign
             println "Signer decisions: " + sign.decisions
 
             println "Signer Similar: " + signer.moreLikeThis(result: 'every')
+            signers.add(sign)
 
         }
 
-
-        def decisions = Decision.search(query, defaultOperator: "or").results
+        ArrayList<Decision> decisions = new ArrayList<>()
+        def resultsDecisions = Decision.search(query, defaultOperator: "or").results
         println "Decision Suggestions: " + Decision.suggestQuery(query, escape: true, userFriendly: true, emulateCapitalisation: false, allowSame: true)
 
-        for (Decision decision : decisions) {
+        for (Decision decision : resultsDecisions) {
             def dec = Decision.findById(decision.getId())
             println "Decision: " + dec
             println "Decision subject: " + dec.subject
 
             println "Decision Similar: " + decision.moreLikeThis(result: 'every')
 
+            decisions.add(dec)
+
         }
 
-        def types = Type.search(query, defaultOperator: "or").results
+        ArrayList<Type> types = new ArrayList<>()
+        def resultsTypes = Type.search(query, defaultOperator: "or").results
         println "Type Suggestions: " + Type.suggestQuery(query, escape: true, userFriendly: true, emulateCapitalisation: false, allowSame: true)
 
-        for (Type type : types) {
+        for (Type type : resultsTypes) {
             def t = Type.findById(type.getId())
             println "Type: " + t
             println "Type Decisions: " + t.decisions
 
             println "Type Similar: " + t.moreLikeThis(result: 'every')
+            types.add(t)
 
         }
 
@@ -69,6 +76,6 @@ class ContextualSearchController {
         println signer
         println signer.decisions*/
 
-        [decisions: decisions, signers: signers, types: types, geos: geos]
+        [decisions: decisions, decisionInstanceTotal: decisions.size(), source: "home", signers: signers, signerInstanceTotal: signers.size(), types: types, geos: geos]
     }
 }

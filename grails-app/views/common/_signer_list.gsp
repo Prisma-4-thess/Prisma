@@ -8,17 +8,17 @@
         </g:if>--}%
 
         <div class="pagination search_table">
-            <util:remotePaginate action="list" total="${decisionInstanceTotal}"
+            <util:remotePaginate action="list" total="${signerInstanceTotal}"
                                  params="['source': source, 'timeStamp': timeStamp]" update="list-decision"
                                  id="pagination"/>
         </div>
-        <g:render template="/common/table_decisions"
+        <g:render template="/common/table_signers"
                   model="['offset': params.offset, 'source': source, 'timeStamp': timeStamp]"/>
 
     </div>
 </g:if>
 <g:else>
-    <p>Καμία απόφαση δεν ταιριάζει στην αναζήτησή σας</p>
+    <p>Κανένας υπογράφον δεν ταιριάζει στην αναζήτησή σας</p>
 
     <p>
         <img alt="" src="${resource(dir: 'images', file: 'spinner_alt.png')}">

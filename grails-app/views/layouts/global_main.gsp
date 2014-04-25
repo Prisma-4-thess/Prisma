@@ -54,7 +54,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <ul>
 
                     <li><a href="/Prisma/#home">Home</a></li>
-                    <li><g:link controller="contextualSearch">Αναζητηση</g:link></li>
+                    <li><g:link controller="search" action="dedicatedSearchPage">Αναζητηση</g:link></li>
                     <li><a href="/Prisma/#map">Χαρτης</a></li>
                     <li><a href="/Prisma/#about">Πληροφοριες</a></li>
                     <li><g:link controller="team">Η ομαδα</g:link></li>

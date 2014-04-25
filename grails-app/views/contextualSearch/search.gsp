@@ -4,6 +4,7 @@
   Date: 4/23/14
   Time: 4:49 PM
 --%>
+<div class="clear"></div>
 
 <div class="nav nav-left">
     <ul>
@@ -16,11 +17,13 @@
 
 <div class="wrap">
     <div class="container">
-        <g:each in="${decisions}">
+        <g:render template="/common/decision_list" model="['results':decisions]"/>
+        %{--<g:each in="${decisions}">
             ${it.subject}
             <br/>
             <br/>
-        </g:each>
+
+        </g:each>--}%
     </div></div>
 
 <div class="clear"></div>
@@ -36,10 +39,13 @@
 
 <div class="wrap">
     <div class="container">
-        <g:each in="${signers}">
+   %{--     <g:each in="${signers}">
             ${it}
             <br/>
-        </g:each>
+        </g:each>--}%
+        <g:render template="/common/signer_list" model="['results':signers]"/>
+
+
     </div></div>
 
 <div class="clear"></div>

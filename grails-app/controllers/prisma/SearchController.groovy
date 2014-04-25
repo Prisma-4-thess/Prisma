@@ -25,6 +25,10 @@ class SearchController {
     def full_search() {
     }
 
+    def dedicatedSearchPage(){
+
+    }
+
     def searchada() {
 
 //        decision = new Decision()
@@ -198,7 +202,7 @@ class SearchController {
         [results: decision.subList(0, toShow), decisionInstanceTotal: decision.size(), source: params.pageId, timeStamp: timeStamp]
     }
 
-    def show() {
+    def showDecision() {
         println params.source
         def dec = Decision.get(params.id)
         def dec_ext = new Decision_ext()
@@ -287,7 +291,7 @@ class SearchController {
         //		decision = decision.ada.sort{it.size()}
         //		def sortedDecisions = Decision.list(params)
         decision = session.getAttribute(params.timeStamp)
-        if (params.offset.empty) offset = "0";
+        if (!params.offset.isInteger()) offset = "0";
         else offset = params.offset
         def c = Decision.createCriteria()
         decision = c.list {
@@ -299,7 +303,7 @@ class SearchController {
 
         def toShow = Math.min(Math.abs(decision.size() - offset.toInteger()), maxToShow)
         println offset + ":" + toShow
-        render(template: "/common/table_results", model: [results: decision.subList(offset.toInteger(), offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), offset: offset, source: params.source, timeStamp: params.timeStamp])
+        render(template: "/common/table_decisions", model: [results: decision.subList(offset.toInteger(), offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), offset: offset, source: params.source, timeStamp: params.timeStamp])
     }
 
 

@@ -41,7 +41,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <ul>
 
                     <li class="active"><a href="#home" class="scroll">Home</a></li>
-                    <li><g:link controller="contextualSearch">Αναζητηση</g:link></li>
+                    <li><g:link controller="search" action="dedicatedSearchPage">Αναζητηση</g:link></li>
                     <li><a href="#map" class="scroll">Χαρτης</a></li>
                     <li><a href="#about" class="scroll">Πληροφοριες</a></li>
                     <li><g:link controller="team">Η ομαδα</g:link></li>
@@ -107,12 +107,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <!-----end-slider-------->
 
+<!---------start-search results------------>
 <div id="search_results"></div>
+<!-----end-slider-------->
 
-
-
-
-<!---------start-map------------>
+<!---------start-search results------------>
 <div id="map">
     <script type="text/javascript">
         <g:remoteFunction controller="map" action="homepage" update="markers"/>

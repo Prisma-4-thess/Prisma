@@ -15,13 +15,13 @@
             <tr>
                 <th><font color="red">Η παρούσα απόφαση έχει διορθωθεί
                 από την: <g:if test="${source == 'home'}">
-                    <g:remoteLink controller="search" action="show" id="${it.id}"
+                    <g:remoteLink controller="search" action="showDecision" id="${it.id}"
                                   update="decision" onComplete="hideResultsShowDecision();"
                                   params="['source': source]">
                         ${it.ada}
                     </g:remoteLink>
                 </g:if> <g:else>
-                    <g:remoteLink controller="search" action="show" id="${it.id}"
+                    <g:remoteLink controller="search" action="showDecision" id="${it.id}"
                                   update="decision" params="['source': source]">
                         ${it.ada}
                     </g:remoteLink>
