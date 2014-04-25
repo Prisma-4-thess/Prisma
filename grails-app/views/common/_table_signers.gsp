@@ -31,28 +31,29 @@
             <g:if test="${source == 'home'}">
 
                 <td><g:remoteLink controller="search" action="showSigner"
-                                  id="${signerInstance.id}" update="${i+1}" onComplete="slideTableRow('${i+1}')"
+                                  id="${signerInstance.id}" update="${"showSigner".concat((i + 1).toString())}"
+                                  onComplete="slideTableRow('${"showSigner".concat((i + 1).toString())}')"
                                   params="['source': source]" style="display:block">
-                   ${signerInstance.firstName}
+                    ${signerInstance.firstName}
                 </g:remoteLink></td>
 
 
 
                 <td><g:remoteLink controller="search" action="showSigner"
-                                  id="${signerInstance.id}" update="${i+1}"
-                                  onComplete="slideTableRow('${i+1}')"
+                                  id="${signerInstance.id}" update="${"showSigner".concat((i + 1).toString())}"
+                                  onComplete="slideTableRow('${"showSigner".concat((i + 1).toString())}')"
                                   params="['source': source]" style="display:block">
                     ${signerInstance.lastName}
                 </g:remoteLink>
                 <td><g:remoteLink controller="search" action="showSigner"
-                                  id="${signerInstance.id}" update="${i+1}"
-                                  onComplete="slideTableRow('${i+1}')"
+                                  id="${signerInstance.id}" update="${"showSigner".concat((i + 1).toString())}"
+                                  onComplete="slideTableRow('${"showSigner".concat((i + 1).toString())}')"
                                   params="['source': source]" style="display:block">
                     ${signerInstance.title}
                 </g:remoteLink></td>
                 <td><g:remoteLink controller="search" action="showSigner"
-                                  id="${signerInstance.id}" update="${i+1}"
-                                  onComplete="slideTableRow('${i+1}')"
+                                  id="${signerInstance.id}" update="${"showSigner".concat((i + 1).toString())}"
+                                  onComplete="slideTableRow('${"showSigner".concat((i + 1).toString())}')"
                                   params="['source': source]" style="display:block">
                     ${signerInstance.position}
                 </g:remoteLink></td>
@@ -61,22 +62,26 @@
             <g:elseif test="${source == 'map'}">
 
                 <td><g:remoteLink controller="search" action="showSigner"
-                                  id="${signerInstance.id}" update="${i+1}" onComplete="slideTableRow('${i+1}')"
+                                  id="${signerInstance.id}" update="${"showSigner".concat((i + 1).toString())}"
+                                  onComplete="slideTableRow('${"showSigner".concat((i + 1).toString())}')"
                                   params="['source': source]" style="display:block">
                     ${signerInstance.firstName}
                 </g:remoteLink></td>
                 <td><g:remoteLink controller="search" action="showSigner"
-                                  id="${signerInstance.id}" update="${i+1}" onComplete="slideTableRow('${i+1}')"
+                                  id="${signerInstance.id}" update="${"showSigner".concat((i + 1).toString())}"
+                                  onComplete="slideTableRow('${"showSigner".concat((i + 1).toString())}')"
                                   params="['source': source]" style="display:block">
                     ${signerInstance.lastName}
                 </g:remoteLink>
                 <td><g:remoteLink controller="search" action="showSignerSigner"
-                                  id="${signerInstance.id}" update="${i+1}" onComplete="slideTableRow('${i+1}')"
+                                  id="${signerInstance.id}" update="${"showSigner".concat((i + 1).toString())}"
+                                  onComplete="slideTableRow('${"showSigner".concat((i + 1).toString())}')"
                                   params="['source': source]" style="display:block">
                     ${signerInstance.title}
                 </g:remoteLink></td>
                 <td><g:remoteLink controller="search" action="showSigner"
-                                  id="${signerInstance.id}" update="${i+1}" onComplete="slideTableRow('${i+1}')"
+                                  id="${signerInstance.id}" update="${"showSigner".concat((i + 1).toString())}"
+                                  onComplete="slideTableRow('${"showSigner".concat((i + 1).toString())}')"
                                   params="['source': source]" style="display:block">
                     ${signerInstance.position}
                 </g:remoteLink></td>
@@ -108,8 +113,8 @@
             </g:else>
 
         </tr>
-        <tr >
-            <td colspan="4" class="toSlide" id="${i+1}" ></td></tr>
+        <tr>
+            <td colspan="4" class="toSlide" id="${"showSigner".concat((i + 1).toString())}"></td></tr>
     </g:each>
     </tbody>
 </table>

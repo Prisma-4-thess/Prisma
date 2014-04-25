@@ -29,33 +29,28 @@
             <g:if test="${source == 'home'}">
 
                 <td><g:remoteLink controller="search" action="showDecision"
-                                  id="${decisionInstance.id}" update="decision"
-                                  onComplete="hideResultsShowDecision();"
+                                  id="${decisionInstance.id}" update="${"showDecision".concat((i+1).toString())}" onComplete="slideTableRow('${"showDecision".concat((i+1).toString())}')"
                                   params="['source': source]" style="display:block">
                     ${decisionInstance.ada}
                 </g:remoteLink></td>
                 <td><g:remoteLink controller="search" action="showDecision"
-                                  id="${decisionInstance.id}" update="decision"
-                                  onComplete="hideResultsShowDecision();"
+                                  id="${decisionInstance.id}" update="${"showDecision".concat((i+1).toString())}" onComplete="slideTableRow('${"showDecision".concat((i+1).toString())}')"
                                   params="['source': source]" style="display:block">
                     ${decisionInstance.subject.take(85)}<g:if
                             test="${decisionInstance.subject.length() > 85}">...</g:if>
                 </g:remoteLink>
                 <td><g:remoteLink controller="search" action="showDecision"
-                                  id="${decisionInstance.id}" update="decision"
-                                  onComplete="hideResultsShowDecision();"
+                                  id="${decisionInstance.id}" update="${"showDecision".concat((i+1).toString())}" onComplete="slideTableRow('${"showDecision".concat((i+1).toString())}')"
                                   params="['source': source]" style="display:block">
                     ${decisionInstance.protocolNumber}
                 </g:remoteLink></td>
                 <td><g:remoteLink controller="search" action="showDecision"
-                                  id="${decisionInstance.id}" update="decision"
-                                  onComplete="hideResultsShowDecision();"
+                                  id="${decisionInstance.id}" update="${"showDecision".concat((i+1).toString())}" onComplete="slideTableRow('${"showDecision".concat((i+1).toString())}')"
                                   params="['source': source]" style="display:block">
                     <g:formatDate date="${decisionInstance.date}"/>
                 </g:remoteLink></td>
                 <td><g:remoteLink controller="search" action="showDecision"
-                                  id="${decisionInstance.id}" update="decision"
-                                  onComplete="hideResultsShowDecision();"
+                                  id="${decisionInstance.id}" update="${"showDecision".concat((i+1).toString())}" onComplete="slideTableRow('${"showDecision".concat((i+1).toString())}')"
                                   params="['source': source]" style="display:block">
                     ${decisionInstance.unit}
                 </g:remoteLink></td>
@@ -64,28 +59,28 @@
             <g:elseif test="${source == 'map'}">
 
                 <td><g:remoteLink controller="search" action="showDecision"
-                                  id="${decisionInstance.id}" update="decision"
+                                  id="${decisionInstance.id}" update="${"showDecision".concat((i+1).toString())}" onComplete="slideTableRow('${"showDecision".concat((i+1).toString())}')"
                                   params="['source': source]" style="display:block">
                     ${decisionInstance.ada}
                 </g:remoteLink></td>
                 <td><g:remoteLink controller="search" action="showDecision"
-                                  id="${decisionInstance.id}" update="decision"
+                                  id="${decisionInstance.id}" update="${"showDecision".concat((i+1).toString())}" onComplete="slideTableRow('${"showDecision".concat((i+1).toString())}')"
                                   params="['source': source]" style="display:block">
                     ${decisionInstance.subject.take(85)}<g:if
                             test="${decisionInstance.subject.length() > 85}">...</g:if>
                 </g:remoteLink>
                 <td><g:remoteLink controller="search" action="showDecision"
-                                  id="${decisionInstance.id}" update="decision"
+                                  id="${decisionInstance.id}" update="${"showDecision".concat((i+1).toString())}" onComplete="slideTableRow('${"showDecision".concat((i+1).toString())}')"
                                   params="['source': source]" style="display:block">
                     ${decisionInstance.protocolNumber}
                 </g:remoteLink></td>
                 <td><g:remoteLink controller="search" action="showDecision"
-                                  id="${decisionInstance.id}" update="decision"
+                                  id="${decisionInstance.id}" update="${"showDecision".concat((i+1).toString())}" onComplete="slideTableRow('${"showDecision".concat((i+1).toString())}')"
                                   params="['source': source]" style="display:block">
                     <g:formatDate date="${decisionInstance.date}"/>
                 </g:remoteLink></td>
                 <td><g:remoteLink controller="search" action="showDecision"
-                                  id="${decisionInstance.id}" update="decision"
+                                  id="${decisionInstance.id}" update="${"showDecision".concat((i+1).toString())}" onComplete="slideTableRow('${"showDecision".concat((i+1).toString())}')"
                                   params="['source': source]" style="display:block">
                     ${decisionInstance.unit}
                 </g:remoteLink></td>
@@ -123,6 +118,8 @@
             </g:else>
 
         </tr>
+        <tr >
+            <td colspan="5" class="toSlide" id="${"showDecision".concat((i+1).toString())}" ></td></tr>
     </g:each>
     </tbody>
 </table>
