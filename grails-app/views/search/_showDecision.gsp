@@ -152,14 +152,14 @@
     </tr>
     <g:if test="${relDec}">
         <tr>
-            <td><g:remoteLink action="showRelated"
+            <td><g:remoteLink action="showRelated" onComplete="slideTableRow('${decision.id.toString().concat("related")}')"
                               params="['decisionId': decision.id]" update="${decision.id.toString().concat("related")}">Σχετικές αποφάσεις</g:remoteLink>
             </td>
         </tr>
     </g:if>
     <g:if test="${simDec}">
         <tr>
-            <td><g:remoteLink action="showSimilar"
+            <td><g:remoteLink action="showSimilar" onComplete="slideTableRow('${decision.id.toString().concat("similar")}')"
                               params="['decisionId': decision.id]" update="${decision.id.toString().concat("similar")}">Παρόμοιες αποφάσεις</g:remoteLink>
             </td>
         </tr>
@@ -176,9 +176,9 @@
     </tr>
 </table>
 
-<div id="${decision.id.toString().concat("related")}"></div>
+<div class="toSlide" id="${decision.id.toString().concat("related")}"></div>
 
-<div id="${decision.id.toString().concat("similar")}"></div>
+<div class="toSlide" id="${decision.id.toString().concat("similar")}"></div>
 
 <div id="${decision.id.toString().concat("comments")}" style="display: none;">
     <g:remoteLink controller="search" action="blog" id="${decision.ada}"
