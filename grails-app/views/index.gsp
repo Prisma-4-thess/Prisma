@@ -95,7 +95,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                    this.value = 'Αναζητήστε αποφάσεις, υπογράφοντες, τοποθεσίες κ.τ.λ...';
                                }"/>
                         <div id="spinner" class="spinner"
-                             style="display: none;">
+                             style="display: none; top: 0; right: 0">
                             <g:message code="spinner.alt" default="Loading&hellip;"/>
                         </div>
                         <span>

@@ -17,7 +17,7 @@
 
 <div class="wrap">
     <div class="container">
-        <g:render template="/common/decision_list" model="['results':decisions]"/>
+        <g:render template="/common/decision_list" model="['results': decisions]"/>
         %{--<g:each in="${decisions}">
             ${it.subject}
             <br/>
@@ -39,12 +39,11 @@
 
 <div class="wrap">
     <div class="container">
-   %{--     <g:each in="${signers}">
-            ${it}
-            <br/>
-        </g:each>--}%
-        <g:render template="/common/signer_list" model="['results':signers]"/>
-
+        %{--     <g:each in="${signers}">
+                 ${it}
+                 <br/>
+             </g:each>--}%
+        <g:render template="/common/signer_list" model="['results': signers]"/>
 
     </div></div>
 
@@ -61,10 +60,14 @@
 
 <div class="wrap">
     <div class="container">
-        <g:each in="${types}">
-            ${it}
-            <br/>
-        </g:each>
+        <ul>
+            <g:each in="${types}">
+                <li>
+                    <g:link controller="search" action="showType" id="${it.id}">${it}</g:link>
+                </li>
+
+            </g:each>
+        </ul>
     </div></div>
 
 <div class="clear"></div>
@@ -80,10 +83,14 @@
 
 <div class="wrap">
     <div class="container">
-        <g:each in="${geos}">
-            ${it}
-            <br/>
-        </g:each>
+        <ul>
+            <g:each in="${geos}">
+                <li>
+                    <g:link controller="search" action="showGeo" id="${it.id}" >${it}</g:link>
+                </li>
+
+            </g:each>
+        </ul>
     </div></div>
 
 <div class="clear"></div>
