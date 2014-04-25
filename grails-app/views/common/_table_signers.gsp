@@ -31,7 +31,7 @@
             <g:if test="${source == 'home'}">
 
                 <td><g:remoteLink controller="search" action="showSigner"
-                                  id="${signerInstance.id}" update="${signerInstance.id}" onComplete="slideTableRow('${i}')"
+                                  id="${signerInstance.id}" update="${i+1}" onComplete="slideTableRow('${i+1}')"
                                   params="['source': source]" style="display:block">
                    ${signerInstance.firstName}
                 </g:remoteLink></td>
@@ -39,20 +39,20 @@
 
 
                 <td><g:remoteLink controller="search" action="showSigner"
-                                  id="${signerInstance.id}" update="decision"
-                                  onComplete="hideResultsShowDecision();"
+                                  id="${signerInstance.id}" update="${i+1}"
+                                  onComplete="slideTableRow('${i+1}')"
                                   params="['source': source]" style="display:block">
                     ${signerInstance.lastName}
                 </g:remoteLink>
                 <td><g:remoteLink controller="search" action="showSigner"
-                                  id="${signerInstance.id}" update="decision"
-                                  onComplete="hideResultsShowDecision();"
+                                  id="${signerInstance.id}" update="${i+1}"
+                                  onComplete="slideTableRow('${i+1}')"
                                   params="['source': source]" style="display:block">
                     ${signerInstance.title}
                 </g:remoteLink></td>
                 <td><g:remoteLink controller="search" action="showSigner"
-                                  id="${signerInstance.id}" update="decision"
-                                  onComplete="hideResultsShowDecision();"
+                                  id="${signerInstance.id}" update="${i+1}"
+                                  onComplete="slideTableRow('${i+1}')"
                                   params="['source': source]" style="display:block">
                     ${signerInstance.position}
                 </g:remoteLink></td>
@@ -61,22 +61,22 @@
             <g:elseif test="${source == 'map'}">
 
                 <td><g:remoteLink controller="search" action="showSigner"
-                                  id="${signerInstance.id}" update="decision"
+                                  id="${signerInstance.id}" update="${i+1}" onComplete="slideTableRow('${i+1}')"
                                   params="['source': source]" style="display:block">
                     ${signerInstance.firstName}
                 </g:remoteLink></td>
                 <td><g:remoteLink controller="search" action="showSigner"
-                                  id="${signerInstance.id}" update="decision"
+                                  id="${signerInstance.id}" update="${i+1}" onComplete="slideTableRow('${i+1}')"
                                   params="['source': source]" style="display:block">
                     ${signerInstance.lastName}
                 </g:remoteLink>
                 <td><g:remoteLink controller="search" action="showSignerSigner"
-                                  id="${signerInstance.id}" update="decision"
+                                  id="${signerInstance.id}" update="${i+1}" onComplete="slideTableRow('${i+1}')"
                                   params="['source': source]" style="display:block">
                     ${signerInstance.title}
                 </g:remoteLink></td>
                 <td><g:remoteLink controller="search" action="showSigner"
-                                  id="${signerInstance.id}" update="decision"
+                                  id="${signerInstance.id}" update="${i+1}" onComplete="slideTableRow('${i+1}')"
                                   params="['source': source]" style="display:block">
                     ${signerInstance.position}
                 </g:remoteLink></td>
@@ -109,7 +109,7 @@
 
         </tr>
         <tr >
-            <td colspan="4" class="toSlide" id="${i}" >testing</td></tr>
+            <td colspan="4" class="toSlide" id="${i+1}" ></td></tr>
     </g:each>
     </tbody>
 </table>
