@@ -153,14 +153,14 @@
     <g:if test="${relDec}">
         <tr>
             <td><g:remoteLink action="showRelated"
-                              params="['decisionId': decision.id]" update="related">Σχετικές αποφάσεις</g:remoteLink>
+                              params="['decisionId': decision.id]" update="${decision.id.toString().concat("related")}">Σχετικές αποφάσεις</g:remoteLink>
             </td>
         </tr>
     </g:if>
     <g:if test="${simDec}">
         <tr>
             <td><g:remoteLink action="showSimilar"
-                              params="['decisionId': decision.id]" update="similar">Παρόμοιες αποφάσεις</g:remoteLink>
+                              params="['decisionId': decision.id]" update="${decision.id.toString().concat("similar")}">Παρόμοιες αποφάσεις</g:remoteLink>
             </td>
         </tr>
     </g:if>
@@ -176,11 +176,11 @@
     </tr>
 </table>
 
-<div id="related"></div>
+<div id="${decision.id.toString().concat("related")}"></div>
 
-<div id="similar"></div>
+<div id="${decision.id.toString().concat("similar")}"></div>
 
-<div id="comments" style="display: none;">
+<div id="${decision.id.toString().concat("comments")}" style="display: none;">
     <g:remoteLink controller="search" action="blog" id="${decision.ada}"
                   update="blog">enable blog</g:remoteLink>
     <div id="blog" class="blog">

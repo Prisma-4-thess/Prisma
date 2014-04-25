@@ -8,9 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
+    <resource:autoComplete skin="default"/>
+    %{--<resource:tooltip/>--}%
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="layout" content="global_main"/>
-    <title>Search</title>
 </head>
 
 <body>
