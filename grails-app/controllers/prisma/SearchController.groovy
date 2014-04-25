@@ -307,7 +307,7 @@ class SearchController {
     }
     def showSigner(){
         def s = Signer.get(params.id)
-        render(template: "/search/showSigner", model: [signer:s , signersDecisions:s.decisions])
+        render(template: "/search/showSigner", model: [signer:s , signersDecisions:s.decisions.size()])
     }
     def showType(){
         def t  = Type.get(params.id)
