@@ -87,7 +87,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <g:formRemote id="queryForm" name="query_form"
                                   url="[controller: 'contextualSearch', action: 'search']" update="search_results">
                         <input name="query" type="text" class="textbox"
-                               value=""/>
+                               value="Αναζητήστε αποφάσεις, υπογράφοντες, τοποθεσίες κ.τ.λ..."
+                               onfocus="if (this.value == 'Αναζητήστε αποφάσεις, υπογράφοντες, τοποθεσίες κ.τ.λ...') {
+                                   this.value = '';
+                               }"
+                               onblur="if (this.value == '') {
+                                   this.value = 'Αναζητήστε αποφάσεις, υπογράφοντες, τοποθεσίες κ.τ.λ...';
+                               }"/>
+                        <div id="spinner" class="spinner"
+                             style="display: none;">
+                            <g:message code="spinner.alt" default="Loading&hellip;"/>
+                        </div>
                         <span>
                             <g:submitButton name="Submit" type="submit" class=""
                                             value="Αναζητηση"/>

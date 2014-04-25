@@ -16,7 +16,7 @@
 <body>
 <div class="container">
     <div class="wrap">
-        <g:render template="/search/show"/>
+        <g:render template="/search/showDecision"/>
     </div>
 </div>
 </body>
