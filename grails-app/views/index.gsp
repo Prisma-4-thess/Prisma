@@ -85,7 +85,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="search_form">
                 <div class="contact-form">
                     <g:formRemote id="queryForm" name="query_form"
-                                  url="[controller: 'contextualSearch', action: 'search']" update="search_results">
+                                  url="[controller: 'contextualSearch', action: 'search']" update="searchResults">
                         <input name="query" type="text" class="textbox"
                                value="Αναζητήστε αποφάσεις, υπογράφοντες, τοποθεσίες κ.τ.λ..."
                                onfocus="if (this.value == 'Αναζητήστε αποφάσεις, υπογράφοντες, τοποθεσίες κ.τ.λ...') {
@@ -94,10 +94,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                onblur="if (this.value == '') {
                                    this.value = 'Αναζητήστε αποφάσεις, υπογράφοντες, τοποθεσίες κ.τ.λ...';
                                }"/>
-                        <div id="spinner" class="spinner"
-                             style="display: none; top: 0; right: 0">
-                            <g:message code="spinner.alt" default="Loading&hellip;"/>
-                        </div>
                         <span>
                             <g:submitButton name="Submit" type="submit" class=""
                                             value="Αναζητηση"/>
@@ -118,7 +114,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-----end-slider-------->
 
 <!---------start-search results------------>
-<div id="search_results"></div>
+
+<div id="contextualSearch" class="container">
+
+    <div align="center">
+        <h2>Αποτελέσματα
+        <span id="spinner" class="spinner"
+               style="display:none;/* position:inherit;*/">
+            %{--<g:message code="spinner.alt" default="Loading&hellip;"/>--}%
+        </span></h2>
+
+
+
+        <div id="searchResults">
+            <p>Τα αποτελέσματα της αναζήτησης θα εμφανιστούν εδώ</p>
+        </div>
+    </div>
+</div>
 <!-----end-slider-------->
 
 <!---------start-search results------------>
