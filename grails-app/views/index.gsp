@@ -102,10 +102,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </g:formRemote>
                 </div>
             </div>
-            <a id="apklink" href="${resource(dir: 'apk', file: 'com.spydi2kood.prisma.apk')}"><span
-                    id="toFadeS1" class="da-img"></span>
-            </a> <a><span id="toFadeS2" class="da-video" onclick="play()">
-        </span></a>
+
+            <div align="center" id="bubbles">
+                <a id="apklink" href="${resource(dir: 'apk', file: 'com.spydi2kood.prisma.apk')}">
+                    <div id="toFadeS1" class="da-img"></div>
+                </a>
+                <a>
+                    <div id="toFadeS2" class="da-video" onclick="play()"></div>
+                </a>
+            </div>
         </div>
         <!---//End-da-slider---->
     </div>
@@ -117,19 +122,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <div id="contextualSearch" class="container">
 
-    <div align="center">
-        <h2>Αποτελέσματα
+    <h2>Αποτελέσματα
         <span id="spinner" class="spinner"
-               style="display:none;/* position:inherit;*/">
+              style="display:none;/* position:inherit;*/">
             %{--<g:message code="spinner.alt" default="Loading&hellip;"/>--}%
         </span></h2>
 
 
-
-        <div id="searchResults">
-            <p>Τα αποτελέσματα της αναζήτησης θα εμφανιστούν εδώ</p>
-        </div>
+    <div id="searchResults">
+        <p>Τα αποτελέσματα της αναζήτησης θα εμφανιστούν εδώ</p>
     </div>
+
 </div>
 <!-----end-slider-------->
 
