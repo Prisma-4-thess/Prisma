@@ -25,16 +25,19 @@
     </tr>
     </thead>
     <tbody>
+
     <g:each in="${results}" status="i" var="signerInstance">
         <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
             <g:if test="${source == 'home'}">
 
                 <td><g:remoteLink controller="search" action="showSigner"
-                                  id="${signerInstance.id}" update="decision"
-                                  onComplete="hideResultsShowDecision();"
+                                  id="${signerInstance.id}" update="${signerInstance.id}" onComplete="slideTableRow('${i}')"
                                   params="['source': source]" style="display:block">
-                    ${signerInstance.firstName}
+                   ${signerInstance.firstName}
                 </g:remoteLink></td>
+
+
+
                 <td><g:remoteLink controller="search" action="showSigner"
                                   id="${signerInstance.id}" update="decision"
                                   onComplete="hideResultsShowDecision();"
@@ -105,6 +108,8 @@
             </g:else>
 
         </tr>
+        <tr >
+            <td colspan="4" class="toSlide" id="${i}" >testing</td></tr>
     </g:each>
     </tbody>
 </table>
