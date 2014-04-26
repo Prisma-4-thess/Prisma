@@ -6,26 +6,10 @@ import grails.plugin.springsecurity.annotation.Secured
 class ContextualSearchController {
 
     def index() {
-
-
     }
 
     def search() {
         def query = "*" + params.query + "*"
-
-        ArrayList<Signer> signers = new ArrayList<>()
-        def resultsSigners = Signer.search(query, defaultOperator: "or").results
-        println "Signer Suggestions: " + Signer.suggestQuery(query, escape: true, userFriendly: true, emulateCapitalisation: false, allowSame: true)
-
-        for (Signer signer : resultsSigners) {
-            def sign = Signer.findById(signer.getId())
-            println "Signer: " + sign
-            println "Signer decisions: " + sign.decisions
-
-            println "Signer Similar: " + signer.moreLikeThis(result: 'every')
-            signers.add(sign)
-
-        }
 
         ArrayList<Decision> decisions = new ArrayList<>()
         def resultsDecisions = Decision.search(query, defaultOperator: "or").results
@@ -42,6 +26,20 @@ class ContextualSearchController {
 
         }
 
+        ArrayList<Signer> signers = new ArrayList<>()
+        def resultsSigners = Signer.search(query, defaultOperator: "or").results
+        println "Signer Suggestions: " + Signer.suggestQuery(query, escape: true, userFriendly: true, emulateCapitalisation: false, allowSame: true)
+
+        for (Signer signer : resultsSigners) {
+            def sign = Signer.findById(signer.getId())
+            println "Signer: " + sign
+//            println "Signer decisions: " + sign.decisions
+
+            println "Signer Similar: " + signer.moreLikeThis(result: 'every')
+            signers.add(sign)
+
+        }
+
         ArrayList<Type> types = new ArrayList<>()
         def resultsTypes = Type.search(query, defaultOperator: "or").results
         println "Type Suggestions: " + Type.suggestQuery(query, escape: true, userFriendly: true, emulateCapitalisation: false, allowSame: true)
@@ -49,7 +47,7 @@ class ContextualSearchController {
         for (Type type : resultsTypes) {
             def t = Type.findById(type.getId())
             println "Type: " + t
-            println "Type Decisions: " + t.decisions
+//            println "Type Decisions: " + t.decisions
 
             println "Type Similar: " + t.moreLikeThis(result: 'every')
             types.add(t)
@@ -62,7 +60,7 @@ class ContextualSearchController {
         for (Geo geo : geos) {
             def g = Geo.findById(geo.getId())
             println "Geo: " + g
-            println "Geo Decisions: " + g.decisions
+//            println "Geo Decisions: " + g.decisions
 
             println "Geo Similar: " + geo.moreLikeThis(result: 'every')
 

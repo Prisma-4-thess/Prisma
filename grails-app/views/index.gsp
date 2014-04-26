@@ -122,12 +122,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <div id="contextualSearch" class="container">
 
-    <h2>Αποτελέσματα
-        <span id="spinner" class="spinner"
-              style="display:none;/* position:inherit;*/">
-            %{--<g:message code="spinner.alt" default="Loading&hellip;"/>--}%
-        </span></h2>
-
+    <h2>Αποτελέσματα<span id="spinner" class="spinner" style="display:none;/* position:inherit;*/"/></h2>
 
     <div id="searchResults">
         <p>Τα αποτελέσματα της αναζήτησης θα εμφανιστούν εδώ</p>

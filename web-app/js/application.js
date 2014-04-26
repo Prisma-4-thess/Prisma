@@ -1,9 +1,9 @@
 if (typeof jQuery !== 'undefined') {
 	(function($) {
 		$('#spinner').ajaxStart(function() {
-			$(this).fadeIn();
+			$(this).fadeIn().css("display","inline");;
 		}).ajaxStop(function() {
-			$(this).fadeOut();
+			$(this).fadeOut().css("display","inline");;
 		});
 	})(jQuery);
 }
