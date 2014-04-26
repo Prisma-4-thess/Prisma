@@ -1,1 +1,1 @@
-<label>Number of Decisions: </label><span>${signerDecisions}</span>
+<label>Πλήθος Αποφάσεων:</label> <span>${signerDecisions}</span>

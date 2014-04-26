@@ -1,6 +1,6 @@
 <ul>
     <li>
-        <label>Number of Decisions:</label> <span>${typeDecisions}</span>
+        <label>Πλήθος Αποφάσεων:</label> <span>${typeDecisions}</span>
     </li>
     <li>
         <label>Επιπλέον χαρακτηριστικά:</label>

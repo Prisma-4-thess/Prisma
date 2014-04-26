@@ -95,7 +95,7 @@ function play() {
     myVideo.play();
     $('#toFadeH').animate({ opacity: 0 });
     $('#toFadeP').animate({ opacity: 0 });
-    $('#toFadeA').animate({ opacity: 0 });
+    $('#queryForm').animate({ opacity: 0 });
     $('#toFadeS1').animate({ opacity: 0 });
     $('#toFadeS2').animate({ opacity: 0 });
     document.getElementById("toHide").style["display"] = "none";
@@ -109,7 +109,7 @@ function pause() {
     document.getElementById("close_vid").style["display"] = "none";
     $('#toFadeH').delay(500).animate({ opacity: 1 });
     $('#toFadeP').delay(750).animate({ opacity: 1 });
-    $('#toFadeA').delay(1000).animate({ opacity: 1 });
+    $('#queryForm').delay(1000).animate({ opacity: 1 });
     $('#toFadeS1').delay(1250).animate({ opacity: 1 });
     $('#toFadeS2').delay(1250).animate({ opacity: 1 });
 }
