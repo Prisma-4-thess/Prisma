@@ -84,14 +84,15 @@
 
 <div class="wrap">
     <div class="container">
-        <ul>
+        %{--<ul>
             <g:each in="${geos}">
                 <li>
                     <g:link controller="search" action="showGeo" id="${it.id}" >${it}</g:link>
                 </li>
 
             </g:each>
-        </ul>
+        </ul>--}%
+        <g:render template="/common/geo_list" model="['results': geos]"/>
     </div></div>
 
 <div class="clear"></div>

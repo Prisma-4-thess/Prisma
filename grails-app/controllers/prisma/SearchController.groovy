@@ -317,7 +317,7 @@ class SearchController {
 
     def showGeo() {
         def g = Geo.get(params.id)
-        [geo:g, decisionsFromGeo:g.decisions]
+        render(template: "/search/showGeo", model: [geo:g, geoDecisions:Decision.countByGeo(g)])
     }
 
 }
