@@ -307,11 +307,12 @@ class SearchController {
     }
     def showSigner(){
         def s = Signer.get(params.id)
-        render(template: "/search/showSigner", model: [signer:s , signersDecisions: Decision.countBySigner(s)])
+        render(template: "/search/showSigner", model: [signer:s , signerDecisions: Decision.countBySigner(s)])
     }
     def showType(){
         def t  = Type.get(params.id)
-        [type:t, extraTypes:t.extras, decisionsFromType:t.decisions]
+
+        render(template: "/search/showType", model: [type:t, extraTypes:t.extras, typeDecisions:Decision.countByType(t)])
     }
 
     def showGeo() {

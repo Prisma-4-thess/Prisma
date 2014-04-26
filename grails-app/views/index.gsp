@@ -87,12 +87,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <g:formRemote id="queryForm" name="query_form"
                                   url="[controller: 'contextualSearch', action: 'search']" update="searchResults">
                         <input name="query" type="text" class="textbox"
-                               value="Αναζητήστε αποφάσεις, υπογράφοντες, τοποθεσίες κ.τ.λ..."
-                               onfocus="if (this.value == 'Αναζητήστε αποφάσεις, υπογράφοντες, τοποθεσίες κ.τ.λ...') {
+                               value="<g:message  code='homepage.searchHint'/>"
+                               onfocus="if (this.value == '<g:message  code='homepage.searchHint'/>') {
                                    this.value = '';
                                }"
                                onblur="if (this.value == '') {
-                                   this.value = 'Αναζητήστε αποφάσεις, υπογράφοντες, τοποθεσίες κ.τ.λ...';
+                                   this.value = '<g:message  code='homepage.searchHint'/>';
                                }"/>
                         <span>
                             <g:submitButton name="Submit" type="submit" class=""
@@ -122,7 +122,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <div id="contextualSearch" class="container">
 
-    <h2>Αποτελέσματα<span id="spinner" class="spinner" style="display:none;/* position:inherit;*/"/></h2>
+    <h2>Αποτελέσματα<span id="spinner" class="spinner" style="display:none;/* position:inherit;*/"></span></h2>
 
     <div id="searchResults">
         <p>Τα αποτελέσματα της αναζήτησης θα εμφανιστούν εδώ</p>

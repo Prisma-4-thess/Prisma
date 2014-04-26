@@ -1,2 +1,1 @@
-
-<label>Number of Decisions:</label><div>${signersDecisions}</div>
+<label>Number of Decisions: </label><span>${signerDecisions}</span>

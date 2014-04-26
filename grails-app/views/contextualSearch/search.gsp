@@ -60,14 +60,15 @@
 
 <div class="wrap">
     <div class="container">
-        <ul>
+        %{--<ul>
             <g:each in="${types}">
                 <li>
                     <g:link controller="search" action="showType" id="${it.id}">${it}</g:link>
                 </li>
 
             </g:each>
-        </ul>
+        </ul>--}%
+        <g:render template="/common/type_list" model="['results': types]"/>
     </div></div>
 
 <div class="clear"></div>

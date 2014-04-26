@@ -9,6 +9,8 @@ class ContextualSearchController {
     }
 
     def search() {
+
+        if(params.query.equals(message(code: 'homepage.searchHint'))) render(text:'<p>'+message(code: 'homepage.emptySearchMessage')+'<p>' )
         def query = "*" + params.query + "*"
 
         ArrayList<Decision> decisions = new ArrayList<>()
@@ -54,15 +56,17 @@ class ContextualSearchController {
 
         }
 
-        def geos = Geo.search(query, defaultOperator: "or").results
+        ArrayList<Geo> geos = new ArrayList<>()
+        def resultsGeos = Geo.search(query, defaultOperator: "or").results
         println "Geo Suggestions: " + Geo.suggestQuery(query, escape: true, userFriendly: true, emulateCapitalisation: false, allowSame: true)
 
-        for (Geo geo : geos) {
+        for (Geo geo : resultsGeos) {
             def g = Geo.findById(geo.getId())
             println "Geo: " + g
 //            println "Geo Decisions: " + g.decisions
 
             println "Geo Similar: " + geo.moreLikeThis(result: 'every')
+            geos.add(g)
 
         }
 
@@ -74,6 +78,6 @@ class ContextualSearchController {
         println signer
         println signer.decisions*/
 
-        [decisions: decisions, decisionInstanceTotal: decisions.size(), source: "home", signers: signers, signerInstanceTotal: signers.size(), types: types, geos: geos]
+        [decisions: decisions, decisionInstanceTotal: decisions.size(), source: "home", signers: signers, signerInstanceTotal: signers.size(), types: types, typeInstanceTotal:types.size(), geos: geos]
     }
 }
