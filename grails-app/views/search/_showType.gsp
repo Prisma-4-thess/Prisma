@@ -4,7 +4,7 @@
     </li>
     <li>
         <label>Επιπλέον χαρακτηριστικά:</label>
-        <g:each in="${type.extras}">${it.label}, </g:each>
+        <g:each in="${type.extras}">${it.label},</g:each>
 
     </li>
 </ul>

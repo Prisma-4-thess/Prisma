@@ -9,11 +9,11 @@
 
         <div class="pagination search_table">
             <util:remotePaginate action="list" total="${decisionInstanceTotal}"
-                                 params="['source': source, 'timeStamp': timeStamp]" update="list-decision"
+                                 params="['timeStamp': timeStamp]" update="list-decision"
                                  id="pagination"/>
         </div>
         <g:render template="/common/table_decisions"
-                  model="['offset': params.offset, 'source': source, 'timeStamp': timeStamp]"/>
+                  model="['offset': params.offset, 'timeStamp': timeStamp]"/>
 
     </div>
 </g:if>

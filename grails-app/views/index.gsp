@@ -96,7 +96,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                }"/>
                         <span>
                             <g:submitButton id="submitButton" name="Submit" type="submit" class=""
-                                            onclick="scrollTo('contextualSearch',1500)"
+                                            onclick="scrollTo('contextualSearch',1200)"
                                             value="Αναζητηση"/>
                         </span>
 

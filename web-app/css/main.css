@@ -681,3 +681,6 @@ a.skip {
 }
 
 /**************Sbond**************/
+.toSlide{
+    display: none;
+}

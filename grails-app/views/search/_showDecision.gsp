@@ -1,5 +1,5 @@
 <table id="one-column-emphasis" class="search_table">
-    <tr>
+    %{--<tr>
         <th><g:if test="${source == "map"}">
         <%--<g:link mapping="rootUrl">←</g:link>
             --%>
@@ -8,25 +8,25 @@
         </g:elseif> <g:else>
 
         </g:else></th>
-    </tr>
+    </tr>--}%
     <g:if test="${dec2}">
 
         <g:each in="${dec2}">
             <tr>
                 <th><font color="red">Η παρούσα απόφαση έχει διορθωθεί
-                από την: <g:if test="${source == 'home'}">
+                από την: </font>%{--<g:if test="${source == 'home'}">
                     <g:remoteLink controller="search" action="showDecision" id="${it.id}"
                                   update="decision" onComplete="hideResultsShowDecision();"
-                                  params="['source': source]">
+                                  params="['source': source]">--}%
                         ${it.ada}
-                    </g:remoteLink>
+%{--                    </g:remoteLink>
                 </g:if> <g:else>
                     <g:remoteLink controller="search" action="showDecision" id="${it.id}"
                                   update="decision" params="['source': source]">
                         ${it.ada}
                     </g:remoteLink>
-                </g:else>
-                </font></th>
+                </g:else>--}%
+                </th>
             </tr>
         </g:each>
 
@@ -133,12 +133,12 @@
         <td>
         <td><g:if test="${decision.geo}">
             <g:link controller="map" action="show_geo"
-                    params="['source': source]" id="${decision.geo.id}" target="_blank">
+                    id="${decision.geo.id}" target="_blank">
                 ${decision.geo}
             </g:link>
         </g:if> <g:else>
             <g:link controller="defineGeo" action="index"
-                    params="['source': source, 'decisionId': decision.id, 'decisionName': decision.ada]"
+                    params="['decisionId': decision.id, 'decisionName': decision.ada]"
                     target="_blank">
                 Πρόσθεσε Τοποθεσία
             </g:link>
@@ -164,7 +164,7 @@
             </td>
         </tr>
     </g:if>
-    <tr>
+   %{-- <tr>
         <th><g:if test="${source == "map"}">
         <%--<g:link mapping="rootUrl">←</g:link>
             --%>
@@ -173,7 +173,7 @@
         </g:elseif> <g:else>
 
         </g:else></th>
-    </tr>
+    </tr>--}%
 </table>
 
 <div class="toSlide" id="${decision.id.toString().concat("related")}"></div>

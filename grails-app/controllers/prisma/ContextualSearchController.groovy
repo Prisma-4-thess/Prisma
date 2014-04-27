@@ -71,7 +71,7 @@ class ContextualSearchController {
 
             }
 
-            [decisions: decisions, decisionInstanceTotal: decisions.size(), source: "home", signers: signers, signerInstanceTotal: signers.size(), types: types, typeInstanceTotal: types.size(), geos: geos]
+            [decisions: decisions, decisionInstanceTotal: decisions.size(), signers: signers, signerInstanceTotal: signers.size(), types: types, typeInstanceTotal: types.size(), geos: geos]
         } catch (Exception e) {
             e.printStackTrace()
             render(text: '<p>' + message(code: 'homepage.errorSearchMessage') + '<p>')

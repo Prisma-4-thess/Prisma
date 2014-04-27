@@ -24,7 +24,7 @@
 
                   <p class="more">
                         <g:link controller="search" action="showDecision"
-                                id="${it?.id}" params="['source': 'similar']"
+                                id="${it?.id}" params="['newTab': 'true']"
                                 style="display:block" target="_blank">Περισσότερα...</g:link>
                   </p>
                 </dd>

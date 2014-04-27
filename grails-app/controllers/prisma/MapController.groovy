@@ -89,7 +89,7 @@ class MapController {
         println timeStamp;
         session.setAttribute((String) timeStamp, (Object) decision)
 
-        render(view: "/map/markerList", model: [results: decision.subList(0, toShow), decisionInstanceTotal: decision.size(), source: "map", timeStamp: timeStamp])
+        render(view: "/map/markerList", model: [results: decision.subList(0, toShow), decisionInstanceTotal: decision.size(), timeStamp: timeStamp])
     }
 
     def list() {
@@ -98,8 +98,7 @@ class MapController {
         def toShow = Math.min(Math.abs(decision.size() - params.offset.toInteger()), maxToShow)
         println "toShow: " + toShow
         println "remaining: " + (decision.size())
-        println "source: " + params.source
-        render(template: "/common/decision_list", model: [results: decision.subList(params.offset.toInteger(), params.offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), source: params.source, timeStamp: params.timeStamp])
+        render(template: "/common/decision_list", model: [results: decision.subList(params.offset.toInteger(), params.offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), timeStamp: params.timeStamp])
     }
 
     def sort() {
@@ -130,6 +129,6 @@ class MapController {
         session.setAttribute(params.timeStamp, decision)
         def toShow = Math.min(Math.abs(decision.size() - offset.toInteger()), maxToShow)
         println offset + ":" + toShow
-        render(template: "/common/table_decisions", model: [results: decision.subList(offset.toInteger(), offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), offset: offset, source: params.source, timeStamp: params.timeStamp])
+        render(template: "/common/table_decisions", model: [results: decision.subList(offset.toInteger(), offset.toInteger() + toShow), decisionInstanceTotal: (decision.size()), offset: offset, timeStamp: params.timeStamp])
     }
 }
