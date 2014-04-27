@@ -155,6 +155,15 @@ body {
 }
 
 /************Sbond***********/
+
+.odd {
+    background: #f7f7f7;
+}
+
+.even {
+    background: #ffffff;
+}
+
 .news_slider_bg {
 	background: url('../images/spydi2kood.jpg') no-repeat;
 	background-size: cover;

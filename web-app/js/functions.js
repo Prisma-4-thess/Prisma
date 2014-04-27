@@ -139,8 +139,17 @@ function pop() {
 }
 
 /******END - Contact response popup at homepage ********/
+
 /******START- Slides elements(show-hide)******/
 function slideTableRow(id) {
     $(document.getElementById(id)).slideToggle("fast");
 }
 /*******END-Slides elements(show-hide)******/
+
+/******START- Smooth scroll to element******/
+function scrollTo(elementId, duration) {
+    $('html, body').animate({
+        scrollTop: $("#" + elementId).offset().top
+    }, duration);
+}
+/******END- Smooth scroll to element******/

@@ -87,7 +87,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <g:formRemote id="queryForm" name="query_form"
                                   url="[controller: 'contextualSearch', action: 'search']" update="searchResults">
                         <input name="query" type="text" class="textbox"
-                               value="<g:message  code='homepage.searchHint'/>"
+                               value="<g:message code='homepage.searchHint'/>"
                                onfocus="if (this.value == '<g:message  code='homepage.searchHint'/>') {
                                    this.value = '';
                                }"
@@ -95,7 +95,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                    this.value = '<g:message  code='homepage.searchHint'/>';
                                }"/>
                         <span>
-                            <g:submitButton name="Submit" type="submit" class=""
+                            <g:submitButton id="submitButton" name="Submit" type="submit" class=""
+                                            onclick="scrollTo('contextualSearch',1500)"
                                             value="Αναζητηση"/>
                         </span>
 
