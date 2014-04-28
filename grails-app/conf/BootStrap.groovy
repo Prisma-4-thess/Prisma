@@ -1,3 +1,4 @@
+import prisma.Setting
 import prisma.User;
 import prisma.Role
 import prisma.UserRole
@@ -12,6 +13,8 @@ class BootStrap {
 		User admin = createUser('admin', adminRole)
 		User mod = createUser('moderator', modRole)
 		User up = createUser('uploader', upRole)
+        def settings=new Setting()
+        settings.save(flush: true)
 	}
 	private User createUser(username, role) {
 

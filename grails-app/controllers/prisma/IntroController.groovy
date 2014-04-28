@@ -5,7 +5,9 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['permitAll'])
 class IntroController {
 
-    def index() {}
+    def index() {
+        redirect(action: "intro")
+    }
 
     def intro() {
         params.order = "asc"
@@ -32,10 +34,12 @@ class IntroController {
     }
    def addToList(){
        //ToDo Create domain ,load from domain-store to domain
-       def chosenOrganization = params.chosenOrgan
-       ArrayList<String> organizationsList = new ArrayList<>()
-       organizationsList.add(chosenOrganization)
-       [organizationsList: organizationsList]
+       def chosenOrganization = Organization.findByLabel(params.chosenOrgan)
+       def setting=Setting.get(1)
+
+       setting.addToOrgs(chosenOrganization)
+       setting.save(flush: true)
+       [organizationsList: Setting.get(1).orgs]
    }
     def removeFromList(){
         def chosenOrganizationToRemove = params.chosenOrganToDelete
