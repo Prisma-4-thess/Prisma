@@ -16,7 +16,7 @@ class ContextualSearchController {
 
             ArrayList<Decision> decisions = new ArrayList<>()
             def resultsDecisions = Decision.search(query, defaultOperator: "or").results
-            println "Decision Suggestions: " + Decision.suggestQuery(query, escape: true, userFriendly: true, emulateCapitalisation: false, allowSame: true)
+            println "Decision Suggestions: " + Decision.suggestQuery(params.query, escape: true, userFriendly: true, emulateCapitalisation: false, allowSame: true)
 
             for (Decision decision : resultsDecisions) {
                 def dec = Decision.findById(decision.getId())
@@ -31,7 +31,7 @@ class ContextualSearchController {
 
             ArrayList<Signer> signers = new ArrayList<>()
             def resultsSigners = Signer.search(query, defaultOperator: "or").results
-            println "Signer Suggestions: " + Signer.suggestQuery(query, escape: true, userFriendly: true, emulateCapitalisation: false, allowSame: true)
+            println "Signer Suggestions: " + Signer.suggestQuery(params.query, escape: true, userFriendly: true, emulateCapitalisation: false, allowSame: true)
 
             for (Signer signer : resultsSigners) {
                 def sign = Signer.findById(signer.getId())
@@ -45,7 +45,7 @@ class ContextualSearchController {
 
             ArrayList<Type> types = new ArrayList<>()
             def resultsTypes = Type.search(query, defaultOperator: "or").results
-            println "Type Suggestions: " + Type.suggestQuery(query, escape: true, userFriendly: true, emulateCapitalisation: false, allowSame: true)
+            println "Type Suggestions: " + Type.suggestQuery(params.query, escape: true, userFriendly: true, emulateCapitalisation: false, allowSame: true)
 
             for (Type type : resultsTypes) {
                 def t = Type.findById(type.getId())
@@ -59,7 +59,7 @@ class ContextualSearchController {
 
             ArrayList<Geo> geos = new ArrayList<>()
             def resultsGeos = Geo.search(query, defaultOperator: "or").results
-            println "Geo Suggestions: " + Geo.suggestQuery(query, escape: true, userFriendly: true, emulateCapitalisation: false, allowSame: true)
+            println "Geo Suggestions: " + Geo.suggestQuery(params.query, escape: true, userFriendly: true, emulateCapitalisation: false, allowSame: true)
 
             for (Geo geo : resultsGeos) {
                 def g = Geo.findById(geo.getId())

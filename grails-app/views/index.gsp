@@ -40,11 +40,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="nav">
                 <ul>
 
-                    <li class="active"><a href="#home" class="scroll">Home</a></li>
-                    <li><g:link controller="search" action="dedicatedSearchPage">Αναζητηση</g:link></li>
-                    <li><a href="#map" class="scroll">Χαρτης</a></li>
-                    <li><a href="#about" class="scroll">Πληροφοριες</a></li>
-                    <li><g:link controller="team">Η ομαδα</g:link></li>
+                    <li class="active"><a href="#home" class="scroll"><g:message code="homepage.home.label" /></a></li>
+                    <li><g:link controller="search" action="dedicatedSearchPage"><g:message code="homepage.search.label" /></g:link></li>
+                    <li><a href="#map" class="scroll"><g:message code="homepage.map.label" /></a></li>
+                    <li><a href="#about" class="scroll"><g:message code="homepage.info.label" /></a></li>
+                    <li><g:link controller="team"><g:message code="homepage.team.label" /></g:link></li>
                     <li><g:render template="/common/topbar"/></li>
 
                     <div class="clear"></div>
@@ -77,27 +77,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!-------start-da-slider-->
         <div class="da-slide">
             <h2 id="toFadeH">
-                <span>Καλωσήρθατε στο</span> Prisma
+                <span><g:message code="homepage.welcome.message" /></span> <g:message code="app.name" />
             </h2>
 
-            <p id="toFadeP">Γνωρίστε τη νέα πύλη διαδικτυακής διακυβέρνησης</p>
+            <p id="toFadeP"><g:message code="homepage.landing.message" /></p>
 
             <div class="search_form">
                 <div class="contact-form">
                     <g:formRemote id="queryForm" name="query_form"
                                   url="[controller: 'contextualSearch', action: 'search']" update="searchResults">
                         <input name="query" type="text" class="textbox"
-                               value="<g:message code='homepage.searchHint'/>"
-                               onfocus="if (this.value == '<g:message  code='homepage.searchHint'/>') {
+                               value="${message(code:"homepage.searchHint")}"
+                               onfocus="if (this.value == '${message(code:"homepage.searchHint")}') {
                                    this.value = '';
                                }"
                                onblur="if (this.value == '') {
-                                   this.value = '<g:message  code='homepage.searchHint'/>';
+                                   this.value = '${message(code:"homepage.searchHint")}';
                                }"/>
                         <span>
                             <g:submitButton id="submitButton" name="Submit" type="submit" class=""
                                             onclick="scrollTo('contextualSearch',1200)"
-                                            value="Αναζητηση"/>
+                                            value="${message(code:"homepage.search.button")}"/>
                         </span>
 
                     </g:formRemote>
@@ -118,10 +118,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <div id="contextualSearch" class="container">
 
-    <h2>Αποτελέσματα<span id="spinner" class="spinner" style="display:none;/* position:inherit;*/"></span></h2>
+    <h2><g:message code="homepage.searchresults.header" /><span id="spinner" class="spinner" style="display:none;/* position:inherit;*/"></span></h2>
 
     <div id="searchResults">
-        <p>Τα αποτελέσματα της αναζήτησης θα εμφανιστούν εδώ</p>
+        <p><g:message code="homepage.searchresults.paragraph" /></p>
     </div>
 
 </div>
@@ -144,10 +144,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <div class="about" id="about">
     <div class="wrap">
-        <h2>Τι είναι το Prisma</h2>
+        <h2><g:message code="homepage.about.heading" /></h2>
 
-        <p>Με το Prisma θέλουμε να δώσουμε την δυνατότητα στον πολίτη να
-        είναι μέρος της διακυβέρνησης του τόπου του</p>
+        <p><g:message code="homepage.about.paragraph" /></p>
 
         <div class="about-grids">
             <%--<div class="grid">
@@ -220,18 +219,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
 
                 <div class="desc">
-                    <h3>Δήμος Θεσσαλονίκης</h3>
+                    <h3><g:message code="dimos.thessalonikis" /></h3>
 
-                    <p>συμβάλλω</p>
+                    <p><g:message code="homepage.aboutthessaloniki.moto" /></p>
 
-                    <p id="desc-text">Το Prisma προσφέρει έναν ευκολότερο τρόπο
-                    εύρεσης των επιθυμητών αποφάσεων. Ακόμη, δίνεται ιδιαίτερη έμφαση
-                    στο γεωγραφικό προσδιορισμό και τη γεωγραφική συσχέτιση των
-                    αποφάσεων μέσω της εφαρμογής κινητού. Ο καθένας έχει δικαίωμα να
-                    ενημερώνεται για τις οικονομικές, πολιτικές και κοινωνικές
-                    εξελίξεις του τόπου του. Το Prisma είναι ο συνδετικός κρίκος της
-                    πολιτείας με τον πολίτη. Είναι η εφαρμογή της δημοκρατίας στη
-                    σύγχρονη μορφή της.</p>
+                    <p id="desc-text"><g:message code="homepage.aboutthessaloniki.paragraph" /></p>
                 </div>
             </div>
 
@@ -251,17 +243,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
 
                 <div class="desc">
-                    <h3>Δι@ύγεια</h3>
+                    <h3><g:message code="diaugeia.name" /></h3>
 
-                    <p>γνωρίζω</p>
+                    <p><g:message code="homepage.aboutdiaugeia.moto" /></p>
 
-                    <p id="desc-text">Η εφαρμογή Prisma αποτελεί μία καινοτόμο
-                    πύλη σε αποφάσεις σχετικές με το Δήμο Θεσσαλονίκης. Όλες οι
-                    πληροφορίες αντλούνται απ’ ευθείας από το site της Δι@ύγειας και
-                    φέρουν ισότιμης αξιοπιστίας. Κάθε απόφαση απαρτίζεται από το
-                    μοναδικό Αριθμό Διαδικτιακής Ανάρτησης (ΑΔΑ), τον αριθμό
-                    προτωκόλλου, το θέμα, τον τελικό υπογράφων, τον τύπο και την
-                    κατηγορία - με αναλυτικά στοιχεία.</p>
+                    <p id="desc-text"><g:message code="homepage.aboutdiaugeia.paragraph" /></p>
                 </div>
             </div>
 
@@ -274,16 +260,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="desc">
                     <h3>Prisma</h3>
 
-                    <p>συμμετέχω</p>
+                    <p><g:message code="homepage.aboutprisma.moto" /></p>
 
-                    <p id="desc-text">Σε σύγκριση με το σύστημα της Δι@ύγειας, το
-                    Prisma προσφέρει έναν ευκολότερο τρόπο εύρεσης των επιθυμητών
-                    αποφάσεων παρέχοντας τέσσερεις τρόπους αναζήτησης. Ακόμη, δίνεται
-                    ιδιαίτερη έμφαση στο γεωγραφικό προσδιορισμό και τη γεωγραφική
-                    συσχέτιση των αποφάσεων, παρέχοντας τη δυνατότητα οπτικοποίησής
-                    τους στο χάρτη της Θεσσαλονίκης. Επιπλέον, δίνεται η δυνατότητα
-                    στο χρήστη να συμβάλει στη γεωγραφική συσχέτιση αποφάσεων,
-                    προτείνοντας ο ίδιος θέση για κάποια απόφαση.</p>
+                    <p id="desc-text"><g:message code="homepage.aboutprisma.paragraph" /></p>
                 </div>
             </div>
 
@@ -298,9 +277,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!---------start-contact------------>
 <div class="contact" id="contact">
     <div class="wrap">
-        <h2>Επικοινωνία</h2>
-        <h4>Βοηθήστε μας να γίνουμε καλύτεροι. Στείλτε μας τις προτάσεις
-        και τα σχόλιά σας.</h4>
+        <h2><g:message code="homepage.contact.header" /></h2>
+        <h4><g:message code="homepage.contact.landing" /></h4>
 
         <div class="section group">
             <div class="col span_2_of_3">
@@ -310,37 +288,37 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                   onComplete="pop();" update="contact_resp">
 
                         <input name="name" type="text" class="textbox"
-                               value="Ονοματεπώνυμο" onfocus="if (this.value == 'Ονοματεπώνυμο') {
+                               value="${message(code:"onomatepwnumo")}" onfocus="if (this.value == '${message(code:"onomatepwnumo")}') {
                             this.value = '';
                         }"
                                onblur="if (this.value == '') {
-                                   this.value = 'Ονοματεπώνυμο';
+                                   this.value = '${message(code:"onomatepwnumo")}';
                                }"/>
                         <input name="email" type="text" class="textbox" value="Email"
-                               onfocus="if (this.value == 'Email') {
+                               onfocus="if (this.value == '${message(code:"email")}') {
                                    this.value = '';
                                }"
                                onblur="if (this.value == '') {
-                                   this.value = 'Email';
+                                   this.value = '${message(code:"email")}';
                                }"/>
 
                         <div class="clear"></div>
 
                         <div>
-                            <textarea name="message" value="Το μήνυμά σας:"
-                                      onfocus="if (this.value == 'Το μήνυμά σας...') {
+                            <textarea name="message" value="${message(code:"homepage.contact.leaveyourmessage")}"
+                                      onfocus="if (this.value == '${message(code:"homepage.contact.leaveyourmessage")}') {
                                           this.value = '';
                                       }"
                                       onblur="if (this.value == '') {
-                                          this.value = 'Το μήνυμά σας...';
-                                      }">Το μήνυμά σας...</textarea>
+                                          this.value = '${message(code:"homepage.contact.leaveyourmessage")}';
+                                      }"><g:message code="homepage.contact.leaveyourmessage"/> </textarea>
                         </div>
                     <%--<span><input type="submit" class="" value="Submit"></span>
                     --%>
                         <div>
                             <span id="contact_resp" style="display: none;"></span> <span>
                             <g:submitButton name="Submit" type="submit" class=""
-                                            value="Αποστολη"/>
+                                            value="${message(code:"homepage.contact.button")}"/>
                         </span>
                         </div>
 
@@ -351,17 +329,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
             <div class="col span_1_of_3">
                 <div class="company_address">
-                    <h5>INFORMATION</h5>
+                    <h5><g:message code="homepage.info.label"/> </h5>
                     <ul class="list3">
                         <li><img
                                 src="${resource(dir: 'images', file: 'location.png')}" alt=""/>
 
                             <div class="extra-wrap">
-                                <p>Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης</p>
+                                <p><g:message code="aristoteleio.label" /></p>
 
-                                <p>Τ.Κ. 546 21</p>
+                                <p><g:message code="aristoteleio.tk" /></p>
 
-                                <p>Θεσσαλονίκη , Ελλάδα</p>
+                                <p><g:message code="thessaloniki.label" />, <g:message code="greece.label" /></p>
                             </div>
 
                             <div class="clear"></div></li>
@@ -383,7 +361,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                         <div class="extra-wrap">
                             <p>
-                                <a href="mailto:info@mycompany.com">spydiko(at)gmail.com</a>
+                                <a href="mailto:info@mycompany.com"><g:message code="spydiko.gmail" /></a>
                             </p>
                         </div>
 
