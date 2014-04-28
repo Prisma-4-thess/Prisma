@@ -103,15 +103,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </g:formRemote>
                 </div>
             </div>
-
-            <div align="center" id="bubbles">
-                <a id="apklink" href="${resource(dir: 'apk', file: 'com.spydi2kood.prisma.apk')}">
-                    <div id="toFadeS1" class="da-img"></div>
-                </a>
-                <a>
-                    <div id="toFadeS2" class="da-video" onclick="play()"></div>
-                </a>
-            </div>
+        <div align="center" id="bubbles">
+            <div id="toFadeS1" class="da-img" onclick="downloadApk();"></div>
+            <div id="toFadeS2" class="da-video" onclick="play()"></div>
+        </div>
         </div>
         <!---//End-da-slider---->
     </div>

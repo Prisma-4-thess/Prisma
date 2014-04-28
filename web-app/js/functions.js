@@ -153,3 +153,9 @@ function scrollTo(elementId, duration) {
     }, duration);
 }
 /******END- Smooth scroll to element******/
+
+/******START- Download the apk******/
+function downloadApk (){
+    window.location="/Prisma/static/apk/com.spydi2kood.prisma.apk";
+}
+/******END-Download the apk******/
