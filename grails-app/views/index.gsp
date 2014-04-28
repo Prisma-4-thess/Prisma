@@ -40,11 +40,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="nav">
                 <ul>
 
-                    <li class="active"><a href="#home" class="scroll"><g:message code="homepage.home.label" /></a></li>
-                    <li><g:link controller="search" action="dedicatedSearchPage"><g:message code="homepage.search.label" /></g:link></li>
-                    <li><a href="#map" class="scroll"><g:message code="homepage.map.label" /></a></li>
-                    <li><a href="#about" class="scroll"><g:message code="homepage.info.label" /></a></li>
-                    <li><g:link controller="team"><g:message code="homepage.team.label" /></g:link></li>
+                    <li class="active"><a href="#home" class="scroll"><g:message code="homepage.home.label"/></a></li>
+                    <li><g:link controller="search" action="dedicatedSearchPage"><g:message
+                            code="homepage.search.label"/></g:link></li>
+                    <li><a href="#map" class="scroll"><g:message code="homepage.map.label"/></a></li>
+                    <li><a href="#about" class="scroll"><g:message code="homepage.info.label"/></a></li>
+                    <li><g:link controller="team"><g:message code="homepage.team.label"/></g:link></li>
                     <li><g:render template="/common/topbar"/></li>
 
                     <div class="clear"></div>
@@ -77,17 +78,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!-------start-da-slider-->
         <div class="da-slide">
             <h2 id="toFadeH">
-                <span><g:message code="homepage.welcome.message" /></span> <g:message code="app.name" />
+                <span><g:message code="homepage.welcome.message"/></span> <g:message code="app.name"/>
             </h2>
 
-            <p id="toFadeP"><g:message code="homepage.landing.message" /></p>
+        <p id="toFadeP"><g:message code="homepage.landing.message"/></p>
 
-            <div class="search_form">
+        <div class="search_form">
                 <div class="contact-form">
                     <g:formRemote id="queryForm" name="query_form"
                                   url="[controller: 'contextualSearch', action: 'search']" update="searchResults">
                         <input name="query" type="text" class="textbox"
-                               value="${message(code:"homepage.searchHint")}"
+                               value="${message(code: "homepage.searchHint")}"
                                onfocus="if (this.value == '${message(code:"homepage.searchHint")}') {
                                    this.value = '';
                                }"
@@ -97,17 +98,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <span>
                             <g:submitButton id="submitButton" name="Submit" type="submit" class=""
                                             onclick="scrollTo('contextualSearch',1200)"
-                                            value="${message(code:"homepage.search.button.caps")}"/>
+                                            value="${message(code: "homepage.search.button.caps")}"/>
                         </span>
 
                     </g:formRemote>
                 </div>
             </div>
+
         <div align="center" id="bubbles">
             <div id="toFadeS1" class="da-img" onclick="downloadApk();"></div>
-            <div id="toFadeS2" class="da-video" onclick="play()"></div>
+
+            <div id="toFadeS2" class="da-video" onclick="play();"></div>
         </div>
-        </div>
+    </div>
         <!---//End-da-slider---->
     </div>
 </div>
@@ -118,10 +121,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <div id="contextualSearch" class="container">
 
-    <h2><g:message code="homepage.searchresults.header" /><span id="spinner" class="spinner" style="display:none;/* position:inherit;*/"></span></h2>
+    <h2><g:message code="homepage.searchresults.header"/><span id="spinner" class="spinner"
+                                                               style="display:none;/* position:inherit;*/"></span></h2>
 
     <div id="searchResults">
-        <p><g:message code="homepage.searchresults.paragraph" /></p>
+        <p><g:message code="homepage.searchresults.paragraph"/></p>
     </div>
 
 </div>
@@ -144,9 +148,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <div class="about" id="about">
     <div class="wrap">
-        <h2><g:message code="homepage.about.heading" /></h2>
+        <h2><g:message code="homepage.about.heading"/></h2>
 
-        <p><g:message code="homepage.about.paragraph" /></p>
+        <p><g:message code="homepage.about.paragraph"/></p>
 
         <div class="about-grids">
             <%--<div class="grid">
@@ -219,11 +223,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
 
                 <div class="desc">
-                    <h3><g:message code="dimos.thessalonikis" /></h3>
+                    <h3><g:message code="dimos.thessalonikis"/></h3>
 
-                    <p><g:message code="homepage.aboutthessaloniki.moto" /></p>
+                    <p><g:message code="homepage.aboutthessaloniki.moto"/></p>
 
-                    <p id="desc-text"><g:message code="homepage.aboutthessaloniki.paragraph" /></p>
+                    <p id="desc-text"><g:message code="homepage.aboutthessaloniki.paragraph"/></p>
                 </div>
             </div>
 
@@ -243,11 +247,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
 
                 <div class="desc">
-                    <h3><g:message code="diaugeia.name" /></h3>
+                    <h3><g:message code="diaugeia.name"/></h3>
 
-                    <p><g:message code="homepage.aboutdiaugeia.moto" /></p>
+                    <p><g:message code="homepage.aboutdiaugeia.moto"/></p>
 
-                    <p id="desc-text"><g:message code="homepage.aboutdiaugeia.paragraph" /></p>
+                    <p id="desc-text"><g:message code="homepage.aboutdiaugeia.paragraph"/></p>
                 </div>
             </div>
 
@@ -260,9 +264,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="desc">
                     <h3>Prisma</h3>
 
-                    <p><g:message code="homepage.aboutprisma.moto" /></p>
+                    <p><g:message code="homepage.aboutprisma.moto"/></p>
 
-                    <p id="desc-text"><g:message code="homepage.aboutprisma.paragraph" /></p>
+                    <p id="desc-text"><g:message code="homepage.aboutprisma.paragraph"/></p>
                 </div>
             </div>
 
@@ -277,8 +281,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!---------start-contact------------>
 <div class="contact" id="contact">
     <div class="wrap">
-        <h2><g:message code="homepage.contact.header" /></h2>
-        <h4><g:message code="homepage.contact.landing" /></h4>
+        <h2><g:message code="homepage.contact.header"/></h2>
+        <h4><g:message code="homepage.contact.landing"/></h4>
 
         <div class="section group">
             <div class="col span_2_of_3">
@@ -288,13 +292,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                   onComplete="pop();" update="contact_resp">
 
                         <input name="name" type="text" class="textbox"
-                               value="${message(code:"contact.name.label")}" onfocus="if (this.value == '${message(code:"contact.name.label")}') {
-                            this.value = '';
-                        }"
+                               value="${message(code: "contact.name.label")}"
+                               onfocus="if (this.value == '${message(code:"contact.name.label")}') {
+                                   this.value = '';
+                               }"
                                onblur="if (this.value == '') {
                                    this.value = '${message(code:"contact.name.label")}';
                                }"/>
-                        <input name="email" type="text" class="textbox" value="${message(code:"contact.email.label")}"
+                        <input name="email" type="text" class="textbox" value="${message(code: "contact.email.label")}"
                                onfocus="if (this.value == '${message(code:"contact.email.label")}') {
                                    this.value = '';
                                }"
@@ -305,20 +310,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div class="clear"></div>
 
                         <div>
-                            <textarea name="message" value="${message(code:"homepage.contact.leaveyourmessage")}"
-                                      onfocus="if (this.value == '${message(code:"homepage.contact.leaveyourmessage")}') {
+                            <textarea name="message" value="${message(code: "homepage.contact.leaveyourmessage")}"
+                                      onfocus="if (this.value == '${message(code: "homepage.contact.leaveyourmessage")}') {
                                           this.value = '';
                                       }"
                                       onblur="if (this.value == '') {
-                                          this.value = '${message(code:"homepage.contact.leaveyourmessage")}';
-                                      }"><g:message code="homepage.contact.leaveyourmessage"/> </textarea>
+                                          this.value = '${message(code: "homepage.contact.leaveyourmessage")}';
+                                      }"><g:message code="homepage.contact.leaveyourmessage"/></textarea>
                         </div>
                     <%--<span><input type="submit" class="" value="Submit"></span>
                     --%>
                         <div>
                             <span id="contact_resp" style="display: none;"></span> <span>
                             <g:submitButton name="Submit" type="submit" class=""
-                                            value="${message(code:"homepage.contact.button.caps")}"/>
+                                            value="${message(code: "homepage.contact.button.caps")}"/>
                         </span>
                         </div>
 
@@ -329,17 +334,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
             <div class="col span_1_of_3">
                 <div class="company_address">
-                    <h5><g:message code="homepage.info.label"/> </h5>
+                    <h5><g:message code="homepage.info.label"/></h5>
                     <ul class="list3">
                         <li><img
                                 src="${resource(dir: 'images', file: 'location.png')}" alt=""/>
 
                             <div class="extra-wrap">
-                                <p><g:message code="aristoteleio.label" /></p>
+                                <p><g:message code="aristoteleio.label"/></p>
 
-                                <p><g:message code="aristoteleio.tk" /></p>
+                                <p><g:message code="aristoteleio.tk"/></p>
 
-                                <p><g:message code="thessaloniki.label" />, <g:message code="greece.label" /></p>
+                                <p><g:message code="thessaloniki.label"/>, <g:message code="greece.label"/></p>
                             </div>
 
                             <div class="clear"></div></li>
@@ -361,7 +366,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                         <div class="extra-wrap">
                             <p>
-                                <a href="mailto:info@mycompany.com"><g:message code="spydiko.gmail" /></a>
+                                <a href="mailto:info@mycompany.com"><g:message code="spydiko.gmail"/></a>
                             </p>
                         </div>
 

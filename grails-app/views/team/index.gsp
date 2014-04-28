@@ -117,7 +117,7 @@
                             <div class="ch-info">
                                 <img src="${resource(dir: 'images', file: 'zoom-white.png')}"/>
 
-                                <h3><g:message code="team.manwlas.fullname"/></h3>
+                                <h3><g:message code="team.manwlas.fullname.caps"/></h3>
 
                                 <p>
                                     <a href="#"><g:message code="team.role.web.desinger" /></a>
@@ -139,7 +139,7 @@
                             <div class="ch-info">
                                 <img src="${resource(dir: 'images', file: 'zoom-white.png')}"/>
 
-                                <h3><g:message code="team.bontomitsidis.fullname"/></h3>
+                                <h3><g:message code="team.bontomitsidis.fullname.caps"/></h3>
 
                                 <p>
                                     <a href="#"><g:message code="team.role.web.developer" /></a>
@@ -161,7 +161,7 @@
                             <div class="ch-info">
                                 <img src="${resource(dir: 'images', file: 'zoom-white.png')}"/>
 
-                                <h3><g:message code="team.mylwnaki.fullname"/></h3>
+                                <h3><g:message code="team.mylwnaki.fullname.caps"/></h3>
 
                                 <p>
                                     <a href="#"><g:message code="team.role.legal.advisor" /></a>
@@ -183,7 +183,7 @@
                             <div class="ch-info">
                                 <img src="${resource(dir: 'images', file: 'zoom-white.png')}"/>
 
-                                <h3><g:message code="team.mylwnakis.fullname"/></h3>
+                                <h3><g:message code="team.mylwnakis.fullname.caps"/></h3>
 
                                 <p>
                                     <a href="#"><g:message code="team.role.server.administrator" /></a>
@@ -205,7 +205,7 @@
                             <div class="ch-info">
                                 <img src="${resource(dir: 'images', file: 'zoom-white.png')}"/>
 
-                                <h3><g:message code="team.nikolis.fullname"/></h3>
+                                <h3><g:message code="team.nikolis.fullname.caps"/></h3>
 
                                 <p>
                                     <a href="#"><g:message code="team.role.software.engineer" /></a>
@@ -227,7 +227,7 @@
                             <div class="ch-info">
                                 <img src="${resource(dir: 'images', file: 'zoom-white.png')}"/>
 
-                                <h3><g:message code="team.pitsianis.fullname"/></h3>
+                                <h3><g:message code="team.pitsianis.fullname.caps"/></h3>
 
                                 <p>
                                     <a href="#"><g:message code="team.role.project.advisor" /></a>
@@ -249,7 +249,7 @@
                             <div class="ch-info">
                                 <img src="${resource(dir: 'images', file: 'zoom-white.png')}"/>
 
-                                <h3><g:message code="team.flwros.fullname"/></h3>
+                                <h3><g:message code="team.flwros.fullname.caps"/></h3>
 
                                 <p>
                                     <a href="#"><g:message code="team.role.android.developer" /></a>

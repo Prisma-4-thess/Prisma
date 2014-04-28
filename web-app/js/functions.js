@@ -156,6 +156,6 @@ function scrollTo(elementId, duration) {
 
 /******START- Download the apk******/
 function downloadApk (){
-    window.location="/Prisma/static/apk/com.spydi2kood.prisma.apk";
+    window.location = "/Prisma/apk/com.spydi2kood.prisma.apk";
 }
 /******END-Download the apk******/
