@@ -42,7 +42,9 @@ class IntroController {
        [organizationsList: Setting.get(1).orgs]
    }
     def removeFromList(){
-        def chosenOrganizationToRemove = params.chosenOrganToDelete
+        def chosenOrganizationToRemove = Organization.findByLabel(params.chosenOrganToDelete)
+        def setting=Setting.get(1)
+        setting.removeFromOrgs(chosenOrganizationToRemove)
 
         //ToDo remove the chosen organizations from the domain
     }
