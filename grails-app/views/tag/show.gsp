@@ -39,8 +39,10 @@
         <g:if test="${tagInstance?.label}">
             <li class="fieldcontain"><span id="label-label"
                                            class="property-label"><g:message code="tag.label.label"
-                                                                             default="Label"/></span> <span class="property-value"
-                                                                                                            aria-labelledby="label-label"><g:fieldValue
+                                                                             default="Label"/></span>
+                <span
+                        class="property-value"
+                        aria-labelledby="label-label"><g:fieldValue
                         bean="${tagInstance}" field="label"/></span></li>
         </g:if>
 

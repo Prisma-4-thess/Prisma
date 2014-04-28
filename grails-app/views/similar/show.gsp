@@ -27,7 +27,7 @@
 
         <g:if test="${similarInstance?.decision}">
             <li class="fieldcontain">
-                <span id="decision-label" class="property-label"><g:message code="similar.decision.label" default="Decision"/></span>
+                <span id="decision-label" class="property-label"><g:message code="decision.label" default="Decision"/></span>
 
                 <span class="property-value" aria-labelledby="decision-label"><g:link controller="decision" action="show"
                                                                                       id="${similarInstance?.decision?.id}">${similarInstance?.decision?.encodeAsHTML()}</g:link></span>
@@ -37,7 +37,7 @@
 
         <g:if test="${similarInstance?.sim_decision}">
             <li class="fieldcontain">
-                <span id="sim_decision-label" class="property-label"><g:message code="similar.sim_decision.label" default="Simdecision"/></span>
+                <span id="sim_decision-label" class="property-label"><g:message code="similar.label" default="Simdecision"/></span>
 
                 <span class="property-value" aria-labelledby="sim_decision-label"><g:link controller="decision" action="show"
                                                                                           id="${similarInstance?.sim_decision?.id}">${similarInstance?.sim_decision?.encodeAsHTML()}</g:link></span>

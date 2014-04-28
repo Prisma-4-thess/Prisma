@@ -1,1 +1,1 @@
-<font color="red">[!]Η τοποθεσία απορρίφθηκε</font>
+<font color="red">[!]<g:message code="approve.geoDisapproved" /></font>

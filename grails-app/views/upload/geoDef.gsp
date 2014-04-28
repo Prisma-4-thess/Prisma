@@ -28,17 +28,17 @@
 
             <input name="decisionId" type="hidden" value="${params.decisionId}"/>
 
-            <g:textField id="lat" name="lat" value="Latitude" class="textbox"
+            <g:textField id="lat" name="lat" value="${message(code: 'geo.latitude.label')}" class="textbox"
                          onfocus="this.value = '';"
-                         onblur="if (this.value == '') {this.value = 'Latitude';}"/>
-            <g:textField id="lng" name="lng" value="Longitude"
+                         onblur="if (this.value == '') {this.value = '${message(code: "geo.latitude.label")}'" />
+            <g:textField id="lng" name="lng" value="${message(code: 'geo.longitude.label')}"
                          onfocus="this.value = '';"
-                         onblur="if (this.value == '') {this.value = 'Longitude';}"/>
-            <g:textField id="address" name="address" value="Διεύθυνση"
-                         onblur="if (this.value == '') {this.value = 'Διεύθυνση';}"/>
-            <g:textField id="namegrk" name="namegrk" value="Όνομασία Θέσης"
-                         onfocus="this.value = '';"
-                         onblur="if (this.value == '') {this.value = 'Ονομασία Θέσης';}"/>
+                         onblur="if (this.value == '') {this.value = '${message(code: "geo.longitude.label")}';}"/>
+            <g:textField id="address" name="address" value="${message(code: 'geo.address.label')}"
+                         onblur="if (this.value == '') {this.value = '${message(code: "geo.address.label")}';}"/>
+            <g:textField id="namegrk" name="namegrk" value="${message(code: 'geo.namegrk.label')}"
+                         onfocus="if (this.value == '${message(code: 'geo.namegrk.label')}') {this.value = '';}"
+                         onblur="if (this.value == '') {this.value = '${message(code: "geo.namegrk.label")}';}"/>
 
         </g:formRemote>
     </div>
@@ -69,7 +69,7 @@
                 position: location,
                 map: map,
                 draggable: true,
-                title: 'Καινούγια Τοποθεσία'
+                title: '<g:message code="defineGeo.newPosition" />'
             });
 
             google.maps.event.addListener(marker, 'dragend',
@@ -103,7 +103,7 @@
                     document.getElementById('address').value = responses[0].formatted_address;
                 } else {
                     //console.info('Cannot determine address at this location.');
-                    document.getElementById('address').value = 'Δεν βρέθηκε διεύθυνση';
+                    document.getElementById('address').value = '<g:message code="defineGeo.noAddressfound" />';
                 }
             });
         }

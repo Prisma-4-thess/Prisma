@@ -6,7 +6,6 @@
     <g:javascript library="jquery"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="layout" content="main"/>
-    <title>Insert title here</title>
 </head>
 
 <body>
@@ -15,12 +14,11 @@
 </div>
 <table>
     <tr>
-        <td><i></i><font color="red">Είναι σε σωστή τοποθεσία το
-        σημείο ${mark[0].description}; </i>
-        </font></td>
+        <td><i><font color="red"><g:message code="approve.areusure" /> ${mark[0].description}<g:message code="questionmark" /></font></i>
+        </td>
         <td><g:remoteLink action="geo_approved" id="${geo_id}"
-                          update="next">Έγκριση</g:remoteLink> <g:remoteLink
-                action="geo_disapproved" id="${geo_id}" update="next">Απόρριψη</g:remoteLink></td>
+                          update="next"><g:message code="approve.approve" /></g:remoteLink> <g:remoteLink
+                action="geo_disapproved" id="${geo_id}" update="next"><g:message code="approve.decline" /></g:remoteLink></td>
     </tr>
 </table>
 

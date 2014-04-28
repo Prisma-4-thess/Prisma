@@ -32,7 +32,7 @@
 
 <div
         class="fieldcontain ${hasErrors(bean: organizationInstance, field: 'units', 'error')} ">
-    <label for="units"><g:message code="organization.units.label"
+    <label for="units"><g:message code="unit.label"
                                   default="Units"/>
 
     </label>

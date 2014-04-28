@@ -4,7 +4,7 @@
 
 <div
         class="fieldcontain ${hasErrors(bean: decision_extInstance, field: 'extra', 'error')} ">
-    <label for="extra"><g:message code="decision_ext.extra.label"
+    <label for="extra"><g:message code="extra.label"
                                   default="Extra"/>
 
     </label>
@@ -16,7 +16,7 @@
 <div
         class="fieldcontain ${hasErrors(bean: decision_extInstance, field: 'decision', 'error')} required">
     <label for="decision"><g:message
-            code="decision_ext.decision.label" default="Decision"/> <span
+            code="decision.label" default="Decision"/> <span
             class="required-indicator">*</span>
     </label>
     <g:select id="decision" name="decision.id"

@@ -46,7 +46,7 @@
 
         <g:if test="${typeInstance?.extras}">
             <li class="fieldcontain"><span id="extras-label"
-                                           class="property-label"><g:message code="type.extras.label"
+                                           class="property-label"><g:message code="extra.label"
                                                                              default="Extras"/></span> <g:each in="${typeInstance.extras}" var="e">
                 <span class="property-value" aria-labelledby="extras-label"><g:link
                         controller="extra" action="show" id="${e.id}">

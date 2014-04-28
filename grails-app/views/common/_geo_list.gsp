@@ -18,7 +18,7 @@
     </div>
 </g:if>
 <g:else>
-    <p>Καμία γεωγραφική θέση δεν ταιριάζει στην αναζήτησή σας</p>
+    <p><g:message code="common.geo.noSearchResults" /></p>
 
     <p>
         <img alt="" src="${resource(dir: 'images', file: 'spinner_alt.png')}">

@@ -4,17 +4,17 @@
 
         <util:remoteSortableColumn property="namegrk"
                                    update="one-column-emphasis" action="sort"
-                                   title="${message(code: 'decision.ada.label', default: 'Όνομα')}"
+                                   title="${message(code: 'geo.namegrk.label')}"
                                    params="['offset': offset, 'timeStamp': timeStamp]"/>
 
         <util:remoteSortableColumn property="dimos"
                                    update="one-column-emphasis" action="sort"
-                                   title="${message(code: 'decision.protocolNumber.label', default: 'Δήμος')}"
+                                   title="${message(code: 'geo.dimos.label')}"
                                    params="['offset': offset, 'timeStamp': timeStamp]"/>
 
         <util:remoteSortableColumn property="address"
                                    update="one-column-emphasis" action="sort"
-                                   title="${message(code: 'decision.date.label', default: 'Διεύθυνση')}"
+                                   title="${message(code: 'geo.address.label')}"
                                    params="['offset': offset, 'timeStamp': timeStamp]"/>
 
 

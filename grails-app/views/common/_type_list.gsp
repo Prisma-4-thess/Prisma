@@ -18,7 +18,7 @@
     </div>
 </g:if>
 <g:else>
-    <p>Κανένας τύπος δεν ταιριάζει στην αναζήτησή σας</p>
+    <p><g:message code="common.type.noSearchResults" /></p>
 
     <p>
         <img alt="" src="${resource(dir: 'images', file: 'spinner_alt.png')}">

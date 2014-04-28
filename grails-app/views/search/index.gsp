@@ -3,7 +3,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="layout" content="main"/>
-    <title>Search</title>
     <g:javascript library="jquery"/>
     <resource:autoComplete skin="default"/>
 </head>
@@ -24,7 +23,7 @@
     </table>
 
     <div id="mainContent" style="background-color: #c0ffc0;">
-        <p>Επιλέξτε κατηγορία αναζήτησης.</p>
+        <p><g:message code="search.landing.paragraph"/></p>
     </div>
 </div>
 </body>

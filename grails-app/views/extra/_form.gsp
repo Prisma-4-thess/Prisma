@@ -60,7 +60,7 @@
 
 <div
         class="fieldcontain ${hasErrors(bean: extraInstance, field: 'type', 'error')} required">
-    <label for="type"><g:message code="extra.type.label"
+    <label for="type"><g:message code="type.label"
                                  default="Type"/> <span class="required-indicator">*</span>
     </label>
     <g:select id="type" name="type.id" from="${prisma.Type.list()}"

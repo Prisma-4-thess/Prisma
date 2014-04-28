@@ -1,20 +1,20 @@
 <ul>
     <li>
-        <label>Πλήθος Αποφάσεων:</label> <span>${geoDecisions}</span>
+        <label><g:message code="search.numberOfDecisions" />:</label> <span>${geoDecisions}</span>
     </li>
     <li>
-        <label>Κατηγορία:</label> ${geo.newCat}, ${geo.newSubCat}
+        <label><g:message code="geo.newCat.label" />:</label> ${geo.newCat}, ${geo.newSubCat}
     </li>
     <li>
-        <label>Ταχυδρομικός κώδικας:</label> ${geo.tk}
+        <label><g:message code="geo.tk.label" />:</label> ${geo.tk}
     </li>
     <li>
-        <label>Τηλέφωνο:</label> ${geo.phone}
+        <label><g:message code="geo.phone.label" />:</label> ${geo.phone}
     </li>
     <li>
-        <label>Γεωγραφικό μήκος:</label> ${geo.longitude}
+        <label><g:message code="geo.longitude.label" />:</label> ${geo.longitude}
     </li>
     <li>
-        <label>Γεωγραφικό πλάτος:</label> ${geo.latitude}
+        <label><g:message code="geo.latitude.label" />:</label> ${geo.latitude}
     </li>
 </ul>

@@ -18,7 +18,7 @@
     </div>
 </g:if>
 <g:else>
-    <p>Κανένας υπογράφον δεν ταιριάζει στην αναζήτησή σας</p>
+    <p><g:message code="common.signer.noSearchResults" /></p>
 
     <p>
         <img alt="" src="${resource(dir: 'images', file: 'spinner_alt.png')}">

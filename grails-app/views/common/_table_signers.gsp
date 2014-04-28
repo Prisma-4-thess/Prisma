@@ -4,22 +4,22 @@
 
         <util:remoteSortableColumn property="firstName"
                                    update="one-column-emphasis" action="sort"
-                                   title="${message(code: 'decision.ada.label', default: 'Όνομα')}"
+                                   title="${message(code: 'signer.firstName.label')}"
                                    params="['offset': offset, 'timeStamp': timeStamp]"/>
 
         <util:remoteSortableColumn property="lastName"
                                    update="one-column-emphasis" action="sort"
-                                   title="${message(code: 'decision.protocolNumber.label', default: 'Επώνυμο')}"
+                                   title="${message(code: 'signer.lastName.label')}"
                                    params="['offset': offset, 'timeStamp': timeStamp]"/>
 
         <util:remoteSortableColumn property="title"
                                    update="one-column-emphasis" action="sort"
-                                   title="${message(code: 'decision.date.label', default: 'Τίτλος')}"
+                                   title="${message(code: 'signer.title.label')}"
                                    params="['offset': offset, 'timeStamp': timeStamp]"/>
 
         <util:remoteSortableColumn property="position"
                                    update="one-column-emphasis" action="sort"
-                                   title="${message(code: 'decision.date.label', default: 'Θέση')}"
+                                   title="${message(code: 'signer.position.label')}"
                                    params="['offset': offset, 'timeStamp': timeStamp]"/>
 
     </tr>

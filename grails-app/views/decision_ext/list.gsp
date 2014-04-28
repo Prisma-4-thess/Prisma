@@ -37,7 +37,7 @@
         <thead>
         <tr>
 
-            <th><g:message code="decision_ext.extra.label" default="Extra"/></th>
+            <th><g:message code="extra.label" default="Extra"/></th>
 
             <th><g:message code="decision_ext.decision.label"
                            default="Decision"/></th>

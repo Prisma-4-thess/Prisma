@@ -53,7 +53,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: decisionInstance, field: 'signer', 'error')} required">
     <label for="signer">
-        <g:message code="decision.signer.label" default="Signer"/>
+        <g:message code="signer.label" default="Signer"/>
         <span class="required-indicator">*</span>
     </label>
     <g:select id="signer" name="signer.id" from="${prisma.Signer.list()}" optionKey="id" required="" value="${decisionInstance?.signer?.id}" class="many-to-one"/>
@@ -69,7 +69,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: decisionInstance, field: 'tags', 'error')} ">
     <label for="tags">
-        <g:message code="decision.tags.label" default="Tags"/>
+        <g:message code="tag.label" default="Tags"/>
 
     </label>
     <g:select name="tags" from="${prisma.Tag.list()}" multiple="multiple" optionKey="id" size="5" value="${decisionInstance?.tags*.id}" class="many-to-many"/>
@@ -77,7 +77,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: decisionInstance, field: 'type', 'error')} required">
     <label for="type">
-        <g:message code="decision.type.label" default="Type"/>
+        <g:message code="type.label" default="Type"/>
         <span class="required-indicator">*</span>
     </label>
     <g:select id="type" name="type.id" from="${prisma.Type.list()}" optionKey="id" required="" value="${decisionInstance?.type?.id}" class="many-to-one"/>
@@ -85,7 +85,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: decisionInstance, field: 'unit', 'error')} required">
     <label for="unit">
-        <g:message code="decision.unit.label" default="Unit"/>
+        <g:message code="unit.label" default="Unit"/>
         <span class="required-indicator">*</span>
     </label>
     <g:select id="unit" name="unit.id" from="${prisma.Unit.list()}" optionKey="id" required="" value="${decisionInstance?.unit?.id}" class="many-to-one"/>

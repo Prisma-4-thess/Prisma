@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Welcome to Prisma</title>
+    <title><g:message code="adminPanel.welcome.title" /></title>
 </head>
 
 <body>
@@ -10,7 +10,7 @@
         code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 
 <div id="status" role="complementary">
-    <h1>Application Status</h1>
+    <h1><g:message code="adminPanel.application.status" /></h1>
     <ul>
         <li>App version: <g:meta name="app.version"/></li>
         <li>Grails version: <g:meta name="app.grails.version"/></li>
@@ -23,7 +23,7 @@
         <li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
     </ul>
 
-    <h1>Installed Plugins</h1>
+    <h1><g:message code="adminPanel.installed.plugins" /></h1>
     <ul>
         <g:each var="plugin"
                 in="${applicationContext.getBean('pluginManager').allPlugins}">
@@ -35,12 +35,12 @@
 </div>
 
 <div id="page-body" role="main">
-    <h1>Welcome to Prisma</h1>
+    <h1><g:message code="adminPanel.welcome.title" /></h1>
 
-    <p>This is the admin panel. Here you can view and edit the contains of our database. In addition you can test each part of the complete functionality individually. Take care...</p>
+    <p><g:message code="adminPanel.welcome.paragraph" /></p>
 
     <div id="controller-list" role="navigation">
-        <h2>Available Controllers:</h2>
+        <h2><g:message code="adminPanel.available.controllers" />:</h2>
         <ul>
             <g:each var="c"
                     in="${grailsApplication.controllerClasses.sort { it.fullName }}">

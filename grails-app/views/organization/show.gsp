@@ -63,7 +63,7 @@
         <g:if test="${organizationInstance?.units}">
             <li class="fieldcontain"><span id="units-label"
                                            class="property-label"><g:message
-                        code="organization.units.label" default="Units"/></span> <g:each
+                        code="unit.label" default="Units"/></span> <g:each
                     in="${organizationInstance.units}" var="u">
                 <span class="property-value" aria-labelledby="units-label"><g:link
                         controller="unit" action="show" id="${u.id}">

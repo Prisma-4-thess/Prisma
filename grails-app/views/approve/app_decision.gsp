@@ -1,1 +1,1 @@
-<font color="green">Εγκρίθηκε</font>
+<font color="green"><g:message code="approve.approved" /></font>

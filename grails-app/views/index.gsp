@@ -97,7 +97,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <span>
                             <g:submitButton id="submitButton" name="Submit" type="submit" class=""
                                             onclick="scrollTo('contextualSearch',1200)"
-                                            value="${message(code:"homepage.search.button")}"/>
+                                            value="${message(code:"homepage.search.button.caps")}"/>
                         </span>
 
                     </g:formRemote>
@@ -288,18 +288,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                   onComplete="pop();" update="contact_resp">
 
                         <input name="name" type="text" class="textbox"
-                               value="${message(code:"onomatepwnumo")}" onfocus="if (this.value == '${message(code:"onomatepwnumo")}') {
+                               value="${message(code:"contact.name.label")}" onfocus="if (this.value == '${message(code:"contact.name.label")}') {
                             this.value = '';
                         }"
                                onblur="if (this.value == '') {
-                                   this.value = '${message(code:"onomatepwnumo")}';
+                                   this.value = '${message(code:"contact.name.label")}';
                                }"/>
-                        <input name="email" type="text" class="textbox" value="Email"
-                               onfocus="if (this.value == '${message(code:"email")}') {
+                        <input name="email" type="text" class="textbox" value="${message(code:"contact.email.label")}"
+                               onfocus="if (this.value == '${message(code:"contact.email.label")}') {
                                    this.value = '';
                                }"
                                onblur="if (this.value == '') {
-                                   this.value = '${message(code:"email")}';
+                                   this.value = '${message(code:"contact.email.label")}';
                                }"/>
 
                         <div class="clear"></div>
@@ -318,7 +318,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div>
                             <span id="contact_resp" style="display: none;"></span> <span>
                             <g:submitButton name="Submit" type="submit" class=""
-                                            value="${message(code:"homepage.contact.button")}"/>
+                                            value="${message(code:"homepage.contact.button.caps")}"/>
                         </span>
                         </div>
 

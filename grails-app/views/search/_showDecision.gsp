@@ -1,38 +1,38 @@
 <table id="one-column-emphasis" class="search_table">
-    %{--<tr>
-        <th><g:if test="${source == "map"}">
-        <%--<g:link mapping="rootUrl">←</g:link>
-            --%>
-        </g:if> <g:elseif test="${source == "home"}">
-            <g:remoteLink onComplete="hideDecisionShowResults();">←</g:remoteLink>
-        </g:elseif> <g:else>
+%{--<tr>
+    <th><g:if test="${source == "map"}">
+    <%--<g:link mapping="rootUrl">←</g:link>
+        --%>
+    </g:if> <g:elseif test="${source == "home"}">
+        <g:remoteLink onComplete="hideDecisionShowResults();">←</g:remoteLink>
+    </g:elseif> <g:else>
 
-        </g:else></th>
-    </tr>--}%
+    </g:else></th>
+</tr>--}%
     <g:if test="${dec2}">
 
         <g:each in="${dec2}">
             <tr>
-                <th><font color="red">Η παρούσα απόφαση έχει διορθωθεί
-                από την: </font>%{--<g:if test="${source == 'home'}">
+                <th><font color="red"><g:message code="search.showDecision.hasBeenCorrected"/>
+                </font>%{--<g:if test="${source == 'home'}">
                     <g:remoteLink controller="search" action="showDecision" id="${it.id}"
                                   update="decision" onComplete="hideResultsShowDecision();"
                                   params="['source': source]">--}%
-                        ${it.ada}
-%{--                    </g:remoteLink>
-                </g:if> <g:else>
-                    <g:remoteLink controller="search" action="showDecision" id="${it.id}"
-                                  update="decision" params="['source': source]">
-                        ${it.ada}
-                    </g:remoteLink>
-                </g:else>--}%
+                ${it.ada}
+                %{--                    </g:remoteLink>
+                                </g:if> <g:else>
+                                    <g:remoteLink controller="search" action="showDecision" id="${it.id}"
+                                                  update="decision" params="['source': source]">
+                                        ${it.ada}
+                                    </g:remoteLink>
+                                </g:else>--}%
                 </th>
             </tr>
         </g:each>
 
     </g:if>
     <tr>
-        <th>ΑΔΑ
+        <th><g:message code="decision.ada.label"/>
         <th>
         <th>
             ${decision.ada}
@@ -41,7 +41,7 @@
     </tr>
     <g:if test="${decision.protocolNumber}">
         <tr>
-            <td>Αριθμός Πρώτοκολου
+            <td><g:message code="decision.protocolNumber.label"/>
             <td>
             <td>
                 ${decision.protocolNumber}
@@ -50,7 +50,7 @@
         </tr>
     </g:if>
     <tr>
-        <td>Θέμα
+        <td><g:message code="decision.subject.label"/>
         <td>
         <td>
             ${decision.subject}
@@ -58,7 +58,7 @@
         <td>
     </tr>
     <tr>
-        <td>Ημερομηνία Έκδοσης
+        <td><g:message code="decision.date.label"/>
         <td>
         <td>
             <g:formatDate date="${decision.date}"/>
@@ -66,7 +66,7 @@
         <td>
     </tr>
     <tr>
-        <td>Τύπος Απόφασης
+        <td><g:message code="type.label"/>
         <td>
         <td>
             ${decision.type}
@@ -74,7 +74,7 @@
         <td>
     </tr>
     <tr>
-        <td>Θεματική ενότητα
+        <td><g:message code="tag.label"/>
         <td>
         <td><g:each in="${decision.tags}">
             ${it.label}<br>
@@ -82,7 +82,7 @@
         <td>
     </tr>
     <tr>
-        <td>Φορέας
+        <td><g:message code="organization.label"/>
         <td>
         <td>
             ${org}
@@ -90,7 +90,7 @@
         <td>
     </tr>
     <tr>
-        <td>Μονάδα
+        <td><g:message code="unit.label"/>
         <td>
         <td>
             ${decision.unit}
@@ -98,7 +98,7 @@
         <td>
     </tr>
     <tr>
-        <td>Τελικός Υπογράφων
+        <td><g:message code="signer.label"/>
         <td>
         <td>
             ${decision.signer}
@@ -119,7 +119,7 @@
     </g:each>
     <g:if test="${decision.decisionToCorrect}">
         <tr>
-            <td>Διόρθωση της απόφασης με ΑΔΑ
+            <td><g:message code="search.showDecision.corrects"/>
             <td>
             <td>
                 ${decision.decisionToCorrect}
@@ -140,40 +140,45 @@
             <g:link controller="defineGeo" action="index"
                     params="['decisionId': decision.id, 'decisionName': decision.ada]"
                     target="_blank">
-                Πρόσθεσε Τοποθεσία
+                <g:message code="search.showDecision.addGeo"/>
             </g:link>
         </g:else>
         <td></td>
     </tr>
 
     <tr>
-        <td><a href="${decision.documentUrl}" target="_blank">Pdf
-        Απόφασης</a></td>
+        <td><a href="${decision.documentUrl}" target="_blank"><g:message code="search.showDecision.seePdf"/></a></td>
     </tr>
     <g:if test="${relDec}">
         <tr>
-            <td><g:remoteLink action="showRelated" onComplete="slideTableRow('${decision.id.toString().concat("related")}')"
-                              params="['decisionId': decision.id]" update="${decision.id.toString().concat("related")}">Σχετικές αποφάσεις</g:remoteLink>
+            <td><g:remoteLink action="showRelated"
+                              onComplete="slideTableRow('${decision.id.toString().concat("related")}')"
+                              params="['decisionId': decision.id]"
+                              update="${decision.id.toString().concat("related")}"><g:message
+                        code="relativeDecision.label"/></g:remoteLink>
             </td>
         </tr>
     </g:if>
     <g:if test="${simDec}">
         <tr>
-            <td><g:remoteLink action="showSimilar" onComplete="slideTableRow('${decision.id.toString().concat("similar")}')"
-                              params="['decisionId': decision.id]" update="${decision.id.toString().concat("similar")}">Παρόμοιες αποφάσεις</g:remoteLink>
+            <td><g:remoteLink action="showSimilar"
+                              onComplete="slideTableRow('${decision.id.toString().concat("similar")}')"
+                              params="['decisionId': decision.id]"
+                              update="${decision.id.toString().concat("similar")}"><g:message
+                        code="similar.label"/></g:remoteLink>
             </td>
         </tr>
     </g:if>
-   %{-- <tr>
-        <th><g:if test="${source == "map"}">
-        <%--<g:link mapping="rootUrl">←</g:link>
-            --%>
-        </g:if> <g:elseif test="${source == "home"}">
-            <g:remoteLink onComplete="hideDecisionShowResults();">←</g:remoteLink>
-        </g:elseif> <g:else>
+%{-- <tr>
+     <th><g:if test="${source == "map"}">
+     <%--<g:link mapping="rootUrl">←</g:link>
+         --%>
+     </g:if> <g:elseif test="${source == "home"}">
+         <g:remoteLink onComplete="hideDecisionShowResults();">←</g:remoteLink>
+     </g:elseif> <g:else>
 
-        </g:else></th>
-    </tr>--}%
+     </g:else></th>
+ </tr>--}%
 </table>
 
 <div class="toSlide" id="${decision.id.toString().concat("related")}"></div>
@@ -184,6 +189,6 @@
     <g:remoteLink controller="search" action="blog" id="${decision.ada}"
                   update="blog">enable blog</g:remoteLink>
     <div id="blog" class="blog">
-        <p>Η λειτουργία του σχολιασμού είναι ανενεργή</p>
+        <p><g:message code="search.shoDecision.commentsOff"/></p>
     </div>
 </div>

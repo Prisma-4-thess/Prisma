@@ -12,7 +12,7 @@
 
 <div
         class="fieldcontain ${hasErrors(bean: typeInstance, field: 'extras', 'error')} ">
-    <label for="extras"><g:message code="type.extras.label"
+    <label for="extras"><g:message code="extra.label"
                                    default="Extras"/>
 
     </label>

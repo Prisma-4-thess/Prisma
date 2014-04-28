@@ -1,1 +1,1 @@
-<label>Πλήθος Αποφάσεων:</label> <span>${signerDecisions}</span>
+<label><g:message code="search.numberOfDecisions" />:</label> <span>${signerDecisions}</span>

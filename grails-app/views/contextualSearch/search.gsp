@@ -8,7 +8,7 @@
 
 <div class="nav nav-left">
     <ul>
-        <li class="active"><a>Αποφασεις</a></li>
+        <li class="active"><a><g:message code="contextualsearch.decisions.tab" /></a></li>
 
     </ul>
 </div>
@@ -30,7 +30,7 @@
 
 <div class="nav nav-left">
     <ul>
-        <li class="active"><a>Υπογραφοντες</a></li>
+        <li class="active"><a><g:message code="contextualsearch.signers.tab" /></a></li>
 
     </ul>
 </div>
@@ -51,7 +51,7 @@
 
 <div class="nav nav-left">
     <ul>
-        <li class="active"><a>Τυποι Αποφασεων</a></li>
+        <li class="active"><a><g:message code="contextualsearch.types.tab" /></a></li>
 
     </ul>
 </div>
@@ -75,7 +75,7 @@
 
 <div class="nav nav-left">
     <ul>
-        <li class="active"><a>Γεωγραφικες Θεσεις</a></li>
+        <li class="active"><a><g:message code="contextualsearch.geos.tab" /></a></li>
 
     </ul>
 </div>

@@ -39,7 +39,7 @@
         <g:if test="${decision_extInstance?.extra}">
             <li class="fieldcontain"><span id="extra-label"
                                            class="property-label"><g:message
-                        code="decision_ext.extra.label" default="Extra"/></span> <span
+                        code="extra.label" default="Extra"/></span> <span
                     class="property-value" aria-labelledby="extra-label"><g:link
                         controller="extra" action="show"
                         id="${decision_extInstance?.extra?.id}">
@@ -50,7 +50,7 @@
         <g:if test="${decision_extInstance?.decision}">
             <li class="fieldcontain"><span id="decision-label"
                                            class="property-label"><g:message
-                        code="decision_ext.decision.label" default="Decision"/></span> <span
+                        code="decision.label" default="Decision"/></span> <span
                     class="property-value" aria-labelledby="decision-label"><g:link
                         controller="decision" action="show"
                         id="${decision_extInstance?.decision?.id}">

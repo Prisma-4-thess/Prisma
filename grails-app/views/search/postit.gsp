@@ -10,7 +10,7 @@
     <g:if test="${posts}">
         <table border="1">
             <g:each in="${posts}">
-                <tr><td>${it.firstName} ${it.lastName} έγραψε:</td><td>${it.text}</td></tr>
+                <tr><td>${it.firstName} ${it.lastName} <g:message code="search.postit.wrote" />:</td><td>${it.text}</td></tr>
             </g:each>
         </table>
     </g:if>

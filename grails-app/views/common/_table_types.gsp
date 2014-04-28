@@ -4,7 +4,7 @@
 
         <util:remoteSortableColumn property="label"
                                    update="one-column-emphasis" action="sort"
-                                   title="${message(code: 'decision.ada.label', default: 'Τύπος')}"
+                                   title="${message(code: 'type.label.label')}"
                                    params="['offset': offset, 'timeStamp': timeStamp]"/>
 
     </tr>

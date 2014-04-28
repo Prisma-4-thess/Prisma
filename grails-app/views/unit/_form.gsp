@@ -14,7 +14,7 @@
 <div
         class="fieldcontain ${hasErrors(bean: unitInstance, field: 'organization', 'error')} required">
     <label for="organization"><g:message
-            code="unit.organization.label" default="Organization"/> <span
+            code="organization.label" default="Organization"/> <span
             class="required-indicator">*</span>
     </label>
     <g:select id="organization" name="organization.id"

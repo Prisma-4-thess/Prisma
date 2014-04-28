@@ -126,7 +126,7 @@
             </p>
 
             <p>
-                <input id="submit" type='submit' value="Υποβολή"/>
+                <input id="submit" type='submit' value="${message(code:"submit.button")}"/>
             </p>
         </g:formRemote>
     </div>

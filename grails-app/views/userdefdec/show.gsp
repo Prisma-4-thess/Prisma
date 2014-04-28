@@ -27,7 +27,7 @@
 
         <g:if test="${userdefdecInstance?.decision}">
             <li class="fieldcontain">
-                <span id="decision-label" class="property-label"><g:message code="userdefdec.decision.label" default="Decision"/></span>
+                <span id="decision-label" class="property-label"><g:message code="decision.label" default="Decision"/></span>
 
                 <span class="property-value" aria-labelledby="decision-label"><g:link controller="decision" action="show"
                                                                                       id="${userdefdecInstance?.decision?.id}">${userdefdecInstance?.decision?.encodeAsHTML()}</g:link></span>
@@ -37,7 +37,7 @@
 
         <g:if test="${userdefdecInstance?.geo}">
             <li class="fieldcontain">
-                <span id="geo-label" class="property-label"><g:message code="userdefdec.geo.label" default="Geo"/></span>
+                <span id="geo-label" class="property-label"><g:message code="geo.label" default="Geo"/></span>
 
                 <span class="property-value" aria-labelledby="geo-label"><g:link controller="userdefgeo" action="show"
                                                                                  id="${userdefdecInstance?.geo?.id}">${userdefdecInstance?.geo?.encodeAsHTML()}</g:link></span>

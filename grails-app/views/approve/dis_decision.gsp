@@ -1,1 +1,1 @@
-<font color="red">Απορρίφθηκε</font>
+<font color="red"><g:message code="approve.declined" /></font>

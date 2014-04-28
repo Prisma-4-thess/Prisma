@@ -40,7 +40,7 @@
             <g:sortableColumn property="label"
                               title="${message(code: 'unit.label.label', default: 'Label')}"/>
 
-            <th><g:message code="unit.organization.label"
+            <th><g:message code="organization.label"
                            default="Organization"/></th>
 
         </tr>

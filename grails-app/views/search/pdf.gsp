@@ -3,7 +3,6 @@
 <head>
     <meta http-equiv="Content-Type" content="application/pdf; charset=UTF-8"/>
     <meta name="layout" content="main"/>
-    <title>Insert title here</title>
 </head>
 
 <body>

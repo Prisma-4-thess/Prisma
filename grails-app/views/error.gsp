@@ -15,7 +15,7 @@
 </g:if>
 <g:else>
     <ul class="errors">
-        <li>An error has occurred</li>
+        <li><g:message code="app.error.message" /></li>
     </ul>
 </g:else>
 </body>

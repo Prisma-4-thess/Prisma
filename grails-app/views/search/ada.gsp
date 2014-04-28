@@ -2,10 +2,10 @@
 <html>
 <body>
 <div class="body">
-    <p>ADA search</p>
+    <p><g:message code="search.searchBy.ada" /></p>
     <g:formRemote name="ada"
                   url="[controller: 'search', action: 'searchada']" update="results">
-        <label for="ada">ADA:</label>
+        <label for="ada"><g:message code="decision.ada.label" />:</label>
         <g:textField name="ada"/>
         <input name="pageId" type="hidden" value="admin_panel"/>
         <g:submitButton name="search"/>

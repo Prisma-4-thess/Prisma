@@ -1,6 +1,6 @@
 <div class="nav nav-left">
     <ul>
-        <li class="active"><a>Προτεινομενες Θεσεις</a></li>
+        <li class="active"><a><g:message code="defineGeo.suggestedGeo" /></a></li>
     </ul>
 </div>
 

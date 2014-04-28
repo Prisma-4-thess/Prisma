@@ -26,9 +26,9 @@
         <thead>
         <tr>
 
-            <th><g:message code="predefined.decision.label" default="Decision"/></th>
+            <th><g:message code="decision.label" default="Decision"/></th>
 
-            <th><g:message code="predefined.geo.label" default="Geo"/></th>
+            <th><g:message code="geo.label" default="Geo"/></th>
 
         </tr>
         </thead>

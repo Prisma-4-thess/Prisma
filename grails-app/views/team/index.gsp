@@ -9,7 +9,7 @@
 <body>
 <div class="nav nav-left">
     <ul>
-        <li class="active"><a>Η ομαδα πισω απο το Prisma</a></li>
+        <li class="active"><a><g:message code="team.team.tab" /></a></li>
 
     </ul>
 
@@ -37,124 +37,72 @@
 <!--start-mfp -->
 <div id="manwlas" class="mfp-hide">
     <div class="pop_up">
-        <h2>Μανώλας Δημήτρης</h2>
+        <h2><g:message code="team.manwlas.fullname" /></h2>
         <img src="${resource(dir: 'images/heads/', file: 'manwlas.png')}"
              alt=""/>
 
-        <p class="para">Τελειόφοιτος του Τμήματος Ηλεκτρολόγων Μηχανικών
-        και Μηχανικών Υπολογιστών. Ενθουσιάζεται με τις τεχνολογικές
-        εξελίξεις και με την τέχνη του μάρκετινγκ, και έχει έφεση στις
-        παρουσιάσεις. Εμπνέεται ιδιαιτέρως από τη φράση του Μαρκ Τουαίην
-        «Πολλά μικρά πράγματα έχουν γίνει μεγάλα με τη σωστή διαφήμιση». Για
-        την τεχνολογία, πιστεύει ότι αποτελεί μια από τις ευγενέστερες
-        εκφάνσεις του ανθρώπινου μυαλού καθώς και το ισχυρότερο εργαλείο που
-        έχει ο άνθρωπος στη διάθεσή του για να προστατέψει και να βελτιώσει
-        τη ζωή του. Το Prisma αποτελεί γι’αυτόν μια τέτοια είδους χρήση της
-        τεχνολογίας, με απώτερο στόχο την ενημέρωση και την περαιτέρω ένταξη
-        των πολιτών στα κοινά.</p>
+        <p class="para"><g:message code="team.manwlas.description" /></p>
     </div>
 </div>
 
 <div id="mpontomitsidis" class="mfp-hide">
     <div class="pop_up">
-        <h2>Μποντομητσίδης Σπύρος</h2>
+        <h2><g:message code="team.bontomitsidis.fullname" /></h2>
         <img
                 src="${resource(dir: 'images/heads/', file: 'mpontomitsidis.png')}"
                 alt=""/>
 
-        <p class="para">Ο Σπύρος είναι τελειόφοιτος του τμήματος Ηλ. Μηχ.
-        & Μηχ. Η/Υ στο Α.Π.Θ. Πιστεύει στη δύναμη του συνόλου, και για αυτό
-        είναι θερμός υποστηρικτής του Open Source Community. Πολυδιάστατος
-        χαρακτήρας, και από μικρός ήξερε ότι θα παιδεύεται με ηλεκτρονικά
-        και υπολογιστές. Το όραμά του για το Prisma είναι να καταφέρει να
-        μπει στην καθημερινότητα των πολιτών και να συμβάλλει στην έγκυρη
-        ενημέρωσή τους για τα κοινά.</p>
+        <p class="para"><g:message code="team.bontomitsidis.description" /></p>
     </div>
 </div>
 
 <div id="mylwnaki" class="mfp-hide">
     <div class="pop_up">
-        <h2>Μυλωνάκη Φένια</h2>
+        <h2><g:message code="team.mylwnaki.fullname" /></h2>
         <img src="${resource(dir: 'images/heads/', file: 'mylwnaki.png')}"
              alt=""/>
 
-        <p class="para">Η Φένια είναι ασκούμενη δικηγόρος. Βασικό κίνητρο
-        για την υλοποίηση της εφαρμογής Prisma, αποτέλεσε η ανάγκη
-        αξιοποίησης των δεδομένων του προγράμματος Διαύγεια για την ανάπτυξη
-        μιας εύχρηστης εφαρμογής, η οποία θα μπορούσε να αποτελέσει χρήσιμη
-        πηγή πληροφόρησης για κάθε πολίτη αλλά και επαγγελματικό εργαλείο
-        για κάθε νομικό.</p>
+        <p class="para"><g:message code="team.mylwnaki.description" /></p>
     </div>
 </div>
 
 <div id="mylwnakis" class="mfp-hide">
     <div class="pop_up">
-        <h2>Μυλωνάκης Κώστας</h2>
+        <h2><g:message code="team.mylwnakis.fullname" /></h2>
         <img src="${resource(dir: 'images/heads/', file: 'mylwnakis.png')}"
              alt=""/>
 
-        <p class="para">Ο Κώστας είναι φοιτητής του τμήματος Ηλεκτρολόγων
-        Μηχανικών & Μηχανικών Ηλεκτρονικών Υπολογιστών στο Α.Π.Θ. Πιστεύει
-        ότι είναι χρέος των νέων ανθρώπων να βελτιώσουν την κοινότητά τους
-        με καινοτόμες ιδέες και να σταματήσουν το brain drain. Το όραμά του
-        σχετικά με το Prisma είναι σε λίγα χρόνια κάθε
-        κτίριο,πεζοδρόμιο,κάδος κλπ. να έχει αντιστοιχισμένες τις αποφάσεις
-        που το αφορούν ώστε κάθε πολίτης να έχει πρόσβαση σε αυτές. Ελπίζει
-        το Prisma να χρησιμοποιηθεί και από άλλους δήμους της χώρας.
-        Τελευταία ασχολείται με Web developing & Server maintenance.</p>
+        <p class="para"><g:message code="team.mylwnakis.description" /></p>
     </div>
 </div>
 
 <div id="nikolis" class="mfp-hide">
     <div class="pop_up">
-        <h2>Νικολής Οδυσσέας</h2>
+        <h2><g:message code="team.nikolis.fullname" /></h2>
         <img src="${resource(dir: 'images/heads/', file: 'nikolis.png')}"
              alt=""/>
 
-        <p class="para">Κατάγεται από τη “μυροβόλο” Χίο και τα τελευταία
-        χρόνια ζει στην “ιστορική” Θεσσαλονίκη. Η συνεργασία, η
-        αδελφικότητα, η εφευρετικότητα, η αναζήτηση του αγνώστου και η
-        “περιέργεια” για τις νέες τεχνολογίες συνυπάρχουν στο χαρακτήρα του,
-        όπως και στον “Ομηρικό” Οδυσσέα 😋. Ως μέλος της ομάδας ανάπτυξης
-        της εφαρμογής Prisma νιώθει περήφανος, γιατί το Prisma βοηθά τη
-        Θεσσαλονίκη και είναι ίσως το καλύτερο αντάλλαγμα για την Παιδεία
-        που προσφέρει αυτή η πόλη στους φοιτητές-πολίτες της. Πέρα από τα
-        τεχνολογικά δρώμενα είναι λάτρης της θάλασσας και του αρέσει η
-        μουσική και ο αθλητισμός.</p>
+        <p class="para"><g:message code="team.nikolis.description" /></p>
     </div>
 </div>
 
 <div id="pitsianis" class="mfp-hide">
     <div class="pop_up">
-        <h2>Πιτσιάνης Νίκος</h2>
+        <h2><g:message code="team.pitsianis.fullname" /></h2>
         <img src="${resource(dir: 'images/heads/', file: 'pitsianis.png')}"
              alt=""/>
 
-        <p class="para">Ο Νίκος Πιτσιάνης επέστρεψε στα πάτρια μετά από
-        20 χρόνια σπουδές και εργασία στς ΗΠΑ. Θεωρεί την Ανοικτή
-        Διακυβέρνηση μια μεγάλη ευκαιρία για την συμμετοχή στα κοινά όλων,
-        τη συνεργασία και τη διαφάνεια. Ελπίζει ότι το Prisma θα είναι ένα
-        εργαλείο που θα βοηθήσει και θα εμπνεύσει χρήστες και
-        προγραμματιστές να βρουν νέους τρόπους χρήσης κι εκμετάλλευσης της
-        δημόσιας πληροφορίας που παράγεται από τη λειτουργία του κράτους.</p>
+        <p class="para"><g:message code="team.pitsianis.description" /></p>
     </div>
 </div>
 
 <div id="flwros" class="mfp-hide">
     <div class="pop_up">
-        <h2>Φλώρος Δημήτρης</h2>
+        <h2><g:message code="team.flwros.fullname" /></h2>
         <img src="${resource(dir: 'images/heads/', file: 'flwros.png')}"
              alt=""/>
 
-        <p class="para">Φοιτητής του τμήματος Ηλεκτρολογών Μηχανικών και
-        Μηχανικών Υπολογιστών του Αριστοτελείου Πανεπιστημίου Θεσσαλονικής.
-        Τον διακρίνουν τα πολύπλευρα ενδιαφέροντά του, καθώς και το πάθος
-        του για διαρκή εξερεύνηση νέων τεχνολογικών εξελίξεων στο
-        επιστημονικό του πεδίο. Τον τελευταίο καιρό, ασχολείται με την
-        ανάπτυξη web και mobile εφαρμογών, με κύρια έμφαση στο android
-        developing. Θεωρεί ότι το Prisma αντιπροσωπεύει τη βασική αρχή του θεσμού της δημοκρατίας
-        - τη ενεργή συμμετοχή των πολιτών στις αποφάσεις - αξιοποιώντας,
-        ταυτόχρονα, τη ραγδαία εξέλιξη της τεχνολογίας.</p>
+        <p class="para"><g:message code="team.flwros.description" /></p>
     </div>
 </div>
 <!--end-mfp -->
@@ -169,10 +117,10 @@
                             <div class="ch-info">
                                 <img src="${resource(dir: 'images', file: 'zoom-white.png')}"/>
 
-                                <h3>Μανωλας Δημητρης</h3>
+                                <h3><g:message code="team.manwlas.fullname"/></h3>
 
                                 <p>
-                                    <a href="#">Web Desinger</a>
+                                    <a href="#"><g:message code="team.role.web.desinger" /></a>
                                 </p>
                             </div>
                         </div>
@@ -191,10 +139,10 @@
                             <div class="ch-info">
                                 <img src="${resource(dir: 'images', file: 'zoom-white.png')}"/>
 
-                                <h3>Μποντομητσιδης Σπυρος</h3>
+                                <h3><g:message code="team.bontomitsidis.fullname"/></h3>
 
                                 <p>
-                                    <a href="#">Web Developer</a>
+                                    <a href="#"><g:message code="team.role.web.developer" /></a>
                                 </p>
                             </div>
                         </div>
@@ -213,10 +161,10 @@
                             <div class="ch-info">
                                 <img src="${resource(dir: 'images', file: 'zoom-white.png')}"/>
 
-                                <h3>Μυλωνακη Φενια</h3>
+                                <h3><g:message code="team.mylwnaki.fullname"/></h3>
 
                                 <p>
-                                    <a href="#">Legal Advisor</a>
+                                    <a href="#"><g:message code="team.role.legal.advisor" /></a>
                                 </p>
                             </div>
                         </div>
@@ -235,10 +183,10 @@
                             <div class="ch-info">
                                 <img src="${resource(dir: 'images', file: 'zoom-white.png')}"/>
 
-                                <h3>Μυλωνακης Κωστας</h3>
+                                <h3><g:message code="team.mylwnakis.fullname"/></h3>
 
                                 <p>
-                                    <a href="#">Server Administrator</a>
+                                    <a href="#"><g:message code="team.role.server.administrator" /></a>
                                 </p>
                             </div>
                         </div>
@@ -257,10 +205,10 @@
                             <div class="ch-info">
                                 <img src="${resource(dir: 'images', file: 'zoom-white.png')}"/>
 
-                                <h3>Νικολης Οδυσσεας</h3>
+                                <h3><g:message code="team.nikolis.fullname"/></h3>
 
                                 <p>
-                                    <a href="#">Software Engineer</a>
+                                    <a href="#"><g:message code="team.role.software.engineer" /></a>
                                 </p>
                             </div>
                         </div>
@@ -279,10 +227,10 @@
                             <div class="ch-info">
                                 <img src="${resource(dir: 'images', file: 'zoom-white.png')}"/>
 
-                                <h3>Πιτσιανης Νικος</h3>
+                                <h3><g:message code="team.pitsianis.fullname"/></h3>
 
                                 <p>
-                                    <a href="#">Project Advisor</a>
+                                    <a href="#"><g:message code="team.role.project.advisor" /></a>
                                 </p>
                             </div>
                         </div>
@@ -301,10 +249,10 @@
                             <div class="ch-info">
                                 <img src="${resource(dir: 'images', file: 'zoom-white.png')}"/>
 
-                                <h3>Φλωρος Δημητρης</h3>
+                                <h3><g:message code="team.flwros.fullname"/></h3>
 
                                 <p>
-                                    <a href="#">Android Developer</a>
+                                    <a href="#"><g:message code="team.role.android.developer" /></a>
                                 </p>
                             </div>
                         </div>
@@ -320,7 +268,7 @@
 
 <div class="nav nav-left">
     <ul>
-        <li class="active"><a>Διακρισεις</a></li>
+        <li class="active"><a><g:message code="team.awards.tab" /></a></li>
 
     </ul>
 </div>
@@ -330,14 +278,9 @@
 <div class="wrap">
     <div class="container">
 
-        <h3>3-4-2014</h3>
+        <h3><g:message code="team.awards.apps4thess.date" /></h3>
 
-        <p>Το Prisma υλοποιήθηκε στα πλαίσια του διαγωνισμού
-        apps4thessaloniki, τμήμα του πανευρωπαϊκού διαγωνισμού apps4europe,
-        και διοργανώθηκε για πρώτη φορά στην Ελλάδα από το δήμο
-        Θεσσαλονίκης. Κατάφερε να κατακτήσει την 1η θέση ανάμεσα σε 14
-        υλοποιημένες ιδέες και να ξεχωρίσει τόσο από την κριτική επιτροπή
-        όσο και από το κοινό.</p>
+        <p><g:message code="team.awards.apps4thess.description" /></p>
 
     </div>
 </div>
@@ -346,7 +289,7 @@
 
 <div class="nav nav-left">
     <ul>
-        <li class="active"><a>Υποστηρικτες</a></li>
+        <li class="active"><a><g:message code="team.supporters.tab" /></a></li>
 
     </ul>
 
@@ -404,7 +347,7 @@
 
 <div class="nav nav-left">
     <ul>
-        <li class="active"><a>Αναφορες σε ΜΜΕ</a></li>
+        <li class="active"><a><g:message code="team.mme.tab" /></a></li>
 
     </ul>
 </div>

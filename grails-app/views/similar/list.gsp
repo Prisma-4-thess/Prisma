@@ -26,9 +26,9 @@
         <thead>
         <tr>
 
-            <th><g:message code="similar.decision.label" default="Decision"/></th>
+            <th><g:message code="decision.label" default="Decision"/></th>
 
-            <th><g:message code="similar.sim_decision.label" default="Simdecision"/></th>
+            <th><g:message code="similar.label" default="Simdecision"/></th>
 
         </tr>
         </thead>
