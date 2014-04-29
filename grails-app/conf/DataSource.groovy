@@ -28,12 +28,7 @@ environments {
     }
     production {
         dataSource {
-            dbCreate = "update"
-            url = "jdbc:mysql://localhost/prisma?useUnicode=yes&characterEncoding=UTF-8"
-			username = "prisma"
-			password = "spydiko2014"
-			dialect = "prisma.MyCustomMySQL5InnoDBDialect"
-            pooled = true
+            jndiName = "java:comp/env/myDataSource"
             properties {
                maxActive = -1
                minEvictableIdleTimeMillis=1800000
