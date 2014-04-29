@@ -684,3 +684,29 @@ a.skip {
 .toSlide{
     display: none;
 }
+/**************GTsan**************/
+.plusMinus{
+    cursor:pointer;
+    width: 25px;
+    float: right;
+}
+#contact_resp {
+    font-family: 'Ubuntu', sans-serif;
+    color: #fff;
+    padding: 0.8em 1.5em;
+    background: #1BBC9B;
+    border: 1px solid #1BBC9B;
+    /*display: block;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;*/
+    cursor: default;
+    font-size: 1em;
+    outline: none;
+    text-transform: uppercase;
+    float: left;
+    margin-right: 2%;
+    vertical-align: baseline;
+}

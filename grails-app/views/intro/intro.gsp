@@ -18,29 +18,30 @@
 <body>
 <div class="nav">
     <ul>
-        <li class="active"><a style="cursor:pointer;" onclick="showOptionsAdminpanel()">Organizations</a></li>
+        <li class="active"><g:remoteLink action="showTab" update="organizationTab" style="cursor:pointer;" onComplete="showOptionsAdminpanel()">Organizations</g:remoteLink></li>
+        <li class="active"><g:remoteLink action="showSelected" update="organizationsList" style="cursor:pointer;" onComplete="showSelectedOrganizations()">My selected organizations</g:remoteLink></li>
+        <li id="contact_resp" style="display:none;">${responseMsg}
+        </li>
     </ul>
 </div>
 
 
-<div id="organizationTab">
-<div class="pagination">
-    <g:each in="${firstChar}">
-        <g:remoteLink controller="intro" action="show" id="${it}"
-                      update="organizations">
-            ${it}
-        </g:remoteLink>
-    </g:each>
+<div id="organizationTab" class="toSlide">
+
 </div>
 
+<div id="organizationsList" class="toSlide">
 
-<div id="organizations"></div>
 </div>
-<div id="organizationsList"></div>
+
 <script>
-    $('#organizationTab').hide()
     function showOptionsAdminpanel() {
+        $('#organizationsList').hide()
         $('#organizationTab').slideToggle("fast");
+    }
+    function showSelectedOrganizations() {
+        $('#organizationTab').hide()
+        $('#organizationsList').slideToggle("fast");
     }
 </script>
 

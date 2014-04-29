@@ -4,7 +4,6 @@
   Date: 23/4/2014
   Time: 4:56 μμ
 --%>
-
 <table>
     <thead>
     <tr>
@@ -16,13 +15,14 @@
 <g:each in="${sortedOrgazizations}" status="i"  var="sortedOrgan">
     <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
     <td>
-    ${sortedOrgan} <g:remoteLink action="addToList" update="organizationsList" params="[chosenOrgan:sortedOrgan]">
-        <g:img dir="images" file="plus.png" style="cursor:pointer; width: 25px; float: right;" />
+    ${sortedOrgan} <g:remoteLink action="addToList" update="contact_resp" params="[chosenOrgan:sortedOrgan]" onComplete="pop()">
+        <g:img dir="images" file="plus.png" class="plusMinus" />
     </g:remoteLink>
     </td>
     </tr>
 </g:each>
 </tbody>
 </table>
+
 
 

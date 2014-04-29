@@ -11,43 +11,58 @@ class IntroController {
     }
 
     def intro() {
-        params.order = "asc"
-        params.sort = "label"
-        ArrayList<String> firstChar = new ArrayList<>()
-        Organization.list(params).each {
-            if (!firstChar.contains(it.label.substring(0,1))) {
-                firstChar.add(it.label.substring(0,1))
-            }
-        }
-         [firstChar: firstChar, organizationInstanceList: Organization.list(params), organizationInstanceTotal: Organization.count()]
 
+        [organizationInstanceList: Organization.list(params), organizationInstanceTotal: Organization.count()]
     }
-    def show(){
+
+    def show() {
         def begChar = params.id
         ArrayList<String> sortedOrgazizations = new ArrayList<>()
-        Organization.list(params).each{
-            if(it.label.startsWith(begChar)){
+        Organization.list(params).each {
+            if (it.label.startsWith(begChar)) {
                 sortedOrgazizations.add(it.label)
             }
         }
 
         [sortedOrgazizations: sortedOrgazizations]
     }
-   def addToList(){
-       //ToDo Create domain ,load from domain-store to domain
-       def chosenOrganization = Organization.findByLabel(params.chosenOrgan)
-       def setting=Setting.get(1)
 
-       setting.addToOrgs(chosenOrganization)
-       setting.save(flush: true)
-       [organizationsList: Setting.get(1).orgs]
-   }
-    def removeFromList(){
+    def addToList() {
+        def chosenOrganization = Organization.findByLabel(params.chosenOrgan)
+        def setting = Setting.get(1)
+        String responseMsg
+        if (!setting.orgs.contains(chosenOrganization)) {
+            setting.addToOrgs(chosenOrganization)
+            responseMsg = "Organization successfully added to the list"
+        } else {
+            responseMsg = "The organization is already selected"
+        }
+        setting.save(flush: true)
+        render(text: responseMsg)
+    }
+
+    def removeFromList() {
         def chosenOrganizationToRemove = Organization.findByLabel(params.chosenOrganToDelete)
-        def setting=Setting.get(1)
+        def setting = Setting.get(1)
         setting.removeFromOrgs(chosenOrganizationToRemove)
+        render(view: 'showSelected', model: [orgsFromDatabase: Setting.get(1).orgs])
+    }
 
-        //ToDo remove the chosen organizations from the domain
+    def showSelected() {
+        [orgsFromDatabase: Setting.get(1).orgs]
+    }
+
+    def showTab() {
+        params.order = "asc"
+        params.sort = "label"
+        ArrayList<String> firstChar = new ArrayList<>()
+        Organization.list(params).each {
+            if (!firstChar.contains(it.label.substring(0, 1))) {
+                firstChar.add(it.label.substring(0, 1))
+            }
+        }
+        [firstChar: firstChar]
+
     }
     def upload(){
         def f = request.getFile('myFile')
