@@ -1,6 +1,7 @@
 package prisma
 
 import grails.plugin.springsecurity.annotation.Secured
+import org.codehaus.groovy.grails.commons.GrailsApplication
 
 @Secured(['permitAll'])
 class IntroController {
@@ -47,5 +48,18 @@ class IntroController {
         setting.removeFromOrgs(chosenOrganizationToRemove)
 
         //ToDo remove the chosen organizations from the domain
+    }
+    def upload(){
+        def f = request.getFile('myFile')
+        if (f.empty) {
+            flash.message = 'file cannot be empty'
+            render(view: 'change_img')
+            return
+        }
+        f.transferTo(new File('web-app/images/slider_image_dim_2.jpg'))
+        response.sendError(200, 'Done')
+    }
+    def change_img(){
+
     }
 }

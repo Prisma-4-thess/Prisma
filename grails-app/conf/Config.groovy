@@ -136,3 +136,4 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 grails.plugins.remotepagination.max=10
 
 grails.controllers.defaultScope = "prototype"
+//grails.background.img="../images/slider_image_dim_2.jpg"
