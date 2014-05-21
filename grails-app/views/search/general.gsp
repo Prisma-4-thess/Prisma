@@ -2,7 +2,7 @@
 <html>
 <body>
 <div class="body">
-    <p><g:message code="search.searchBy.general"</p>
+    <p><g:message code="search.searchBy.general"/></p>
     <g:formRemote name="general"
                   url="[controller: 'search', action: 'searchgeneral']" update="results">
         <label for="subject"><g:message code="decision.subject.label"/>:</label>

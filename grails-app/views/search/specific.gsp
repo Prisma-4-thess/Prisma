@@ -2,7 +2,7 @@
 <html>
 <body>
 <div class="body">
-    <p><g:message code="search.searchBy.specific"</p>
+    <p><g:message code="search.searchBy.specific"/></p>
     <g:formRemote name="specific"
                   url="[controller: 'search', action: 'searchspecific']" update="results">
         <label for="prot_num"><g:message code="decision.protocolNumber.label"/>:</label>
