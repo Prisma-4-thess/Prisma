@@ -4,7 +4,7 @@ class UrlMappings {
 		"/$controller/$action?/$id?"{ constraints { // apply constraints here
 			} }
 
-		name rootUrl: "/"(view:"/index")
+		name rootUrl: "/"(view:"/main/index")
 		name error: "500"(view:'/error')
 
 		name adminPanel: "/admin_panel"(view:"/admin_panel")

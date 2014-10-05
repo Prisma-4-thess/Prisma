@@ -6,6 +6,9 @@ import prisma.UserRole
 class BootStrap {
 
 	def init = { servletContext ->
+        TimeZone.setDefault(TimeZone.getTimeZone("CET"))
+        Locale.setDefault(new Locale("gr"));
+
 		def adminRole = createRole('ROLE_ADMIN')
 		def userRole = createRole('ROLE_USER')
 		def modRole = createRole('ROLE_MODERATOR')

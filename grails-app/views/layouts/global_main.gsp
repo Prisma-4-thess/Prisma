@@ -42,7 +42,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="header">
             <!--------start-logo------>
             <div class="logo">
-                <g:link mapping="rootUrl">
+                <g:link controller="main">
                     <img src="${resource(dir: 'images', file: 'site-logo.png')}"
                          alt=""/>
                 </g:link>
@@ -53,13 +53,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="nav">
                 <ul>
 
-                    <li><a href="/Prisma/#home"><g:message code="homepage.home.label" /></a></li>
+                    <li><a href="/Prisma/main/index"><g:message code="homepage.home.label" /></a></li>
                     <li><g:link controller="search" action="dedicatedSearchPage"><g:message code="homepage.search.label" /></g:link></li>
                     <li><a href="/Prisma/#map"><g:message code="homepage.map.label" /></a></li>
                     <li><a href="/Prisma/#about"><g:message code="homepage.info.label" /></a></li>
                     <li><g:link controller="team"><g:message code="homepage.team.label" /></g:link></li>
                     <li><g:render template="/common/topbar"/></li>
-
+                    <li><a href="${request.forwardURI}?lang=gr"><img src="${resource(dir: 'images', file: 'greek_flag.png')}" alt="" height="25" width="30"/></a></li>
+                    <li><a href="${request.forwardURI}?lang=en"><img src="${resource(dir: 'images', file: 'english_flag.png')}" alt="" height="25" width="30"></a></li>
                     <div class="clear"></div>
                 </ul>
 
