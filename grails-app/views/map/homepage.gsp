@@ -1,6 +1,7 @@
+<head>
+    <g:javascript library="jquery"/>
+</head>
 <script type="text/javascript">
-
-
     function initializeMap() {
 
         var mapOptions = {
@@ -20,11 +21,12 @@
         var serverURL = '${it.serverURL}';
         var geoID = '${it.geoID}';
         var geoName = '${it.geoName}';
+        var lang='${params.lang}';
         console.log(geoName);
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(lat, lng),
             map: map,
-            title: '<a href="' + serverURL + '/map/show_geo/' + geoID + '/?source=map" target="_blank">' + geoName + '</a>'
+            title: '<a href="' + serverURL +'/map/show_geo/' + geoID + '/?source=map&lang='+ lang + '" target="_blank">' + geoName + '</a>'
         });
         var infowindow = new google.maps.InfoWindow(), marker, i;
         google.maps.event.addListener(marker, 'click', (function (marker, i) {

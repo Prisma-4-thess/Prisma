@@ -5,5 +5,7 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['permitAll'])
 class MainController {
 
-    def index() {}
+    def index() {
+        println('in main '+params.lang)
+    }
 }

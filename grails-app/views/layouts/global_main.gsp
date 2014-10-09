@@ -52,15 +52,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <!----start-nav-------->
             <div class="nav">
                 <ul>
-
-                    <li><a href="/Prisma/main/index"><g:message code="homepage.home.label" /></a></li>
-                    <li><g:link controller="search" action="dedicatedSearchPage"><g:message code="homepage.search.label" /></g:link></li>
-                    <li><a href="/Prisma/#map"><g:message code="homepage.map.label" /></a></li>
-                    <li><a href="/Prisma/#about"><g:message code="homepage.info.label" /></a></li>
-                    <li><g:link controller="team"><g:message code="homepage.team.label" /></g:link></li>
+                    <li><g:link controller="main" params="[lang:params.lang]"><g:message code="homepage.home.label" /></g:link></li>
+                    <li><g:link controller="search" action="dedicatedSearchPage" params="[lang:params.lang]"><g:message code="homepage.search.label" /></g:link></li>
+                    %{--<li><a href="/Prisma/#map"><g:message code="homepage.map.label" /></a></li>--}%
+                    %{--<li><a href="/Prisma/#about"><g:message code="homepage.info.label" /></a></li>--}%
+                    <li><g:link controller="team" params="[lang:params.lang]"><g:message code="homepage.team.label" /></g:link></li>
                     <li><g:render template="/common/topbar"/></li>
-                    <li><a href="${request.forwardURI}?lang=gr"><img src="${resource(dir: 'images', file: 'greek_flag.png')}" alt="" height="25" width="30"/></a></li>
-                    <li><a href="${request.forwardURI}?lang=en"><img src="${resource(dir: 'images', file: 'english_flag.png')}" alt="" height="25" width="30"></a></li>
+                    <li><g:link controller="${params.controller}" action="${params.action}" params="[lang:'gr']"><img src="${resource(dir: 'images', file: 'greek_flag.png')}" alt="" height="25" width="30"/></g:link></li>
+                    <li><g:link controller="${params.controller}" action="${params.action}" params="[lang:'en']"><img src="${resource(dir: 'images', file: 'english_flag.png')}" alt="" height="25" width="30"></g:link></li>
                     <div class="clear"></div>
                 </ul>
 

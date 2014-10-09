@@ -43,7 +43,7 @@
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(lat, lng),
                 map: map,
-                title: '<a href="' + serverURL + '/map/show_geo/' + geoID + '/?source=map" target="_blank">' + geoName + '</a>'
+                title: '<a href="' + serverURL + ${params.lang}+'/map/show_geo/' + geoID + '/?source=map" target="_blank">' + geoName + '</a>'
             });
             var infowindow = new google.maps.InfoWindow(), marker, i;
             google.maps.event.addListener(marker, 'click', (function (marker, i) {

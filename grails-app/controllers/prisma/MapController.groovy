@@ -43,6 +43,7 @@ class MapController {
     }
 
     def homepage() {
+        println("in homepage "+params.lang)
         def decisionG = new Decision()
         decisionG = Decision.createCriteria().list { isNotNull("geo") }
         println 'size ' + decisionG.size()
@@ -62,16 +63,6 @@ class MapController {
                 marker.add([latitude: lat, longitude: lon, draggable: dr, serverURL: serverURL, geoID: geoID, geoName: geoName])
             }
         }
-
-        /*lat=40.636
-         lon=22.938
-         dr=false
-         marker[0] = [latitude:lat, longitude:lon, draggable:dr,description:ds]
-         lat=40.65
-         lon=22.92
-         dr=false
-         ds='πλατεία τζομπανογλου'
-         marker[1] = [latitude:lat, longitude:lon, draggable:dr,description:ds]*/
         [mark: marker]
     }
 
