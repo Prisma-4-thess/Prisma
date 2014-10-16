@@ -129,7 +129,7 @@
     </g:if>
 
     <tr>
-        <td>Θέση</td>
+        <td><g:message code="signer.position.label" /></td>
         <td>
         <td><g:if test="${decision.geo}">
             <g:link controller="map" action="show_geo"

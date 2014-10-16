@@ -58,8 +58,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     %{--<li><a href="/Prisma/#about"><g:message code="homepage.info.label" /></a></li>--}%
                     <li><g:link controller="team" params="[lang:params.lang]"><g:message code="homepage.team.label" /></g:link></li>
                     <li><g:render template="/common/topbar"/></li>
-                    <li><g:link controller="${params.controller}" action="${params.action}" params="[lang:'gr']"><img src="${resource(dir: 'images', file: 'greek_flag.png')}" alt="" height="25" width="30"/></g:link></li>
-                    <li><g:link controller="${params.controller}" action="${params.action}" params="[lang:'en']"><img src="${resource(dir: 'images', file: 'english_flag.png')}" alt="" height="25" width="30"></g:link></li>
+                    <li><g:link controller="${params.controller}" action="${params.action}" id="${params.id}" params="[lang:'gr',source:params.source]"><img src="${resource(dir: 'images', file: 'greek_flag.png')}" alt="" height="25" width="30"/></g:link></li>
+                    <li><g:link controller="${params.controller}" action="${params.action}" id="${params.id}" params="[lang:'en',source:params.source]"><img src="${resource(dir: 'images', file: 'english_flag.png')}" alt="" height="25" width="30"></g:link></li>
                     <div class="clear"></div>
                 </ul>
 

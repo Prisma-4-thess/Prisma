@@ -23,10 +23,11 @@
         var geoName = '${it.geoName}';
         var lang='${params.lang}';
         console.log(geoName);
+//TODO serverUrl -> prisma4thess.gr/Prisma
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(lat, lng),
             map: map,
-            title: '<a href="' + serverURL +'/map/show_geo/' + geoID + '/?source=map&lang='+ lang + '" target="_blank">' + geoName + '</a>'
+            title: '<a href="/Prisma/map/show_geo/' + geoID + '/?source=map&lang='+ lang + '" target="_blank">' + geoName + '</a>'
         });
         var infowindow = new google.maps.InfoWindow(), marker, i;
         google.maps.event.addListener(marker, 'click', (function (marker, i) {
